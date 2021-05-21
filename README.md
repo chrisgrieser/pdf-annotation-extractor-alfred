@@ -32,7 +32,7 @@ brew install wkhtmltopdf
 - Alternatively when you are familiar with Alfred, you can also use fiel filter and a file search with the keyword `anno`
 - Use the Alfred keyword `aconf` to set up output style, reference insertion, and (optionally) pdf engine.
   - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Markdown specifically for [Notion.so Toggled Lists](https://www.notion.so/Toggles-c720af26b4bd4789b736c140b2dc73fe).
-  - reference insertion: The workflow inserts the references (e.g. Grieser 2019: 24). You either tell the Annotation Extractor manually which Reference to insert, or it will automatically determine the correct reference from the filename of your pdf. For that, it must be formatted as `"authors_year_[...].pdf"`.
+  - reference insertion: The workflow inserts the references (e.g. Grieser 2019: 24). You either tell the Annotation Extractor manually which Reference to insert, or it will automatically determine the correct reference from the filename of your pdf. For that, it must be formatted as `"authors_year_[...].pdf"`. You can use bibliography management software to name your papers automatically like that.
 - Right now, this workflow only extracts free comments and highlights with comments. More in the future.
 
 ## Troubleshooting 
