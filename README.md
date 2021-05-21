@@ -34,8 +34,13 @@ brew install wkhtmltopdf
   - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Markdown specifically for [Notion.so Toggled Lists](https://www.notion.so/Toggles-c720af26b4bd4789b736c140b2dc73fe).
   - reference insertion: The workflow inserts the references (e.g. Grieser 2019: 24). You either tell the Annotation Extractor manually which Reference to insert, or it will automatically determine the correct reference from the filename of your pdf. For that, it must be formatted as `"authors_year_[...].pdf"`. You can use bibliography management software to name your papers automatically like that.
 - Right now, this workflow only extracts free comments and highlights with comments. More in the future.
+- Auto-Updates for this workflow are implemented.
 
 ## Troubleshooting 
 When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
+
+## Credits
+This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to Andreas
+), which is basically the whole backend of this workflow.
