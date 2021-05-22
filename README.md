@@ -11,11 +11,11 @@ Alfred Workflow that does pretty much what the name implies
 python3 --version
 python3 -m pip3 --version
 ```
-3) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
-4) 
+2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
+3) Run the [Installer Script](https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install.sh).
 
-
-7) Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
+*optional: in case you want the annotations as PDF file:**
+4) Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
 
 ```
 # Install Homebrew
