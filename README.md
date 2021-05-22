@@ -13,6 +13,7 @@ Alfred Workflow that does pretty much what the name implies
 5) unzip at `/usr/local/lib/python3.9/site-packages`
 6) run in the Terminal:
 ```
+curl https://github.com/0xabu/pdfannots/archive/refs/heads/master.zip -o pdfannots_install.zip
 cd '/usr/local/lib/python3.9/site-packages'
 run python3 setup.py install 
 ```
