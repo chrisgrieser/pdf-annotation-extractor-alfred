@@ -1,5 +1,5 @@
 # PDF Annotation Extractor
-Alfred Workflow that does pretty much what the name implies
+Alfred Workflow that does pretty much what the name says.
 
 <img src="https://i.imgur.com/MqoPtO2.gif" alt="" width=50% height=50%>
 
