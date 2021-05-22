@@ -12,7 +12,7 @@ Alfred Workflow that does pretty much what the name implies
 2) If is not installed, [install it](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
 3) Install [PDFminer](https://github.com/pdfminer/pdfminer.six): `pip install pdfminer.six`
 4) [Download pdfannots](https://github.com/0xabu/pdfannots/archive/refs/heads/master.zip).
-5) unzip at '/usr/local/lib/python3.9/site-packages'
+5) unzip at `/usr/local/lib/python3.9/site-packages`
 6) run in the Terminal:
 ```
 cd '/usr/local/lib/python3.9/site-packages'
@@ -33,13 +33,12 @@ brew install wkhtmltopdf
 - Use the Alfred keyword `aconf` to set up output style, reference insertion, and (optionally) pdf engine.
   - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Markdown specifically for [Notion.so Toggled Lists](https://www.notion.so/Toggles-c720af26b4bd4789b736c140b2dc73fe).
   - reference insertion: The workflow inserts the references (e.g. Grieser 2019: 24). You either tell the Annotation Extractor manually which Reference to insert, or it will automatically determine the correct reference from the filename of your pdf. For that, it must be formatted as `"authors_year_[...].pdf"`. You can use bibliography management software to name your papers automatically like that.
-- Right now, this workflow only extracts free comments and highlights with comments. More in the future.
-- Auto-Updates for this workflow are implemented.
+- Right now, this workflow only extracts free comments and highlights with comments. More in the future (this workflow has automatic updates).
 
 ## Troubleshooting 
 When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
-<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
+<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=60% height=60%> 
 
 ## Credits
 This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](https://github.com/0xabu/pdfannots), which is basically the whole backend of this workflow.
