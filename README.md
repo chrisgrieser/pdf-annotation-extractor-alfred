@@ -42,5 +42,4 @@ When the hotkey does not work in Preview, most likely the Alfred app does not ha
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
 
 ## Credits
-This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to Andreas
-), which is basically the whole backend of this workflow.
+This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](https://github.com/0xabu/pdfannots), which is basically the whole backend of this workflow.
