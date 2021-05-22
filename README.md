@@ -36,7 +36,7 @@ brew install wkhtmltopdf
 - Right now, this workflow only extracts free comments and highlights with comments. More in the future (this workflow has automatic updates).
 
 ## Troubleshooting 
-- This workflow won't work with annotations that are not actually saved in the PDF file. [Some PDF Readers like Skim so this, but you can tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
+- This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like Skim so this, but you can [tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
