@@ -6,7 +6,7 @@ Alfred Workflow that does pretty much what the name implies
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 
 ## Installation
-1) Check if Python3 and Pip, the python package manager, are installed on your machine: 
+1) Check if Python3 (version 3.9) and Pip are installed on your machine: 
 ```
 python3 --version
 python3 -m pip3 --version
