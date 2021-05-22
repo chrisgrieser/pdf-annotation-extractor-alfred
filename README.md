@@ -39,7 +39,7 @@ brew install wkhtmltopdf
 - This workflow won't work with annotations that are not actually saved in the PDF file. [Some PDF Readers like Skim so this, but you can tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
-<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=60% height=60%> 
+<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
 
 ## Credits
 This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](https://github.com/0xabu/pdfannots), which is basically the whole backend of this workflow.
