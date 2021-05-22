@@ -1,6 +1,8 @@
 # PDF Annotation Extractor
 Alfred Workflow that does pretty much what the name implies
 
+<img src="https://i.imgur.com/MqoPtO2.gif" alt="" width=50% height=50%>
+
 ## Requirements
 - Alfred (🍏️ only)
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
