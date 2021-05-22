@@ -6,20 +6,21 @@ Alfred Workflow that does pretty much what the name implies
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 
 ## Installation
-1) Check if Pip, the python package manager, is installed on your machine: `python3 -m pip --version`
-2) If is not installed, [install it](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
-3) Install [PDFminer](https://github.com/pdfminer/pdfminer.six): `pip install pdfminer.six`
-4) [Download pdfannots](https://github.com/0xabu/pdfannots/archive/refs/heads/master.zip).
-5) unzip at `/usr/local/lib/python3.9/site-packages`
-6) run in the Terminal:
+1) Check if Python3 and Pip, the python package manager, are installed on your machine: 
 ```
-curl https://github.com/0xabu/pdfannots/archive/refs/heads/master.zip -o pdfannots_install.zip
-cd '/usr/local/lib/python3.9/site-packages'
-run python3 setup.py install 
+python3 --version
+python3 -m pip3 --version
 ```
-*in case you want to output your annotations as PDF File*
+3) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
+4) 
+
 
 7) Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
+
+```
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 ```
 # assuming you have Homebrew
 brew install pandoc
