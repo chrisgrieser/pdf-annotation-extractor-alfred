@@ -22,10 +22,10 @@ run python3 setup.py install
 
 7) Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
 ```
+# assuming you have Homebrew
 brew install pandoc
 brew install wkhtmltopdf
 ```
-----
 
 ## How to use
 - Use the hotkey in when you have a PDF selectd in Finder or open in Preview. The Hotkey can be set in Alfred by doubleclicking the respective field at the top left.
