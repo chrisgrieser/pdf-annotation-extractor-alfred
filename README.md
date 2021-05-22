@@ -4,8 +4,6 @@ Alfred Workflow that does pretty much what the name implies
 ## Requirements
 - Alfred (🍏️ only)
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
-- the CL-Tools described below under "Installation"
-- works with any PDF Reader that can annotate
 
 ## Installation
 1) Check if Pip, the python package manager, is installed on your machine: `python3 -m pip --version`
@@ -36,7 +34,8 @@ brew install wkhtmltopdf
 - Right now, this workflow only extracts free comments and highlights with comments. More in the future (this workflow has automatic updates).
 
 ## Troubleshooting 
-When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
+- this workflow won't work with PDF readers that doe not save annotations in the PDF file. 
+- When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=60% height=60%> 
 
