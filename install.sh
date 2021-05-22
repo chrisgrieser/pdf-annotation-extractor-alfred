@@ -1,4 +1,4 @@
-#install pip – will only produce Terminal output, if already installed
+#install pdfminer.six – will only produce Terminal output, if already installed
 pip install pdfminer.six
 
 #install pdfannots
