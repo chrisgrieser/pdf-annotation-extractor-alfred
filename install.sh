@@ -9,7 +9,3 @@ temp=$PWD
 cd '/usr/local/lib/python3.9/site-packages/pdfannots-master/'
 python3 setup.py install
 cd $temp
-
-#install Alfred Workflow
-curl -s -L https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/download/PDF.Annotation.Extractor.alfredworkflow -o $HOME/Downloads/PDF.Annotation.Extractor.alfredworkflow
-open PDF.Annotation.Extractor.alfredworkflow
