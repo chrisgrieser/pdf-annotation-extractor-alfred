@@ -21,7 +21,7 @@ curl https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alf
 
 4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/download/PDF.Annotation.Extractor.alfredworkflow).
 
-5) *optional: in case you want the annotations as PDF file: Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).*
+5) *(optional – in case you want the annotations as PDF file)* Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
 
 ```
 # Install Homebrew
