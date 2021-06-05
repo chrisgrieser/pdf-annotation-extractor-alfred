@@ -9,3 +9,4 @@ temp=$PWD
 cd '/usr/local/lib/python3.9/site-packages/pdfannots-master/'
 python3 setup.py install
 cd $temp
+echo 'pdf-annots installation finished'
