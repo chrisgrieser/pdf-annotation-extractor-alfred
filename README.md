@@ -15,7 +15,7 @@ python3 -m pip3 --version
 ```
 2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py). You can do so with this code:
 ```
-# first line assumes you have brew. if not, install python3 manually: https://www.python.org/downloads/mac-osx/
+# first line assumes you have Homebrew. if not, install python3 manually: https://www.python.org/downloads/mac-osx/
 brew install python3
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
