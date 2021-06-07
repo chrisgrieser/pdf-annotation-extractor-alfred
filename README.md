@@ -13,13 +13,19 @@ Alfred Workflow that does pretty much what the name says.
 python3 --version
 python3 -m pip3 --version
 ```
-2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py).
-3) Run the Installer:
+2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py). You can do so with this code:
+```
+# first line assumes you have brew. if not, install python3 manually: https://www.python.org/downloads/mac-osx/
+brew install python3
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+```
+
+3) Install pdfannots and its dependencies via this line:
 ```
 curl https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install.sh | bash
 ```
-
-4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/download/PDF.Annotation.Extractor.alfredworkflow).
+4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 
 5) *(optional – in case you want the annotations as PDF file)* Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/).
 
