@@ -207,7 +207,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>B93952C4-6437-46FA-8F0F-B0AA18AEDF95</string>
+				<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -293,19 +293,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3E840FA4-1943-4481-AD16-B835C6879050</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7B7CA49A-2B1D-4473-AE22-54A496A5BDCE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</key>
 		<array>
 			<dict>
@@ -336,19 +323,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6C861A8B-E65D-48C5-AD3D-E98510CA045A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>41B75749-6A32-4250-8010-3B486228115C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7C5EC0ED-FA5C-4F79-B73E-C8C27A1CB213</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -396,6 +370,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A37D8724-7F84-4931-B412-68377C99A6EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4F2776D7-A996-4B98-B2BC-BFC991002296</key>
 		<array>
 			<dict>
@@ -409,37 +396,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5099CEF4-7BAE-4BAF-88C7-3F2CF36A749A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5D082EDD-9749-40DF-A502-2C3BB2C152CB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5D082EDD-9749-40DF-A502-2C3BB2C152CB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7CAE575F-F377-486B-B010-939DF9782AA0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -481,6 +442,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FBA710D1-638F-46CB-9771-37A9802C9877</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -575,50 +538,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>7C5EC0ED-FA5C-4F79-B73E-C8C27A1CB213</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7F6F7A74-6804-40D0-8B95-1AE3DD0C7D2B</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>86514609-4A22-4679-B595-2E96303A9132</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>7CAE575F-F377-486B-B010-939DF9782AA0</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>41B75749-6A32-4250-8010-3B486228115C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>7F6F7A74-6804-40D0-8B95-1AE3DD0C7D2B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3E840FA4-1943-4481-AD16-B835C6879050</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -658,6 +582,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>29B1E708-A231-4989-9463-0AD74C394DAA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -832,6 +769,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A7323E84-86A9-4D7E-93C2-5968D1763BD9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</key>
 		<array>
 			<dict>
@@ -910,19 +860,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B93952C4-6437-46FA-8F0F-B0AA18AEDF95</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>BB7FDA9D-8F18-48D4-979A-A0C3D63134B7</key>
 		<array>
 			<dict>
@@ -990,6 +927,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>47107825-F548-4FC2-BE0E-A23B332ED170</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1210,169 +1160,13 @@
 	<key>createdby</key>
 	<string>Chris Grieser</string>
 	<key>description</key>
-	<string>Does exactly what the name implies.</string>
+	<string>Does exactly what the name says.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>PDF Annotation Extractor</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>↩</string>
-				<key>keycode</key>
-				<integer>36</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>41B75749-6A32-4250-8010-3B486228115C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>↩</string>
-				<key>keycode</key>
-				<integer>36</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>7B7CA49A-2B1D-4473-AE22-54A496A5BDCE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>7</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1572864</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>7F6F7A74-6804-40D0-8B95-1AE3DD0C7D2B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>2</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>17</integer>
-				<key>hotmod</key>
-				<integer>1179648</integer>
-				<key>hotstring</key>
-				<string>T</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedApps</key>
-				<array>
-					<string>notion.id</string>
-				</array>
-				<key>relatedAppsMode</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>5099CEF4-7BAE-4BAF-88C7-3F2CF36A749A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>5D082EDD-9749-40DF-A502-2C3BB2C152CB</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>0.3</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>7CAE575F-F377-486B-B010-939DF9782AA0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>0.3</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>3E840FA4-1943-4481-AD16-B835C6879050</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>0.3</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>7C5EC0ED-FA5C-4F79-B73E-C8C27A1CB213</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -1459,7 +1253,7 @@ end alfred_script</string>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
-				<string>{annotations}</string>
+				<string>{var:annotations}</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
@@ -1471,27 +1265,6 @@ end alfred_script</string>
 			<string>F6FC0362-0C72-412A-A10D-1323A0A1C5D3</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Extraction finished. Choose Notion Page.</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1511,6 +1284,27 @@ end alfred_script</string>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>80F5AE6A-45A7-4C8B-9C3C-77654DBAA3B8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Extraction finished. Choose Notion Page.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1543,11 +1337,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>17</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>1835008</integer>
 				<key>hotstring</key>
-				<string>T</string>
+				<string>A</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1701,23 +1495,27 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Annotations are being extracted...</string>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>export PATH=/usr/local/lib:/usr/local/bin:$PATH
+python3 -c "import pdfminer" 
+echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
+			<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1760,7 +1558,7 @@ end alfred_script</string>
   if (mdStyle == "notion"){
     annotations = "- **" + shortRef + "**" + annotations; //putting reference as heading
   } else {
-    annotations = "# " + shortRef + annotations;
+    annotations = "# Annotations on " + shortRef + annotations;
     annotations = annotations.replaceAll ("  ",""); //double spaces before the run
   }
   return annotations;
@@ -1782,33 +1580,29 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH=/usr/local/lib/python3.9:/usr/local/bin:$PATH
-python3 -c "import pdfminer" 
-echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Annotations are being extracted...</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
+			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -1955,26 +1749,6 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>ref_name</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>1C540104-846F-4F83-91F1-69C9CFCCA2AC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
@@ -2044,26 +1818,6 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>first_page_no</key>
-					<string>1</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>B93952C4-6437-46FA-8F0F-B0AA18AEDF95</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<true/>
 				<key>filetypes</key>
@@ -2077,6 +1831,26 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>ref_name</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1C540104-846F-4F83-91F1-69C9CFCCA2AC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2198,7 +1972,7 @@ fi</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"Select Output Style","arg":"output","subtitle":"Markdown, PDF, or Notion.so"},{"title":"Set PDF-Engine","arg":"pdfengine","subtitle":"will be used when Output Style is \"pdf\""},{"title":"How the Reference will be generated","arg":"reference","subtitle":"via manual input or file name"}]</string>
+				<string>[{"title":"Select Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"Set PDF Engine to use","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"How the Reference will be generated","arg":"reference","subtitle":"currently: {var:reference_insertion}"},{"title":"Exit this Configuration","arg":"exit"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -2214,6 +1988,87 @@ fi</string>
 			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
 			<string>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>Input was not a number. Please try again.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>number-input-loop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>4CBB5EFD-7DE6-47E9-8677-232683385214</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>number-input-loop</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>{var:output_md}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2247,21 +2102,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>soundname</key>
-				<string>Basso</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2283,44 +2123,22 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>{var:output_md}</string>
+				<key>argument</key>
+				<string>{var:annotations}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>output_md</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
+			<string>6C861A8B-E65D-48C5-AD3D-E98510CA045A</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>Input is not a number. Please try again.</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -2371,47 +2189,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:annotations}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>output_md</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>6C861A8B-E65D-48C5-AD3D-E98510CA045A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Annotation Extraction finished</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -2439,19 +2216,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>{var:output_pdf}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2472,6 +2236,53 @@ pandoc ~'/Library/Application Support/Alfred/Workflow Data/de.chris-grieser.pdf-
 			<string>C3A4210B-D26D-40F0-BD41-D4907C6FCA1D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Annotation Extraction finished</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>{var:output_pdf}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>aconf-loop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>A7323E84-86A9-4D7E-93C2-5968D1763BD9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2756,7 +2567,7 @@ end alfred_script</string>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
-tell application "Alfred" to set configuration "output_style" to value q in workflow "de.chris-grieser.pdf-annotation-extraction"
+tell application "Alfred" to set configuration "output_style" to value q in workflow "de.chris-grieser.pdf-annotation-extraction" with exportable
 
 end alfred_script</string>
 				<key>cachescript</key>
@@ -2809,7 +2620,7 @@ end alfred_script</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"PDF","arg":"pdf","subtitle":"requires Pandoc and selected PDF Engine"},{"title":"Markdown File","arg":"markdown"},{"title":"Notion","arg":"notion","subtitle":"copies Markdown that can be pasted into Notion (toggle paste: ⌥V)"}]</string>
+				<string>[{"title":"PDF","arg":"pdf","subtitle":"requires Pandoc and selected PDF Engine"},{"title":"Markdown File","arg":"markdown"},{"title":"Notion","arg":"notion","subtitle":"copies Markdown that can be pasted into Notion"}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -3004,27 +2815,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>PDF Engine selected</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -3033,7 +2823,7 @@ end alfred_script</string>
 				<string>on run
 
 tell application "Alfred" 
-    set configuration "pdf_engine" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction"
+    set configuration "pdf_engine" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction" with exportable
 end tell
 
 return "{query}"
@@ -3052,6 +2842,27 @@ end run</string>
 			<string>D1D08724-FD0C-4DF0-9786-718A39D6468F</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>PDF Engine selected</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3113,9 +2924,23 @@ end run</string>
 						<key>uid</key>
 						<string>59E1E37B-87DB-410B-8B4C-77377DD440E9</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>reference</string>
+						<key>outputlabel</key>
+						<string>reference</string>
+						<key>uid</key>
+						<string>FBA710D1-638F-46CB-9771-37A9802C9877</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>reference</string>
+				<string>exit</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -3193,6 +3018,25 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>aconf-loop</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>soundname</key>
 				<string>Blow</string>
 				<key>systemsound</key>
@@ -3202,33 +3046,6 @@ end run</string>
 			<string>alfred.workflow.output.playsound</string>
 			<key>uid</key>
 			<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"Manual Input","arg":"manually","subtitle":"before annotation extraction, will ask for the reference to put in"},{"title":"Automatically from File Name","arg":"filename","subtitle":"file must be named in the format \"authors_year_[...].pdf\""}]</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Select a Type of Reference Input</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
-			<key>uid</key>
-			<string>93AA67C4-5283-4131-BBCA-FDED34162A98</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3264,7 +3081,7 @@ end run</string>
 				<string>on run
 
 tell application "Alfred" 
-    set configuration "reference_insertion" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction"
+    set configuration "reference_insertion" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction" with exportable
 end tell
 
 return "{query}"
@@ -3287,6 +3104,33 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"Manual Input","arg":"manually","subtitle":"before annotation extraction, will ask for the reference to put in"},{"title":"Automatically from File Name","arg":"filename","subtitle":"file must be named in the format \"authors_year_[...].pdf\""}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Select a Type of Reference Input</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>93AA67C4-5283-4131-BBCA-FDED34162A98</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -3305,7 +3149,13 @@ end run</string>
 	<key>readme</key>
 	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#pdf-annotation-extractor
 
-Created by Chris Grieser, https://chris-grieser.de/</string>
+Created by Chris Grieser https://chris-grieser.de/
+
+---
+
+Release Notes
+
+version 1.0: aconf has a loop for more convenience of doing multiple configurations, prettier icon, force input of digits as page numbers</string>
 	<key>uidata</key>
 	<dict>
 		<key>000BB652-39B5-43A4-A41C-CCAC26C3E81D</key>
@@ -3317,7 +3167,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>380</integer>
 			<key>ypos</key>
-			<integer>130</integer>
+			<integer>55</integer>
 		</dict>
 		<key>00AC4898-5483-4154-B852-15EE7C43A3E8</key>
 		<dict>
@@ -3326,7 +3176,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1640</integer>
+			<integer>1565</integer>
 		</dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
 		<dict>
@@ -3335,7 +3185,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1300</integer>
+			<integer>1225</integer>
 		</dict>
 		<key>00D4341E-299D-4AA6-9831-81EB643F68E0</key>
 		<dict>
@@ -3344,7 +3194,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1775</integer>
+			<integer>1700</integer>
 		</dict>
 		<key>031D4224-B2EE-46AA-942C-0790F94F622E</key>
 		<dict>
@@ -3353,7 +3203,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>540</integer>
 			<key>ypos</key>
-			<integer>1630</integer>
+			<integer>1555</integer>
 		</dict>
 		<key>0B185B98-4066-4CB1-9724-AA64206396DF</key>
 		<dict>
@@ -3362,27 +3212,25 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>585</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>15</integer>
 		</dict>
 		<key>0BAD7D58-975F-45DD-AA9E-0369F9091F9F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
-			<key>note</key>
-			<string>saves file_path</string>
 			<key>xpos</key>
-			<integer>425</integer>
+			<integer>415</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>370</integer>
 		</dict>
 		<key>0C48457B-7D93-4C7A-866E-E9F32870A1B4</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>915</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>585</integer>
 		</dict>
 		<key>0D9FAD09-116C-46BD-9AAC-08445B3B4BEA</key>
 		<dict>
@@ -3393,7 +3241,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
-			<integer>1235</integer>
+			<integer>1160</integer>
 		</dict>
 		<key>0E3F5955-6B2F-4EB7-BD58-7BD32E2EB8C9</key>
 		<dict>
@@ -3402,7 +3250,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1505</integer>
+			<integer>1430</integer>
 		</dict>
 		<key>106248DA-2DCF-477E-AD35-D8CC6F19792F</key>
 		<dict>
@@ -3411,7 +3259,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1735</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>285</integer>
 		</dict>
 		<key>1C540104-846F-4F83-91F1-69C9CFCCA2AC</key>
 		<dict>
@@ -3420,9 +3268,9 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>saves ref_name</string>
 			<key>xpos</key>
-			<integer>655</integer>
+			<integer>645</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>370</integer>
 		</dict>
 		<key>1CC341EC-003E-424D-B663-C4D7E27694FB</key>
 		<dict>
@@ -3431,7 +3279,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>85</integer>
 		</dict>
 		<key>1F409233-6B32-4BC6-9162-D0D58C81A5F1</key>
 		<dict>
@@ -3440,7 +3288,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>875</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>300</integer>
 		</dict>
 		<key>280875D9-6878-4994-8CC2-C08DF9543A64</key>
 		<dict>
@@ -3449,7 +3297,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>555</integer>
 		</dict>
 		<key>295DD35F-44FB-4D24-AAB6-58B62558CB3C</key>
 		<dict>
@@ -3460,7 +3308,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1345</integer>
 			<key>ypos</key>
-			<integer>1250</integer>
+			<integer>1175</integer>
 		</dict>
 		<key>29B1E708-A231-4989-9463-0AD74C394DAA</key>
 		<dict>
@@ -3469,7 +3317,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>415</integer>
+			<integer>340</integer>
 		</dict>
 		<key>3E4CC6CD-B1E5-4DCF-9C06-C05748422A49</key>
 		<dict>
@@ -3478,7 +3326,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1190</integer>
+			<integer>1115</integer>
 		</dict>
 		<key>3E6ADB83-E616-4EB7-B561-394E99087883</key>
 		<dict>
@@ -3487,16 +3335,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1430</integer>
-		</dict>
-		<key>3E840FA4-1943-4481-AD16-B835C6879050</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>1450</integer>
-			<key>ypos</key>
-			<integer>50</integer>
+			<integer>1355</integer>
 		</dict>
 		<key>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</key>
 		<dict>
@@ -3505,7 +3344,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>280</integer>
 			<key>ypos</key>
-			<integer>100</integer>
+			<integer>25</integer>
 		</dict>
 		<key>3F8C3DCD-8151-4229-B2FF-826DDBC4B494</key>
 		<dict>
@@ -3514,16 +3353,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1095</integer>
 			<key>ypos</key>
-			<integer>660</integer>
-		</dict>
-		<key>41B75749-6A32-4250-8010-3B486228115C</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>1110</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>585</integer>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
@@ -3532,7 +3362,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>845</integer>
 			<key>ypos</key>
-			<integer>1745</integer>
+			<integer>1670</integer>
 		</dict>
 		<key>47107825-F548-4FC2-BE0E-A23B332ED170</key>
 		<dict>
@@ -3541,7 +3371,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1220</integer>
+			<integer>1145</integer>
 		</dict>
 		<key>480754C9-A1DE-4C75-9CC2-4F1AF53CB5BC</key>
 		<dict>
@@ -3550,7 +3380,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1535</integer>
+			<integer>1460</integer>
+		</dict>
+		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>725</integer>
+			<key>ypos</key>
+			<integer>505</integer>
 		</dict>
 		<key>4F2776D7-A996-4B98-B2BC-BFC991002296</key>
 		<dict>
@@ -3559,18 +3398,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1325</integer>
-		</dict>
-		<key>5099CEF4-7BAE-4BAF-88C7-3F2CF36A749A</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>note</key>
-			<string>Paste as Toggled List in Notion</string>
-			<key>xpos</key>
-			<integer>25</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>1250</integer>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -3581,16 +3409,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>165</integer>
-		</dict>
-		<key>5D082EDD-9749-40DF-A502-2C3BB2C152CB</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>915</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>90</integer>
 		</dict>
 		<key>602D972B-BB63-496F-B96B-C4207E25422E</key>
 		<dict>
@@ -3599,7 +3418,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>155</integer>
 			<key>ypos</key>
-			<integer>1615</integer>
+			<integer>1540</integer>
 		</dict>
 		<key>63AC5ECC-3565-47BA-81EC-77840ADD8B14</key>
 		<dict>
@@ -3608,7 +3427,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>1595</integer>
 		</dict>
 		<key>6681F19F-9735-4C3C-80A9-CD70104E90EE</key>
 		<dict>
@@ -3617,16 +3436,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1115</integer>
+			<integer>1040</integer>
 		</dict>
 		<key>6A532A92-9A3C-4481-BA03-AE157B3CFDAA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>385</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1610</integer>
+			<integer>1535</integer>
 		</dict>
 		<key>6C861A8B-E65D-48C5-AD3D-E98510CA045A</key>
 		<dict>
@@ -3637,7 +3456,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>660</integer>
+			<integer>585</integer>
 		</dict>
 		<key>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</key>
 		<dict>
@@ -3649,7 +3468,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1185</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>280</integer>
 		</dict>
 		<key>71DCC589-DA81-4D39-815A-2A5817B543B1</key>
 		<dict>
@@ -3660,18 +3479,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
-		</dict>
-		<key>7B7CA49A-2B1D-4473-AE22-54A496A5BDCE</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>note</key>
-			<string>open toggle list for inspection</string>
-			<key>xpos</key>
-			<integer>1505</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>985</integer>
 		</dict>
 		<key>7C419ED6-E477-4731-A8D7-135988B7A1F0</key>
 		<dict>
@@ -3680,16 +3488,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>850</integer>
 			<key>ypos</key>
-			<integer>1255</integer>
-		</dict>
-		<key>7C5EC0ED-FA5C-4F79-B73E-C8C27A1CB213</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>1255</integer>
-			<key>ypos</key>
-			<integer>50</integer>
+			<integer>1180</integer>
 		</dict>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<dict>
@@ -3698,25 +3497,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>310</integer>
-		</dict>
-		<key>7CAE575F-F377-486B-B010-939DF9782AA0</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>1050</integer>
-			<key>ypos</key>
-			<integer>50</integer>
-		</dict>
-		<key>7F6F7A74-6804-40D0-8B95-1AE3DD0C7D2B</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>10</integer>
-			<key>xpos</key>
-			<integer>1315</integer>
-			<key>ypos</key>
-			<integer>20</integer>
+			<integer>240</integer>
 		</dict>
 		<key>7F7FC071-3074-42ED-9DDD-451DCFE8D302</key>
 		<dict>
@@ -3725,7 +3506,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1010</integer>
+			<integer>935</integer>
 		</dict>
 		<key>80F5AE6A-45A7-4C8B-9C3C-77654DBAA3B8</key>
 		<dict>
@@ -3734,7 +3515,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1315</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>85</integer>
+		</dict>
+		<key>83D85448-CA51-4A18-87B6-0F6F02EA0D73</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>590</integer>
+			<key>ypos</key>
+			<integer>505</integer>
 		</dict>
 		<key>86514609-4A22-4679-B595-2E96303A9132</key>
 		<dict>
@@ -3745,7 +3535,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>225</integer>
 			<key>ypos</key>
-			<integer>425</integer>
+			<integer>350</integer>
 		</dict>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<dict>
@@ -3754,7 +3544,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>1675</integer>
+			<integer>1600</integer>
 		</dict>
 		<key>8DD65E80-0A92-4F06-A75F-2B7F9571157A</key>
 		<dict>
@@ -3763,7 +3553,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>535</integer>
 			<key>ypos</key>
-			<integer>1275</integer>
+			<integer>1200</integer>
 		</dict>
 		<key>9046160C-6521-481D-B278-1E254A2008F9</key>
 		<dict>
@@ -3772,16 +3562,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1400</integer>
+			<integer>1325</integer>
 		</dict>
 		<key>93AA67C4-5283-4131-BBCA-FDED34162A98</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>390</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1745</integer>
+			<integer>1670</integer>
 		</dict>
 		<key>972267FB-A5B1-42A6-86D7-91ED0A815777</key>
 		<dict>
@@ -3792,7 +3582,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1735</integer>
 			<key>ypos</key>
-			<integer>515</integer>
+			<integer>440</integer>
+		</dict>
+		<key>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>1670</integer>
+			<key>ypos</key>
+			<integer>1600</integer>
 		</dict>
 		<key>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</key>
 		<dict>
@@ -3801,7 +3600,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1380</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>700</integer>
 		</dict>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
 		<dict>
@@ -3812,7 +3611,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1335</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>280</integer>
 		</dict>
 		<key>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</key>
 		<dict>
@@ -3823,16 +3622,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>575</integer>
+			<integer>500</integer>
 		</dict>
 		<key>A0207D9A-20A9-4AF8-9E7D-905566B18866</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>1510</integer>
+			<integer>1505</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>85</integer>
 		</dict>
 		<key>A238B23D-2F3A-4C85-A3CB-66FF48FEEE5B</key>
 		<dict>
@@ -3843,7 +3642,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1115</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>700</integer>
 		</dict>
 		<key>A37D8724-7F84-4931-B412-68377C99A6EA</key>
 		<dict>
@@ -3852,7 +3651,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>720</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>280</integer>
 		</dict>
 		<key>A503D151-F1FC-4262-A6F7-02F374B9786F</key>
 		<dict>
@@ -3861,7 +3660,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>910</integer>
 			<key>ypos</key>
-			<integer>1015</integer>
+			<integer>940</integer>
+		</dict>
+		<key>A7323E84-86A9-4D7E-93C2-5968D1763BD9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>315</integer>
+			<key>ypos</key>
+			<integer>705</integer>
 		</dict>
 		<key>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</key>
 		<dict>
@@ -3870,7 +3678,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>850</integer>
 			<key>ypos</key>
-			<integer>1555</integer>
+			<integer>1480</integer>
 		</dict>
 		<key>AB2B2780-B8AB-4E7D-AD86-F4EC3501E13E</key>
 		<dict>
@@ -3881,7 +3689,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1245</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>555</integer>
 		</dict>
 		<key>B2E63790-BE81-4BCA-971E-E93C887F6262</key>
 		<dict>
@@ -3892,7 +3700,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1270</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>B64AD0AD-FAB9-4653-B474-877CF9E2FA26</key>
 		<dict>
@@ -3901,7 +3709,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1085</integer>
+			<integer>1010</integer>
 		</dict>
 		<key>B7529BEE-D49E-40BE-B768-6F30B63427D0</key>
 		<dict>
@@ -3912,16 +3720,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1055</integer>
 			<key>ypos</key>
-			<integer>805</integer>
+			<integer>730</integer>
 		</dict>
 		<key>B7CFBC29-8784-4E92-B775-B87611C6E218</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>450</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>505</integer>
 		</dict>
 		<key>B7DC3104-D14F-4027-AD33-BD835F015FE6</key>
 		<dict>
@@ -3930,18 +3738,9 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>remove \n</string>
 			<key>xpos</key>
-			<integer>585</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<integer>325</integer>
-		</dict>
-		<key>B93952C4-6437-46FA-8F0F-B0AA18AEDF95</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>xpos</key>
-			<integer>980</integer>
-			<key>ypos</key>
-			<integer>430</integer>
+			<integer>250</integer>
 		</dict>
 		<key>BB7FDA9D-8F18-48D4-979A-A0C3D63134B7</key>
 		<dict>
@@ -3952,7 +3751,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1025</integer>
 			<key>ypos</key>
-			<integer>660</integer>
+			<integer>585</integer>
 		</dict>
 		<key>BBA749AA-EDEC-4269-AED6-E665AF904A6D</key>
 		<dict>
@@ -3961,7 +3760,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1560</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>285</integer>
 		</dict>
 		<key>C18B1943-3299-4D5E-9115-B8C3F9C1161A</key>
 		<dict>
@@ -3970,7 +3769,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>840</integer>
 			<key>ypos</key>
-			<integer>1080</integer>
+			<integer>1005</integer>
 		</dict>
 		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
 		<dict>
@@ -3979,9 +3778,9 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>Error Sound</string>
 			<key>xpos</key>
-			<integer>600</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>505</integer>
 		</dict>
 		<key>C3A4210B-D26D-40F0-BD41-D4907C6FCA1D</key>
 		<dict>
@@ -3992,16 +3791,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1245</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>700</integer>
 		</dict>
 		<key>C7679DCD-1436-41BF-80EE-FAE5C4DB3638</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>505</integer>
+			<integer>480</integer>
 			<key>ypos</key>
-			<integer>415</integer>
+			<integer>340</integer>
 		</dict>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<dict>
@@ -4010,7 +3809,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>775</integer>
+			<integer>700</integer>
 		</dict>
 		<key>D1D08724-FD0C-4DF0-9786-718A39D6468F</key>
 		<dict>
@@ -4019,7 +3818,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
-			<integer>1555</integer>
+			<integer>1480</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
@@ -4028,7 +3827,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>440</integer>
+			<integer>365</integer>
 		</dict>
 		<key>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</key>
 		<dict>
@@ -4037,7 +3836,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>980</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>300</integer>
 		</dict>
 		<key>E6FF25D7-C3E2-4D46-8946-CDEAD26E6E4F</key>
 		<dict>
@@ -4048,7 +3847,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>805</integer>
+			<integer>730</integer>
 		</dict>
 		<key>E95A863A-FAFB-4666-A5F8-3A13AF7A730D</key>
 		<dict>
@@ -4057,7 +3856,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>980</integer>
+			<integer>905</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
@@ -4066,7 +3865,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>545</integer>
 			<key>ypos</key>
-			<integer>1745</integer>
+			<integer>1670</integer>
 		</dict>
 		<key>EFF65A14-8130-4A5D-A826-B733F799683E</key>
 		<dict>
@@ -4075,7 +3874,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1040</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>280</integer>
 		</dict>
 		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
 		<dict>
@@ -4086,16 +3885,16 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1490</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>310</integer>
 		</dict>
 		<key>F5EA6F50-7225-42D8-B6AD-817B7FD11A5B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>425</integer>
+			<integer>415</integer>
 			<key>ypos</key>
-			<integer>295</integer>
+			<integer>220</integer>
 		</dict>
 		<key>F6FC0362-0C72-412A-A10D-1323A0A1C5D3</key>
 		<dict>
@@ -4104,7 +3903,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>160</integer>
+			<integer>85</integer>
 		</dict>
 		<key>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</key>
 		<dict>
@@ -4113,7 +3912,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1380</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>555</integer>
 		</dict>
 		<key>FBFAD844-0211-4F50-B344-6AAD97D41894</key>
 		<dict>
@@ -4122,7 +3921,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1295</integer>
+			<integer>1220</integer>
 		</dict>
 		<key>FE801F84-93B3-4413-AD3D-3AA906388FFC</key>
 		<dict>
@@ -4131,7 +3930,7 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>985</integer>
 			<key>ypos</key>
-			<integer>805</integer>
+			<integer>730</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -4139,12 +3938,17 @@ Created by Chris Grieser, https://chris-grieser.de/</string>
 		<key>output_style</key>
 		<string>markdown</string>
 		<key>pdf_engine</key>
-		<string></string>
+		<string>wkhtmltopdf</string>
 		<key>reference_insertion</key>
-		<string>manually</string>
+		<string>filename</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>pdf_engine</string>
+		<string>reference_insertion</string>
+	</array>
 	<key>version</key>
-	<string>0.9</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>https://chris-grieser.de/</string>
 </dict>
