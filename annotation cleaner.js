@@ -18,7 +18,7 @@ function run() {
   //formats annotations for Notion Markdown
   annotations = annotations.replace ("## Detailed comments",""); //remove heading
   annotations = annotations.replace (/ \* Page (\d+):\n +> +(.*)\n +(.*)\n/gm,`  - **$3:** "$2" (ZZZZ: $1) \n`); //re-formatting commented highlights
-  annotations = annotations.replace (/ \* Page (\d*):\n(.*)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
+  annotations = annotations.replace (/ \* Page (\d*):[\n| ]?([^\*>]+)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
   annotations = annotations.replaceAll ("ZZZZ",shortRef); //insert reference
 
   //inserts correct page numbers based on https://stackoverflow.com/a/32664436
