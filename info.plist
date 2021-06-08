@@ -1545,7 +1545,7 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
   //formats annotations for Notion Markdown
   annotations = annotations.replace ("## Detailed comments",""); //remove heading
   annotations = annotations.replace (/ \* Page (\d+):\n +&gt; +(.*)\n +(.*)\n/gm,`  - **$3:** "$2" (ZZZZ: $1) \n`); //re-formatting commented highlights
-  annotations = annotations.replace (/ \* Page (\d*): (.*)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
+  annotations = annotations.replace (/ \* Page (\d*):\n(.*)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
   annotations = annotations.replaceAll ("ZZZZ",shortRef); //insert reference
 
   //inserts correct page numbers based on https://stackoverflow.com/a/32664436
@@ -1558,7 +1558,7 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
   if (mdStyle == "notion"){
     annotations = "- **" + shortRef + "**" + annotations; //putting reference as heading
   } else {
-    annotations = "# Annotations on " + shortRef + annotations;
+    annotations = "# " + shortRef + annotations;
     annotations = annotations.replaceAll ("  ",""); //double spaces before the run
   }
   return annotations;
@@ -3155,6 +3155,8 @@ Created by Chris Grieser https://chris-grieser.de/
 
 Release Notes
 
+v. 1.1: small fix concerning free comments
+
 version 1.0: aconf has a loop for more convenience of doing multiple configurations, prettier icon, force input of digits as page numbers</string>
 	<key>uidata</key>
 	<dict>
@@ -3936,7 +3938,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 	<key>variables</key>
 	<dict>
 		<key>output_style</key>
-		<string>markdown</string>
+		<string>notion</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
 		<key>reference_insertion</key>
@@ -3948,7 +3950,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 		<string>reference_insertion</string>
 	</array>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://chris-grieser.de/</string>
 </dict>
