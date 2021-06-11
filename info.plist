@@ -89,6 +89,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>86514609-4A22-4679-B595-2E96303A9132</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -157,6 +167,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1376EAD3-5EC4-4199-8E1A-14AC6F4D023A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B185B98-4066-4CB1-9724-AA64206396DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1A1F82B0-CC80-4895-848D-76E13AF8E68C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65E7AED3-BD1F-43E5-908F-09636A52A2A6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -267,6 +303,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>39FCA636-91EB-4FDC-ABB5-099F9649CE84</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCE7281C-4C22-4A1A-9908-CC5005A7AF9F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3E4CC6CD-B1E5-4DCF-9C06-C05748422A49</key>
 		<array>
 			<dict>
@@ -297,13 +346,25 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0B185B98-4066-4CB1-9724-AA64206396DF</string>
+				<string>F2EC537E-59BA-4509-B70F-3135A67E5323</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B185B98-4066-4CB1-9724-AA64206396DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8E300276-EDC0-4AF3-99F8-19FE89DCA0E7</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -336,6 +397,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1376EAD3-5EC4-4199-8E1A-14AC6F4D023A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -447,6 +521,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F01A0181-060D-42B8-8A1B-617F2EF52BA5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>2B3E0322-80AF-456D-8947-CC6EDA50576F</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>6681F19F-9735-4C3C-80A9-CD70104E90EE</key>
 		<array>
@@ -551,6 +637,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>7EA5C3C5-F07A-4C5F-B9E9-D1EEEA5604F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7F7FC071-3074-42ED-9DDD-451DCFE8D302</key>
 		<array>
 			<dict>
@@ -569,6 +668,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F469E778-8FAE-435D-9716-0856C26F6FC6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -974,6 +1086,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CCE7281C-4C22-4A1A-9908-CC5005A7AF9F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EA5C3C5-F07A-4C5F-B9E9-D1EEEA5604F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<array>
 			<dict>
@@ -1039,6 +1164,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E870BE1C-4697-4A8A-813C-5A344E6642A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39FCA636-91EB-4FDC-ABB5-099F9649CE84</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E95A863A-FAFB-4666-A5F8-3A13AF7A730D</key>
 		<array>
 			<dict>
@@ -1078,11 +1216,49 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F01A0181-060D-42B8-8A1B-617F2EF52BA5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E870BE1C-4697-4A8A-813C-5A344E6642A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>BBA749AA-EDEC-4269-AED6-E665AF904A6D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2EC537E-59BA-4509-B70F-3135A67E5323</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A1F82B0-CC80-4895-848D-76E13AF8E68C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1170,6 +1346,211 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>65E7AED3-BD1F-43E5-908F-09636A52A2A6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>Location fo PDFs not set. To use this workflow with PDF Expert, you need to set the location of your PDFs with "aconf".</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>1A1F82B0-CC80-4895-848D-76E13AF8E68C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>filename="{query}"
+
+homef=~
+temp=`echo -n $pdf_expert_location | sed -e "s/~//"`
+
+echo -n `find "$homef""$temp" -name $filename.pdf -type f -print0 | xargs -0 ls -tl | cut -d '/' -f 2- | head -n 1 | sed -e "s/^/\//"`</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1376EAD3-5EC4-4199-8E1A-14AC6F4D023A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "PDF Expert" to activate
+# save file
+tell application "System Events" to keystroke "s" using {command down}tell application "System Events"	set frontAppProcess to first application process whose frontmost is trueend tell# Tell the *process* to count its windows and return its front window's name.tell frontAppProcess	if (count of windows) &gt; 0 then		set window_name to name of front window	end ifend tell
+
+return window_name
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:pdf_expert_location}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>not set</string>
+						<key>uid</key>
+						<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>location set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F2EC537E-59BA-4509-B70F-3135A67E5323</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:focusedapp}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>com.readdle.PDFExpert-Mac</string>
+						<key>outputlabel</key>
+						<string>PDF Expert</string>
+						<key>uid</key>
+						<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:focusedapp}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>com.apple.Finder</string>
+						<key>outputlabel</key>
+						<string>Finder</string>
+						<key>uid</key>
+						<string>8E300276-EDC0-4AF3-99F8-19FE89DCA0E7</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Preview</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>F469E778-8FAE-435D-9716-0856C26F6FC6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>File is not a PDF</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1200,40 +1581,14 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:focusedapp}</string>
-						<key>matchcasesensitive</key>
-						<true/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string>com.apple.Preview</string>
-						<key>outputlabel</key>
-						<string>Finder</string>
-						<key>uid</key>
-						<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Preview</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
-tell application "Preview" to set current_file to path of front document
+tell application "Preview" 
+	save the front document
+	set current_file to path of front document
+end tell
+
 return current_file
 
 end alfred_script</string>
@@ -1269,6 +1624,27 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Extraction copied to clipboard. Choose Notion Page.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>count</key>
 				<integer>1</integer>
 				<key>keychar</key>
@@ -1284,27 +1660,6 @@ end alfred_script</string>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>80F5AE6A-45A7-4C8B-9C3C-77654DBAA3B8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Extraction finished. Choose Notion Page.</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1349,6 +1704,7 @@ end alfred_script</string>
 				<key>relatedApps</key>
 				<array>
 					<string>com.apple.finder</string>
+					<string>com.readdle.PDFExpert-Mac</string>
 					<string>com.apple.Preview</string>
 				</array>
 				<key>relatedAppsMode</key>
@@ -1495,27 +1851,23 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH=/usr/local/lib:/usr/local/bin:$PATH
-python3 -c "import pdfminer" 
-echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Annotations are being extracted...</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
+			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1545,7 +1897,7 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
   //formats annotations for Notion Markdown
   annotations = annotations.replace ("## Detailed comments",""); //remove heading
   annotations = annotations.replace (/ \* Page (\d+):\n +&gt; +(.*)\n +(.*)\n/gm,`  - **$3:** "$2" (ZZZZ: $1) \n`); //re-formatting commented highlights
-  annotations = annotations.replace (/ \* Page (\d*):\n(.*)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
+  annotations = annotations.replace (/ \* Page (\d*):[\n| ]?([^\*&gt;]+)\n/gm,"  - *$2 (ZZZZ: $1)*\n"); //re-formating free comments
   annotations = annotations.replaceAll ("ZZZZ",shortRef); //insert reference
 
   //inserts correct page numbers based on https://stackoverflow.com/a/32664436
@@ -1580,23 +1932,27 @@ echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Annotations are being extracted...</string>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>export PATH=/usr/local/lib:/usr/local/bin:$PATH
+python3 -c "import pdfminer" 
+echo | python3 -m pdfannots $file_path -s comments --no-condense -n 1</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
+			<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1972,7 +2328,7 @@ fi</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"Select Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"Set PDF Engine to use","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"How the Reference will be generated","arg":"reference","subtitle":"currently: {var:reference_insertion}"},{"title":"Exit this Configuration","arg":"exit"}]</string>
+				<string>[{"title":"Select Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"Set PDF Engine to use","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"How the Reference will be generated","arg":"reference","subtitle":"currently: {var:reference_insertion}"},{"title":"Exit this Configuration","arg":"exit"},{"title":"Location of PDFs","arg":"pdf-expert-location","subtitle":"currently: {var:pdf_expert_location}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -1988,6 +2344,34 @@ fi</string>
 			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
 			<string>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>number-input-loop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>4CBB5EFD-7DE6-47E9-8677-232683385214</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2015,34 +2399,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>number-input-loop</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>4CBB5EFD-7DE6-47E9-8677-232683385214</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Basso</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>number-input-loop</string>
 				<key>passinputasargument</key>
@@ -2056,19 +2412,6 @@ fi</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>path</key>
-				<string>{var:output_md}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2123,28 +2466,13 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:annotations}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>output_md</key>
-					<string>{query}</string>
-				</dict>
+				<key>path</key>
+				<string>{var:output_md}</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.action.revealfile</string>
 			<key>uid</key>
-			<string>6C861A8B-E65D-48C5-AD3D-E98510CA045A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>0C48457B-7D93-4C7A-866E-E9F32870A1B4</string>
+			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2187,6 +2515,55 @@ fi</string>
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>0C48457B-7D93-4C7A-866E-E9F32870A1B4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:annotations}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>output_md</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6C861A8B-E65D-48C5-AD3D-E98510CA045A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:ref_name}</string>
+				<key>title</key>
+				<string>Annotation Extraction finished</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>adduuid</key>
@@ -2216,6 +2593,19 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>path</key>
+				<string>{var:output_pdf}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2236,40 +2626,6 @@ pandoc ~'/Library/Application Support/Alfred/Workflow Data/de.chris-grieser.pdf-
 			<string>C3A4210B-D26D-40F0-BD41-D4907C6FCA1D</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:ref_name}</string>
-				<key>title</key>
-				<string>Annotation Extraction finished</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>path</key>
-				<string>{var:output_pdf}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2815,6 +3171,27 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>PDF Engine selected</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2823,7 +3200,7 @@ end alfred_script</string>
 				<string>on run
 
 tell application "Alfred" 
-    set configuration "pdf_engine" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction" with exportable
+    set configuration "pdf_engine" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction"
 end tell
 
 return "{query}"
@@ -2842,27 +3219,6 @@ end run</string>
 			<string>D1D08724-FD0C-4DF0-9786-718A39D6468F</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>PDF Engine selected</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2937,6 +3293,20 @@ end run</string>
 						<string>reference</string>
 						<key>uid</key>
 						<string>FBA710D1-638F-46CB-9771-37A9802C9877</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>pdf-expert-location</string>
+						<key>outputlabel</key>
+						<string>pdf-expert-location</string>
+						<key>uid</key>
+						<string>2B3E0322-80AF-456D-8947-CC6EDA50576F</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -3052,6 +3422,33 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"Manual Input","arg":"manually","subtitle":"before annotation extraction, will ask for the reference to put in"},{"title":"Automatically from File Name","arg":"filename","subtitle":"file must be named in the format \"author1_auhtor2_year_[...].pdf\""}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Select a Type of Reference Input</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>93AA67C4-5283-4131-BBCA-FDED34162A98</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -3104,33 +3501,6 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"Manual Input","arg":"manually","subtitle":"before annotation extraction, will ask for the reference to put in"},{"title":"Automatically from File Name","arg":"filename","subtitle":"file must be named in the format \"authors_year_[...].pdf\""}]</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Select a Type of Reference Input</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
-			<key>uid</key>
-			<string>93AA67C4-5283-4131-BBCA-FDED34162A98</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -3145,6 +3515,174 @@ end run</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Location of PDFs set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7EA5C3C5-F07A-4C5F-B9E9-D1EEEA5604F3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array/>
+				<key>sortmode</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Confirm with return</string>
+				<key>title</key>
+				<string>Search for a folder where you store your PDFs</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>E870BE1C-4697-4A8A-813C-5A344E6642A2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>on run
+
+tell application "Alfred" 
+    set configuration "pdf_expert_location" to value "{query}" in workflow "de.chris-grieser.pdf-annotation-extraction"
+end tell
+
+return "{query}"
+
+end run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CCE7281C-4C22-4A1A-9908-CC5005A7AF9F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>^\/users\/[^\/]*(\/.*)$</string>
+				<key>regexcaseinsensitive</key>
+				<true/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string>~$1</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>39FCA636-91EB-4FDC-ABB5-099F9649CE84</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F01A0181-060D-42B8-8A1B-617F2EF52BA5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#pdf-annotation-extractor
@@ -3155,9 +3693,16 @@ Created by Chris Grieser https://chris-grieser.de/
 
 Release Notes
 
-v. 1.1: small fix concerning free comments
+v 1.2
+- Support for directly triggering from PDF Expert. 
+- As PDF Expert only allows to retrieve a filename, the workflow searches for the path of that file. To speed up the search, only the location selected via "aconf" will be searched. In case there are two files, the most recently modified one will be used.
+- nicer icon
 
-version 1.0: aconf has a loop for more convenience of doing multiple configurations, prettier icon, force input of digits as page numbers</string>
+v. 1.1: 
+small fix concerning free comments
+
+v. 1.0: 
+aconf has a loop for more convenience of doing multiple configurations, prettier icon, force input of digits as page numbers</string>
 	<key>uidata</key>
 	<dict>
 		<key>000BB652-39B5-43A4-A41C-CCAC26C3E81D</key>
@@ -3167,9 +3712,9 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>note</key>
 			<string>get Preview's front window</string>
 			<key>xpos</key>
-			<integer>380</integer>
+			<integer>465</integer>
 			<key>ypos</key>
-			<integer>55</integer>
+			<integer>320</integer>
 		</dict>
 		<key>00AC4898-5483-4154-B852-15EE7C43A3E8</key>
 		<dict>
@@ -3178,7 +3723,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1565</integer>
+			<integer>1920</integer>
 		</dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
 		<dict>
@@ -3187,7 +3732,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1225</integer>
+			<integer>1580</integer>
 		</dict>
 		<key>00D4341E-299D-4AA6-9831-81EB643F68E0</key>
 		<dict>
@@ -3196,7 +3741,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>305</integer>
 			<key>ypos</key>
-			<integer>1700</integer>
+			<integer>2055</integer>
 		</dict>
 		<key>031D4224-B2EE-46AA-942C-0790F94F622E</key>
 		<dict>
@@ -3205,16 +3750,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>540</integer>
 			<key>ypos</key>
-			<integer>1555</integer>
+			<integer>1910</integer>
 		</dict>
 		<key>0B185B98-4066-4CB1-9724-AA64206396DF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>585</integer>
+			<integer>705</integer>
 			<key>ypos</key>
-			<integer>15</integer>
+			<integer>275</integer>
 		</dict>
 		<key>0BAD7D58-975F-45DD-AA9E-0369F9091F9F</key>
 		<dict>
@@ -3223,7 +3768,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>415</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>725</integer>
 		</dict>
 		<key>0C48457B-7D93-4C7A-866E-E9F32870A1B4</key>
 		<dict>
@@ -3232,7 +3777,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>940</integer>
 		</dict>
 		<key>0D9FAD09-116C-46BD-9AAC-08445B3B4BEA</key>
 		<dict>
@@ -3243,7 +3788,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
-			<integer>1160</integer>
+			<integer>1515</integer>
 		</dict>
 		<key>0E3F5955-6B2F-4EB7-BD58-7BD32E2EB8C9</key>
 		<dict>
@@ -3252,7 +3797,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1430</integer>
+			<integer>1785</integer>
 		</dict>
 		<key>106248DA-2DCF-477E-AD35-D8CC6F19792F</key>
 		<dict>
@@ -3261,7 +3806,27 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1735</integer>
 			<key>ypos</key>
-			<integer>285</integer>
+			<integer>640</integer>
+		</dict>
+		<key>1376EAD3-5EC4-4199-8E1A-14AC6F4D023A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>searches the last modified file with the file name</string>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>1A1F82B0-CC80-4895-848D-76E13AF8E68C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>15</integer>
 		</dict>
 		<key>1C540104-846F-4F83-91F1-69C9CFCCA2AC</key>
 		<dict>
@@ -3272,7 +3837,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>645</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>725</integer>
 		</dict>
 		<key>1CC341EC-003E-424D-B663-C4D7E27694FB</key>
 		<dict>
@@ -3281,7 +3846,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>85</integer>
+			<integer>440</integer>
 		</dict>
 		<key>1F409233-6B32-4BC6-9162-D0D58C81A5F1</key>
 		<dict>
@@ -3290,7 +3855,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>875</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>655</integer>
 		</dict>
 		<key>280875D9-6878-4994-8CC2-C08DF9543A64</key>
 		<dict>
@@ -3299,7 +3864,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>555</integer>
+			<integer>910</integer>
 		</dict>
 		<key>295DD35F-44FB-4D24-AAB6-58B62558CB3C</key>
 		<dict>
@@ -3310,7 +3875,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1345</integer>
 			<key>ypos</key>
-			<integer>1175</integer>
+			<integer>1530</integer>
 		</dict>
 		<key>29B1E708-A231-4989-9463-0AD74C394DAA</key>
 		<dict>
@@ -3319,7 +3884,18 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>695</integer>
+		</dict>
+		<key>39FCA636-91EB-4FDC-ABB5-099F9649CE84</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>note</key>
+			<string>replace home with ~</string>
+			<key>xpos</key>
+			<integer>580</integer>
+			<key>ypos</key>
+			<integer>2200</integer>
 		</dict>
 		<key>3E4CC6CD-B1E5-4DCF-9C06-C05748422A49</key>
 		<dict>
@@ -3328,7 +3904,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1115</integer>
+			<integer>1470</integer>
 		</dict>
 		<key>3E6ADB83-E616-4EB7-B561-394E99087883</key>
 		<dict>
@@ -3337,16 +3913,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1355</integer>
+			<integer>1710</integer>
 		</dict>
 		<key>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>210</integer>
 			<key>ypos</key>
-			<integer>25</integer>
+			<integer>260</integer>
 		</dict>
 		<key>3F8C3DCD-8151-4229-B2FF-826DDBC4B494</key>
 		<dict>
@@ -3355,16 +3931,27 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1095</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>940</integer>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>845</integer>
+			<integer>850</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>2025</integer>
+		</dict>
+		<key>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>get PDF Experts front Window</string>
+			<key>xpos</key>
+			<integer>415</integer>
+			<key>ypos</key>
+			<integer>150</integer>
 		</dict>
 		<key>47107825-F548-4FC2-BE0E-A23B332ED170</key>
 		<dict>
@@ -3373,7 +3960,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1145</integer>
+			<integer>1500</integer>
 		</dict>
 		<key>480754C9-A1DE-4C75-9CC2-4F1AF53CB5BC</key>
 		<dict>
@@ -3382,7 +3969,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1460</integer>
+			<integer>1815</integer>
 		</dict>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<dict>
@@ -3391,7 +3978,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>725</integer>
 			<key>ypos</key>
-			<integer>505</integer>
+			<integer>860</integer>
 		</dict>
 		<key>4F2776D7-A996-4B98-B2BC-BFC991002296</key>
 		<dict>
@@ -3400,7 +3987,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1250</integer>
+			<integer>1605</integer>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -3411,16 +3998,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>90</integer>
+			<integer>445</integer>
 		</dict>
 		<key>602D972B-BB63-496F-B96B-C4207E25422E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>155</integer>
+			<integer>110</integer>
 			<key>ypos</key>
-			<integer>1540</integer>
+			<integer>1895</integer>
 		</dict>
 		<key>63AC5ECC-3565-47BA-81EC-77840ADD8B14</key>
 		<dict>
@@ -3429,7 +4016,18 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
-			<integer>1595</integer>
+			<integer>1950</integer>
+		</dict>
+		<key>65E7AED3-BD1F-43E5-908F-09636A52A2A6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>note</key>
+			<string>Error Sound</string>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>15</integer>
 		</dict>
 		<key>6681F19F-9735-4C3C-80A9-CD70104E90EE</key>
 		<dict>
@@ -3438,7 +4036,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<integer>1395</integer>
 		</dict>
 		<key>6A532A92-9A3C-4481-BA03-AE157B3CFDAA</key>
 		<dict>
@@ -3447,7 +4045,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1535</integer>
+			<integer>1890</integer>
 		</dict>
 		<key>6C861A8B-E65D-48C5-AD3D-E98510CA045A</key>
 		<dict>
@@ -3458,7 +4056,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>940</integer>
 		</dict>
 		<key>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</key>
 		<dict>
@@ -3470,7 +4068,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1185</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>635</integer>
 		</dict>
 		<key>71DCC589-DA81-4D39-815A-2A5817B543B1</key>
 		<dict>
@@ -3481,7 +4079,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>700</integer>
 			<key>ypos</key>
-			<integer>985</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>7C419ED6-E477-4731-A8D7-135988B7A1F0</key>
 		<dict>
@@ -3490,7 +4088,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>850</integer>
 			<key>ypos</key>
-			<integer>1180</integer>
+			<integer>1535</integer>
 		</dict>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<dict>
@@ -3499,7 +4097,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>595</integer>
+		</dict>
+		<key>7EA5C3C5-F07A-4C5F-B9E9-D1EEEA5604F3</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>xpos</key>
+			<integer>850</integer>
+			<key>ypos</key>
+			<integer>2170</integer>
 		</dict>
 		<key>7F7FC071-3074-42ED-9DDD-451DCFE8D302</key>
 		<dict>
@@ -3508,7 +4115,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>935</integer>
+			<integer>1290</integer>
 		</dict>
 		<key>80F5AE6A-45A7-4C8B-9C3C-77654DBAA3B8</key>
 		<dict>
@@ -3517,7 +4124,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1315</integer>
 			<key>ypos</key>
-			<integer>85</integer>
+			<integer>440</integer>
 		</dict>
 		<key>83D85448-CA51-4A18-87B6-0F6F02EA0D73</key>
 		<dict>
@@ -3526,7 +4133,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>590</integer>
 			<key>ypos</key>
-			<integer>505</integer>
+			<integer>860</integer>
+		</dict>
+		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<integer>920</integer>
+			<key>ypos</key>
+			<integer>265</integer>
 		</dict>
 		<key>86514609-4A22-4679-B595-2E96303A9132</key>
 		<dict>
@@ -3537,7 +4153,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>225</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>705</integer>
 		</dict>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<dict>
@@ -3546,7 +4162,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>1600</integer>
+			<integer>1955</integer>
 		</dict>
 		<key>8DD65E80-0A92-4F06-A75F-2B7F9571157A</key>
 		<dict>
@@ -3555,7 +4171,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>535</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1555</integer>
 		</dict>
 		<key>9046160C-6521-481D-B278-1E254A2008F9</key>
 		<dict>
@@ -3564,7 +4180,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1325</integer>
+			<integer>1680</integer>
 		</dict>
 		<key>93AA67C4-5283-4131-BBCA-FDED34162A98</key>
 		<dict>
@@ -3573,7 +4189,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>2025</integer>
 		</dict>
 		<key>972267FB-A5B1-42A6-86D7-91ED0A815777</key>
 		<dict>
@@ -3584,7 +4200,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1735</integer>
 			<key>ypos</key>
-			<integer>440</integer>
+			<integer>795</integer>
 		</dict>
 		<key>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</key>
 		<dict>
@@ -3593,7 +4209,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1670</integer>
 			<key>ypos</key>
-			<integer>1600</integer>
+			<integer>1955</integer>
 		</dict>
 		<key>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</key>
 		<dict>
@@ -3602,7 +4218,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1380</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>1055</integer>
 		</dict>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
 		<dict>
@@ -3613,7 +4229,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1335</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>635</integer>
 		</dict>
 		<key>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</key>
 		<dict>
@@ -3624,7 +4240,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>500</integer>
+			<integer>855</integer>
 		</dict>
 		<key>A0207D9A-20A9-4AF8-9E7D-905566B18866</key>
 		<dict>
@@ -3633,7 +4249,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1505</integer>
 			<key>ypos</key>
-			<integer>85</integer>
+			<integer>440</integer>
 		</dict>
 		<key>A238B23D-2F3A-4C85-A3CB-66FF48FEEE5B</key>
 		<dict>
@@ -3644,7 +4260,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1115</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>1055</integer>
 		</dict>
 		<key>A37D8724-7F84-4931-B412-68377C99A6EA</key>
 		<dict>
@@ -3653,7 +4269,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>720</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>635</integer>
 		</dict>
 		<key>A503D151-F1FC-4262-A6F7-02F374B9786F</key>
 		<dict>
@@ -3662,7 +4278,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>910</integer>
 			<key>ypos</key>
-			<integer>940</integer>
+			<integer>1295</integer>
 		</dict>
 		<key>A7323E84-86A9-4D7E-93C2-5968D1763BD9</key>
 		<dict>
@@ -3671,7 +4287,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>315</integer>
 			<key>ypos</key>
-			<integer>705</integer>
+			<integer>1060</integer>
 		</dict>
 		<key>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</key>
 		<dict>
@@ -3680,7 +4296,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>850</integer>
 			<key>ypos</key>
-			<integer>1480</integer>
+			<integer>1835</integer>
 		</dict>
 		<key>AB2B2780-B8AB-4E7D-AD86-F4EC3501E13E</key>
 		<dict>
@@ -3691,7 +4307,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1245</integer>
 			<key>ypos</key>
-			<integer>555</integer>
+			<integer>910</integer>
 		</dict>
 		<key>B2E63790-BE81-4BCA-971E-E93C887F6262</key>
 		<dict>
@@ -3702,7 +4318,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>380</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
+			<integer>1550</integer>
 		</dict>
 		<key>B64AD0AD-FAB9-4653-B474-877CF9E2FA26</key>
 		<dict>
@@ -3711,7 +4327,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1010</integer>
+			<integer>1365</integer>
 		</dict>
 		<key>B7529BEE-D49E-40BE-B768-6F30B63427D0</key>
 		<dict>
@@ -3722,7 +4338,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1055</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>1085</integer>
 		</dict>
 		<key>B7CFBC29-8784-4E92-B775-B87611C6E218</key>
 		<dict>
@@ -3731,7 +4347,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
-			<integer>505</integer>
+			<integer>860</integer>
 		</dict>
 		<key>B7DC3104-D14F-4027-AD33-BD835F015FE6</key>
 		<dict>
@@ -3742,7 +4358,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>560</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>605</integer>
 		</dict>
 		<key>BB7FDA9D-8F18-48D4-979A-A0C3D63134B7</key>
 		<dict>
@@ -3753,7 +4369,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1025</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>940</integer>
 		</dict>
 		<key>BBA749AA-EDEC-4269-AED6-E665AF904A6D</key>
 		<dict>
@@ -3762,7 +4378,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1560</integer>
 			<key>ypos</key>
-			<integer>285</integer>
+			<integer>640</integer>
 		</dict>
 		<key>C18B1943-3299-4D5E-9115-B8C3F9C1161A</key>
 		<dict>
@@ -3771,7 +4387,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>840</integer>
 			<key>ypos</key>
-			<integer>1005</integer>
+			<integer>1360</integer>
 		</dict>
 		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
 		<dict>
@@ -3782,7 +4398,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>455</integer>
 			<key>ypos</key>
-			<integer>505</integer>
+			<integer>860</integer>
 		</dict>
 		<key>C3A4210B-D26D-40F0-BD41-D4907C6FCA1D</key>
 		<dict>
@@ -3793,7 +4409,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1245</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>1055</integer>
 		</dict>
 		<key>C7679DCD-1436-41BF-80EE-FAE5C4DB3638</key>
 		<dict>
@@ -3802,7 +4418,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>480</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>695</integer>
+		</dict>
+		<key>CCE7281C-4C22-4A1A-9908-CC5005A7AF9F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>xpos</key>
+			<integer>695</integer>
+			<key>ypos</key>
+			<integer>2170</integer>
 		</dict>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<dict>
@@ -3811,7 +4436,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1515</integer>
 			<key>ypos</key>
-			<integer>700</integer>
+			<integer>1055</integer>
 		</dict>
 		<key>D1D08724-FD0C-4DF0-9786-718A39D6468F</key>
 		<dict>
@@ -3820,7 +4445,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
-			<integer>1480</integer>
+			<integer>1835</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
@@ -3829,7 +4454,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>365</integer>
+			<integer>720</integer>
 		</dict>
 		<key>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</key>
 		<dict>
@@ -3838,7 +4463,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>980</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>655</integer>
 		</dict>
 		<key>E6FF25D7-C3E2-4D46-8946-CDEAD26E6E4F</key>
 		<dict>
@@ -3849,7 +4474,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>1085</integer>
+		</dict>
+		<key>E870BE1C-4697-4A8A-813C-5A344E6642A2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>2170</integer>
 		</dict>
 		<key>E95A863A-FAFB-4666-A5F8-3A13AF7A730D</key>
 		<dict>
@@ -3858,7 +4492,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>905</integer>
+			<integer>1260</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
@@ -3867,7 +4501,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>545</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>2025</integer>
 		</dict>
 		<key>EFF65A14-8130-4A5D-A826-B733F799683E</key>
 		<dict>
@@ -3876,7 +4510,16 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1040</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>635</integer>
+		</dict>
+		<key>F01A0181-060D-42B8-8A1B-617F2EF52BA5</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>2200</integer>
 		</dict>
 		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
 		<dict>
@@ -3887,7 +4530,27 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1490</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>665</integer>
+		</dict>
+		<key>F2EC537E-59BA-4509-B70F-3135A67E5323</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>285</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>F469E778-8FAE-435D-9716-0856C26F6FC6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>note</key>
+			<string>Error Sound</string>
+			<key>xpos</key>
+			<integer>1060</integer>
+			<key>ypos</key>
+			<integer>265</integer>
 		</dict>
 		<key>F5EA6F50-7225-42D8-B6AD-817B7FD11A5B</key>
 		<dict>
@@ -3896,7 +4559,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>415</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>575</integer>
 		</dict>
 		<key>F6FC0362-0C72-412A-A10D-1323A0A1C5D3</key>
 		<dict>
@@ -3905,7 +4568,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>915</integer>
 			<key>ypos</key>
-			<integer>85</integer>
+			<integer>440</integer>
 		</dict>
 		<key>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</key>
 		<dict>
@@ -3914,7 +4577,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1380</integer>
 			<key>ypos</key>
-			<integer>555</integer>
+			<integer>910</integer>
 		</dict>
 		<key>FBFAD844-0211-4F50-B344-6AAD97D41894</key>
 		<dict>
@@ -3923,7 +4586,7 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>1125</integer>
 			<key>ypos</key>
-			<integer>1220</integer>
+			<integer>1575</integer>
 		</dict>
 		<key>FE801F84-93B3-4413-AD3D-3AA906388FFC</key>
 		<dict>
@@ -3932,25 +4595,27 @@ version 1.0: aconf has a loop for more convenience of doing multiple configurati
 			<key>xpos</key>
 			<integer>985</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>1085</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>output_style</key>
-		<string>notion</string>
+		<string>markdown</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
+		<key>pdf_expert_location</key>
+		<string>~/Google Drive</string>
 		<key>reference_insertion</key>
-		<string>filename</string>
+		<string>manually</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>pdf_engine</string>
-		<string>reference_insertion</string>
+		<string>pdf_expert_location</string>
 	</array>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>https://chris-grieser.de/</string>
 </dict>
