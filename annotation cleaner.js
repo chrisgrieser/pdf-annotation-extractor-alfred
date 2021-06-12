@@ -26,13 +26,16 @@ function run() {
     return ": " + (parseInt(n) + firstPageNo) + ")";
   });
 
+  //merge quotes where the second highlight comment is exactly "cont"
+  //for quotes that span multiple pages or have stuff in between
+  annotations = annotations.replace (/" \(.*: (\d+)\) \n  - \*\*cont:\*\* "(.*\(.*: )(\d+\))/gm," $2$1-$3");  
 
   var mdStyle = $.getenv('output_style');
   if (mdStyle == "notion"){
-    annotations = "- **" + shortRef + "**" + annotations; //putting reference as heading
+    annotations = "- **" + shortRef + "**" + annotations;
   } else {
     annotations = "# " + shortRef + annotations;
-    annotations = annotations.replaceAll ("  ",""); //double spaces before the run
+    annotations = annotations.replaceAll ("  ","");
   }
   return annotations;
 }
