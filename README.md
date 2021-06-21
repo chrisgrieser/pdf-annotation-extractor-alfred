@@ -40,21 +40,22 @@ brew install wkhtmltopdf
 ```
 
 ## How to use
-- Use the **hotkey** in when you have a PDF selected in Finder, or the currently open document in Preview or PDF Expert. The hotkey can be set in Alfred by doubleclicking the respective field at the top left.(When you are familiar with Alfred, you can also use file filter or a file search with the keyword `anno`).
-- automatically **merge highlights that span two pages**: give the highlight on the next page *exactly* the comment `cont` and they two highlights will be merge. The comment from the first highlgiht will be preserved and the reference will be corrected to include two pages, e.g. `Pohl 2018: **13-14**`
-- Use the Alfred keyword `aconf` to set up output style, reference insertion, and (optionally) pdf engine.
+- Use the **hotkey** in when you have a PDF selected in Finder, or the currently open document in Preview or PDF Expert (needs to set folder of PDFs for PDF Expert). The hotkey can be set in Alfred by doubleclicking the respective field at the top left.(When you are familiar with Alfred, you can also use file filter or a file search with the keyword `anno`).
+- automatically **merges highlights that span two pages**: give the highlight on the next page *exactly* the comment `cont` and they two highlights will be merge. The comment from the first highlgiht will be preserved and the reference will be corrected to include two pages, e.g. `Pohl 2018: **13-14**`
+- **automatically recognize the refrence and page numbers to input**: You can enter them manually, or have the workflow recognize them automatically from the filename, when the filename is in the format `authors_year_page-page_[...].pdf`. You can easily achieve this with automatic renaming from your reference manager. When you use Zotero, [Zotfile](http://zotfile.com/) does this when you use the renaming rule `{%a_}{%y_}{%f_}{%t}` set in the Zotfile preferences.
+- Use the Alfred keyword `aconf` to configure the workflow
   - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Markdown specifically for [Notion.so Toggled Lists](https://www.notion.so/Toggles-c720af26b4bd4789b736c140b2dc73fe).
-  - reference insertion: The workflow inserts the references (e.g. Grieser 2019: 24). You either tell the Annotation Extractor manually which reference to insert, or it will automatically determine the correct reference from the filename of your pdf. For that, it must be formatted as `"author1_author2_year_[...].pdf"`. You can use bibliography management software to name your papers automatically like that.
-- set the number of columns per pdf page (wrong column number results in wrong order of some annotations in the resulting document)
+  - set the number of columns per pdf page (wrong column number results in wrong order of some annotations in the resulting document)
+  - type of reference / page number recognition
 
 - Right now, this workflow **only extracts free comments and highlights with comments**. More in the future (this workflow has automatic updates).
 
 
 ## Troubleshooting 
-- This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like **Skim** so this, but you can [tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
+- This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like **Skim** do this, but you can [tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - The workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. by using a stylus on a tablet to). Delete all annotations that are "image" or "free form" and the workflow should work again.
 - Do not use backticks (`` ` ``) in any type of comment as this will break the annotation extraction.
-- When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
+- When the hotkey does not work in Preview/PDF Expert, most likely the Alfred app does not have permissions to access Preview/PDF Expert. You can give Alfred permission in the Mac OS System Settings.
 
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
 
