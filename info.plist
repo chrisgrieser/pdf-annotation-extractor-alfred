@@ -587,6 +587,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<array>
 			<dict>
@@ -674,12 +687,37 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D407E01A-667B-446E-8733-6717C1222845</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FFBEE83A-8A2B-4DC0-BFDD-F293B34F7A0E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>60875D2B-F345-4667-9631-7C7E14922640</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>8050AEAF-E9FC-4CD7-8C5E-9E2E53A3B9FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2084,82 +2122,21 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>anchorfields</key>
+				<key>acceptsmulti</key>
 				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>anno</string>
-				<key>limit</key>
-				<integer>0</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>scopes</key>
-				<array/>
-				<key>sortmode</key>
-				<integer>2</integer>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Extract PDF Annotations from '{query}'</string>
-				<key>types</key>
+				<key>filetypes</key>
 				<array>
 					<string>com.adobe.pdf</string>
 				</array>
-				<key>withspace</key>
-				<true/>
+				<key>name</key>
+				<string>Extract Annotations</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
+			<string>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2224,7 +2201,7 @@ fi</string>
   var filepath = `{query}`;
 
   //the following assumes that the file was named "authors_year_page-page_title.pdf"
-  firstPageNo = filepath.replace (/.*\/.*_(\d+)-\d+_.*\.pdf/,"$1"); 
+  firstPageNo = filepath.replace (/.*\/.*_(\d+)-\d+\.pdf/,"$1"); 
 
   if (firstPageNo.includes ("/")){
     return "error";
@@ -2407,7 +2384,7 @@ echo | python3 -m pdfannots $file_path --sections comments --no-condense --cols 
 					</dict>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:page_no_insertion}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
@@ -2561,21 +2538,82 @@ echo | python3 -m pdfannots $file_path --sections comments --no-condense --cols 
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsmulti</key>
+				<key>anchorfields</key>
 				<true/>
-				<key>filetypes</key>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>anno</string>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array/>
+				<key>sortmode</key>
+				<integer>2</integer>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Extract PDF Annotations from '{query}'</string>
+				<key>types</key>
 				<array>
 					<string>com.adobe.pdf</string>
 				</array>
-				<key>name</key>
-				<string>Extract Annotations</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
+			<string>alfred.workflow.input.filefilter</string>
 			<key>uid</key>
-			<string>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</string>
+			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2695,6 +2733,19 @@ echo | python3 -m pdfannots $file_path --sections comments --no-condense --cols 
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>run-from-aconf</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>5508A734-A564-49AC-9939-D2B126FDCB74</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -2702,7 +2753,7 @@ echo | python3 -m pdfannots $file_path --sections comments --no-condense --cols 
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🏛 Number of Columns","arg":"columns","subtitle":"currently: {var:columns}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"↙️ How the Reference is determined","arg":"reference","subtitle":"currently: {var:reference_insertion}"},{"title":"🔢 How Page Numbers are determined","arg":"page_no_insertion","subtitle":"currently: {var:page_no_insertion}"},{"title":"📂 Location of PDFs (when using the Hotkey with PDF Expert)","arg":"pdf_expert_location","subtitle":"currently: {var:pdf_expert_location}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"🚪 Exit this Configuration","arg":"exit"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏛 Number of Columns","arg":"columns","subtitle":"currently: {var:columns}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"↙️ How the Reference is determined","arg":"reference","subtitle":"currently: {var:reference_insertion}"},{"title":"🔢 How Page Numbers are determined","arg":"page_no_insertion","subtitle":"currently: {var:page_no_insertion}"},{"title":"📂 Location of PDFs (when using the Hotkey with PDF Expert)","arg":"pdf_expert_location","subtitle":"currently: {var:pdf_expert_location}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"🏃 Run Annotation Extraction","arg":"run"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -2718,6 +2769,23 @@ echo | python3 -m pdfannots $file_path --sections comments --no-condense --cols 
 			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
 			<string>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string> </string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -4008,6 +4076,20 @@ end run</string>
 						<key>uid</key>
 						<string>79DA6DA5-E59E-4CAA-B833-385F9F8309E6</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>run</string>
+						<key>outputlabel</key>
+						<string>run</string>
+						<key>uid</key>
+						<string>FFBEE83A-8A2B-4DC0-BFDD-F293B34F7A0E</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>exit</string>
@@ -4029,7 +4111,7 @@ end run</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"Manual Input","arg":"manually","subtitle":"enter the reference manually before extraction"},{"title":"Recognize automatically from Filename","arg":"filename","subtitle":"filename must be in the format \"authors_year_page-page_[...].pdf\""}]</string>
+				<string>[{"title":"Manual Input","arg":"manually","subtitle":"enter the reference manually before extraction"},{"title":"Automatically from Filename","arg":"filename","subtitle":"filename must be in the format \"authors_year_[...]_page-page.pdf\""}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -4407,7 +4489,7 @@ end run</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"Manual Input","arg":"manually","subtitle":"enter the first page number manually before extraction"},{"title":"Recognize automatically from Filename (Fallback: DOI)","arg":"filename","subtitle":"filename must be in the format \"authors_year_page-page_[...].pdf\""},{"title":"DOI in the PDF (Fallback: Manual Input)","arg":"doi","subtitle":"looks for a DOI inside the pdf to get page numbers online"}]</string>
+				<string>[{"title":"Manual Input","arg":"manually","subtitle":"enter the first page number manually before extraction"},{"title":"Automatically from Filename (Fallback: DOI)","arg":"filename","subtitle":"filename must be in the format \"authors_year_[...]_page-page.pdf\""},{"title":"DOI in the PDF (Fallback: Manual Input)","arg":"doi","subtitle":"looks for a DOI inside the pdf to get page numbers online"}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -4493,6 +4575,25 @@ end run</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>run-from-aconf</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D407E01A-667B-446E-8733-6717C1222845</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#pdf-annotation-extractor
@@ -4502,12 +4603,15 @@ Created by Chris Grieser https://chris-grieser.de/
 ---
 
 ### Release Notes
+v. 1.6
+- run from directly from aconf
+- some under-the-hood-improvements
+
 v 1.5
 - scans the PDF for a DOIs, if they are found, uses the DOI to automatically get the page numbers online
 
-
 v 1.4
-- option to automatically recognize the page number from filename (similar to reference input), when filename is formatted "authors_year_page-page_[...].pdf"
+- option to automatically recognize the page number from filename (similar to reference input), when filename is formatted "authors_year_[...]_page-page.pdf"
 - nicer icons for aconf-keyword
 
 v.1.3
@@ -4878,6 +4982,15 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>ypos</key>
 			<integer>675</integer>
 		</dict>
+		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>230</integer>
+			<key>ypos</key>
+			<integer>850</integer>
+		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
 			<key>colorindex</key>
@@ -4906,6 +5019,17 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>960</integer>
 			<key>ypos</key>
 			<integer>425</integer>
+		</dict>
+		<key>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>space for auto-search</string>
+			<key>xpos</key>
+			<integer>385</integer>
+			<key>ypos</key>
+			<integer>880</integer>
 		</dict>
 		<key>63AC5ECC-3565-47BA-81EC-77840ADD8B14</key>
 		<dict>
@@ -4993,7 +5117,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>595</integer>
+			<integer>715</integer>
 		</dict>
 		<key>7EA5C3C5-F07A-4C5F-B9E9-D1EEEA5604F3</key>
 		<dict>
@@ -5406,6 +5530,15 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>ypos</key>
 			<integer>1835</integer>
 		</dict>
+		<key>D407E01A-667B-446E-8733-6717C1222845</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<integer>285</integer>
+			<key>ypos</key>
+			<integer>2605</integer>
+		</dict>
 		<key>D6301F77-8C49-40C3-8900-BD37F3B26FBA</key>
 		<dict>
 			<key>colorindex</key>
@@ -5431,7 +5564,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>xpos</key>
 			<integer>25</integer>
 			<key>ypos</key>
-			<integer>720</integer>
+			<integer>600</integer>
 		</dict>
 		<key>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</key>
 		<dict>
@@ -5591,7 +5724,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 	<key>variables</key>
 	<dict>
 		<key>columns</key>
-		<string>2</string>
+		<string>1</string>
 		<key>output_style</key>
 		<string>markdown</string>
 		<key>page_no_insertion</key>
@@ -5601,7 +5734,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 		<key>pdf_expert_location</key>
 		<string>~/Google Drive</string>
 		<key>reference_insertion</key>
-		<string>filename</string>
+		<string>manually</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
@@ -5609,7 +5742,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 		<string>pdf_expert_location</string>
 	</array>
 	<key>version</key>
-	<string>1.5</string>
+	<string>1.6</string>
 	<key>webaddress</key>
 	<string>https://chris-grieser.de/</string>
 </dict>
