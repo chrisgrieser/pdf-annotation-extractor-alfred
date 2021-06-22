@@ -27,8 +27,10 @@ function run() {
   });
 
   //merge quotes where the second highlight comment is exactly "cont"
-  //for quotes that span multiple pages or have stuff in between
-  annotations = annotations.replace (/" \(.*: (\d+)\) \n  - \*\*cont:\*\* "(.*\(.*: )(\d+\))/gm," $2$1-$3");  
+  //for quotes that span multiple pages or have stuff in between them
+  annotations = annotations.replace (/" \(.*: (\d+)\) \n  - \*\*cont:\*\* "(.*\(.*: )(\d+\))/gm," $2$1-$3");
+  //corrects page number for quotes on the same page
+  annotations = annotations.replace (/(\d+)-(\1)\)/,"$1)");
 
   var mdStyle = $.getenv('output_style');
   if (mdStyle == "notion"){
