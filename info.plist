@@ -2032,8 +2032,8 @@ fi
 hasDOI=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='DOI: ?[[:graph:]]*' $file_path`
 if [[ $hasDOI &gt; 0 ]]
 then
-    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI: ?[[:graph:]]*" $file_path | head -n 1`
-    doi=`sed -E 's/doi: ?/https:\/\/doi.org\//gi' &lt;&lt;&lt; $doiNumber`
+    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI: *[[:graph:]]*" $file_path | head -n 1`
+    doi=`sed -E 's/doi: */https:\/\/doi.org\//gi' &lt;&lt;&lt; $doiNumber`
 fi
 
 if [[ $doi == "no DOI" ]]
@@ -5749,17 +5749,17 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 	<key>variables</key>
 	<dict>
 		<key>columns</key>
-		<string>2</string>
+		<string>1</string>
 		<key>output_style</key>
-		<string>markdown</string>
+		<string>notion</string>
 		<key>page_no_insertion</key>
-		<string>doi</string>
+		<string>filename</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
 		<key>pdf_expert_location</key>
 		<string>~/Google Drive</string>
 		<key>reference_insertion</key>
-		<string>manually</string>
+		<string>filename</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>

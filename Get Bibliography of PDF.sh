@@ -14,8 +14,8 @@ fi
 hasDOI=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='DOI: ?[[:graph:]]*' $file_path`
 if [[ $hasDOI > 0 ]]
 then
-    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI: ?[[:graph:]]*" $file_path | head -n 1`
-    doi=`sed -E 's/doi: ?/https:\/\/doi.org\//gi' <<< $doiNumber`
+    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI: *[[:graph:]]*" $file_path | head -n 1`
+    doi=`sed -E 's/doi: */https:\/\/doi.org\//gi' <<< $doiNumber`
 fi
 
 if [[ $doi == "no DOI" ]]
