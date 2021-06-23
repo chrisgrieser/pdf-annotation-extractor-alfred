@@ -2016,15 +2016,31 @@ end alfred_script</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export PATH=/usr/local/bin:$PATH
+				<string>#file_path='/Users/chrisgrieser/Google Drive/PDF Archive/S/Stamm/2021/Stamm_2021_Groups Matter.pdf'
 
-hasDOI=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='https?://doi.org[[:graph:]]*' $file_path`
+#file_path='/Users/chrisgrieser/Google Drive/PDF Archive/Y/Yang_Aldrich/2014/Yang_Aldrich_2014_Who’s the Boss.pdf'
 
-if [[ $hasDOI == 0 ]]
+export PATH=/usr/local/bin:$PATH
+
+doi="no DOI"
+hasDoiURL=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='https?://doi.org[:graph:]*' $file_path`
+if [[ $hasDoiURL &gt; 0 ]]
+then
+    doi=`pdfgrep --only-matching --ignore-case --page-range=1-3 --regexp="https?://doi.org[[:graph:]]*" $file_path | head -n 1`
+fi
+
+hasDOI=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='DOI: ?[[:graph:]]*' $file_path`
+if [[ $hasDOI &gt; 0 ]]
+then
+    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI: ?[[:graph:]]*" $file_path | head -n 1`
+    doi=`sed -E 's/doi: ?/https:\/\/doi.org\//gi' &lt;&lt;&lt; $doiNumber`
+fi
+
+if [[ $doi == "no DOI" ]]
 then
     echo -n "no DOI"
 else
-    curl --silent -LH "Accept: application/x-bibtex" $(pdfgrep --only-matching --ignore-case --page-range=1-3 --regexp='https?://doi.org[[:graph:]]*' $file_path | head -n 1) | grep "pages" | cut -d "{" -f 2 | cut -d "-" -f 1
+    curl --silent -LH "Accept: application/x-bibtex" $doi | grep "pages" | cut -d "{" -f 2 | cut -d "-" -f 1
 fi</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -2123,7 +2139,7 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<true/>
+				<false/>
 				<key>filetypes</key>
 				<array>
 					<string>com.adobe.pdf</string>
@@ -4605,6 +4621,10 @@ Created by Chris Grieser https://chris-grieser.de/
 ---
 
 ### Release Notes
+v 1.8
+- improved DOI recognition
+
+
 v 1.7
 - automatic quote merging now also works on the same page (useful for leaving out sth between two quotes)
 
@@ -5729,7 +5749,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 	<key>variables</key>
 	<dict>
 		<key>columns</key>
-		<string>1</string>
+		<string>2</string>
 		<key>output_style</key>
 		<string>markdown</string>
 		<key>page_no_insertion</key>
@@ -5747,7 +5767,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 		<string>pdf_expert_location</string>
 	</array>
 	<key>version</key>
-	<string>1.7</string>
+	<string>1.8</string>
 	<key>webaddress</key>
 	<string>https://chris-grieser.de/</string>
 </dict>
