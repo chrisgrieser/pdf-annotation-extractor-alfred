@@ -11,7 +11,7 @@ Alfred Workflow that does pretty much what the name says.
 1) Check if Python3 (version 3.9) and Pip are installed on your machine: 
 ```
 python3 --version
-python3 -m pip3 --version
+pip3 --version
 ```
 2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py). You can do so with this code:
 ```
