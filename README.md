@@ -17,13 +17,13 @@ pip3 --version
 ```
 # first line assumes you have Homebrew. if not, install python3 manually: https://www.python.org/downloads/mac-osx/
 brew install python3
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 ```
 
 3) Install pdfannots and its dependencies via this line:
 ```
-curl https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install.sh | bash
 ```
 4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 
