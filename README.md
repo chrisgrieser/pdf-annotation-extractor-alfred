@@ -21,15 +21,15 @@ curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 ```
 
-3) Install pdfannots and its dependencies via this line:
+3) Install pdfminer.six
 ```
-curl -s https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install.sh | bash
+pip install pdfminer.six
 ```
 4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 
-5a) *(optional – in case you want the annotations as PDF file)* Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [wkhtmltopdf](https://wkhtmltopdf.org/). 
+5a) *(optional – in case you want the annotations as PDF file)* Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [BasicTex](https://www.tug.org/mactex/morepackages.html).
 
-5b) *(optional – in case you want to extract the page numbers automatically via DOI or filename)* Install [pdfgrep](https://pdfgrep.org/).
+5b) *(optional – in case you want to extract the page numbers automatically via DOI)* Install [pdfgrep](https://pdfgrep.org/).
 
 ```
 # Install Homebrew
@@ -38,7 +38,7 @@ curl -s https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-
 ```
 # assuming you have Homebrew
 brew install pandoc
-brew install wkhtmltopdf
+brew install basictex
 brew install pdfgrep
 ```
 
