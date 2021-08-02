@@ -44,14 +44,13 @@ brew install pdfgrep
 
 ## How to use
 - Use the **hotkey** in when you have a PDF selected in Finder, or the currently open document in Preview or PDF Expert (needs to set folder of PDFs for PDF Expert). The hotkey can be set in Alfred by doubleclicking the respective field at the top left.(When you are familiar with Alfred, you can also use file filter or a file search with the keyword `anno`).
-- automatically **merges highlights that span two pages**: give the highlight on the next page *exactly* the comment `cont` and they two highlights will be merge. The comment from the first highlgiht will be preserved and the reference will be corrected to include two pages, e.g. `Pohl 2018: **13-14**`
-- **automatically recognize the refrence and page numbers to input**: You can enter them manually, or have the workflow recognize them automatically from the filename, when the filename is in the format `authors_year_page-page_[...].pdf`. You can easily achieve this with automatic renaming from your reference manager. When you use Zotero, [Zotfile](http://zotfile.com/) does this when you use the renaming rule `{%a_}{%y_}{%t}{_%f}` set in the Zotfile preferences.
-- Alernatively, you can also use the DOI ro automatically recognize the page numbers
+- automatically **merges highlights that span two pages**: give the highlight on the next page *exactly* the comment `c` and they two highlights will be merge. The comment from the first highlight will be preserved and the reference will be corrected to include two pages, e.g. `Pohl 2018: **13-14**`. If you just want to leave out a bit on the same page, do the same but use `j`instead – the PDF Annotation Extractor will then input a "[...]" and join the two highlights.
+- **automatically recognize the reference and page numbers to input**: You can enter them manually, or have the workflow recognize them automatically from the filename, when the filename is in the format `authors_year_page-page_[...].pdf`. You can easily achieve this with automatic renaming from your reference manager. When you use Zotero, [Zotfile](http://zotfile.com/) does this when you use the renaming rule `{%a_}{%y_}{%t}{_%f}` set in the Zotfile preferences.
+- Alernatively, you can also use the DOI to automatically recognize the page numbers
 - Use the Alfred keyword `aconf` to configure the workflow
-  - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Markdown specifically for [Notion.so Toggled Lists](https://www.notion.so/Toggles-c720af26b4bd4789b736c140b2dc73fe).
+  - output styles: Markdown file, PDF (Pandoc & PDF Engine needed), Obsidian, or Drafts.
   - set the number of columns per pdf page (wrong column number results in wrong order of some annotations in the resulting document)
   - type of reference / page number recognition
-
 - Right now, this workflow **only extracts free comments and highlights with comments**. More in the future (this workflow has automatic updates).
 
 
