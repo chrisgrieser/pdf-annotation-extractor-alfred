@@ -22,7 +22,6 @@ python3 get-pip.py
 
 # further needed CLIs
 pip3 install pdfminer.six
-brew install pcregrep
 brew install pandoc
 brew install pdfgrep
 brew install basictex
