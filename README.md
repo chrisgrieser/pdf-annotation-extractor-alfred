@@ -8,39 +8,27 @@ Alfred Workflow that does pretty much what the name says.
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 
 ## Installation
-1) Check if Python3 (version 3.9) and Pip are installed on your machine: 
-```
-python3 --version
-pip3 --version
-```
-2) If not, install [Python3](https://www.python.org/downloads/mac-osx/) and [Pip3](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py). You can do so with this code:
-```
-# first line assumes you have Homebrew. if not, install python3 manually: https://www.python.org/downloads/mac-osx/
-brew install python3
-curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-```
-
-3) Install pdfminer.six
-```
-pip install pdfminer.six
-```
-4) Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
-
-5a) *(optional – in case you want the annotations as PDF file)* Install [Pandoc](https://pandoc.org/installing.html) and a [PDF engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice, e.g. [BasicTex](https://www.tug.org/mactex/morepackages.html).
-
-5b) *(optional – in case you want to extract the page numbers automatically via DOI)* Install [pdfgrep](https://pdfgrep.org/).
-
+1) Install the following requirements:
 ```
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-```
-# assuming you have Homebrew
+
+# Install Python3
+brew install python3
+
+# install pip3
+curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+
+# further needed CLIs
+pip3 install pdfminer.six
+brew install pcregrep
 brew install pandoc
-brew install basictex
 brew install pdfgrep
+brew install basictex
 ```
+
+2) Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 
 ## How to use
 - Use the **hotkey** in when you have a PDF selected in Finder, or the currently open document in Preview or PDF Expert (needs to set folder of PDFs for PDF Expert). The hotkey can be set in Alfred by doubleclicking the respective field at the top left.(When you are familiar with Alfred, you can also use file filter or a file search with the keyword `anno`).
