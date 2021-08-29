@@ -1,6 +1,13 @@
 # PDF Annotation Extractor
 Alfred Workflow that does pretty much what the name says.
 
+---
+⚠️⚠️⚠️⚠️  
+The documentation and the version uploaded here are out of date – I have done a complete overhaul of how this workflow works for version 3.0 which autoamtes even further things, prepends YAML headers, and works purely with **Pandoc citations**. I will release 3.0 with documentation when I have the time. You can watch the releases to be notified, and use version 2.0 which works with more manual input and with APA-style citations instead of Pandoc citations until then.  
+⚠️⚠️⚠️⚠️
+
+---
+
 <img src="https://i.imgur.com/MqoPtO2.gif" alt="" width=50% height=50%>
 
 ## Requirements
