@@ -20,7 +20,6 @@ Extract Annotations as Markdown & inserts Pandoc Citations with correct page num
 ℹ️ _Right now, this workflow **only extracts free comments and highlights with comments**. More will be implemented in the future (this workflow has automatic updates so you will not miss it)._
 
 ## Special Features
-The PDF Annotation Extractor features some methods for merging/joining highlights.
 - **automatically merge highlights that span two pages**: give the highlight _on the next page **exactly**_ the comment `c` (for "continue") and they two highlights will be merged. The comment from the first highlight will be preserved. 
 - **automatically merge highlights on one page**: If you just want to leave out some text _on the same page_, do the same as above but use `j` (for "join") instead. The PDF Annotation Extractor will then input a "[...]" and otherwise join the two highlights.
 
