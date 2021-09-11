@@ -32,18 +32,16 @@ brew install pdfgrep
 
 **3) Define the Hotkey by double-clicking this field**
 
-<img width="170" alt="Screenshot 2021-09-11 20 40 27" src="https://user-images.githubusercontent.com/73286100/132958090-432b2c0b-98d6-4e88-81a7-8cba272b7fc0.png">
+<img width=50% alt="Screenshot 2021-09-11 22 12 14" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
 
 **4) Set BibTeX Library Path**
 - using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 
 **5) optional: further steps only required for specific output types**
-_Obsidian as Output_
-- using the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
+- _Obsidian as Output_: - using the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
+- _PDF as Output Format_: Install Pandoc & a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice
 
-_PDF as Output Format_
-Install Pandoc & a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice
 ```bash
 brew install pandoc
 # can be changed to a pdf-engine of your choice
@@ -67,9 +65,9 @@ brew install wkhtmltopdf
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like **Skim** do this, but you can [tell them to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - The workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. by using a stylus on a tablet to). Delete all annotations that are "image" or "free form" and the workflow should work again.
 - Do not use backticks (`` ` ``) in any type of comment as this will break the annotation extraction.
-- When the hotkey does not work in Preview/PDF Expert, most likely the Alfred app does not have permissions to access Preview/PDF Expert. You can give Alfred permission in the Mac OS System Settings.
+- When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=50% height=50%> 
 
 ## Credits
-This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python script 'pdfannots'](https://github.com/0xabu/pdfannots), which is basically the whole backend of this workflow.
+This workflow was created by [Chris Grieser](https://chris-grieser.de/). Thanks to [Andrew Baumann for his python CLI 'pdfannots'](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
