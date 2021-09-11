@@ -59,7 +59,7 @@ brew install pdfgrep
 
 **3) Define the Hotkey by double-clicking this field**
 
-<img width=12% alt="Screenshot 2021-09-11 22 12 14" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
+<img width=18% alt="Screenshot 2021-09-11 22 12 14" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
 **4) Set BibTeX Library Path**
 - using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
