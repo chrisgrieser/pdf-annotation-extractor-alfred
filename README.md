@@ -2,6 +2,8 @@
 Extract Annotations as Markdown & inserts Pandoc Citations as References.
 Correct Page numbers are automatically determined, highlights across pages merged, wikilinks automatically copied, and YAML Headers with bibliographic information prepended.
 
+<img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60% height=60%>
+
 ## Table of Content
 - [How to Use](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#how-to-use)
 - [Special Features](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#special-features)
