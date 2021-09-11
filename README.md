@@ -1,5 +1,5 @@
 # PDF Annotation Extractor
-Extract Annotations as Markdown & inserts Pandoc Citations with correct page numbers.
+Extract Annotations as Markdown & inserts Pandoc Citations with correct page numbers. 
 
 ## Table of Content
 - [How to Use](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#how-to-use)
@@ -22,6 +22,7 @@ Extract Annotations as Markdown & inserts Pandoc Citations with correct page num
 ## Special Features
 - **automatically merge highlights that span two pages**: give the highlight _on the next page **exactly**_ the comment `c` (for "continue") and they two highlights will be merged. The comment from the first highlight will be preserved. 
 - **automatically merge highlights on one page**: If you just want to leave out some text _on the same page_, do the same as above but use `j` (for "join") instead. The PDF Annotation Extractor will then input a "[...]" and otherwise join the two highlights.
+- when using Obsidian, the wikilink is also directly copied to the clipboard
 
 
 ## Requirements & Installation
