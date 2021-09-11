@@ -11,7 +11,7 @@ Correct Page numbers are automatically determined, highlights across pages merge
 
 ## How to Use
 - Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected pdf file will be selected. 
-- **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI which can be used to query the correct page numbers. If this fails as well, you will be asked to enter the *first* page number of your PDF (e.g. with "Nature 20(41): 103-145" you will have to enter "103".)
+- **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI to query the correct page numbers. If this fails as well, you will be asked to enter the **first** page number of your PDF (e.g. with "Nature 20(41): 103-145" you will have to enter "103".)
 - use the Alfred keyword `aconf` to for configuration of this workflow
   -  the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
   -  whether citekeys are entered manually or automatically via filename (requires filenames beginning with the citekey and followed by an underscore:`citekey_`. You can easily achieve with via renaming rules of your reference manger, [e.g. the ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules)).
@@ -23,9 +23,9 @@ Correct Page numbers are automatically determined, highlights across pages merge
 ## Special Features
 - **automatically merge highlights that span two pages**: give the highlight _on the next page **exactly**_ the comment `c` (for "continue") and they two highlights will be merged. The comment from the first highlight will be preserved. 
 - **automatically merge highlights on one page**: If you just want to leave out some text _on the same page_, do the same as above but use `j` (for "join") instead. The PDF Annotation Extractor will then input a "[...]" and otherwise join the two highlights.
-- when using Obsidian, the wikilink is also directly copied to the clipboard
-- When using Obsidian or Markdown as Output Type, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
-
+- When using Obsidian, the wikilink is also copied to the clipboard
+- With the output type set to Obsidian or Markdown, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
+- When manually entering the number of the first page, *negative* page numbers are accepted. This is useful for books and reports where there are some PDF pages before the first page, e.g. due to a preface. 
 
 ## Requirements & Installation
 
