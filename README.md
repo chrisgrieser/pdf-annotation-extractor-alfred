@@ -1,5 +1,6 @@
 # PDF Annotation Extractor
-Extract Annotations as Markdown & inserts Pandoc Citations with correct page numbers. 
+Extract Annotations as Markdown & inserts Pandoc Citations as References.
+Correct Page numbers are automatically determined, highlights across pages merged, wikilinks automatically copied, and YAML Headers with bibliographic information prepended.
 
 ## Table of Content
 - [How to Use](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#how-to-use)
@@ -23,6 +24,7 @@ Extract Annotations as Markdown & inserts Pandoc Citations with correct page num
 - **automatically merge highlights that span two pages**: give the highlight _on the next page **exactly**_ the comment `c` (for "continue") and they two highlights will be merged. The comment from the first highlight will be preserved. 
 - **automatically merge highlights on one page**: If you just want to leave out some text _on the same page_, do the same as above but use `j` (for "join") instead. The PDF Annotation Extractor will then input a "[...]" and otherwise join the two highlights.
 - when using Obsidian, the wikilink is also directly copied to the clipboard
+- When using Obsidian or Markdown as Output Type, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
 
 
 ## Requirements & Installation
@@ -30,6 +32,7 @@ Extract Annotations as Markdown & inserts Pandoc Citations with correct page num
 **0) Requirements**
 - Alfred (Mac only)
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
+- References saved as BibTeX-Library (`.bib`)
 
 **1) Install the following Third-Party-Software**
 ```bash
@@ -44,7 +47,7 @@ curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 rm get-pip.py
 
-# further needed CLIs
+# CLIs needed for Annotation Extraction
 pip3 install pdfminer.six
 pip3 install pdfannots
 brew install pdfgrep
