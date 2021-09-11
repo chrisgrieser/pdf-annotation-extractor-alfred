@@ -1,13 +1,6 @@
 # PDF Annotation Extractor
 Alfred Workflow that does pretty much what the name says.
 
----
-**⚠️⚠️⚠️⚠️  
-The documentation and the version uploaded here are out of date – I have done a complete overhaul of how this workflow works. Version 3.0 will automate even more things, prepend YAML headers, and will work purely with *Pandoc citations*. I will release 3.0 with documentation when I have the time. You can watch the releases to be notified, and use version 2.0 which works with more manual input as well as APA-style citations instead of Pandoc citations until then.  
-⚠️⚠️⚠️⚠️**
-
----
-
 <img src="https://i.imgur.com/MqoPtO2.gif" alt="" width=50% height=50%>
 
 ## Requirements & Installation
@@ -38,7 +31,9 @@ brew install pdfgrep
 **2) Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/)**.
 
 **3) Define the Hotkey by double-clicking this field**
+
 <img width="170" alt="Screenshot 2021-09-11 20 40 27" src="https://user-images.githubusercontent.com/73286100/132958090-432b2c0b-98d6-4e88-81a7-8cba272b7fc0.png">
+
 
 **4) Set BibTeX Library Path**
 - using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
