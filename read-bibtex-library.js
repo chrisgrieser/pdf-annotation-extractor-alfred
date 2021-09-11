@@ -4,7 +4,7 @@ function run() {
 	ObjC.import("stdlib");
 	app = Application.currentApplication();
 	app.includeStandardAdditions = true;
-	let homepath = app.pathTo("home folder");
+	const homepath = app.pathTo("home folder");
 
 	//import variables
 	var citekey = $.getenv("citekey");
@@ -13,9 +13,20 @@ function run() {
 
 	//read bibtex-entry
 	var bibtex_entry = app.doShellScript(
-		'cat "' + bibtex_library_path + '"' + '| grep -A 15 "' + "{" + citekey + '"'
+		'cat "' + bibtex_library_path + '"' + '| '
+		+ '{ grep -A 15 "' + "{" + citekey + ',"' + '|| true; }'
 	);
-	bibtex_entry = bibtex_entry.split("@")[1]; //workaround to avoid the need for pcregrep
+
+	if (bibtex_entry == "") {
+		let citekey_insertion = $.getenv("citekey_insertion");
+		let error_msg = "No Citekey found.\n\n";
+		if (citekey_insertion == "filename")	error_msg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'" ;
+		if (citekey_insertion == "manually")	error_msg += "Check your BibTeX Library for the correct citekey." ;
+		return error_msg;
+	}
+
+	//workaround to avoid the need for pcregrep (uses grep -A15 from before)
+	bibtex_entry = "@" + bibtex_entry.split("@")[1];
 
 	// BibTeX-Decoding
 	const german_chars = [
@@ -77,13 +88,12 @@ function run() {
 
 	var array = bibtex_entry.split("\r");
 	array.forEach((property) => {
-		property = property.replace(/[\{|\}]/g, ""); //remove Tex
 
 		if (property.match(/\stitle \=/i) != null) {
 			title = extract(property);
 		}
 		if (property.includes("@")) {
-			ptype = ptype.replace(/@(.*)\{.*/, "$1");
+			ptype = property.replace(/@(.*)\{.*/, "$1");
 		}
 		if (property.includes("pages =")) {
 			firstPage = property.match(/\d+/)[0];
@@ -91,21 +101,23 @@ function run() {
 		if (property.includes("author =")) {
 			author = extract(property);
 		}
+		if (property.includes("date =")) {
+			year = property.match(/\d{4}/)[0];
+		}
 		if (property.includes("year =")) {
 			year = property.match(/\d{4}/)[0];
 		}
 		if (property.includes("keywords =")) {
-			keywords = extract(property);
-			keywords = keywords.replaceAll(",", ", ");
+			keywords = extract(property).replaceAll(" ", "-").replaceAll(",", ", ");
 		}
 	});
-	
+
 	return (
 		firstPage + ";;" +
 		title + ";;" +
 		keywords + ";;" +
 		author + ";;" +
 		year + ";;" +
-		pytype
-	);
+		ptype
+	).replace(/[\{\}]/g, ""); //remove Tex
 }

@@ -1,5 +1,5 @@
 #!/bin/zsh
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin/:/opt/homebrew/bin/:$PATH
 
 doi="no DOI"
 hasDoiURL=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='https?://[[:graph:]]*doi.org[[:graph:]]*' $file_path`
