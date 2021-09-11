@@ -12,11 +12,11 @@ The documentation and the version uploaded here are out of date – I have done 
 
 ## Requirements & Installation
 
-0) Requirements
+**0) Requirements**
 - Alfred (Mac only)
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 
-1) Install the following Third-Party-Software:
+**1) Install the following Third-Party-Software**
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -35,16 +35,25 @@ pip3 install pdfannots
 brew install pdfgrep
 ```
 
-1a) Further installation for PDF as output Format
+**2) Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/)**.
+
+**3) Define the Hotkey by double-clicking this field**
+<img width="170" alt="Screenshot 2021-09-11 20 40 27" src="https://user-images.githubusercontent.com/73286100/132958090-432b2c0b-98d6-4e88-81a7-8cba272b7fc0.png">
+
+**4) Set BibTeX Library Path**
+- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
+
+**5) optional: further steps only required for specific output types**
+_Obsidian as Output_
+- using the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
+
+_PDF as Output Format_
+Install Pandoc & a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice
 ```bash
 brew install pandoc
-brew install basictex
+# can be changed to a pdf-engine of your choice
+brew install wkhtmltopdf
 ```
-
-2) Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
-
-3) Define the Hotkey by doubleclicking this field
-<img width="170" alt="Screenshot 2021-09-11 20 40 27" src="https://user-images.githubusercontent.com/73286100/132958090-432b2c0b-98d6-4e88-81a7-8cba272b7fc0.png">
 
 
 ## How to use
