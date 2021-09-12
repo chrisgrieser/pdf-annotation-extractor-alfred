@@ -69,7 +69,7 @@ brew install pdfgrep
 - using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 
 **5) optional: further steps only required for specific output types**
-- _Obsidian as Output_: - using the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
+- _Obsidian as Output_: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
 - _PDF as Output Format_: Install Pandoc & a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice
 
 ```bash
