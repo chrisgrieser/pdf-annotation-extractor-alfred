@@ -16,11 +16,11 @@ Automatically determines correct page numbers, merges highlights across page bre
 - [Credits](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#credits)
 
 ## How to Use
-- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected pdf file will be selected. 
-- **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI to query the correct page numbers. If this fails as well, you will be asked to enter the **first** page number of your PDF (e.g. with `Nature 20(41): 103-145` you have to enter `103`.)
+- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected pdf file will be used. 
+- **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI to query the correct page numbers. If this fails as well, you will be asked to enter the **first** page number of your PDF, e.g. with `Nature 20(41): 103-145` you have to enter `103`.
 - use the Alfred keyword `aconf` to for configuration of this workflow
   -  the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
-  -  whether citekeys are entered manually or automatically via filename (requires filenames beginning with the citekey and followed by an underscore:`citekey_`. You can easily achieve with via renaming rules of your reference manger, [e.g. the ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules)).
+  -  set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore:`[citekey]_[...].pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules)).
   -  the Obsidian destination (must be a folder in your vault)
   -  select the number of columns your PDF has
 
