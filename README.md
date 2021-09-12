@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
-A Workflow for [Alfred](https://www.alfredapp.com/) to extract Annotations as Markdown & inserts Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file or simply the clipboard.
+An [Alfred Workflow](https://www.alfredapp.com/) to extract Annotations as Markdown & inserts Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file or simply the clipboard.
 
 Automatically determines correct page numbers, merges highlights across page breaks, and prepends a YAML Header populated with bibliographic information.
 
