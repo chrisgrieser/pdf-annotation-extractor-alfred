@@ -89,4 +89,4 @@ brew install wkhtmltopdf
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=40%> 
 
 ## Credits
-This workflow was created by [Chris Grieser](https://chris-grieser.de/) aka pseudometa. Thanks to [Andrew Baumann for his python CLI 'pdfannots'](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
+This workflow was created by [Chris Grieser](https://chris-grieser.de/) aka pseudometa. Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
