@@ -1,6 +1,9 @@
-# PDF Annotation Extractor
-Extract Annotations as Markdown & inserts Pandoc Citations as References.
-Correct Page numbers are automatically determined, highlights across pages merged, wikilinks automatically copied, and YAML Headers with bibliographic information prepended.
+# PDF Annotation Extractor (Alfred Workflow)
+A Workflow for [Alfred](https://www.alfredapp.com/) to extract Annotations as Markdown & inserts Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file or simply the clipboard.
+
+Automatically determines correct page numbers, merges highlights across page breaks, and prepends a YAML Header populated with bibliographic information.
+
+![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60% height=60%>
 
@@ -20,7 +23,7 @@ Correct Page numbers are automatically determined, highlights across pages merge
   -  the Obsidian destination (must be a folder in your vault)
   -  select the number of columns your PDF has
 
-ℹ️ _Right now, this workflow **only extracts free comments and highlights with comments**. More will be implemented in the future (this workflow has automatic updates so you will not miss it)._
+ℹ️ _Caveat: Right now, this workflow **only extracts free comments and highlights with comments**. More will be implemented in the future (this workflow has automatic updates so you will not miss it)._
 
 ## Special Features
 - **automatically merge highlights that span two pages**: give the highlight _on the next page **exactly**_ the comment `c` (for "continue") and they two highlights will be merged. The comment from the first highlight will be preserved. 
