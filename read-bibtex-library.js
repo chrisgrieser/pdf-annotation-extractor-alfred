@@ -19,7 +19,7 @@ function run() {
 
 	if (bibtex_entry == "") {
 		let citekey_insertion = $.getenv("citekey_insertion");
-		let error_msg = "No Citekey found.\n\n";
+		let error_msg = "No citekey found.\n\n";
 		if (citekey_insertion == "filename")	error_msg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'" ;
 		if (citekey_insertion == "manually")	error_msg += "Check your BibTeX Library for the correct citekey." ;
 		return error_msg;

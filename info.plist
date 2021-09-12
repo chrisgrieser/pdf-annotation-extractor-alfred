@@ -2133,9 +2133,9 @@ delay 0.1</string>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Searching for DOI...</string>
+				<string>Searching PDF for DOI...</string>
 				<key>title</key>
-				<string>ℹ️ Citekey found, but no page numbers</string>
+				<string>ℹ️ Citekey found, but BibTeX entry has no page numbers</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -4989,8 +4989,11 @@ Created by Chris Grieser https://chris-grieser.de/
 ---
 
 ### Release Notes
+v. 3.0.1
+- small bugfix with automatic filename recognition
+
 v 3.0 Pandoc Citation Overhaul
-- ⚠️ **breaking change**: inserts citekey &amp; Pandoc citations instead of APA-styled references
+- inserts citekey &amp; Pandoc citations instead of APA-styled references (⚠️ breaking change, if you previously used version 2.0)
 - prepends yaml headers when exporting to Markdown or Obsidian
 - inserts title at the annotations header as well
 - removed options for page number extraction, instead tries all of them (priority: bibtex information, DOI, manual input)
@@ -5736,7 +5739,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Fallback: Manual Entering</string>
+			<string>Fallback: Manual Entering of Page Number</string>
 			<key>xpos</key>
 			<integer>1170</integer>
 			<key>ypos</key>
@@ -6222,7 +6225,7 @@ these 5 above can be double-clicked to configure the formatting
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vault/Literature Notes</string>
 		<key>obsidian_intro</key>
-		<string></string>
+		<string>###### **Einstiegsfrage:** &lt;% tp.file.cursor (1) %&gt;</string>
 		<key>output_style</key>
 		<string>obsidian</string>
 		<key>pdf_engine</key>
@@ -6236,7 +6239,7 @@ these 5 above can be double-clicked to configure the formatting
 		<string>obsidian_destination</string>
 	</array>
 	<key>version</key>
-	<string>3.0</string>
+	<string>3.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
