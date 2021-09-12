@@ -48,7 +48,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 # Install Python3
 brew install python3
 
-# install pip3
+# Install pip3
 curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 rm get-pip.py
@@ -83,10 +83,11 @@ brew install wkhtmltopdf
 - The workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet to). Delete all annotations that are "image" or "free form" and the workflow should work again.
 - Do not use backticks (`` ` ``) in any type of comment – this will break the annotation extraction.
 - When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
-- When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. 
-  - You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file. 
+<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%> 
 
-<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=40%> 
+- When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file. 
+
+
 
 ## Credits
 This workflow was created by [Chris Grieser](https://chris-grieser.de/) aka pseudometa. Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
