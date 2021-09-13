@@ -41,6 +41,9 @@ Automatically determines correct page numbers, merges highlights across page bre
 - References saved as BibTeX-Library (`.bib`)
 
 **1) Install the following Third-Party-Software**
+
+Don't be discouraged if you are not familiar with the Terminal. Just copypaste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything. )
+
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
