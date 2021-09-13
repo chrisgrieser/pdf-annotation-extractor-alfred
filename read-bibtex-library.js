@@ -14,7 +14,7 @@ function run() {
 	//read bibtex-entry
 	var bibtex_entry = app.doShellScript(
 		'cat "' + bibtex_library_path + '"' + '| '
-		+ '{ grep -A 15 "' + "{" + citekey + ',"' + '|| true; }'
+		+ '{ grep -i -A 15 "' + "{" + citekey + ',"' + '|| true; }'
 	);
 
 	if (bibtex_entry == "") {

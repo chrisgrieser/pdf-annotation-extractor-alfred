@@ -4989,6 +4989,9 @@ Created by Chris Grieser https://chris-grieser.de/
 ---
 
 ### Release Notes
+v. 3.0.2
+- citekey matching is now case insensitive (thanks @ShiJanhui)
+
 v. 3.0.1
 - small bugfix with automatic filename recognition
 
@@ -6239,7 +6242,7 @@ these 5 above can be double-clicked to configure the formatting
 		<string>obsidian_destination</string>
 	</array>
 	<key>version</key>
-	<string>3.0.1</string>
+	<string>3.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
