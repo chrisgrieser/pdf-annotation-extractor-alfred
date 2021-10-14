@@ -77,8 +77,7 @@ brew install pdfgrep
 
 ```bash
 brew install pandoc
-# can be changed to a pdf-engine of your choice
-brew install wkhtmltopdf
+brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ```
 
 ## Troubleshooting 
