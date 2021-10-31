@@ -93,7 +93,7 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
 
 ### Donations
-- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser).
+- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser)
 - [Ko-Fi](https://ko-fi.com/pseudometa)
 - Thanks 🙏
 
