@@ -89,7 +89,13 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 
 - When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file. 
 
-
-
 ## Credits
-This workflow was created by [Chris Grieser](https://chris-grieser.de/) aka pseudometa. Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
+Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
+
+### Donations
+- [PayPal](https://www.paypal.com/paypalme/ChrisGrieser).
+- [Ko-Fi](https://ko-fi.com/pseudometa)
+- Thanks 🙏
+
+### About the Author
+This workflow has been created by [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
