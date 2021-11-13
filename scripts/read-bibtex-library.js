@@ -7,14 +7,13 @@ function run() {
 	const homepath = app.pathTo("home folder");
 
 	//import variables
-	var citekey = $.getenv("citekey");
-	var bibtex_library_path = $.getenv("bibtex_library_path");
-	bibtex_library_path = bibtex_library_path.replace(/^~/, homepath);
+	const citekey = $.getenv("citekey");
+	const bibtex_library_path = $.getenv("bibtex_library_path").replace(/^~/, homepath);
 
 	//read bibtex-entry
-	var bibtex_entry = app.doShellScript(
+	let bibtex_entry = app.doShellScript(
 		'cat "' + bibtex_library_path + '"' + '| '
-		+ '{ grep -i -A 15 "' + "{" + citekey + ',"' + '|| true; }'
+		+ '{ grep -E -i -A 15 "' + "{" + citekey + ',$"' + '|| true; }'
 	);
 
 	if (bibtex_entry == "") {
@@ -79,37 +78,28 @@ function run() {
 	}
 
 	//parse BibTeX entry
-	var title = "";
-	var ptype = "";
-	var firstPage = "";
-	var author = "";
-	var year = "";
-	var keywords = "";
+	let title = "";
+	let ptype = "";
+	let firstPage = "";
+	let author = "";
+	let year = "";
+	let keywords = "";
+	let url = "";
 
-	var array = bibtex_entry.split("\r");
-	array.forEach((property) => {
+	let array = bibtex_entry.split("\r");
+	array.forEach(property => {
 
-		if (property.match(/\stitle \=/i) != null) {
-			title = extract(property);
-		}
-		if (property.includes("@")) {
-			ptype = property.replace(/@(.*)\{.*/, "$1");
-		}
-		if (property.includes("pages =")) {
-			firstPage = property.match(/\d+/)[0];
-		}
-		if (property.includes("author =")) {
-			author = extract(property);
-		}
-		if (property.includes("date =")) {
-			year = property.match(/\d{4}/)[0];
-		}
-		if (property.includes("year =")) {
-			year = property.match(/\d{4}/)[0];
-		}
-		if (property.includes("keywords =")) {
-			keywords = extract(property).replaceAll(" ", "-").replaceAll(",", ", ");
-		}
+		if (property.match(/\stitle \=/i) != null) title = extract(property);
+		if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
+		if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
+		if (property.includes("author =")) author = extract(property);
+		if (property.includes("year =")) year = property.match(/\d{4}/)[0];
+		else if (property.includes("date ="))	year = property.match(/\d{4}/)[0];
+		if (property.includes("keywords =")) keywords = extract(property)
+			.replaceAll(" ", "-")
+			.replaceAll(",", ", ");
+		if  (property.includes ("url =")) url = extract (property);
+      else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
 	});
 
 	return (
@@ -118,6 +108,7 @@ function run() {
 		keywords + ";;" +
 		author + ";;" +
 		year + ";;" +
-		ptype
+		ptype + ";;" +
+		url
 	).replace(/[\{\}]/g, ""); //remove Tex
 }
