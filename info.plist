@@ -2414,7 +2414,7 @@ return current_file</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>largetypetext</key>
-				<string>Saving Screenshots only works for Obsidian as Output.</string>
+				<string>Saving Screenshots via Hotkey only works for Obsidian as Output.</string>
 				<key>textcolor</key>
 				<string></string>
 				<key>wrapat</key>
@@ -5454,10 +5454,9 @@ end run</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#pdf-annotation-extractor
+	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
 
 Created by Chris Grieser https://chris-grieser.de/
-
 
 ---
 
@@ -6748,7 +6747,7 @@ these 5 above can be double-clicked to configure the formatting
 			<key>note</key>
 			<string>Double Click to define Hotkey
 
-Image Insert</string>
+Image Insert (Obsidian only)</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
@@ -6842,7 +6841,7 @@ Image Insert</string>
 		<string>pdf_engine</string>
 	</array>
 	<key>version</key>
-	<string>3.0.2</string>
+	<string>4.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>

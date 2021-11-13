@@ -41,7 +41,7 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 - `## foo` **(comments)**: Adds "foo" as heading at that location. Number of "#" determines the heading level.
 - `X` **(highlights)**: Turns highlight into task and move up. Removes the comment afterwards.
 - `X foo` **(comments)**: Turns "foo" into task and move up. Removes the comment afterwards.
-- `!n foo` **(comments)**: Insert nth image taken with the image-hotkey at the location of the comment location. "n" being the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label). Removes the comment afterwards.
+- `!n foo` **(comments)**: Insert nth image taken with the image-hotkey at the location of the comment location. "n" being the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label). Removes the comment afterwards. (The Hotkey works only for Obsidian as output format.)
 - `=` **(highlights)**: Adds highlight as keyword to the YAML-frontmatter. Removes the highlight afterwards
 - `= foo` **(comments)**: Adds "foo" as keyword to the YAML-frontmatter. Removes the comment afterwards.
 
