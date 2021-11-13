@@ -8,12 +8,17 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
-## Table of Content
-- [How to Use](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#how-to-use)
-- [Special Features](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#special-features)
-- [Requirements & Installation](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#requirements--installation)
-- [Troubleshooting](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#troubleshooting)
-- [Credits](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#credits)
+
+<!-- MarkdownTOC autolink="true" levels="2" -->
+
+- [How to Use](#how-to-use)
+- [Annotation Codes](#annotation-codes)
+- [Extra Features](#extra-features)
+- [Requirements & Installation](#requirements--installation)
+- [Troubleshooting](#troubleshooting)
+- [Credits](#credits)
+
+<!-- /MarkdownTOC -->
 
 ## How to Use
 - Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected pdf file will be used. 
@@ -53,9 +58,9 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 - [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 - References saved as BibTeX-Library (`.bib`)
 
-### Install the following Third-Party-Software**
+### Install the following Third-Party-Software
 
-Don't be discouraged if you are not familiar with the Terminal. Just copypaste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything. )
+Don't be discouraged if you are not familiar with the Terminal. Just copypaste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
 
 ```bash
 # Install Homebrew
@@ -75,17 +80,17 @@ pip3 install pdfannots
 brew install pdfgrep
 ```
 
-### Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/)**.
+### Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 
-### Define the Hotkey by double-clicking this field**
-<img width=18% alt="Screenshot 2021-09-11 22 12 14" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
+### Define the Hotkey by double-clicking this field
+<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
-### Set BibTeX Library Path**
+### Set BibTeX Library Path
 - using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 
-### Further steps only required for specific output types**
-- _Obsidian as Output_: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder 
-- _PDF as Output Format_: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice
+### Further steps only required for specific output types
+- _Obsidian as Output_: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder .
+- _PDF as Output Format_: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
 
 ```bash
 brew install pandoc
@@ -99,12 +104,13 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 - Do not use backticks (`` ` ``) in any type of comment – this will break the annotation extraction.
 - When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%> 
-- When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file. 
+
+➡️ When you cannot resolve the problem, please [open an GitHub issue](/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
 
 ## Credits
 ### Thanks
 - Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
-- Thanks to StPag for his ideas on annotation codes
+- Thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
 
 ### Donations 🙏
 - [PayPal](https://www.paypal.com/paypalme/ChrisGrieser)
