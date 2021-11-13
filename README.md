@@ -8,6 +8,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
+## Table of Contents
 
 <!-- MarkdownTOC autolink="true" levels="2" -->
 
@@ -105,11 +106,11 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 - When the hotkey does not work in Preview, most likely the Alfred app does not have permissions to access Preview. You can give Alfred permission in the Mac OS System Settings.
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%> 
 
-➡️ When you cannot resolve the problem, please [open an GitHub issue](/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
+➡️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
 
 ## Credits
 ### Thanks
-- Thanks to [Andrew Baumann for his python CLI _pdfannots_](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
+- Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
 - Thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
 
 ### Donations 🙏
