@@ -3,5 +3,10 @@
 
 # Alfred
 List Filter Images/
-/*.png
 !/icon.png
+
+# "/*" affects only images in the root directory
+/*.png
+
+# Sublime Markdown Preview Plugin
+*.html

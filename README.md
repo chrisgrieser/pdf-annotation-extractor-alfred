@@ -10,7 +10,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 ## Table of Contents
 
-<!-- MarkdownTOC autolink="true" levels="2" -->
+<!-- MarkdownTOC levels="2" -->
 
 - [How to Use](#how-to-use)
 - [Annotation Codes](#annotation-codes)
@@ -22,7 +22,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 <!-- /MarkdownTOC -->
 
 ## How to Use
-- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected pdf file will be used. 
+- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used. 
 - **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI to query the correct page numbers. If this fails as well, you will be asked to enter the **first** page number of your PDF, e.g. with `Nature 20(41): 103-145` you have to enter `103`.
 - use the Alfred keyword `aconf` to for configuration of this workflow
   -  the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
@@ -32,7 +32,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 ℹ️ : This workflow **only extracts free comments and highlights with comments**.
 
 ## Annotation Codes
-Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. You can run the Alfred command `acode` to display a quick cheat sheet showing all these.
+Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
 - `+` **(highlights)**: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
 - `++` **(highlights)**: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
@@ -61,7 +61,7 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 
 ### Install the following Third-Party-Software
 
-Don't be discouraged if you are not familiar with the Terminal. Just copypaste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
+Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
 
 ```bash
 # Install Homebrew
@@ -81,7 +81,7 @@ pip3 install pdfannots
 brew install pdfgrep
 ```
 
-### Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
+### Download & Install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/)
 
 ### Define the Hotkey by double-clicking this field
 <img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
@@ -98,7 +98,7 @@ brew install pandoc
 brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ```
 
-## Troubleshooting 
+## Troubleshooting
 - Upgrade to the newest version of pdfannots: `pip3 install --upgrade pdfannots`
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like **Skim** do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - The workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet to). Delete all annotations that are "image" or "free form" and the workflow should work again.
@@ -109,6 +109,7 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ➡️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
 
 ## Credits
+
 ### Thanks
 - Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
 - Thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
