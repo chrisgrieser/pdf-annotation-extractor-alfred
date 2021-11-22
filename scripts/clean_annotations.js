@@ -23,17 +23,18 @@ function run(argv) {
 
 	// reformat pdfannots' output & insert proper numbers
 	annotations = annotations
-		//re-format free comments
+		// re-format free comments
 		.replace(
 			/ \* Page (\d+).*?:[\n| ]?([^\*>]+)(?=\n)/gm,
 			"- *$2 [" + pandoc_cite + "p. $1]*"
 		)
-		//re-format commented highlights; lookahead ensures recognition of multi-line-comments in face of another highlight, document-end, or an (transformed) free comment
+		// re-format commented highlights; lookahead ensures recognition of multi-line-comments
+		// in face of another highlight, document-end, or an already reformated free comment
 		.replace(
 			/ \* Page (\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
 			'- __$3:__ "$2" [' + pandoc_cite + 'p. $1]'
 		)
-		//reformat multi-line-highlights properly
+		// reformat multi-line-highlights properly
 		.replace(
 			/- __[^"]*\n[^"]*:__/gm,
 			function (ml){
@@ -118,7 +119,7 @@ function run(argv) {
 	//merge into task section
 	if (new_tasks.length != 0){
 		annotations =
-	new_tasks.join("\n") + "\n"
+			new_tasks.join("\n") + "\n"
 			+ "\n---\n"
 			+ annotations;
 	}
@@ -183,9 +184,8 @@ function run(argv) {
 	//fix for Annotations beginning with `#tags` (e.g. Annotation Tags)
 	annotations = annotations
 		.replace(/__(#\w+):__/g,"$1") //annotations-tag only (highlight)
-		.replace(/__(#\w+)\b ?/g,"$1 __") //annotation-tag followed by text (highlight)
-		.replace(/\*(#\w+)\b ?/g,"$1 *") //annotation-tag followed by text (free comment)
-	;
+		.replace(/__(#\w+)\b */g,"$1 __") //annotation-tag followed by text (highlight)
+		.replace(/\*(#\w+)\b */g,"$1 *"); //annotation-tag followed by text (free comment)
 	
 	return annotations;
 }
