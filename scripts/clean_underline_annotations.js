@@ -11,7 +11,7 @@ function run(argv) {
 		.replaceAll('„',"'")
 		.replaceAll('...',"…")
 		.replaceAll('. . .',"…")
-		.replace("## Detailed comments\n", ""); //remove heading
+		.replace("## Nits\n", ""); //remove heading
 
 	//import Alfred variables
 	let pandoc_cite;
@@ -24,12 +24,12 @@ function run(argv) {
 	// reformat pdfannots' output & insert proper numbers
 	annotations = annotations
 		//re-format commented underlines; lookahead ensures recognition of multi-line-comments in face of
-		//another underline, document-end, or an already reformated free comment
+		//another underline, or document-end
 		.replace(
-			/ \* Page (\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
+			/ \* Page #?(\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
 			'- __$3:__ "$2" [' + pandoc_cite + 'p. $1]'
 		)
-		//reformat multi-line-highlights properly
+		//reformat multi-line-underlin comments properly
 		.replace(
 			/- __[^"]*\n[^"]*:__/gm,
 			function (ml){
@@ -67,4 +67,5 @@ function run(argv) {
 			//corrects page number for quotes merged on the same page
 			.replace(/p\. (\d+)-(\1)\]/g, "p. $1]");
 
+	return annotations;
 }

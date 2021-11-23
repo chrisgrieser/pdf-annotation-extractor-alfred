@@ -25,13 +25,13 @@ function run(argv) {
 	annotations = annotations
 		// re-format free comments
 		.replace(
-			/ \* Page (\d+).*?:[\n| ]?([^\*>]+)(?=\n)/gm,
+			/ \* Page #?(\d+).*?:[\n| ]?([^\*>]+)(?=\n)/gm,
 			"- *$2 [" + pandoc_cite + "p. $1]*"
 		)
 		// re-format commented highlights; lookahead ensures recognition of multi-line-comments
 		// in face of another highlight, document-end, or an already reformated free comment
 		.replace(
-			/ \* Page (\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
+			/ \* Page #?(\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
 			'- __$3:__ "$2" [' + pandoc_cite + 'p. $1]'
 		)
 		// reformat multi-line-highlights properly

@@ -913,19 +913,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>73F58294-551D-4893-991E-15A38DD9B0CE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<array>
 			<dict>
@@ -1311,7 +1298,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>73F58294-551D-4893-991E-15A38DD9B0CE</string>
+				<string>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1906,6 +1893,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>D77FEF87-7F9C-49A5-A89D-4C9BB2FF98C6</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1928,16 +1917,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2114,7 +2093,7 @@
 		click menu item "Show in Finder" of menu "File" of menu bar 1
 	end tell
 end tell
-delay 1
+delay 0.5
 
 tell application "Finder" to set sel to selectionif ((count sel) &gt; 1) then	set firstItem to item 1 of sel	set result to POSIX path of (firstItem as text)else	set result to POSIX path of (sel as text)end if
 
@@ -2609,9 +2588,9 @@ return current_file</string>
 				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
 python3 -c "import pdfminer" 
-pdfannots $file_path --sections comments --no-condense</string>
+pdfannots "$file_path" --sections nits --no-condense</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -2638,7 +2617,7 @@ pdfannots $file_path --sections comments --no-condense</string>
 				<key>filetext</key>
 				<string># {var:citekey} – {var:title}
 
-{var:annotations}</string>
+{query}</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>relativepathmode</key>
@@ -2725,23 +2704,18 @@ pdfannots $file_path --sections comments --no-condense</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>set input to do shell script "cat '{query}'"
+				<string>input=$(cat "$*" | tr '"' "'")
 
-set AppleScript's text item delimiters to "\r"
-set theTextItems to every text item of input
-set AppleScript's text item delimiters to "\n"
-set input to theTextItems as string
-
-tell application "Drafts"
-    make new draft with properties {content: input, tags: {"pdf-annotations"}}
+osascript -e "tell application \"Drafts\"
+    make new draft with properties {content: \"$input\", tags: {\"pdf-annotations\"}}
 	activate
-end tell</string>
+end tell"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -2821,26 +2795,6 @@ end tell</string>
 			<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>annotations</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>73F58294-551D-4893-991E-15A38DD9B0CE</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3098,9 +3052,9 @@ end tell</string>
 				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
 python3 -c "import pdfminer" 
-pdfannots $file_path --sections comments --no-condense</string>
+pdfannots "$file_path" --sections comments --no-condense</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -3761,23 +3715,18 @@ tell application id focusedapp to activatetell application "System Events" to k
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>set input to do shell script "cat '{query}'"
+				<string>input=$(cat "$*" | tr '"' "'")
 
-set AppleScript's text item delimiters to "\r"
-set theTextItems to every text item of input
-set AppleScript's text item delimiters to "\n"
-set input to theTextItems as string
-
-tell application "Drafts"
-    make new draft with properties {content: input, tags: {"pdf-annotations"}}
+osascript -e "tell application \"Drafts\"
+    make new draft with properties {content: \"$input\", tags: {\"pdf-annotations\"}}
 	activate
-end tell</string>
+end tell"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -5116,6 +5065,21 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>soundname</key>
+				<string>Blow</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -5203,21 +5167,6 @@ fi</string>
 			<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Blow</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -6257,7 +6206,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>2345</integer>
+			<integer>2275</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6320,7 +6269,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>2195</integer>
+			<integer>2125</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6532,17 +6481,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>1425</integer>
 		</dict>
-		<key>73F58294-551D-4893-991E-15A38DD9B0CE</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>save annotations</string>
-			<key>xpos</key>
-			<integer>2120</integer>
-			<key>ypos</key>
-			<integer>385</integer>
-		</dict>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<dict>
 			<key>colorindex</key>
@@ -6557,7 +6495,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>2490</integer>
+			<integer>2420</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6699,7 +6637,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>2435</integer>
 			<key>ypos</key>
-			<integer>1795</integer>
+			<integer>1800</integer>
 		</dict>
 		<key>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</key>
 		<dict>
@@ -7214,7 +7152,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>1625</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>385</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
@@ -7230,7 +7168,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1615</integer>
+			<integer>1590</integer>
 			<key>ypos</key>
 			<integer>585</integer>
 		</dict>
