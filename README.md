@@ -1,11 +1,10 @@
 # PDF Annotation Extractor (Alfred Workflow)
 
-![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic)  ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
+![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
 An [Alfred Workflow](https://www.alfredapp.com/) to extract Annotations as Markdown & insert Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file, or simply the clipboard.
 
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life things.
-
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
 ## Table of Contents
@@ -16,6 +15,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - [Annotation Codes](#annotation-codes)
 - [Extra Features](#extra-features)
 - [Requirements & Installation](#requirements--installation)
+- [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
 - [Credits](#credits)
 
@@ -23,23 +23,29 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 ## How to Use
 - Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used. 
-- **Automatic Page Number Identification**: the *correct* page numbers will automatically be determined from your BibTeX-Library and inserted into the references. If the page number cannot be determined, the PDF will be scanned for a DOI to query the correct page numbers. If this fails as well, you will be asked to enter the **first** page number of your PDF, e.g. with `Nature 20(41): 103-145` you have to enter `103`.
-- use the Alfred keyword `aconf` to for configuration of this workflow
-  -  the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
-  -  set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore:`[citekey]_[...].pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules).
-  -  the Obsidian destination (must be a folder in your vault)
 
-ℹ️ : This workflow **only extracts free comments and highlights with comments**.
+### Automatic Page Number Identification
+The *correct* page numbers will automatically be determined from one of three sources  and inserted into the references as Pandoc Citations, with descending priority:
+1. Your BibTeX-Library
+2. DOI found in the PDF
+3. Prompt to manually enter the page number.
+  - Enter the **true page number of your first PDF page**. _Example:_ if the first PDF page represents the page number 104, you have to enter `104`.
+  - In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a **negative page number**, reflecting the true page number the first PDF *would have*. _Example:_ You PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
+
+ℹ️ : This workflow **only extracts free comments and highlights with comments**. (Upcoming feature in 4.5 release: Underlines.)
 
 ## Annotation Codes
 Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
+
+### Highlights & Free Comments
 
 - `+` **(highlights)**: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
 - `++` **(highlights)**: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
 - `? foo` **(comments)**: Turns "foo" into h6 & move up to the top. Removes the comment afterwards. Used for Introductory Comments or Questions ("Pseudo-Admonitions").
 - `##` **(highlights)**: Turns highlight into heading added at that location. Number of "#" determines the heading level.
 - `## foo` **(comments)**: Adds "foo" as heading at that location. Number of "#" determines the heading level.
-- `X` **(highlights)**: Turns highlight into task and move up. Removes the comment afterwards.
+- `X` **(highlights)**: Turns highlight into task and move up. Removes 
+- the comment afterwards.
 - `X foo` **(comments)**: Turns "foo" into task and move up. Removes the comment afterwards.
 - `!n foo` **(comments)**: Insert nth image taken with the image-hotkey at the location of the comment location. "n" being the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label). Removes the comment afterwards. (The Hotkey works only for Obsidian as output format.)
 - `=` **(highlights)**: Adds highlight as keyword to the YAML-frontmatter. Removes the highlight afterwards
@@ -47,10 +53,15 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 
 ℹ️ **multi-line-annotations** only work in highlights for now, but not yet in free comments.
 
+### Underlines (upcoming)
+- `+`: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
+- `++`: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
+
 ## Extra Features
 - When using Obsidian, the wikilink is also copied to the clipboard
 - With the output type set to Obsidian or Markdown, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
 - When manually entering the number of the first page, *negative* page numbers are accepted. This is useful for books and reports where there are some PDF pages before the first page, e.g. due to a preface. 
+- **Upcoming**: Underlines result in a second output document.
 
 ## Requirements & Installation
 
@@ -97,6 +108,14 @@ brew install pdfgrep
 brew install pandoc
 brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ```
+
+## Configuration
+_Use the Alfred keyword `aconf` for the configuration of this workflow._
+
+- the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
+- set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore:`[citekey]_[...].pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules).
+- the Obsidian destination (must be a folder in your vault)
+
 
 ## Troubleshooting
 - Upgrade to the newest version of pdfannots: `pip3 install --upgrade pdfannots`

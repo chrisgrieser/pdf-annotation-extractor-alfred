@@ -48,4 +48,23 @@ function run(argv) {
 				return "p. " + (parseInt(n) + firstPageNo);
 			}
 		);
+
+		// SPECIAL ANNOTATION CODES
+
+		// "+" and "++" (highlights)
+		// merge quotes with preceding quote
+		annotations = annotations
+			//"+": highlights on one page
+			.replace(
+				/" \[.*p\. (\d+)\]\n- __\+:__ "(.*?)" \[.*p\. /g,
+				" (…)" + ' $2" [' + pandoc_cite + 'p. $1-'
+			)
+			//"++": highlights spanning two page
+			.replace(
+				/" \[.*p\. (\d+)\]\n- __\+\+:__ "(.*?)" \[.*p\. /g,
+				' $2" [' + pandoc_cite + 'p. $1-'
+			)
+			//corrects page number for quotes merged on the same page
+			.replace(/p\. (\d+)-(\1)\]/g, "p. $1]");
+
 }
