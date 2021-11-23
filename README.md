@@ -41,15 +41,15 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 
 - `+` **(highlights)**: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
 - `++` **(highlights)**: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
-- `? foo` **(comments)**: Turns "foo" into h6 & move up to the top. Removes the comment afterwards. Used for Introductory Comments or Questions ("Pseudo-Admonitions").
+- `? foo` **(comments)**: Turns "foo" into h6 & move up to the top. (Used for Introductory Comments or Questions ("Pseudo-Admonitions")):
 - `##` **(highlights)**: Turns highlight into heading added at that location. Number of "#" determines the heading level.
 - `## foo` **(comments)**: Adds "foo" as heading at that location. Number of "#" determines the heading level.
-- `X` **(highlights)**: Turns highlight into task and move up. Removes 
-- the comment afterwards.
-- `X foo` **(comments)**: Turns "foo" into task and move up. Removes the comment afterwards.
-- `!n foo` **(comments)**: Insert nth image taken with the image-hotkey at the location of the comment location. "n" being the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label). Removes the comment afterwards. (The Hotkey works only for Obsidian as output format.)
+- `X` **(highlights)**: Turns highlight into task and move up. 
+- `X foo` **(comments)**: Turns "foo" into task and move up. 
+- `!n foo` **(comments)**: Insert nth image taken with the image-hotkey at the location of the comment location. "n" being the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label). (The Hotkey works only for Obsidian as output format.)
 - `=` **(highlights)**: Adds highlight as keyword to the YAML-frontmatter. Removes the highlight afterwards
 - `= foo` **(comments)**: Adds "foo" as keyword to the YAML-frontmatter. Removes the comment afterwards.
+- (upcoming) `---` **(free comments)**: Turns the comment into an markdown hr (`---`). 
 
 ℹ️ **multi-line-annotations** only work in highlights for now, but not yet in free comments.
 
@@ -71,7 +71,6 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 - References saved as BibTeX-Library (`.bib`)
 
 ### Install the following Third-Party-Software
-
 Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
 
 ```bash
@@ -115,7 +114,6 @@ _Use the Alfred keyword `aconf` for the configuration of this workflow._
 - the output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
 - set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore:`[citekey]_[...].pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules).
 - the Obsidian destination (must be a folder in your vault)
-
 
 ## Troubleshooting
 - Upgrade to the newest version of pdfannots: `pip3 install --upgrade pdfannots`

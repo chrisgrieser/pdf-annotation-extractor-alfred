@@ -79,6 +79,10 @@ function run(argv) {
 		.replace(/- \*(#+) (.*?)\[.*?]\*/g, "\n$1 $2") // free comments
 		.replace(/- __(#+) ?:__ "(.*?)".*?\]/g, "\n$1 $2"); //highlights
 
+	// "---" (free comments) becomes hr line
+	annotations = annotations
+		.replace(/- \*--- ?\[.*?]\*/g, "\n---\n"); // free comments
+
 	// "?" (free comments)
 	//make h6 & move up top (i.e., Pseudo-Admonitions)
 	let introRE = new RegExp(/- \*\? ?(.*?)\[.*?]\*/, 'g');
@@ -162,7 +166,6 @@ function run(argv) {
 			.replaceAll("\nZZZZ","");
 		new_keywords.push(...keyword_hl);
 	}
-
 	let new_value = "";
 	if (new_keywords.length != 0){
 		new_keywords =
@@ -172,7 +175,7 @@ function run(argv) {
 	} else {
 		new_value = $.getenv("keywords");
 	}
-	// Variablenname muss gewechselt werden, weil Alfred
+	// Variablenname für tags muss gewechselt werden, weil Alfred
 	// sich sonst weigert diese zu überschreiben...
 	Application('com.runningwithcrayons.Alfred').setConfiguration
  	('tags', {
@@ -180,6 +183,7 @@ function run(argv) {
 		inWorkflow: $.getenv('alfred_workflow_bundleid'),
 		exportable: false}
 	);
+
 
 	//fix for Annotations beginning with `#tags` (e.g. Annotation Tags)
 	annotations = annotations
