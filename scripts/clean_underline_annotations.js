@@ -11,7 +11,7 @@ function run(argv) {
 		.replaceAll("„", "'")
 		.replaceAll("...", "…")
 		.replaceAll(". . .", "…")
-		.replaceAll(" Image", "") // bad scans
+		.replaceAll("Page Image ", "Page ") // not properly renamed scans
 		.replace("## Nits\n", ""); // remove heading
 
 	// import Alfred variables
