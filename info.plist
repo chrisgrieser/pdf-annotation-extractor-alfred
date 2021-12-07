@@ -227,7 +227,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
+				<string>54C17FB9-0718-453C-8899-FEA2785E3A8E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -592,6 +592,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>54C17FB9-0718-453C-8899-FEA2785E3A8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1924,6 +1939,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
 		<array>
@@ -2752,26 +2777,26 @@ end tell"</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:underlines_second_output}</string>
+						<string></string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>true</string>
+						<string></string>
 						<key>outputlabel</key>
-						<string>2nd output</string>
+						<string>no underlines</string>
 						<key>uid</key>
-						<string>D77FEF87-7F9C-49A5-A89D-4C9BB2FF98C6</string>
+						<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>--</string>
+				<string>else</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</string>
+			<string>54C17FB9-0718-453C-8899-FEA2785E3A8E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2795,6 +2820,36 @@ end tell"</string>
 			<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:underlines_second_output}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>2nd output</string>
+						<key>uid</key>
+						<string>D77FEF87-7F9C-49A5-A89D-4C9BB2FF98C6</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>--</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -6206,7 +6261,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>2275</integer>
+			<integer>2445</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6233,7 +6288,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>1895</integer>
+			<integer>2065</integer>
 			<key>ypos</key>
 			<integer>385</integer>
 		</dict>
@@ -6269,7 +6324,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>2125</integer>
+			<integer>2295</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6283,6 +6338,15 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>910</integer>
 			<key>ypos</key>
 			<integer>750</integer>
+		</dict>
+		<key>54C17FB9-0718-453C-8899-FEA2785E3A8E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>1920</integer>
+			<key>ypos</key>
+			<integer>375</integer>
 		</dict>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<dict>
@@ -6495,7 +6559,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>2420</integer>
+			<integer>2590</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -6751,7 +6815,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>clean annotations</string>
 			<key>xpos</key>
-			<integer>1965</integer>
+			<integer>2135</integer>
 			<key>ypos</key>
 			<integer>355</integer>
 		</dict>
@@ -7152,7 +7216,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>1625</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>390</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
