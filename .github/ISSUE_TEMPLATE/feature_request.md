@@ -15,4 +15,3 @@ If applicable, add screenshots to help explain your request.
 
 **Checklist**
 - [ ] The feature would be useful to more users than just me.
-- [ ] I have checked the [feature overview](https://github.com/chrisgrieser/shimmering-obsidian#feature-overview) and the feature doesn't already exist.

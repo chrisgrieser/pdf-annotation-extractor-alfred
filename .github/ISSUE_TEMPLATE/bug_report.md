@@ -27,5 +27,5 @@ logdata
 ```
 
 **Checklist**
-- [ ] I have updated to the latest version of this workflow, the Advanced URI plugin, and the Metadata Extractor plugin.
 - [ ] I have read and checked the [Troubleshooting](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#troubleshooting).
+- [ ] I have updated to the latest version.
