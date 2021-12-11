@@ -2,27 +2,25 @@
 function run(argv) {
 	ObjC.import("stdlib");
 
-	// only for testing purposes
-	//---------------------------------------------------------------
-
-	const firstPageNo = 7;
-	const hasBibtexEntry = true;
-	const underlinesSecondOutput = true;
-	const citekey = "Grieser2020";
-	let keywords = "blubb";
-
 	// import Alfred variables
 	//---------------------------------------------------------------
-	// const firstPageNo = parseInt($.getenv("first_page_no"));
-	// const underlinesSecondOutput = $getenv("underlines_second_output") === true;
-	// const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
-	// let citekey;
-	// if (hasBibtexEntry) citekey = $.getenv("citekey");
-	// else citekey = "";
-	// let keywords = $.getenv("keywords");
+	const firstPageNo = parseInt($.getenv("first_page_no"));
+	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
+	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
+	let citekey = "";
+	if (hasBibtexEntry) citekey = $.getenv("citekey");
+	let keywords = $.getenv("keywords");
 
 	// Core Methods
 	// --------------------------------------------------------------
+
+	function setAlfredEnv (envVar, newValue) {
+		Application("com.runningwithcrayons.Alfred").setConfiguration (envVar, {
+			toValue: newValue,
+			inWorkflow: $.getenv("alfred_workflow_bundleid"),
+			exportable: false
+		});
+	}
 
 	Array.prototype.betterKeys = function () {
 		return this.map (a => {
@@ -66,7 +64,7 @@ function run(argv) {
 	};
 
 	Array.prototype.JSONtoMD = function () {
-		return this.map (a => {
+		const arr = this.map (a => {
 			let annotationTag, comment, output, reference;
 
 			// uncommented highlights or underlines
@@ -122,8 +120,21 @@ function run(argv) {
 
 			return output;
 		});
+		return arr.join("\n");
 	};
 
+	// underlines as secondary output
+	Array.prototype.splitOffUnderlines = function () {
+		if (!underlinesSecondOutput) return this;
+
+		const arr = this.filter (a => a.type !== "Underline");
+		let underlineAnnos = this.filter (a => a.type === "Underline");
+		if (underlineAnnos) underlineAnnos = underlineAnnos.JSONtoMD();
+		else underlineAnnos = "none";
+
+		setAlfredEnv("underlines", underlineAnnos);
+		return arr;
+	};
 
 	// Annotation Code Methods
 	// --------------------------------------------------------------
@@ -246,41 +257,34 @@ function run(argv) {
 			.filter (a => a.type !== "remove");
 
 		if (newKeywords.length) {
-			newKeywords = [... new Set (newKeywords)] // unique only
+			newKeywords = [... new Set (newKeywords)]
 				.map (kw => kw.trim().replaceAll(" ", "-"));
 			keywords += ", " + newKeywords.join(", ");
 		}
-		// variable name has to be changed so Alfred accepts it >:(
-		Application("com.runningwithcrayons.Alfred").setConfiguration ("tags", {
-			toValue: keywords,
-			inWorkflow: $.getenv("alfred_workflow_bundleid"),
-			exportable: false
-		});
+
+		setAlfredEnv("tags", keywords); // variable name has to be changed so Alfred accepts it >:(
 
 		return arr;
 	};
 
-
 	// Main
 	// --------------------------------------------------------------
 
-	let annotations = JSON.parse(argv.join(""))
+	const annotations = JSON.parse(argv.join(""))
 		.betterKeys()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
+
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
 		.pseudoAdmonition()
 		.transformTasks()
 		.insertImageMarker()
-		.transformTag4yaml();
+		.transformTag4yaml()
 
-	if (underlinesSecondOutput) annotations.filter (a => a.type !== "Underline");
+		.splitOffUnderlines()
+		.JSONtoMD();
 
-	annotations = annotations
-		.JSONtoMD()
-		.join ("\n");
-
-	return annotations + "\n";
+	setAlfredEnv("annotations", annotations);
 }

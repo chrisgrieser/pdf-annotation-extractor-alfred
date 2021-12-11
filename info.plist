@@ -140,7 +140,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>39404419-C091-4379-A868-22D8A2854023</string>
+				<string>44776CD9-148B-4DD3-AD19-40B16312706C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -210,19 +210,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>231AD98C-F73F-4EB5-872E-50A6F782DA30</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>54C17FB9-0718-453C-8899-FEA2785E3A8E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>24D55235-69D3-48FA-B0A2-8D061B12209D</key>
 		<array>
 			<dict>
@@ -254,19 +241,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>289AD6ED-AA98-450D-9C21-4BBC15805D2F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8DBA22AB-504A-489C-B721-CC8A7388DE68</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -492,11 +466,23 @@
 				<false/>
 			</dict>
 		</array>
-		<key>46195F9C-5AA2-4775-B49F-84A60834C673</key>
+		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7D16E1FF-B3F0-4BA6-81FD-90FABAED6192</string>
+				<string>88CAA660-62D2-4ADC-BC65-FA21E7379285</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>39404419-C091-4379-A868-22D8A2854023</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -531,19 +517,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A497D0BF-3F62-4C00-AC80-6286B9A80A39</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<array>
 			<dict>
@@ -570,19 +543,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>46195F9C-5AA2-4775-B49F-84A60834C673</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<array>
 			<dict>
@@ -596,26 +556,24 @@
 				<false/>
 			</dict>
 		</array>
-		<key>54C17FB9-0718-453C-8899-FEA2785E3A8E</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -941,8 +899,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>7D16E1FF-B3F0-4BA6-81FD-90FABAED6192</key>
-		<array/>
 		<key>7D407AFC-B0A7-4ABD-A235-5ADF18B6ADF1</key>
 		<array>
 			<dict>
@@ -1035,6 +991,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>29B1E708-A231-4989-9463-0AD74C394DAA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>88CAA660-62D2-4ADC-BC65-FA21E7379285</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1193,24 +1162,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>9B7B9264-0F55-433E-B1F3-3F79A9F2BD02</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E123A763-7B2A-478A-8E89-23CD1D42B4BD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</string>
+				<string>BBA749AA-EDEC-4269-AED6-E665AF904A6D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1314,19 +1270,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>1F409233-6B32-4BC6-9162-D0D58C81A5F1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>A497D0BF-3F62-4C00-AC80-6286B9A80A39</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1795,6 +1738,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39404419-C091-4379-A868-22D8A2854023</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<array>
 			<dict>
@@ -1873,19 +1829,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E123A763-7B2A-478A-8E89-23CD1D42B4BD</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>289AD6ED-AA98-450D-9C21-4BBC15805D2F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</key>
 		<array>
 			<dict>
@@ -1925,21 +1868,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>231AD98C-F73F-4EB5-872E-50A6F782DA30</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>D77FEF87-7F9C-49A5-A89D-4C9BB2FF98C6</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<array>
 			<dict>
@@ -1958,19 +1886,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BBA749AA-EDEC-4269-AED6-E665AF904A6D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2218,255 +2133,6 @@ tell application "PDF Expert" to activate</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>ADB5B0AA-BF9B-491D-98BC-D8D25542C149</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
-
-python3 -c "import pdfminer" 
-pdfannots "$file_path" --sections nits --no-condense</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>231AD98C-F73F-4EB5-872E-50A6F782DA30</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<false/>
-				<key>createintermediatefolders</key>
-				<true/>
-				<key>filename</key>
-				<string>temp.md</string>
-				<key>filetext</key>
-				<string># {var:citekey} – {var:title}
-
-{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>ObjC.import('stdlib');
-  var annotations = `{query}`;
-
-  //prior cleaning
-  annotations = annotations.replaceAll ("  "," "); //double spaces
-  annotations = annotations.replaceAll ("\n\n\n","\n"); //empty lines
-  annotations = annotations.replaceAll ("\n\n","\n"); //empty lines
-  annotations = annotations.replaceAll ("- ",""); //removes hyphenation
-
-  //genererates the reference from filename provided by Alfred
-  var shortRef = $.getenv('ref_name');
-
-  //gets first page number from Alfred
-  var firstPageString = $.getenv('first_page_no');
-  var firstPageNo = parseInt(firstPageString) -1 ; //converts str to int
-
-  //formats annotations for Notion Markdown
-  annotations = annotations.replace ("## Detailed comments",""); //remove heading
-  annotations = annotations.replace (/ \* Page (\d+).*:\n +&gt; +(.*)\n +(.*)\n/gm,`- **$3:** "$2" (ZZZZ: $1) \n`); //re-formatting commented highlights
-  annotations = annotations.replace (/ \* Page (\d+).*:[\n| ]?([^\*&gt;]+)\n/gm,"- *$2 (ZZZZ: $1)*\n"); //re-formating free comments
-  annotations = annotations.replaceAll ("ZZZZ",shortRef); //insert reference
-
-  //inserts correct page numbers based on https://stackoverflow.com/a/32664436
-  annotations = annotations.replace (/\: (\d+)\)/g, function (match, n){
-    return ": " + (parseInt(n) + firstPageNo) + ")";
-  });
-
-  //merge quotes where the second highlight comment is exactly "c"
-  //for quotes that span multiple pages
-  annotations = annotations.replace (/" \(.*: (\d+)\) ?\n ?- \*\*c:\*\* "(.*\(.*: )(\d+\))/gm," $2$1-$3");
-
-  //merges quotes where the second highlight comment is exactly "j" and puts "[...]" between them
-  // for leaving out some stuff
-  annotations = annotations.replace (/" \(.*: (\d+)\) ?\n ?- \*\*j:\*\* "(.*\(.*: )(\d+\))/gm," [...] $2$1-$3");
-
-  //corrects page number for merged quotes on the same page
-  annotations = annotations.replace (/(\d+)-(\1)\)/g,"$1)");
-
-  // adds ref as title
-  annotations = "# " + shortRef + annotations;
-
-  return annotations;</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/clean_underline_annotations.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A497D0BF-3F62-4C00-AC80-6286B9A80A39</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>input=$(cat "$*" | tr '"' "'")
-
-osascript -e "tell application \"Drafts\"
-    make new draft with properties {content: \"$input\", tags: {\"pdf-annotations\"}}
-	activate
-end tell"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>46195F9C-5AA2-4775-B49F-84A60834C673</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey} – {var:title}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>7D16E1FF-B3F0-4BA6-81FD-90FABAED6192</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>no underlines</string>
-						<key>uid</key>
-						<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>54C17FB9-0718-453C-8899-FEA2785E3A8E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>`|'</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:underlines_second_output}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>true</string>
-						<key>outputlabel</key>
-						<string>2nd output</string>
-						<key>uid</key>
-						<string>D77FEF87-7F9C-49A5-A89D-4C9BB2FF98C6</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>--</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2866,148 +2532,6 @@ return current_file</string>
 			<string>9D0436F8-47E6-4AA8-9E41-43F919BF72C6</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>test</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>test</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>9B7B9264-0F55-433E-B1F3-3F79A9F2BD02</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
-
-file_path=~"/Library/Mobile Documents/com~apple~CloudDocs/File Hub/test.pdf"
-
-python3 -c "import pdfminer" 
-pdfannots "$file_path" --format json</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E123A763-7B2A-478A-8E89-23CD1D42B4BD</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>ObjC.import('stdlib');
-  var annotations = `{query}`;
-
-  //prior cleaning
-  annotations = annotations.replaceAll ("  "," "); //double spaces
-  annotations = annotations.replaceAll ("\n\n\n","\n"); //empty lines
-  annotations = annotations.replaceAll ("\n\n","\n"); //empty lines
-  annotations = annotations.replaceAll ("- ",""); //removes hyphenation
-
-  //genererates the reference from filename provided by Alfred
-  var shortRef = $.getenv('ref_name');
-
-  //gets first page number from Alfred
-  var firstPageString = $.getenv('first_page_no');
-  var firstPageNo = parseInt(firstPageString) -1 ; //converts str to int
-
-  //formats annotations for Notion Markdown
-  annotations = annotations.replace ("## Detailed comments",""); //remove heading
-  annotations = annotations.replace (/ \* Page (\d+).*:\n +&gt; +(.*)\n +(.*)\n/gm,`- **$3:** "$2" (ZZZZ: $1) \n`); //re-formatting commented highlights
-  annotations = annotations.replace (/ \* Page (\d+).*:[\n| ]?([^\*&gt;]+)\n/gm,"- *$2 (ZZZZ: $1)*\n"); //re-formating free comments
-  annotations = annotations.replaceAll ("ZZZZ",shortRef); //insert reference
-
-  //inserts correct page numbers based on https://stackoverflow.com/a/32664436
-  annotations = annotations.replace (/\: (\d+)\)/g, function (match, n){
-    return ": " + (parseInt(n) + firstPageNo) + ")";
-  });
-
-  //merge quotes where the second highlight comment is exactly "c"
-  //for quotes that span multiple pages
-  annotations = annotations.replace (/" \(.*: (\d+)\) ?\n ?- \*\*c:\*\* "(.*\(.*: )(\d+\))/gm," $2$1-$3");
-
-  //merges quotes where the second highlight comment is exactly "j" and puts "[...]" between them
-  // for leaving out some stuff
-  annotations = annotations.replace (/" \(.*: (\d+)\) ?\n ?- \*\*j:\*\* "(.*\(.*: )(\d+\))/gm," [...] $2$1-$3");
-
-  //corrects page number for merged quotes on the same page
-  annotations = annotations.replace (/(\d+)-(\1)\)/g,"$1)");
-
-  // adds ref as title
-  annotations = "# " + shortRef + annotations;
-
-  return annotations;</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/clean_annotations.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>289AD6ED-AA98-450D-9C21-4BBC15805D2F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>8DBA22AB-504A-489C-B721-CC8A7388DE68</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3482,26 +3006,6 @@ fi</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>annotations</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -4052,29 +3556,6 @@ end tell"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to remove configuration "tags" in workflow (system attribute "alfred_workflow_bundleid")</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>39404419-C091-4379-A868-22D8A2854023</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -4224,6 +3705,84 @@ app.openLocation(urlscheme);</string>
 			<string>5EF1A653-4872-4BE6-9052-FF031C1F2AC3</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>input=$(cat "$*" | tr '"' "'")
+
+osascript -e "tell application \"Drafts\"
+    make new draft with properties {content: \"$input\", tags: {\"underlines"}}
+end tell"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>*️⃣ Underlines saved in Drafts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<false/>
+				<key>createintermediatefolders</key>
+				<true/>
+				<key>filename</key>
+				<string>temp.md</string>
+				<key>filetext</key>
+				<string># {var:citekey}
+_{var:title}_
+
+{var:underlines}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>88CAA660-62D2-4ADC-BC65-FA21E7379285</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -4459,6 +4018,63 @@ pandoc ~'/Library/Application Support/Alfred/Workflow Data/de.chris-grieser.pdf-
 			<string>alfred.workflow.output.playsound</string>
 			<key>uid</key>
 			<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application id "com.runningwithcrayons.Alfred" to remove configuration "tags" in workflow (system attribute "alfred_workflow_bundleid")
+
+tell application id "com.runningwithcrayons.Alfred" to remove configuration "underlines" in workflow (system attribute "alfred_workflow_bundleid")
+
+tell application id "com.runningwithcrayons.Alfred" to remove configuration "annotations" in workflow (system attribute "alfred_workflow_bundleid")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>39404419-C091-4379-A868-22D8A2854023</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:underlines}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string>none</string>
+						<key>outputlabel</key>
+						<string>underlines</string>
+						<key>uid</key>
+						<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>--</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>44776CD9-148B-4DD3-AD19-40B16312706C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -4801,7 +4417,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification (or disabling Bibliography Extraction)","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification (or disabling Bibliography Extraction)","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -6032,80 +5648,15 @@ tell application id "com.runningwithcrayons.Alfred" to set configuration "underl
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>See https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
+	<string>⚠️ Please update to pdfannots the latest version of pdfannots, since the new features in verison 5.0 rely on them. 
 
-Created by Chris Grieser https://chris-grieser.de/
+`pip3 install --upgrade pdfannots`
 
----
+--------------------------------------------------------------
 
-### Release Notes
-v. 4.0
-- Option in `aconf` extract annotations from PDF not in the BibTeX-lirbary (e.g. manusscripts by colleagues)
-- triggering Annotation Extraction from PDF Expert does not leave a Finder Window behind anymore
-- annotation codes (see readme)
-- removed column-option since the version 0.2 of pdfannots does that automatically. (Use `pip3 install --upgrade pdfannots` to upgrade pdfannots.)
-- added more bibliographic info to YAML
-- removed PDF location option, since the locaiton of the PDF when exporting from PDF Expert is now done automatically
+Documentation: https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
 
-v. 3.0.2
-- citekey matching is now case insensitive (thanks @ShiJanhui)
-
-v. 3.0.1
-- small bugfix with automatic filename recognition
-
-v 3.0 Pandoc Citation Overhaul
-- inserts citekey &amp; Pandoc citations instead of APA-styled references (⚠️ breaking change, if you previously used version 2.0)
-- prepends yaml headers when exporting to Markdown or Obsidian
-- inserts title at the annotations header as well
-- removed options for page number extraction, instead tries all of them (priority: bibtex information, DOI, manual input)
-- clipboard as fifth output format
-
-v 2.0
-- Simplified installation
-- further improved DOI recognition
-- replaced Notion Export with (much better) Obsidian Export
-- option to Export to Drafts
-- new icon (again)
-- automatically merge two highlights when the second one has exactly the content `j`
-- further improved cleaning
-- some debugging
-- changed `cont`to `c` for merging acress pages
-- scrolls up when having to manually enter first page
-- enabled the input of negative numbers (e.g. when page counting starts at PDF page 3, input "-1" is required)
-
-v 1.8
-- improved DOI recognition
-
-v 1.7
-- automatic quote merging now also works on the same page (useful for leaving out sth between two quotes)
-
-v 1.6
-- run from directly from aconf
-- some under-the-hood-improvements
-
-v 1.5
-- scans the PDF for a DOIs, if they are found, uses the DOI to automatically get the page numbers online (requires pdfgrep)
-
-v 1.4
-- option to automatically recognize the page number from filename (similar to reference input), when filename is formatted "authors_year_[...]_page-page.pdf"
-- nicer icons for aconf-keyword
-
-v.1.3
-- automatically **merge highlights that span two pages**: give the highlight on the next page *exactly* the comment `cont` and the two highlights will be merge. The comment from the first highlight will be preserved and the reference will be corrected to include two pages, e.g. `Pohl 2018: **13-14**`
-- setting for the number of columns per pdf page (wrong column number results in wrong order of some annotations in the resulting document)
-- waits till Notion is running before searching there
-- small bugfix with Finder
-
-v 1.2
-- Support for directly triggering from PDF Expert. 
-- As PDF Expert only allows to retrieve a filename, the workflow searches for the path of that file. To speed up the search, only the location selected via "aconf" will be searched. In case there are two files, the most recently modified one will be used.
-- nicer icon
-
-v. 1.1: 
-small fix concerning free comments
-
-v. 1.0: 
-aconf has a loop for more convenience of doing multiple configurations, prettier icon, force input of digits as page numbers</string>
+Created by Chris Grieser https://chris-grieser.de/</string>
 	<key>uidata</key>
 	<dict>
 		<key>000BB652-39B5-43A4-A41C-CCAC26C3E81D</key>
@@ -6196,7 +5747,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>2445</integer>
+			<integer>2450</integer>
 			<key>ypos</key>
 			<integer>1115</integer>
 		</dict>
@@ -6229,18 +5780,6 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>ypos</key>
 			<integer>840</integer>
 		</dict>
-		<key>231AD98C-F73F-4EB5-872E-50A6F782DA30</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>second instance
-(for underlines)</string>
-			<key>xpos</key>
-			<integer>1745</integer>
-			<key>ypos</key>
-			<integer>85</integer>
-		</dict>
 		<key>24D55235-69D3-48FA-B0A2-8D061B12209D</key>
 		<dict>
 			<key>colorindex</key>
@@ -6269,17 +5808,6 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>2260</integer>
 			<key>ypos</key>
 			<integer>1250</integer>
-		</dict>
-		<key>289AD6ED-AA98-450D-9C21-4BBC15805D2F</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>clean annotations</string>
-			<key>xpos</key>
-			<integer>2045</integer>
-			<key>ypos</key>
-			<integer>385</integer>
 		</dict>
 		<key>295DD35F-44FB-4D24-AAB6-58B62558CB3C</key>
 		<dict>
@@ -6334,10 +5862,12 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
+			<key>note</key>
+			<string>remove temporary environment variables</string>
 			<key>xpos</key>
-			<integer>2570</integer>
+			<integer>3175</integer>
 			<key>ypos</key>
-			<integer>955</integer>
+			<integer>1125</integer>
 		</dict>
 		<key>3E4CC6CD-B1E5-4DCF-9C06-C05748422A49</key>
 		<dict>
@@ -6362,7 +5892,7 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>1705</integer>
+			<integer>1730</integer>
 			<key>ypos</key>
 			<integer>1280</integer>
 		</dict>
@@ -6393,16 +5923,14 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
-		<key>46195F9C-5AA2-4775-B49F-84A60834C673</key>
+		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
-			<key>note</key>
-			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>2435</integer>
+			<integer>2615</integer>
 			<key>ypos</key>
-			<integer>85</integer>
+			<integer>1135</integer>
 		</dict>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<dict>
@@ -6421,15 +5949,6 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>1070</integer>
 			<key>ypos</key>
 			<integer>1500</integer>
-		</dict>
-		<key>4C77860D-44B6-4DC7-95D4-841C6E1BE9C6</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>2055</integer>
-			<key>ypos</key>
-			<integer>115</integer>
 		</dict>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<dict>
@@ -6458,15 +5977,6 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<key>ypos</key>
 			<integer>2120</integer>
 		</dict>
-		<key>5190EF6F-68C6-4E3B-BD2A-92402E72E2C4</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>2285</integer>
-			<key>ypos</key>
-			<integer>85</integer>
-		</dict>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<dict>
 			<key>colorindex</key>
@@ -6477,15 +5987,6 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>910</integer>
 			<key>ypos</key>
 			<integer>750</integer>
-		</dict>
-		<key>54C17FB9-0718-453C-8899-FEA2785E3A8E</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>1910</integer>
-			<key>ypos</key>
-			<integer>105</integer>
 		</dict>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<dict>
@@ -6504,6 +6005,17 @@ aconf has a loop for more convenience of doing multiple configurations, prettier
 			<integer>1455</integer>
 			<key>ypos</key>
 			<integer>455</integer>
+		</dict>
+		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>create new Draft</string>
+			<key>xpos</key>
+			<integer>2860</integer>
+			<key>ypos</key>
+			<integer>1000</integer>
 		</dict>
 		<key>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</key>
 		<dict>
@@ -6693,15 +6205,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>730</integer>
 		</dict>
-		<key>7D16E1FF-B3F0-4BA6-81FD-90FABAED6192</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>2580</integer>
-			<key>ypos</key>
-			<integer>85</integer>
-		</dict>
 		<key>7D407AFC-B0A7-4ABD-A235-5ADF18B6ADF1</key>
 		<dict>
 			<key>colorindex</key>
@@ -6773,6 +6276,15 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>645</integer>
 		</dict>
+		<key>88CAA660-62D2-4ADC-BC65-FA21E7379285</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>2710</integer>
+			<key>ypos</key>
+			<integer>1000</integer>
+		</dict>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<dict>
 			<key>colorindex</key>
@@ -6792,13 +6304,6 @@ Start Annotation Export</string>
 			<integer>1090</integer>
 			<key>ypos</key>
 			<integer>445</integer>
-		</dict>
-		<key>8DBA22AB-504A-489C-B721-CC8A7388DE68</key>
-		<dict>
-			<key>xpos</key>
-			<integer>2200</integer>
-			<key>ypos</key>
-			<integer>390</integer>
 		</dict>
 		<key>8DD65E80-0A92-4F06-A75F-2B7F9571157A</key>
 		<dict>
@@ -6834,7 +6339,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<integer>1620</integer>
+			<integer>1660</integer>
 			<key>ypos</key>
 			<integer>1420</integer>
 		</dict>
@@ -6865,9 +6370,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1635</integer>
+			<integer>1615</integer>
 			<key>ypos</key>
-			<integer>1650</integer>
+			<integer>1645</integer>
 		</dict>
 		<key>9B681E9C-4BC9-4DAE-BCA8-7F831EE22829</key>
 		<dict>
@@ -6878,13 +6383,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>1115</integer>
 		</dict>
-		<key>9B7B9264-0F55-433E-B1F3-3F79A9F2BD02</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1620</integer>
-			<key>ypos</key>
-			<integer>360</integer>
-		</dict>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
 		<dict>
 			<key>colorindex</key>
@@ -6892,7 +6390,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>clean annotations</string>
 			<key>xpos</key>
-			<integer>1950</integer>
+			<integer>1925</integer>
 			<key>ypos</key>
 			<integer>585</integer>
 		</dict>
@@ -6960,17 +6458,6 @@ Start Annotation Export</string>
 			<integer>1170</integer>
 			<key>ypos</key>
 			<integer>820</integer>
-		</dict>
-		<key>A497D0BF-3F62-4C00-AC80-6286B9A80A39</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>clean annotations</string>
-			<key>xpos</key>
-			<integer>2125</integer>
-			<key>ypos</key>
-			<integer>85</integer>
 		</dict>
 		<key>A503D151-F1FC-4262-A6F7-02F374B9786F</key>
 		<dict>
@@ -7124,7 +6611,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>saves filename</string>
 			<key>xpos</key>
-			<integer>1785</integer>
+			<integer>1790</integer>
 			<key>ypos</key>
 			<integer>1145</integer>
 		</dict>
@@ -7153,7 +6640,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>gets file_path</string>
 			<key>xpos</key>
-			<integer>1620</integer>
+			<integer>1660</integer>
 			<key>ypos</key>
 			<integer>1280</integer>
 		</dict>
@@ -7162,7 +6649,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1460</integer>
+			<integer>1500</integer>
 			<key>ypos</key>
 			<integer>885</integer>
 		</dict>
@@ -7264,6 +6751,15 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>490</integer>
 		</dict>
+		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>3015</integer>
+			<key>ypos</key>
+			<integer>1000</integer>
+		</dict>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<dict>
 			<key>colorindex</key>
@@ -7331,18 +6827,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>615</integer>
 		</dict>
-		<key>E123A763-7B2A-478A-8E89-23CD1D42B4BD</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>run pdfannots 
-(= extracts annotations)</string>
-			<key>xpos</key>
-			<integer>1785</integer>
-			<key>ypos</key>
-			<integer>365</integer>
-		</dict>
 		<key>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</key>
 		<dict>
 			<key>colorindex</key>
@@ -7359,7 +6843,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>gets file_path</string>
 			<key>xpos</key>
-			<integer>1620</integer>
+			<integer>1660</integer>
 			<key>ypos</key>
 			<integer>1145</integer>
 		</dict>
@@ -7373,15 +6857,6 @@ Start Annotation Export</string>
 			<integer>790</integer>
 			<key>ypos</key>
 			<integer>540</integer>
-		</dict>
-		<key>ED1EBC82-7F3A-4B49-A138-E66E65277EE8</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>1615</integer>
-			<key>ypos</key>
-			<integer>120</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
@@ -7400,17 +6875,6 @@ Start Annotation Export</string>
 			<integer>1590</integer>
 			<key>ypos</key>
 			<integer>585</integer>
-		</dict>
-		<key>F1587940-5AB6-4CCC-9ED8-E40B8B43D6EE</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>save annotations</string>
-			<key>xpos</key>
-			<integer>2140</integer>
-			<key>ypos</key>
-			<integer>615</integer>
 		</dict>
 		<key>F17CB256-A45D-4053-B50A-D46D9F01BEBB</key>
 		<dict>
@@ -7521,7 +6985,7 @@ Image Insert (Obsidian only)</string>
 			<key>colorindex</key>
 			<integer>2</integer>
 			<key>xpos</key>
-			<integer>1705</integer>
+			<integer>1730</integer>
 			<key>ypos</key>
 			<integer>1145</integer>
 		</dict>
@@ -7538,14 +7002,11 @@ Image Insert (Obsidian only)</string>
 		<string>obsidian</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
-		<key>tags</key>
-		<string>blubb</string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>tags</string>
 		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
