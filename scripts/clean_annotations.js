@@ -33,6 +33,7 @@ function run(argv) {
 			delete a.text;
 			delete a.contents;
 			if (a.type === "Text") a.type = "Free Comment";
+			if (a.type === "StrikeOut") a.type = "Strikethrough";
 			return a;
 		});
 	};
@@ -61,6 +62,18 @@ function run(argv) {
 				a.page = a.page.toString();
 				return a;
 			});
+	};
+
+	Array.prototype.splitOffUnderlines = function () {
+		if (!underlinesSecondOutput) return this;
+
+		const arr = this.filter (a => a.type !== "Underline");
+		let underlineAnnos = this.filter (a => a.type === "Underline");
+		if (underlineAnnos) underlineAnnos = underlineAnnos.JSONtoMD();
+		else underlineAnnos = "none";
+
+		setAlfredEnv("underlines", underlineAnnos);
+		return arr;
 	};
 
 	Array.prototype.JSONtoMD = function () {
@@ -98,6 +111,16 @@ function run(argv) {
 					}
 					if (!comment) output = "> \""+ a.quote + "\"" + reference;
 					break;
+				case "Strikethrough":
+					if (comment) {
+						output = "- "
+						+ annotationTag
+						+ "*" + comment + "*: "
+						+ "~~\"" + a.quote + "\"~~"
+						+ reference;
+					}
+					if (!comment) output = "> ~~\""+ a.quote + "\"~~" + reference;
+					break;
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
 					break;
@@ -121,19 +144,6 @@ function run(argv) {
 			return output;
 		});
 		return arr.join("\n");
-	};
-
-	// underlines as secondary output
-	Array.prototype.splitOffUnderlines = function () {
-		if (!underlinesSecondOutput) return this;
-
-		const arr = this.filter (a => a.type !== "Underline");
-		let underlineAnnos = this.filter (a => a.type === "Underline");
-		if (underlineAnnos) underlineAnnos = underlineAnnos.JSONtoMD();
-		else underlineAnnos = "none";
-
-		setAlfredEnv("underlines", underlineAnnos);
-		return arr;
 	};
 
 	// Annotation Code Methods

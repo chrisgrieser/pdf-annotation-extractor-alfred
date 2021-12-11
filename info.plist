@@ -2095,25 +2095,21 @@ tell application "PDF Expert" to activate</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>qlmanage -p "annoation-code-cheatsheet.pdf"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>browser</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#annotation-codes</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>C15A23BF-194F-4054-A4D9-B8CEA4CBE6A4</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -6686,8 +6682,6 @@ Start Annotation Export</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>11</integer>
-			<key>note</key>
-			<string>Quicklook the Cheatsheet</string>
 			<key>xpos</key>
 			<integer>170</integer>
 			<key>ypos</key>
@@ -6916,7 +6910,8 @@ these 5 above can be double-clicked to configure the formatting
 			<key>note</key>
 			<string>Double Click to define Hotkey
 
-Image Insert (Obsidian only)</string>
+Image Insert
+(Obsidian only)</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
