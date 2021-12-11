@@ -1,195 +1,286 @@
 #!/usr/bin/env osascript -l JavaScript
 function run(argv) {
 	ObjC.import("stdlib");
-	let annotations = argv.join("");
 
-	// prior cleaning
-	annotations = annotations
-		.replace(/ {2,}/g, " ") // multiple spaces
-		.replace(/\n{2,}/g, "\n") // empty lines
-		.replaceAll("\"", "'")
-		.replaceAll("„", "'")
-		.replaceAll("...", "…")
-		.replaceAll(". . .", "…")
-		.replaceAll("Page Image ", "Page ") // not properly renamed scans
-		.replace("## Detailed comments\n", ""); // remove heading
+	// only for testing purposes
+	//---------------------------------------------------------------
+
+	const firstPageNo = 7;
+	const hasBibtexEntry = true;
+	const underlinesSecondOutput = true;
+	const citekey = "Grieser2020";
+	let keywords = "blubb";
 
 	// import Alfred variables
-	let pandocCite;
-	const firstPageNo = parseInt($.getenv("first_page_no")) - 1;
-	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
+	//---------------------------------------------------------------
+	// const firstPageNo = parseInt($.getenv("first_page_no"));
+	// const underlinesSecondOutput = $getenv("underlines_second_output") === true;
+	// const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
+	// let citekey;
+	// if (hasBibtexEntry) citekey = $.getenv("citekey");
+	// else citekey = "";
+	// let keywords = $.getenv("keywords");
 
-	if (hasBibtexEntry) pandocCite = "@" + $.getenv("citekey") + ", ";
-	else pandocCite = "";
+	// Core Methods
+	// --------------------------------------------------------------
 
-	// reformat pdfannots' output & insert proper numbers
-	annotations = annotations
-		// re-format free comments
-		.replace(
-			/ \* Page #?(\d+).*?:[\n| ]?([^*>]+)(?=\n)/gm,
-			"- *$2 [" + pandocCite + "p. $1]*"
-		)
-		// re-format commented highlights; lookahead ensures recognition of multi-line-comments
-		// in face of another highlight, document-end, or an already re-formatted free comment
-		.replace(
-			/ \* Page #?(\d+).*?:\n +> +(.*?)\n (.*?)(?=\n-|\n \*|\n$)/gs,
-			"- __$3:__ \"$2\" [" + pandocCite + "p. $1]"
-		)
-		// reformat multi-line-highlights properly
-		.replace(
-			/- __[^"]*\n[^"]*:__/gm,
-			function (ml) {
-				let output = "";
-				const lines = ml.slice(4, -3).split("\n");
-				lines.forEach(line => {
-					output += "- __" + line.trim() + "__\n";
-				});
-				return output + "-";
+	Array.prototype.betterKeys = function () {
+		return this.map (a => {
+			delete a.start_xy;
+			delete a.author;
+			delete a.created;
+
+			a.quote = a.text;
+			a.comment = a.contents;
+			delete a.text;
+			delete a.contents;
+			if (a.type === "Text") a.type = "Free Comment";
+			return a;
+		});
+	};
+
+	Array.prototype.cleanQuoteKey = function () {
+		return this.map (a => {
+			if (!a.quote) return a; // free comments have no text
+			a.quote = a.quote
+				.replace(/ {2,}/g, " ") // multiple spaces
+				.replace(/["„”«»]/g, "'") // quotation marks
+				.replace(/\. ?\. ?\./g, "…"); // ellipsis
+			return a;
+		});
+	};
+
+	Array.prototype.insertAndCleanPageNo = function (pageNo) {
+		return this
+			// in case the page numbers have names like "image 1" instead of integers
+			.map (a => {
+				if (typeof(a.page) === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
+				return a;
+			})
+			.map (a => {
+				a.page += pageNo;
+				a.page--;
+				a.page = a.page.toString();
+				return a;
+			});
+	};
+
+	Array.prototype.JSONtoMD = function () {
+		return this.map (a => {
+			let annotationTag, comment, output, reference;
+
+			// uncommented highlights or underlines
+			if (a.comment) comment = a.comment.trim();
+			else comment = "";
+
+			// separate out leading annotation tags
+			if (/#\w/.test(comment)) {
+				const tempArr = comment.split(" ");
+				annotationTag = tempArr.shift() + " ";
+				comment = tempArr.join(" ");
 			}
-		)
-		// insert correct page numbers based on https://stackoverflow.com/a/32664436
-		.replace(
-			/p\. (\d+)(?=\])/g,
-			function (match, n) {
-				return "p. " + (parseInt(n) + firstPageNo);
+			else {
+				annotationTag = "";
 			}
-		);
+
+			// Pandoc Citation
+			if (hasBibtexEntry) reference = " [@" + citekey + ", p. " + a.page + "]";
+			else reference = "";
+
+			// type specific output
+			switch (a.type) {
+				case "Highlight":
+				case "Underline":
+					if (comment) {
+						output = "- "
+						+ annotationTag
+						+ "__" + comment + "__: "
+						+ "\"" + a.quote + "\""
+						+ reference;
+					}
+					if (!comment) output = "> \""+ a.quote + "\"" + reference;
+					break;
+				case "Free Comment":
+					output = "- " + annotationTag + "*" + comment + reference + "*";
+					break;
+				case "Heading":
+					output = "\n" + comment;
+					break;
+				case "hr":
+					output = "\n---\n";
+					break;
+				case "Pseudo-Admonition":
+					output = "###### " + comment + "\n";
+					break;
+				case "Task":
+					output = "- [ ] " + comment;
+					break;
+				case "Image":
+					output = "\n![[" + comment + "]]\n";
+					break;
+			}
+
+			return output;
+		});
+	};
 
 
-	// SPECIAL ANNOTATION CODES
+	// Annotation Code Methods
+	// --------------------------------------------------------------
 
-	// "+" and "++" (highlights)
-	// merge quotes with preceding quote
-	annotations = annotations
-		// "+": highlights on one page
-		.replace(
-			/" \[.*p\. (\d+)\]\n- __\+:__ "(.*?)" \[.*p\. /g,
-			" (…) $2\" [" + pandocCite + "p. $1-"
-		)
-		// "++": highlights spanning two page
-		.replace(
-			/" \[.*p\. (\d+)\]\n- __\+\+:__ "(.*?)" \[.*p\. /g,
-			" $2\" [" + pandocCite + "p. $1-"
-		)
-		// corrects page number for quotes merged on the same page
-		.replace(/p\. (\d+)-(\1)\]/g, "p. $1]");
+	// "+" and "++"
+	Array.prototype.mergeQuotes = function () {
+		// can start at one, since the first element cant
+		// be merged to a predecessor
+		for (let i = 1; i < this.length; i++) {
+			if (this[i].type === "Free Comment" || !this[i].comment) continue;
 
-	// "## " (free comments & highlights)
-	// make into heading
-	annotations = annotations
-		.replace(/- \*(#+) (.*?)\[.*?]\*/g, "\n$1 $2") // free comments
-		.replace(/- __(#+) ?:__ "(.*?)".*?\]/g, "\n$1 $2"); // highlights
+			let connector = " ";
+			if (this[i].comment === "+") connector = " (…) ";
 
-	// "---" (free comments) becomes hr line
-	annotations = annotations
-		.replace(/- \*--- ?\[.*?]\*/g, "\n---\n"); // free comments
+			if (this[i].comment === "++" || this[i].comment === "+") {
+				this[i-1].quote += connector + this[i].quote;
+				if (this[i-1].page !== this[i].page) this[i-1].page += "–" + this[i].page;
+				this.splice(i, 1); // remove element
+				i--; // to move index back, since element isn't there anymore
+			}
 
-	// "?" (free comments)
-	// make h6 & move up top (i.e., Pseudo-Admonitions)
-	const introRE = new RegExp(/- \*\? ?(.*?)\[.*?]\*/, "g");
-	let intros = annotations.match(introRE);
-	if (intros) {
-		intros = intros.map (item => item.replace(introRE, "###### $1"));
-		annotations = annotations
-			.replace(introRE, "ZZZZ")
-			.replaceAll("\nZZZZ", "");
-		annotations = intros.join("\n") + "\n\n" + annotations;
-	}
+		}
+		return this;
+	};
 
-	// "X " (free comments & highlights)
-	// make to do item & move up
-	const newTasks = [];
+	// "##"
+	Array.prototype.transformHeadings = function () {
+		return this.map(a => {
+			if (!a.comment) return a;
+			const hLevel = a.comment.match(/^#+(?!\w)/);
+			if (hLevel) {
+				if (a.type === "Highlight" || a.type === "Underline") {
+					a.comment = hLevel[0] + " " + a.quote;
+					delete a.quote;
+				}
+				a.type = "Heading";
+			}
+			return a;
+		});
+	};
 
-	// free comments
-	let tasksRE = new RegExp(/- \*X ?(.*?)\[.*?]\*/, "gi");
-	let tasksFc = annotations.match(tasksRE);
-	if (tasksFc) {
-		tasksFc = tasksFc.map (item => item.replace(tasksRE, "- [ ] $1"));
-		annotations = annotations
-			.replace(tasksRE, "ZZZZ")
-			.replaceAll("\nZZZZ", "");
-		newTasks.push(...tasksFc);
-	}
-	// highlights
-	tasksRE = new RegExp(/- __X ?:__ "(.*?)".*?\]/, "gi");
-	let tasksHl = annotations.match(tasksRE);
-	if (tasksHl) {
-		tasksHl = tasksHl.map (item => item.replace(tasksRE, "- [ ] \"$1\""));
-		annotations = annotations
-			.replace(tasksRE, "ZZZZ")
-			.replaceAll("\nZZZZ", "");
-		newTasks.push(...tasksHl);
-	}
+	// "---"
+	Array.prototype.transformHr = function () {
+		return this.map(a => {
+			if (a.type === "Free Comment" && a.comment === "---") a.type = "hr";
+			return a;
+		});
+	};
 
-	// merge into task section
-	if (newTasks.length) {
-		annotations =
-			newTasks.join("\n") + "\n"
-			+ "\n---\n"
-			+ annotations;
-	}
+	// "?"
+	Array.prototype.pseudoAdmonition = function () {
+		let annoArr = this.map(a => {
+			if (!a.comment) return a;
+			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
+				a.type = "Pseudo-Admonition";
+				a.comment = a.comment.slice(1).trim();
+			}
+			return a;
+		});
+		const pseudoAdmos = annoArr.filter(a => a.type === "Pseudo-Admonition");
+		annoArr = annoArr.filter(a => a.type !== "Pseudo-Admonition");
+		return [...pseudoAdmos, ...annoArr];
+	};
 
-	// "!1 " (free comment)
-	// Insert 1st (2nd,...) image and gives it the rest of the comment as label
-	// Obsidian: inserts `![[]]`, else: inserts numbered marker
-	const imageRE = new RegExp (/- \*!(\d+) ?(.*?) ?\[.*\*/, "g");
-	if ($.getenv("output_style") === "obsidian") {
+	// "X"
+	Array.prototype.transformTasks = function () {
+		let annoArr = this.map(a => {
+			if (!a.comment) return a;
+			if (a.comment.startsWith("X")) {
+				a.comment = a.comment.slice(1).trim();
+				if (a.type === "Highlight" || a.type === "Underline") {
+					a.comment += " " + a.quote;
+					delete a.quote;
+				}
+				a.type = "Task";
+			}
+			return a;
+		});
+		const taskArr = annoArr.filter(a => a.type === "Task");
+		if (taskArr.length) {
+			taskArr.unshift ( { "type": "Heading", "comment": "## Tasks" } );
+			taskArr.push ( { "type": "hr" } );
+		}
+
+		annoArr = annoArr.filter(a => a.type !== "Task");
+		return [...taskArr, ...annoArr];
+	};
+
+	// "!n"
+	Array.prototype.insertImageMarker = function () {
 		let filename;
-		if (hasBibtexEntry) filename = $.getenv("citekey");
+		if (hasBibtexEntry) filename = citekey;
 		else filename = (new Date()).toISOString().slice(0, 10);
 
-		annotations = annotations.replace(imageRE, "\n![[" + filename + "_image$1.png|$2]]\n");
-	} else {
-		annotations = annotations.replace(imageRE, "\n==((Image $1))==\n*$2*\n");
-	}
+		return this.map (a => {
+			if (!a.comment) return a;
+			const imageStr = a.comment.match (/^!(\d+) ?(.*)/);
+			if (a.type === "Free Comment" && imageStr) {
+				a.type = "Image";
+				const imageNo = imageStr[1];
+				const imageAlias = imageStr[2];
+				a.comment = filename + "_image"+ imageNo + ".png|"+ imageAlias;
+			}
+			return a;
+		});
+	};
 
-	// "=" (free comments & highlights)
-	// becomes a keyword (tag in the yaml)
-	let newKeywords = [];
+	// "="
+	Array.prototype.transformTag4yaml = function () {
+		let newKeywords = [];
+		const arr = this
+			.map (a => {
+				if (!a.comment) return a;
+				if (a.comment.startsWith("=")) {
+					newKeywords.push (a.comment.slice(1).trim());
+					a.type = "remove";
+				}
+				return a;
+			})
+			.filter (a => a.type !== "remove");
 
-	// free comments
-	let keywordRE = new RegExp(/- \*= ?(.*?)\[.*?]\*/, "g");
-	let keywordFc = annotations.match(keywordRE);
-	if (keywordFc) {
-		keywordFc = keywordFc.map (item => item.replace(keywordRE, "$1"));
-		annotations = annotations
-			.replace(keywordRE, "ZZZZ")
-			.replaceAll("\nZZZZ", "");
-		newKeywords.push(...keywordFc);
-	}
-	// highlights
-	keywordRE = new RegExp(/- __= ?:__ "(.*?)".*?\]/, "g");
-	let keywordHl = annotations.match(keywordRE);
-	if (keywordHl) {
-		keywordHl = keywordHl.map (item => item.replace(keywordRE, "$1"));
-		annotations = annotations
-			.replace(keywordRE, "ZZZZ")
-			.replaceAll("\nZZZZ", "");
-		newKeywords.push(...keywordHl);
-	}
-	let newValue = "";
-	if (newKeywords.length) {
-		newKeywords =
-			[... new Set (newKeywords)] // unique only
+		if (newKeywords.length) {
+			newKeywords = [... new Set (newKeywords)] // unique only
 				.map (kw => kw.trim().replaceAll(" ", "-"));
-		newValue = $.getenv("keywords") + ", " + newKeywords.join(", ");
-	} else {
-		newValue = $.getenv("keywords");
-	}
-	// Variablenname für tags muss gewechselt werden, weil Alfred
-	// sich sonst weigert diese zu überschreiben...
-	Application("com.runningwithcrayons.Alfred").setConfiguration ("tags", {
-		toValue: newValue,
-		inWorkflow: $.getenv("alfred_workflow_bundleid"),
-		exportable: false
-	});
+			keywords += ", " + newKeywords.join(", ");
+		}
+		// variable name has to be changed so Alfred accepts it >:(
+		Application("com.runningwithcrayons.Alfred").setConfiguration ("tags", {
+			toValue: keywords,
+			inWorkflow: $.getenv("alfred_workflow_bundleid"),
+			exportable: false
+		});
+
+		return arr;
+	};
 
 
-	// fix for Annotations beginning with `#tags` (e.g. Annotation Tags)
+	// Main
+	// --------------------------------------------------------------
+
+	let annotations = JSON.parse(argv.join(""))
+		.betterKeys()
+		.insertAndCleanPageNo(firstPageNo)
+		.cleanQuoteKey()
+		.mergeQuotes()
+		.transformHeadings()
+		.transformHr()
+		.pseudoAdmonition()
+		.transformTasks()
+		.insertImageMarker()
+		.transformTag4yaml();
+
+	if (underlinesSecondOutput) annotations.filter (a => a.type !== "Underline");
+
 	annotations = annotations
-		.replace(/__(#\w+):__/g, "$1") // annotations-tag only (highlight)
-		.replace(/__(#\w+)\b */g, "$1 __") // annotation-tag followed by text (highlight)
-		.replace(/\*(#\w+)\b */g, "$1 *"); // annotation-tag followed by text (free comment)
-	
-	return annotations;
+		.JSONtoMD()
+		.join ("\n");
+
+	return annotations + "\n";
 }
