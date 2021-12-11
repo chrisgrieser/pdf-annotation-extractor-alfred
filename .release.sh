@@ -33,7 +33,7 @@ excludedVars=$(plutil -extract variablesdontexport json -o - info.plist | tr -d 
 # remove from info.plist
 echo "$excludedVars" | tr "\n" "\0" | xargs -0 -I § plutil -replace variables.§ -string "" info.plist
 
-# report exluded number
+# report excluded number
 exclusionNo=$(echo $excludedVars | wc -l | tr -d " ")
 echo "Removed $exclusionNo variables flagged as 'no export' removed from 'info.plist'."
 
@@ -56,7 +56,7 @@ mv -v info-original.plist info.plist
 echo ""
 
 # Update Changelog
-git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "typos?$" > ./Changelog.md
+git log --pretty=format:"- %ad%x09%s" --date=short | grep -Ev "typos?$" | grep -Ev "minor$" > ./Changelog.md
 
 # --------------------
 # git push
