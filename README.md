@@ -37,8 +37,6 @@ The *correct* page numbers will automatically be determined from one of three so
 ## Annotation Codes
 Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
-### Highlights & Free Comments
-
 - `+` **(highlights)**: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
 - `++` **(highlights)**: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
 - `? foo` **(comments)**: Turns "foo" into h6 & move up to the top. (Used for Introductory Comments or Questions ("Pseudo-Admonitions")):
@@ -52,10 +50,6 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 - (upcoming) `---` **(free comments)**: Turns the comment into an markdown hr (`---`). 
 
 ℹ️ **multi-line-annotations** only work in highlights for now, but not yet in free comments.
-
-### Underlines (upcoming)
-- `+`: Merge with previous highlight and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both Pages will be included in the citation.
-- `++`: Merge with previous highlight. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
 
 ## Extra Features
 - When using Obsidian, the wikilink is also copied to the clipboard
@@ -137,3 +131,5 @@ _Use the Alfred keyword `aconf` for the configuration of this workflow._
 
 ### About the Author
 This workflow has been created by [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
+
+[⬆️ Go Back to Top](#Table-of-Contents)
