@@ -4033,9 +4033,9 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>scripts/finish-and-debug.js</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -5857,13 +5857,13 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 		<key>39404419-C091-4379-A868-22D8A2854023</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>note</key>
 			<string>remove temporary environment variables</string>
 			<key>xpos</key>
 			<integer>3175</integer>
 			<key>ypos</key>
-			<integer>1125</integer>
+			<integer>1130</integer>
 		</dict>
 		<key>3E4CC6CD-B1E5-4DCF-9C06-C05748422A49</key>
 		<dict>
