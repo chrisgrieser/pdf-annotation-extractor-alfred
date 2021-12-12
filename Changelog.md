@@ -1,3 +1,5 @@
+- 2021-12-12	better debugging logging
+- 2021-12-11	release 4.5
 - 2021-12-11	updated release workflow
 - 2021-12-11	simpler `acode` and fixes for Readme
 - 2021-12-11	finished JSON rewrite (2nd output from underlines)
