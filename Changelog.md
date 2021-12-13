@@ -1,3 +1,5 @@
+- 2021-12-13	improved debugging
+- 2021-12-12	release 4.5.1
 - 2021-12-12	better debugging logging
 - 2021-12-11	release 4.5
 - 2021-12-11	updated release workflow
