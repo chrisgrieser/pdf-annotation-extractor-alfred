@@ -1,22 +1,46 @@
 #!/usr/bin/env osascript -l JavaScript
 
-ObjC.import("stdlib");
-const app = Application.currentApplication();
-app.includeStandardAdditions = true;
+function run () {
+	ObjC.import("stdlib");
+	const app = Application.currentApplication();
+	app.includeStandardAdditions = true;
 
-// remove config
-Application("com.runningwithcrayons.Alfred").removeConfiguration("underlines", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
-Application("com.runningwithcrayons.Alfred").removeConfiguration("tags", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
-Application("com.runningwithcrayons.Alfred").removeConfiguration("annotations", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
+	// either logs to console or returns for clipboard
+	function log (str) { console.log (str) }
+	const onlineJSON = url => JSON.parse(app.doShellScript("curl -sL '" + url + "'"));
 
-// log Version info to debugging log
-const logPath = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.log";
-const obsiVersion = app.doShellScript("grep -Eo -m 1 \"version is [0-9.]+\" \"" + logPath + "\" | cut -c12-" || true);
-const macVersion = app.doShellScript("sw_vers -productVersion");
 
-console.log("-------------------------------");
-console.log("Alfred version: " + $.getenv("alfred_version"));
-console.log("Workflow version: " + $.getenv("alfred_workflow_version"));
-console.log("Obsidian version: " + obsiVersion);
-console.log("macOS version: " + macVersion);
+	// remove config
+	Application("com.runningwithcrayons.Alfred").removeConfiguration("underlines", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
+	Application("com.runningwithcrayons.Alfred").removeConfiguration("tags", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
+	Application("com.runningwithcrayons.Alfred").removeConfiguration("annotations", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
 
+	// stop when no debugging required https://www.alfredapp.com/help/workflows/script-environment-variables/
+	if ($.getenv("alfred_debug") !== "1") return;
+
+	// log Version info to debugging log
+	const logPath = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.log";
+	const obsiVer = app.doShellScript("grep -Eo \"version is [0-9.]+\" \"" + logPath + "\" | tail -n1 | cut -c12-" || true);
+	const macVer = app.doShellScript("sw_vers -productVersion");
+
+	const obsiVerOnline = onlineJSON("https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/desktop-releases.json")
+		.latestVersion;
+	const obsiVerBetaOnline = onlineJSON("https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/desktop-releases.json")
+		.beta.latestVersion;
+	const workflowVerOnline = onlineJSON("https://api.github.com/repos/chrisgrieser/shimmering-obsidian/tags")[0]
+		.name;
+
+	log(" ");
+	log("-------------------------------");
+	log("INSTALLED VERSION");
+	log("macOS: " + macVer);
+	log("Obsidian: " + obsiVer);
+	log("Alfred: " + $.getenv("alfred_version"));
+	log("Workflow: " + $.getenv("alfred_workflow_version"));
+	log("-------------------------------");
+	log("LATEST VERSION");
+	log("Obsidian: " + obsiVerOnline);
+	log("Obsidian (Insider): " + obsiVerBetaOnline);
+	log("Workflow: " + workflowVerOnline);
+	log("-------------------------------");
+}
