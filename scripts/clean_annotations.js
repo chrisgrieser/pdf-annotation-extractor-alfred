@@ -130,8 +130,8 @@ function run(argv) {
 				case "hr":
 					output = "\n---\n";
 					break;
-				case "Pseudo-Admonition":
-					output = "###### " + comment + "\n";
+				case "Checkbox Question":
+					output = "- [?] " + comment + "\n";
 					break;
 				case "Task":
 					output = "- [ ] " + comment;
@@ -195,17 +195,17 @@ function run(argv) {
 	};
 
 	// "?"
-	Array.prototype.pseudoAdmonition = function () {
+	Array.prototype.customCheckboxQuestion = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
 			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
-				a.type = "Pseudo-Admonition";
+				a.type = "Checkbox Question";
 				a.comment = a.comment.slice(1).trim();
 			}
 			return a;
 		});
-		const pseudoAdmos = annoArr.filter(a => a.type === "Pseudo-Admonition");
-		annoArr = annoArr.filter(a => a.type !== "Pseudo-Admonition");
+		const pseudoAdmos = annoArr.filter(a => a.type === "Checkbox Question");
+		annoArr = annoArr.filter(a => a.type !== "Checkbox Question");
 		return [...pseudoAdmos, ...annoArr];
 	};
 
@@ -288,7 +288,7 @@ function run(argv) {
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
-		.pseudoAdmonition()
+		.customCheckboxQuestion()
 		.transformTasks()
 		.insertImageMarker()
 		.transformTag4yaml()

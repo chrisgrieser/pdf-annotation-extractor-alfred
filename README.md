@@ -47,7 +47,7 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 
 - `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both pages will be included in the citation.
 - `++`: Merge with previous highlight/underline. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
-- `? foo` **(free comments)**: Turns "foo" into h6 & move up to the top. (Used for Introductory Comments or Questions).
+- `? foo` **(free comments)**: Turns "foo" into a custom-checkbox[^1] `- [?] ` and move up. (Used for Introductory Comments or Questions).
 - `##`: Turns highlighted/underlined text into a markdown heading that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
 - `---` **(free comments)**: Inserts a markdown hr (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a task and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
@@ -131,3 +131,5 @@ __Donations__ are welcome via [PayPal](https://www.paypal.com/paypalme/ChrisGrie
 __About the Developer__: This workflow has been created by [@pseudo_meta (Twitter)](https://twitter.com/pseudo_meta) aka Chris Grieser (rl). In my day job, I am a PhD student in sociology, studying the governance of the app economy. If you are interested in this subject, check out [my academic homepage](https://chris-grieser.de/) and get in touch.
 
 [⬆️ Go Back to Top](#Table-of-Contents)
+
+[^1]: These are a feature exclusive to Obsidian with [certain CSS snippets](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/S%20-%20Checkboxes.css).
