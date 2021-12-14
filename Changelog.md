@@ -1,3 +1,6 @@
+- 2021-12-14	+ switched pseudoadmonitions to custom checkboxes
+- 2021-12-14	Update README.md
+- 2021-12-13	release 4.5.2
 - 2021-12-13	improved debugging
 - 2021-12-12	release 4.5.1
 - 2021-12-12	better debugging logging
