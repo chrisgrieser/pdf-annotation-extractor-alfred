@@ -1,3 +1,5 @@
+- 2021-12-15	+ when using Drafts, open Draft after annotation extraction
+- 2021-12-14	release 4.5.3
 - 2021-12-14	+ switched pseudoadmonitions to custom checkboxes
 - 2021-12-14	Update README.md
 - 2021-12-13	release 4.5.2
