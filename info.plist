@@ -210,6 +210,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3D475A5-260F-4CE8-96D6-2C3D4A058444</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>24D55235-69D3-48FA-B0A2-8D061B12209D</key>
 		<array>
 			<dict>
@@ -470,7 +483,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>88CAA660-62D2-4ADC-BC65-FA21E7379285</string>
+				<string>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -999,19 +1012,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>88CAA660-62D2-4ADC-BC65-FA21E7379285</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<array>
 			<dict>
@@ -1089,6 +1089,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FBFAD844-0211-4F50-B344-6AAD97D41894</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1278,6 +1291,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A3D475A5-260F-4CE8-96D6-2C3D4A058444</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35144697-AB0F-4433-872A-44BC27DFF752</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A503D151-F1FC-4262-A6F7-02F374B9786F</key>
 		<array>
 			<dict>
@@ -1308,32 +1334,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>295DD35F-44FB-4D24-AAB6-58B62558CB3C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>A5C866AD-1E2D-429E-B578-B49CECD2E2E0</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>35144697-AB0F-4433-872A-44BC27DFF752</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>A6A72D26-4A2E-4E94-9F94-E4CF2EBD65CF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A5C866AD-1E2D-429E-B578-B49CECD2E2E0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1553,7 +1553,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A6A72D26-4A2E-4E94-9F94-E4CF2EBD65CF</string>
+				<string>22C43488-3D00-4C04-B5E2-318560A8B196</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -3381,6 +3381,29 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/create-new-draft.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A3D475A5-260F-4CE8-96D6-2C3D4A058444</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -3402,34 +3425,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>input=$(cat "$*" | tr '"' "'")
-
-osascript -e "tell application \"Drafts\"
-    make new draft with properties {content: \"$input\", tags: {\"pdf-annotations\"}}
-	activate
-end tell"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A5C866AD-1E2D-429E-B578-B49CECD2E2E0</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>triggerid</key>
 				<string>number-input-loop</string>
 			</dict>
@@ -3443,29 +3438,17 @@ end tell"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>adduuid</key>
+				<key>argument</key>
+				<string>{var:annotations}</string>
+				<key>passthroughargument</key>
 				<false/>
-				<key>allowemptyfiles</key>
-				<false/>
-				<key>createintermediatefolders</key>
-				<true/>
-				<key>filename</key>
-				<string>temp.md</string>
-				<key>filetext</key>
-				<string># {var:citekey} – {var:title}
-
-{var:annotations}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>1</integer>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>A6A72D26-4A2E-4E94-9F94-E4CF2EBD65CF</string>
+			<string>22C43488-3D00-4C04-B5E2-318560A8B196</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3705,84 +3688,6 @@ app.openLocation(urlscheme);</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>input=$(cat "$*" | tr '"' "'")
-
-osascript -e "tell application \"Drafts\"
-    make new draft with properties {content: \"$input\", tags: {\"underlines"}}
-end tell"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<false/>
-				<key>createintermediatefolders</key>
-				<true/>
-				<key>filename</key>
-				<string>temp.md</string>
-				<key>filetext</key>
-				<string># {var:citekey}
-_{var:title}_
-
-{var:underlines}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>88CAA660-62D2-4ADC-BC65-FA21E7379285</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -3851,6 +3756,50 @@ _{var:title}_
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/create-new-draft.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>*️⃣ Underlines saved in Drafts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string> </string>
 				<key>passthroughargument</key>
@@ -3862,6 +3811,23 @@ _{var:title}_
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:underlines}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -5776,6 +5742,15 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>ypos</key>
 			<integer>840</integer>
 		</dict>
+		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>1795</integer>
+			<key>ypos</key>
+			<integer>875</integer>
+		</dict>
 		<key>24D55235-69D3-48FA-B0A2-8D061B12209D</key>
 		<dict>
 			<key>colorindex</key>
@@ -5843,7 +5818,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>2260</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>845</integer>
 		</dict>
 		<key>359F151F-4012-4011-A721-327A59E0AF89</key>
 		<dict>
@@ -5859,9 +5834,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>note</key>
-			<string>remove temporary environment variables</string>
+			<string>remove temporary environment variables &amp; debug</string>
 			<key>xpos</key>
-			<integer>3175</integer>
+			<integer>3050</integer>
 			<key>ypos</key>
 			<integer>1130</integer>
 		</dict>
@@ -6009,9 +5984,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>2860</integer>
+			<integer>2770</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>1040</integer>
 		</dict>
 		<key>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</key>
 		<dict>
@@ -6272,15 +6247,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>645</integer>
 		</dict>
-		<key>88CAA660-62D2-4ADC-BC65-FA21E7379285</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>2710</integer>
-			<key>ypos</key>
-			<integer>1000</integer>
-		</dict>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<dict>
 			<key>colorindex</key>
@@ -6309,6 +6275,15 @@ Start Annotation Export</string>
 			<integer>555</integer>
 			<key>ypos</key>
 			<integer>1530</integer>
+		</dict>
+		<key>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>2710</integer>
+			<key>ypos</key>
+			<integer>1070</integer>
 		</dict>
 		<key>92AB51FB-020B-47D9-8AD3-3D1A351C6867</key>
 		<dict>
@@ -6455,6 +6430,17 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>820</integer>
 		</dict>
+		<key>A3D475A5-260F-4CE8-96D6-2C3D4A058444</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>create new Draft</string>
+			<key>xpos</key>
+			<integer>2115</integer>
+			<key>ypos</key>
+			<integer>845</integer>
+		</dict>
 		<key>A503D151-F1FC-4262-A6F7-02F374B9786F</key>
 		<dict>
 			<key>colorindex</key>
@@ -6472,26 +6458,6 @@ Start Annotation Export</string>
 			<integer>1385</integer>
 			<key>ypos</key>
 			<integer>1420</integer>
-		</dict>
-		<key>A5C866AD-1E2D-429E-B578-B49CECD2E2E0</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>create new Draft</string>
-			<key>xpos</key>
-			<integer>2115</integer>
-			<key>ypos</key>
-			<integer>855</integer>
-		</dict>
-		<key>A6A72D26-4A2E-4E94-9F94-E4CF2EBD65CF</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>1850</integer>
-			<key>ypos</key>
-			<integer>855</integer>
 		</dict>
 		<key>A7323E84-86A9-4D7E-93C2-5968D1763BD9</key>
 		<dict>
@@ -6647,7 +6613,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>1500</integer>
 			<key>ypos</key>
-			<integer>885</integer>
+			<integer>875</integer>
 		</dict>
 		<key>BC076709-F221-436F-88DE-401BA8D595DA</key>
 		<dict>
@@ -6750,9 +6716,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>3015</integer>
+			<integer>2915</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>1040</integer>
 		</dict>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<dict>
@@ -6876,7 +6842,7 @@ Start Annotation Export</string>
 			<integer>8</integer>
 			<key>note</key>
 			<string>⬆️⬆️⬆️⬆️⬆️
-these 5 above can be double-clicked to configure the formatting
+these 4 above can be double-clicked to configure the formatting
 ⬆️⬆️⬆️⬆️⬆️</string>
 			<key>xpos</key>
 			<integer>1885</integer>
@@ -6987,6 +6953,9 @@ Image Insert
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>annotations</key>
+		<string>&gt; "programs [IRPs]). How such programs emerge during the early career phase is still poorly understood. Drawing on semistructured interviews with German ECRs in plant biology, experimental physics, and early modern history, we show that the development of such a plan is a research process in itself." [@LaudelBielick2018, p. 1]
+- __est__: "udies tend to focus on career success such as achieving a tenured position (e.g., Jungbauer-Gans and Gross 2013; Lutter and Schro¨der 2016), career satisfac" [@LaudelBielick2018, p. 2]</string>
 		<key>bibtex_library_path</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/BibDesk/My Library.bib</string>
 		<key>citekey_insertion</key>
@@ -6997,15 +6966,22 @@ Image Insert
 		<string>obsidian</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
+		<key>tags</key>
+		<string>Wissenschaft, epistemic-Regimes, Karriere, Mechanismen, Operationsbedingung</string>
+		<key>underlines</key>
+		<string>- __dies!__: "dies. In contrast, observations by science studies suggest that, at least in some fields, becoming independent involves more than the ability to autonomous" [@LaudelBielick2018, p. 2]</string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
+		<string>annotations</string>
+		<string>tags</string>
 		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
 		<string>obsidian_destination</string>
+		<string>underlines</string>
 	</array>
 	<key>version</key>
 	<string>4.5.3</string>

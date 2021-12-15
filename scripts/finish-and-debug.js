@@ -30,7 +30,7 @@ function run () {
 	const workflowVerOnline = onlineJSON("https://api.github.com/repos/chrisgrieser/shimmering-obsidian/tags")[0]
 		.name;
 
-	log(" ");
+	log("_");
 	log("-------------------------------");
 	log("INSTALLED VERSION");
 	log("macOS: " + macVer);
