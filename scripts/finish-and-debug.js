@@ -9,7 +9,6 @@ function run () {
 	function log (str) { console.log (str) }
 	const onlineJSON = url => JSON.parse(app.doShellScript("curl -sL '" + url + "'"));
 
-
 	// remove config
 	Application("com.runningwithcrayons.Alfred").removeConfiguration("underlines", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
 	Application("com.runningwithcrayons.Alfred").removeConfiguration("tags", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
@@ -19,8 +18,8 @@ function run () {
 	if ($.getenv("alfred_debug") !== "1") return;
 
 	// log Version info to debugging log
-	const logPath = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.log";
-	const obsiVer = app.doShellScript("grep -Eo \"version is [0-9.]+\" \"" + logPath + "\" | tail -n1 | cut -c12-" || true);
+	const appTempPath = app.pathTo("home folder") + "/Library/Application Support/obsidian/";
+	const obsiVer = app.doShellScript("cd '" + appTempPath + "'; ls *.asar | grep -Eo '(\\d|\\.)*'").slice (0, -1);
 	const macVer = app.doShellScript("sw_vers -productVersion");
 
 	const obsiVerOnline = onlineJSON("https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/desktop-releases.json")
