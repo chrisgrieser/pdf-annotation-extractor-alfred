@@ -6984,7 +6984,7 @@ Image Insert
 		<string>underlines</string>
 	</array>
 	<key>version</key>
-	<string>4.6</string>
+	<string>4.6.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
