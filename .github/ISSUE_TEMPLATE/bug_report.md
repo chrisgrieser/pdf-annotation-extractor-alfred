@@ -20,9 +20,9 @@ Steps to reproduce the behavior:
 If applicable, add screenshots to help explain your problem.
 
 **Debugging Log**
-You can get a debugging log by opening the workflow in Alfred preferences and pressing cmd + D. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
+You can get a debugging log by opening the workflow in Alfred preferences and pressing `Cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach it as text file.
 
-```
+```text
 logdata
 ```
 
