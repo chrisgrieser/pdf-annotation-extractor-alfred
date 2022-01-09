@@ -131,7 +131,7 @@ function run(argv) {
 					output = "\n---\n";
 					break;
 				case "Checkbox Question":
-					output = "- [?] " + comment + "\n";
+					output = ">>> " + comment + "\n";
 					break;
 				case "Task":
 					output = "- [ ] " + comment;
