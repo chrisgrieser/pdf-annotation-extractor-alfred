@@ -1,6 +1,7 @@
 #!/usr/bin/env osascript -l JavaScript
 function run(argv) {
 	ObjC.import("stdlib");
+	ObjC.import("Foundation");
 
 	// import Alfred variables
 	//---------------------------------------------------------------
@@ -10,9 +11,15 @@ function run(argv) {
 	let citekey = "";
 	if (hasBibtexEntry) citekey = $.getenv("citekey");
 	let keywords = $.getenv("keywords");
+	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 
-	// Core Methods
-	// --------------------------------------------------------------
+	function readFile (path, encoding) {
+		if (!encoding) encoding = $.NSUTF8StringEncoding;
+		const fm = $.NSFileManager.defaultManager;
+		const data = fm.contentsAtPath(path);
+		const str = $.NSString.alloc.initWithDataEncoding(data, encoding);
+		return ObjC.unwrap(str);
+	}
 
 	function setAlfredEnv (envVar, newValue) {
 		Application("com.runningwithcrayons.Alfred").setConfiguration (envVar, {
@@ -21,6 +28,9 @@ function run(argv) {
 			exportable: false
 		});
 	}
+
+	// Core Methods
+	// --------------------------------------------------------------
 
 	Array.prototype.betterKeys = function () {
 		return this.map (a => {
@@ -280,7 +290,7 @@ function run(argv) {
 	// Main
 	// --------------------------------------------------------------
 
-	const annotations = JSON.parse(argv.join(""))
+	const annotations = JSON.parse(readFile(inputFile))
 		.betterKeys()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()

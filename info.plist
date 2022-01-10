@@ -2789,7 +2789,10 @@ return current_file</string>
 				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
 python3 -c "import pdfminer" 
-pdfannots "$file_path" --format json</string>
+
+mkdir -p "$alfred_workflow_cache"
+
+pdfannots "$file_path" --format json &gt; "$alfred_workflow_cache"/temp.json</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -6365,7 +6368,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>clean annotations</string>
 			<key>xpos</key>
-			<integer>1925</integer>
+			<integer>1940</integer>
 			<key>ypos</key>
 			<integer>585</integer>
 		</dict>
@@ -6958,25 +6961,54 @@ Image Insert
 	<key>variables</key>
 	<dict>
 		<key>annotations</key>
-		<string>- [?] Was ist eigentlich der Unterschied zwischen 'sozialer Innovation' und 'sozialer Wandel'? Was sind Beispiele für eine soziale Innovation (Versicherungen)?
+		<string>
+## Tasks
+- [ ] link to note on informaiton overload
 
-- [?] wie geht man mit einem Konzept um, dass so politisch aufgeladen ist wie das der sozialen Innovation?
+---
+
+&gt;&gt;&gt; Was heißt beduetet die Aussage, dass Geld ein generalisiertes Austauschmedium sei?
+
+&gt;&gt;&gt; Welche Methode der hat die digitale Werbeindustrie entwickelt, damit Werbung Euch auf jeden fall erreicht
 
 
-## Einleitung
-- #definition __Allgemeinverständnis des Begriffs "sozialer Innovation"__: "Ab Ende des 19. und im beginnenden 20. Jahrhundert kommt eine neue Begriffsbedeutung auf: Soziale Innovation als die Einführung oder Übernahme eines neuen Verhaltens oder einer neuen Praxis jedweder Art und in sämtlichen gesellschaftlichen Bereichen, beispielsweise im Geschlechterverhältnis, in Erziehung und Bildung, im Management, im Regierungsin etablierten Gewohnheiten und handeln ebenso wie im alltäglichen Leben, kulturellen Konventionen. Der Begriff wird zu einem allgemeinen Label, um beliebige soziale Phänomene und Prozesse des Wandels zu umschreiben" [@HowaldtSchwarz2019, p. 2]
-- __strategische Nutzung des Begriffs sozialer Innovation__: "Besonders häufig findet sich ein Bezug auf soziale Innovationen im Sinne eines die sozialen Aspekte betonenden Gegenstücks zu technologischen Innovationen" [@HowaldtSchwarz2019, p. 2]
-- #definition __Politik / Zivilgesellschaft__: "Im zivilgesellschaftlichen und politischen Diskurs herrscht die Position vor, dass es sich bei sozialen Innovationen um sozial wünschenswerte Problemlösungen, Lebensweisen, Projekte und Praktiken handelt, initiiert und getragen durch Aktivitäten von unten, neuen sozialen Bewegungen und/oder Social Entrepreneurship." [@HowaldtSchwarz2019, p. 3]
-- #important __Widersprüchlichkeit &amp; Normativität des Konzeptes__: "In der wissenschaftlichen Beschäftigung mit dem Thema stehen sich normative und nicht-normative Ansätze und dementsprechend unterschiedliche, zum Teil widersprüchliche und überwiegend deskriptive Definitionen gegenüber (Rüede und Lurtz 2012). Infolgedessen sind bei politischen Entscheidungsträgerinnen, wissenschaftlichen Institutionen und gesellschaftlichen Akteuren erhebliche Deutungsprobleme sowie widersprüchliche Verständnisse zu verzeichnen." [@HowaldtSchwarz2019, p. 3]
+## The Emergence of Attention Markets
+- __Werbung als die Erschaffung von Bedürfnissen, zu deren Bedürfnissen Produkte gekauft werden sollen__: "With an increase in wages and wealth, a new social class emerged: the bourgeoisie. Its members could spend money on products and services beyond the satisfaction of their primary needs. What needs came up? New needs would have to be awakened first." [@BachmannSiegert2021, p. 147]
+- #important __Basisthese__: "attention is a social phenomenon that, in modern society, is traded in markets on an industrial scale." [@BachmannSiegert2021, p. 148]
+&gt; "(a) To what extent is the generation of attention a social action? (b) How do markets emerge in which something as fleeting as attention is traded? (c) What causes change in attention markets? and (d) How are attention markets currently changing through digital transformation?" [@BachmannSiegert2021, p. 148]
+- __schwierige Messbarkeit von Aufmerksamkeit ➞ Medienreichweite als Substitut__: "Since attention takes place in the minds of other people, the amount and quality of attention are difficult to measure, (…) in practice, attention buyers and dealers use stopgap measures; they do not trade actual attention, but media reach, as a substitute, because its amount and quality are easier to measure. Media are institutions that bundle attention, which is why, in research and practice, attention markets appear in the form of media markets." [@BachmannSiegert2021, p. 148]
 
-## Stand der Forschung
-- #definition __Ogburn. soziale Innovation als Reaktion auf technische Innovation (cultural lag)__: "Sozialer Wandel wird als ein emergenter Prozess technische Veränderungen Auslöser sind und sozialen konzipiert, wobei meist Neuerungen zunächst primär die Funktion einer (verzögerten) Anpassung im Sinne einer 'kulturellen Phasenverschiebung' (Ogburn 1969, S. 64) zugeschrieben wird." [@HowaldtSchwarz2019, p. 4]
-- #definition __Zapf: soziale Innovation als Untermenge sozialen Wandels__: "'neue Wege, Ziele zu erreichen, insbesondere neue Organisationsformen, neue Regulierungen, neue Lebensstile, die die Richtung des sozialen Wandels verändern, Probleme besser lösen als frühere Praktiken, und die deshalb wert sind, nachgeahmt und institutionalisiert zu werden.' (Zapf 1989, S. 177; Hervorhebungen im Original) Sie sind Teilmenge von Prozessen des sozialen Wandels beziehungsweise gesellschaftlicher Modernisierung und 'geeignete Mittel […], gesellschaftlichen Herausforderungen zu begegnen, nämlich durch sachliche, zeitliche und soziale Teilung (gesellschaftlicher) Probleme, damit sie ihr überwältigendes Ausmaß verlieren.' (Zapf 1997, S. 39)" [@HowaldtSchwarz2019, p. 5]
-- __social entrepreneurship__: "Social Entrepreneurs Damit gewinnen unternehmens- und organisationsorientierte Perspektiven an Bedeutung. Neue und zugleich effektivere, effizientere und nachhaltigere Lösungen für soziale Probleme mit hohem gesellschaftlichen Nutzen (Phills et al. 2008) beziehungsweise innovative Aktivitäten und Dienstleistungen, die durch das Ziel motiviert sind, ein gesellschaftliches Bedürfnis zu befriedigen und primär durch Organisationen mit einer sozialen Zweckbestimmung entwickelt und verbreitet werden (Murray et al. 2010), stehen hier im Vordergrund." [@HowaldtSchwarz2019, p. 7–8]
-- __liberale Perspektive auf soziale Innovation__: "Das überkommene System sozialstaatlicher Regulierungen soll Gegenstand von Innovationen werden, die sich aus dem Bereich der Zivilgesellschaft heraus entwickeln. Das aus der ökonomischen Innovationsforschung hervorgegangene Konzept des Entrepreneurs soll für die Lösung sozialer Probleme genutzt werden." [@HowaldtSchwarz2019, p. 8]
-- __Intentionalität als das Kernelement sozialer Innovationen__: "Die Frage, wie der Zusammenhang von sozialen Innovationen und sozialem Wandel in einer nicht normativ angelegten Theorie sozialer Innovation zu erfassen ist, haben Jürgen Howaldt und Kollegen in praxistheoretischer Perspektive und unter Rückgriff auf die Sozialtheorie von Tarde weiterverfolgt (Howaldt und Schwarz 2010; Howaldt et al. 2014b). Sie definieren soziale Innovation als 'eine von bestimmten Akteuren bzw. Akteurskonstellationen ausgehende intentionale, zielgerichtete Neukombination bzw. Neukonfiguration sozialer Praktiken in bestimmten Handlungsfeldern bzw. sozialen Kontexten, mit dem Ziel, Probleme oder Bedürfnisse besser zu lösen bzw. zu befriedigen, als dies auf der Grundlage etablierter Praktiken möglich ist.' (Howaldt und Schwarz 2010, S. 54)" [@HowaldtSchwarz2019, p. 11]
-- #important __Nachahmung als des Neuen als das Wesensmerkmal von Innovation und sozialer Innovation__: "Es handelt sich dann und insoweit um eine soziale Innovation, wenn bestimmte Erfindungen, Ideen und Initiativen nachgeahmt, kontextspezifisch angepasst und (dadurch) zu einer Transformation sozialer Praktiken in oder zwischen spezifischen gesellschaftlichen Teilbereichen als Ausdruck und Treiber sozialen Wandels führen." [@HowaldtSchwarz2019, p. 11]
-- __normativer Begriff sozialer Innovation__: "Im Rahmen dieses bis in die EU-Programmatik hinein verbreiteten Standpunkts werden soziale Innovationen auf solche Innovationen beschränkt, die auf Bedürfnisse orientiert sind, die nicht über den Markt befriedigt werden können und die Lebensqualität verbessern, ohne Profit zu generieren, und die Eigenschaften öffentlicher Güter haben (Pol und Ville 2009, S. 15)." [@HowaldtSchwarz2019, p. 12]</string>
+## Defining Attention and Attention Markets
+- #question __Wie ist die Kommidifizierung von Aufmerksamkeit möglich?__: "or that allow buyers and sellers goods, In the most general sense, markets are social to structures exchange information. services, Is attention really an economic commodity? To what extent is it possible for attention to be traded in a market?" [@BachmannSiegert2021, p. 148]
+&gt; "Simmel conceptualized money as a interaction'. 'generalized medium of" [@BachmannSiegert2021, p. 148]
+- #agree __Warum Geld keine gute Währung ist__: "the buyer While money is temporally and socially indifferent and, thus far, can be stored, attention is difficult to store, whether by the owner or (…) Even Davenport and Beck acknowledge, 'attention is focused on a particular item of information' (2001, 20)." [@BachmannSiegert2021, p. 149]
+- #definition __Aufmerksamkeit als gezielte Störung__: "Walter Benjamin pointed out in his Arcades Project (1927–40) that a specific disturbance is necessary to capture someone else's attention, especially in the public domain. It is a targeted disturbance that aims to trigger the mental engagement of another, unknown person." [@BachmannSiegert2021, p. 149]
+- __digitale Reproduzierbarkeit als Grundlage der Informationsüberflutung__: "Moreover, the 'technical reproducibility' (Benjamin 1969), and now also the digital reproducibility of media content leads to many disturbances, which far exceed people's mental capacities." [@BachmannSiegert2021, p. 149]
+- *Konzert Metapher: 'Basso cintino' als kontinuierlicher Hintergrund, 'First violin' als Vordergrund [@BachmannSiegert2021, p. 149]*
+- #quote __Informationsflut der Moderne macht Aufmerksamkeit zum knappen gut ➞ vgl. Idee von Ökonomie als Wissenschaft knapper Ressourcen__: "In an information-rich world, the wealth of information means a dearth of something else: a scarcity of whatever it is that information consumes. What information consumes it consumes the attention of its recipients. Hence, a wealth of information creates poverty of attention (Simon 1971, 40 f.). rather obvious; is" [@BachmannSiegert2021, p. 149]
+&gt; "We can conclude that attention is not a currency because it is not a generalized medium of Instead, attention seems to be a interaction. non-generalizable commodity; it is bound to a particular item of information and is thus difficult to exchange. The first research question, to what extent is the generation of attention a social action, can be answered as follows: all social action is based on the generation of attention. However, in immediate social contexts, attention is generally not an independent social action; on the contrary, attention is the figured bass of interactions. However, under market conditions, attention is not a side aspect anymore, but rather a scarce commodity. In modern society, the generation of attention through communication media, over great distances of time and space is the basic resource for achieving society's economic, political, cultural, and religious goals, among others." [@BachmannSiegert2021, p. 149–150]
+- __Messung von Aufmerksamkeit mittels des Indikators Reichweite__: "the amount and quality of attention cannot be expressed in monetary terms either, there is a conversion dilemma between money and attention. The price uncertainty that ensues is highly unsatisfactory for market players (see Siegert 2001a, b). Thus, market players who buy and sell must utilize tricks or tools. Instead of trading hard-to-measure attention, they convert it into media reach, which is a quantifiable measure." [@BachmannSiegert2021, p. 150]
+
+## The Constitution of Attention Markets
+- __Distanz und Anonymität erschwer tes einzuschätzen, inwieweit tatsächlich Aufmerksamkeit generiert wurde__: "the greater the distances in time and space between humans, the more the problem of other minds inevitably arises. Over great distances of time and space, the amount and quality of attention generated cannot, or at best very superficially, be recognized and measured." [@BachmannSiegert2021, p. 150]
+- #example *hört jemand wirklich zu, wenn man redet, z.B. bei einer langen Rede? [@BachmannSiegert2021, p. 150]*
+- #example __thousand-contact-price__: "Advertising has established the thousand-contact price (CPT), which reveals the amount of money that must be spent on an advertising campaign to reach 1000 people of a target group, visually or audibly. Similarly to standardized container dimensions, which ensure the efficient trade of goods, CPT is a standard measure that regulates the conversion of money and attention between principals and attention merchants." [@BachmannSiegert2021, p. 150]
+&gt; "'The fact of attention often matters more than the quality of attention (which can rarely be adequately measured)'" [@BachmannSiegert2021, p. 151]
+
+## Social Change: Attention, Media, and Persuasion Markets
+&gt; "A focus on public communication, or the production and trade of media reach, may lead to the assumption that the targets are merely passive recipients of stimuli; principals and merchants need only slip a particular item of information to relevant target groups, and this information would then achieve the desired effect in the recipient's consciousness. Even in the social sciences, this idea of passive, externally controlled recipients has long been prevalent, especially from members of the Frankfurt School." [@BachmannSiegert2021, p. 151]
+- #agree *Rezipienten nicht passive Schafe wie die Kritische Theorie es zuweilen impliziert [@BachmannSiegert2021, p. 151]*
+- __Rüstungswettkampf zwischen Erzeugern und Rezipienten von Aufmerksamkeit__: "there is a kind of arms race between generators, dealers, and recipients of attention, constituted in efforts to escape and expose the attention stimuli and accompanying attempts at persuasion." [@BachmannSiegert2021, p. 151]
+- #example *Adblocker und Adblocker-Umgehung [@BachmannSiegert2021, p. 151]*
+- __Humor als Methode Werbung "nicht ignorierbar" zu machen__: "Advertisers try to place messages in the right environments to attract attention to the interests of their clients. A high level of creativity is required to ensure these ignored, which can be messages demonstrated, in although not humorous campaigns, or by advertising in unusual places. exclusively, are not" [@BachmannSiegert2021, p. 152]
+- #summary *Abschnitt 2.4 auf dieser Seite fast die Argumentation zusammen [@BachmannSiegert2021, p. 152]*
+
+## Attention Markets in the Digital Age
+- #important __Informations-Überfluss als Allokations-Problem, Erfolg von Tech-Unternehmen liegt in der Nutzung von Algorithmen zur effizienten Allokation__: "Considering that the wealth of information and the poverty of attention are two sides of the same coin, Simon saw 'a need to allocate that attention efficiently among the overabundance of information sources that might consume it' (1971, 40 f.). In the digital environment, successful companies are those which have algorithms that make it possible to automate cultural activity, which previously was an exclusive domain of humans (see Stalder 2018, 104 ff.)." [@BachmannSiegert2021, p. 153]
+- __Plattformen können die *Qualität* von Aufmerksamkeit (Näherungsweise) messen, was sie wertvoller macht__: "Platform operators offer their paying clientele much more than media reach. McQuail's statement, the 'fact of attention, often matters more than the quality of attention (which can be adequately measured)' (2010, 72) may be considered obsolete in the digital environment. (…) Not only can digital platforms measure the quality of attention, they can even better predict attentional behavior. For example, Zuboff (2019) refers to Facebook's loyalty prediction service that predicts which customers are at risk, explaining, 'The idea is that predictions can trigger advertisers to intervene promptly, targeting aggressive messages to stabilize loyalty and thus achieve guaranteed outcomes by altering the course of the future' (Zuboff 2019, 279)." [@BachmannSiegert2021, p. 154]
+- __Zukunft der Werbeindustrie liegt in effizientem Targetting__: "In this context, Bachmann (2019) argues that future public relations and advertising providers who use big data, data mining, and artificial intelligence to manage data flow most effectively will be successful in targeting actions, especially purchase." [@BachmannSiegert2021, p. 154]
+- __Die Messbarkeit von Aufmerksamkeit bringt es "näher" an das Konzept der Währung__: "Although attention has not yet been given to the properties of money in the digital age, the question remains as to whether attention has already become close to currency, as it can be measured so accurately and in a timely and individualized manner." [@BachmannSiegert2021, p. 155]
+- __bla__: "Adorno, T. W. (1963). Kann das Publikum wollen. In A. R. Katz (Ed.), Vierzehn Mutmaßungen über das 55–60). München: Deutscher Fernsehen Taschenbuch Verlag. (pp." [@BachmannSiegert2021, p. 155]</string>
 		<key>bibtex_library_path</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/BibDesk/My Library.bib</string>
 		<key>citekey_insertion</key>
@@ -6988,21 +7020,18 @@ Image Insert
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
 		<key>tags</key>
-		<string>Innovationsbegriff, soziale-Innovation</string>
-		<key>underlines</key>
-		<string>- __Nachahmung als Wesensmarkmal von Innovatione passt zu dem, was auf Plattformen geschieht__: "Das Neue manifestiert sich hier nicht im Medium technischer Artefakte, sondern auf der Ebene sozialer Praktiken. Das Innovative besteht in der sozialen, kollaborativen Neukonfiguration von (immer schon vorhandenen) sozialen Praktiken. Dies impliziert ein nicht-normatives Verständnis von sozial, welches sich nicht auf sozial wünschenswert oder gut als bestimmendes Kriterium kapriziert. Es handelt sich dann und insoweit um eine soziale Innovation, wenn bestimmte Erfindungen, Ideen und Initiativen nachgeahmt, kontextspezifisch angepasst und (dadurch) zu einer Transformation sozialer Praktiken in oder zwischen spezifischen gesellschaftlichen Teilbereichen als Ausdruck und Treiber sozialen Wandels führen." [@HowaldtSchwarz2019, p. 11]</string>
+		<string>Digitalwirtschaft, Wirtschaftssoziologie, Aufmerksamkeitsökonomie, Kommodifizierung, Währung,-Geld</string>
 		<key>underlines_second_output</key>
-		<string>true</string>
+		<string>false</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
+		<string>annotations</string>
+		<string>tags</string>
+		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
 		<string>obsidian_destination</string>
-		<string>annotations</string>
-		<string>underlines</string>
-		<string>tags</string>
-		<string>bibtex_library_path</string>
 	</array>
 	<key>version</key>
 	<string>4.7.0</string>
