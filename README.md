@@ -47,11 +47,11 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 
 - `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both pages will be included in the citation.
 - `++`: Merge with previous highlight/underline. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
-- `? foo` **(free comments)**: Turns "foo" into a "Pseudo-Admonitions" [^1] (`>>> `) and move up. (Used for Introductory Comments or Questions).
-- `##`: Turns highlighted/underlined text into a markdown heading that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
-- `---` **(free comments)**: Inserts a markdown hr (`---`) and removes the annotation.
-- `X` Turns highlighted/underlines text into a task and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
-- `=`: Adds highlighted/underlined text as keyword to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
+- `? foo` **(free comments)**: Turns "foo" into a **"Pseudo-Admonitions"** [^1] (`>>> `) and move up. (Used for Introductory Comments or Questions).
+- `##`: Turns highlighted/underlined text into a **heading** that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
+- `---` **(free comments)**: Inserts a markdown **hr** (`---`) and removes the annotation.
+- `X` Turns highlighted/underlines text into a **task** and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
+- `=`: Adds highlighted/underlined text as **tags** to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
 - **Images** (Obsidian only): Take a screenshot with the set hotkey you set. The image will be saved to the folder `attachments` in the Obsidian destination folder and renamed with the citekey. You can then use the annotation code `!n foo` **(free comments)** to insert the n-th image taken with the image-hotkey at the location of the comment location. "n" is the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label).
 
 ## Extra Features
