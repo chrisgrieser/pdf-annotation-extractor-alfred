@@ -10,10 +10,10 @@ function run() {
 	const citekey = $.getenv("citekey");
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, homepath);
 
-	// read bibtex-entry
+	// read BibTeX-entry
 	let bibtexEntry = app.doShellScript(
-		"cat \"" + bibtexLibraryPath + "\"" + "| "
-		+ "{ grep -E -i -A 15 \"" + "{" + citekey + ",$\"" + "|| true; }"
+		"cat \"" + bibtexLibraryPath + "\"| "
+		+ "{ grep -E -i -A 20 \"{" + citekey + ",$\"|| true; }"
 	);
 
 	if (bibtexEntry === "") {
@@ -24,7 +24,7 @@ function run() {
 		return errorMsg;
 	}
 
-	// workaround to avoid the need for pcregrep (uses grep -A15 from before)
+	// workaround to avoid the need for pcregrep (uses grep -A20 from before)
 	bibtexEntry = "@" + bibtexEntry.split("@")[1];
 
 	// BibTeX-Decoding
@@ -90,17 +90,17 @@ function run() {
 	array.forEach(property => {
 
 		if (/\stitle =/i.test(property)) title = extract(property);
-		if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
-		if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
-		if (property.includes("author =")) author = extract(property);
-		if (property.includes("year =")) year = property.match(/\d{4}/)[0];
-		else if (property.includes("date ="))	year = property.match(/\d{4}/)[0];
-		if (property.includes("keywords =")) {
+		else if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
+		else if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
+		else if (property.includes("author =")) author = extract(property);
+		else if (/\syear =/i.test(property)) year = property.match(/\d{4}/)[0];
+		else if (property.includes("date =")) year = property.match(/\d{4}/)[0];
+		else if (property.includes("keywords =")) {
 			keywords = extract(property)
 				.replaceAll(" ", "-")
 				.replaceAll(",", ", ");
 		}
-		if (property.includes ("url =")) url = extract (property);
+		else if (property.includes ("url =")) url = extract (property);
 		else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
 	});
 
