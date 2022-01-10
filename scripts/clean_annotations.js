@@ -1,5 +1,5 @@
 #!/usr/bin/env osascript -l JavaScript
-function run(argv) {
+function run() {
 	ObjC.import("stdlib");
 	ObjC.import("Foundation");
 
@@ -88,21 +88,25 @@ function run(argv) {
 
 	Array.prototype.JSONtoMD = function () {
 		const arr = this.map (a => {
-			let annotationTag, comment, output, reference;
+			let comment, output, reference;
+			let annotationTag = "";
 
 			// uncommented highlights or underlines
 			if (a.comment) comment = a.comment.trim();
 			else comment = "";
 
 			// separate out leading annotation tags
-			if (/#\w/.test(comment)) {
-				const tempArr = comment.split(" ");
-				annotationTag = tempArr.shift() + " ";
-				comment = tempArr.join(" ");
+			if (/^#\w/.test(comment)) {
+				if (comment.includes(" ")) {
+					const tempArr = comment.split(" ");
+					annotationTag = tempArr.shift() + " ";
+					comment = tempArr.join(" ");
+				} else {
+					annotationTag = comment;
+					comment = "";
+				}
 			}
-			else {
-				annotationTag = "";
-			}
+			else annotationTag = "";
 
 			// Pandoc Citation
 			if (hasBibtexEntry) reference = " [@" + citekey + ", p. " + a.page + "]";
@@ -118,8 +122,13 @@ function run(argv) {
 						+ "__" + comment + "__: "
 						+ "\"" + a.quote + "\""
 						+ reference;
+					} else if (!comment && annotationTag) {
+						output = "- "
+						+ annotationTag
+						+ " \"" + a.quote + "\""
+						+ reference;
 					}
-					if (!comment) output = "> \""+ a.quote + "\"" + reference;
+					else if (!comment && !annotationTag) output = "> \""+ a.quote + "\"" + reference;
 					break;
 				case "Strikethrough":
 					if (comment) {
