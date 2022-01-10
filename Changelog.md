@@ -1,3 +1,7 @@
+- 2022-01-10	better display of tasks annotaitons
+- 2022-01-10	improved bibtex data extraction
+- 2022-01-10	annotations code "=" now accepts multiple tags at once when comma-separated
+- 2022-01-10	release 4.7.1
 - 2022-01-10	prevent underline-splitoff when there are no underline annotations
 - 2022-01-10	fixed annotation tags not getting properly seperated out
 - 2022-01-10	fix encoding issue
