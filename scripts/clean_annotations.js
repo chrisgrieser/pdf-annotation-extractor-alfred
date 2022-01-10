@@ -81,7 +81,7 @@ function run() {
 			return this;
 		}
 
-		let underlineAnnos = this
+		const underlineAnnos = this
 			.filter (a => a.type === "Underline")
 			.JSONtoMD();
 		setAlfredEnv("underlines", underlineAnnos);
@@ -245,10 +245,7 @@ function run() {
 			return a;
 		});
 		const taskArr = annoArr.filter(a => a.type === "Task");
-		if (taskArr.length) {
-			taskArr.unshift ( { "type": "Heading", "comment": "## Tasks" } );
-			taskArr.push ( { "type": "hr" } );
-		}
+		if (taskArr.length) taskArr.unshift ( { "type": "Heading", "comment": "## Tasks" } );
 
 		annoArr = annoArr.filter(a => a.type !== "Task");
 		return [...taskArr, ...annoArr];
@@ -278,10 +275,11 @@ function run() {
 		let newKeywords = [];
 		const arr = this
 			.map (a => {
-				if (!a.comment) return a;
-				if (a.comment.startsWith("=")) {
-					newKeywords.push (a.comment.slice(1).trim());
+				if (a.comment?.startsWith("=")) {
 					a.type = "remove";
+					const comment = a.comment.slice(1); // remove the "="
+					const tags = comment.split(",");
+					tags.forEach (tag => newKeywords.push(tag.trim()) );
 				}
 				return a;
 			})
@@ -289,7 +287,7 @@ function run() {
 
 		if (newKeywords.length) {
 			newKeywords = [... new Set (newKeywords)]
-				.map (kw => kw.trim().replaceAll(" ", "-"));
+				.map (kw => kw.replaceAll(" ", "-"));
 			keywords += ", " + newKeywords.join(", ");
 		}
 

@@ -2,49 +2,49 @@
 
 function run() {
 	ObjC.import("stdlib");
-	app = Application.currentApplication();
+	const app = Application.currentApplication();
 	app.includeStandardAdditions = true;
 	const homepath = app.pathTo("home folder");
 
-	//import variables
+	// import variables
 	const citekey = $.getenv("citekey");
-	const bibtex_library_path = $.getenv("bibtex_library_path").replace(/^~/, homepath);
+	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, homepath);
 
-	//read bibtex-entry
-	let bibtex_entry = app.doShellScript(
-		'cat "' + bibtex_library_path + '"' + '| '
-		+ '{ grep -E -i -A 15 "' + "{" + citekey + ',$"' + '|| true; }'
+	// read bibtex-entry
+	let bibtexEntry = app.doShellScript(
+		"cat \"" + bibtexLibraryPath + "\"" + "| "
+		+ "{ grep -E -i -A 15 \"" + "{" + citekey + ",$\"" + "|| true; }"
 	);
 
-	if (bibtex_entry == "") {
-		let citekey_insertion = $.getenv("citekey_insertion");
-		let error_msg = "No citekey found.\n\n";
-		if (citekey_insertion == "filename")	error_msg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'" ;
-		if (citekey_insertion == "manually")	error_msg += "Check your BibTeX Library for the correct citekey." ;
-		return error_msg;
+	if (bibtexEntry === "") {
+		const citekeyInsertion = $.getenv("citekey_insertion");
+		let errorMsg = "No citekey found.\n\n";
+		if (citekeyInsertion === "filename")	errorMsg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'";
+		if (citekeyInsertion === "manually")	errorMsg += "Check your BibTeX Library for the correct citekey.";
+		return errorMsg;
 	}
 
-	//workaround to avoid the need for pcregrep (uses grep -A15 from before)
-	bibtex_entry = "@" + bibtex_entry.split("@")[1];
+	// workaround to avoid the need for pcregrep (uses grep -A15 from before)
+	bibtexEntry = "@" + bibtexEntry.split("@")[1];
 
 	// BibTeX-Decoding
-	const german_chars = [
-		'{\\"u};ü',
-		'{\\"a};ä',
-		'{\\"o};ö',
-		'{\\"U};Ü',
-		'{\\"A};Ä',
-		'{\\"O};Ö',
-		'\\"u;ü',
-		'\\"a;ä',
-		'\\"o;ö',
-		'\\"U;Ü',
-		'\\"A;Ä',
-		'\\"O;Ö',
+	const germanChars = [
+		"{\\\"u};ü",
+		"{\\\"a};ä",
+		"{\\\"o};ö",
+		"{\\\"U};Ü",
+		"{\\\"A};Ä",
+		"{\\\"O};Ö",
+		"\\\"u;ü",
+		"\\\"a;ä",
+		"\\\"o;ö",
+		"\\\"U;Ü",
+		"\\\"A;Ä",
+		"\\\"O;Ö",
 		"\\ss;ß",
-		"{\\ss};ß",
+		"{\\ss};ß"
 	];
-	const other_chars = [
+	const otherChars = [
 		"{\\~n};ñ",
 		"{\\'a};á",
 		"{\\'e};é",
@@ -52,32 +52,32 @@ function run() {
 		"\\c{c};ç",
 		"\\o{};ø",
 		"\\^{i};î",
-		'\\"{i};î',
-		'\\"{i};ï',
+		"\\\"{i};î",
+		"\\\"{i};ï",
 		"{\\'c};ć",
-		'\\"e;ë',
+		"\\\"e;ë"
 	];
-	const special_chars = [
+	const specialChars = [
 		"\\&;&",
-		'``;"',
+		"``;\"",
 		"`;'",
 		"\\textendash{};—",
 		"---;—",
-		"--;—",
+		"--;—"
 	];
-	const decode_pair = [...german_chars, ...other_chars, ...special_chars];
-	decode_pair.forEach((pair) => {
-		let half = pair.split(";");
-		bibtex_entry = bibtex_entry.replaceAll(half[0], half[1]);
+	const decodePair = [...germanChars, ...otherChars, ...specialChars];
+	decodePair.forEach((pair) => {
+		const half = pair.split(";");
+		bibtexEntry = bibtexEntry.replaceAll(half[0], half[1]);
 	});
 
-	//extracts content of a BibTeX-field
+	// extracts content of a BibTeX-field
 	function extract(str) {
 		str = str.split(" = ")[1];
 		return str.replace(/,$/, "");
 	}
 
-	//parse BibTeX entry
+	// parse BibTeX entry
 	let title = "";
 	let ptype = "";
 	let firstPage = "";
@@ -86,20 +86,22 @@ function run() {
 	let keywords = "";
 	let url = "";
 
-	let array = bibtex_entry.split("\r");
+	const array = bibtexEntry.split("\r");
 	array.forEach(property => {
 
-		if (property.match(/\stitle \=/i) != null) title = extract(property);
+		if (/\stitle =/i.test(property)) title = extract(property);
 		if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
 		if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
 		if (property.includes("author =")) author = extract(property);
 		if (property.includes("year =")) year = property.match(/\d{4}/)[0];
 		else if (property.includes("date ="))	year = property.match(/\d{4}/)[0];
-		if (property.includes("keywords =")) keywords = extract(property)
-			.replaceAll(" ", "-")
-			.replaceAll(",", ", ");
-		if  (property.includes ("url =")) url = extract (property);
-      else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
+		if (property.includes("keywords =")) {
+			keywords = extract(property)
+				.replaceAll(" ", "-")
+				.replaceAll(",", ", ");
+		}
+		if (property.includes ("url =")) url = extract (property);
+		else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
 	});
 
 	return (
@@ -110,5 +112,5 @@ function run() {
 		year + ";;" +
 		ptype + ";;" +
 		url
-	).replace(/[\{\}]/g, ""); //remove Tex
+	).replace(/[{}]/g, ""); // remove Tex
 }

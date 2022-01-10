@@ -6960,54 +6960,6 @@ Image Insert
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>annotations</key>
-		<string>
-## Tasks
-- [ ] link to note on informaiton overload
-
----
-
-&gt;&gt;&gt; Was heißt beduetet die Aussage, dass Geld ein generalisiertes Austauschmedium sei?
-
-&gt;&gt;&gt; Welche Methode der hat die digitale Werbeindustrie entwickelt, damit Werbung Euch auf jeden fall erreicht
-
-
-## The Emergence of Attention Markets
-- __Werbung als die Erschaffung von Bedürfnissen, zu deren Bedürfnissen Produkte gekauft werden sollen__: "With an increase in wages and wealth, a new social class emerged: the bourgeoisie. Its members could spend money on products and services beyond the satisfaction of their primary needs. What needs came up? New needs would have to be awakened first." [@BachmannSiegert2021, p. 147]
-- #important __Basisthese__: "attention is a social phenomenon that, in modern society, is traded in markets on an industrial scale." [@BachmannSiegert2021, p. 148]
-- #question "(a) To what extent is the generation of attention a social action? (b) How do markets emerge in which something as fleeting as attention is traded? (c) What causes change in attention markets? and (d) How are attention markets currently changing through digital transformation?" [@BachmannSiegert2021, p. 148]
-- __schwierige Messbarkeit von Aufmerksamkeit ➞ Medienreichweite als Substitut__: "Since attention takes place in the minds of other people, the amount and quality of attention are difficult to measure, (…) in practice, attention buyers and dealers use stopgap measures; they do not trade actual attention, but media reach, as a substitute, because its amount and quality are easier to measure. Media are institutions that bundle attention, which is why, in research and practice, attention markets appear in the form of media markets." [@BachmannSiegert2021, p. 148]
-
-## Defining Attention and Attention Markets
-- #question __Wie ist die Kommidifizierung von Aufmerksamkeit möglich?__: "or that allow buyers and sellers goods, In the most general sense, markets are social to structures exchange information. services, Is attention really an economic commodity? To what extent is it possible for attention to be traded in a market?" [@BachmannSiegert2021, p. 148]
-- #definition "Simmel conceptualized money as a interaction'. 'generalized medium of" [@BachmannSiegert2021, p. 148]
-- #agree __Warum Geld keine gute Währung ist__: "the buyer While money is temporally and socially indifferent and, thus far, can be stored, attention is difficult to store, whether by the owner or (…) Even Davenport and Beck acknowledge, 'attention is focused on a particular item of information' (2001, 20)." [@BachmannSiegert2021, p. 149]
-- #definition __Aufmerksamkeit als gezielte Störung__: "Walter Benjamin pointed out in his Arcades Project (1927–40) that a specific disturbance is necessary to capture someone else's attention, especially in the public domain. It is a targeted disturbance that aims to trigger the mental engagement of another, unknown person." [@BachmannSiegert2021, p. 149]
-- __digitale Reproduzierbarkeit als Grundlage der Informationsüberflutung__: "Moreover, the 'technical reproducibility' (Benjamin 1969), and now also the digital reproducibility of media content leads to many disturbances, which far exceed people's mental capacities." [@BachmannSiegert2021, p. 149]
-- *Konzert Metapher: 'Basso cintino' als kontinuierlicher Hintergrund, 'First violin' als Vordergrund [@BachmannSiegert2021, p. 149]*
-- #quote __Informationsflut der Moderne macht Aufmerksamkeit zum knappen gut ➞ vgl. Idee von Ökonomie als Wissenschaft knapper Ressourcen__: "In an information-rich world, the wealth of information means a dearth of something else: a scarcity of whatever it is that information consumes. What information consumes it consumes the attention of its recipients. Hence, a wealth of information creates poverty of attention (Simon 1971, 40 f.). rather obvious; is" [@BachmannSiegert2021, p. 149]
-- #summary "We can conclude that attention is not a currency because it is not a generalized medium of Instead, attention seems to be a interaction. non-generalizable commodity; it is bound to a particular item of information and is thus difficult to exchange. The first research question, to what extent is the generation of attention a social action, can be answered as follows: all social action is based on the generation of attention. However, in immediate social contexts, attention is generally not an independent social action; on the contrary, attention is the figured bass of interactions. However, under market conditions, attention is not a side aspect anymore, but rather a scarce commodity. In modern society, the generation of attention through communication media, over great distances of time and space is the basic resource for achieving society's economic, political, cultural, and religious goals, among others." [@BachmannSiegert2021, p. 149–150]
-- __Messung von Aufmerksamkeit mittels des Indikators Reichweite__: "the amount and quality of attention cannot be expressed in monetary terms either, there is a conversion dilemma between money and attention. The price uncertainty that ensues is highly unsatisfactory for market players (see Siegert 2001a, b). Thus, market players who buy and sell must utilize tricks or tools. Instead of trading hard-to-measure attention, they convert it into media reach, which is a quantifiable measure." [@BachmannSiegert2021, p. 150]
-
-## The Constitution of Attention Markets
-- __Distanz und Anonymität erschwer tes einzuschätzen, inwieweit tatsächlich Aufmerksamkeit generiert wurde__: "the greater the distances in time and space between humans, the more the problem of other minds inevitably arises. Over great distances of time and space, the amount and quality of attention generated cannot, or at best very superficially, be recognized and measured." [@BachmannSiegert2021, p. 150]
-- #example *hört jemand wirklich zu, wenn man redet, z.B. bei einer langen Rede? [@BachmannSiegert2021, p. 150]*
-- #example __thousand-contact-price__: "Advertising has established the thousand-contact price (CPT), which reveals the amount of money that must be spent on an advertising campaign to reach 1000 people of a target group, visually or audibly. Similarly to standardized container dimensions, which ensure the efficient trade of goods, CPT is a standard measure that regulates the conversion of money and attention between principals and attention merchants." [@BachmannSiegert2021, p. 150]
-- #quote "'The fact of attention often matters more than the quality of attention (which can rarely be adequately measured)'" [@BachmannSiegert2021, p. 151]
-
-## Social Change: Attention, Media, and Persuasion Markets
-&gt; "A focus on public communication, or the production and trade of media reach, may lead to the assumption that the targets are merely passive recipients of stimuli; principals and merchants need only slip a particular item of information to relevant target groups, and this information would then achieve the desired effect in the recipient's consciousness. Even in the social sciences, this idea of passive, externally controlled recipients has long been prevalent, especially from members of the Frankfurt School." [@BachmannSiegert2021, p. 151]
-- #agree *Rezipienten nicht passive Schafe wie die Kritische Theorie es zuweilen impliziert [@BachmannSiegert2021, p. 151]*
-- __Rüstungswettkampf zwischen Erzeugern und Rezipienten von Aufmerksamkeit__: "there is a kind of arms race between generators, dealers, and recipients of attention, constituted in efforts to escape and expose the attention stimuli and accompanying attempts at persuasion." [@BachmannSiegert2021, p. 151]
-- #example *Adblocker und Adblocker-Umgehung [@BachmannSiegert2021, p. 151]*
-- __Humor als Methode Werbung "nicht ignorierbar" zu machen__: "Advertisers try to place messages in the right environments to attract attention to the interests of their clients. A high level of creativity is required to ensure these ignored, which can be messages demonstrated, in although not humorous campaigns, or by advertising in unusual places. exclusively, are not" [@BachmannSiegert2021, p. 152]
-- #summary *Abschnitt 2.4 auf dieser Seite fast die Argumentation zusammen [@BachmannSiegert2021, p. 152]*
-
-## Attention Markets in the Digital Age
-- #important __Informations-Überfluss als Allokations-Problem, Erfolg von Tech-Unternehmen liegt in der Nutzung von Algorithmen zur effizienten Allokation__: "Considering that the wealth of information and the poverty of attention are two sides of the same coin, Simon saw 'a need to allocate that attention efficiently among the overabundance of information sources that might consume it' (1971, 40 f.). In the digital environment, successful companies are those which have algorithms that make it possible to automate cultural activity, which previously was an exclusive domain of humans (see Stalder 2018, 104 ff.)." [@BachmannSiegert2021, p. 153]
-- __Plattformen können die *Qualität* von Aufmerksamkeit (Näherungsweise) messen, was sie wertvoller macht__: "Platform operators offer their paying clientele much more than media reach. McQuail's statement, the 'fact of attention, often matters more than the quality of attention (which can be adequately measured)' (2010, 72) may be considered obsolete in the digital environment. (…) Not only can digital platforms measure the quality of attention, they can even better predict attentional behavior. For example, Zuboff (2019) refers to Facebook's loyalty prediction service that predicts which customers are at risk, explaining, 'The idea is that predictions can trigger advertisers to intervene promptly, targeting aggressive messages to stabilize loyalty and thus achieve guaranteed outcomes by altering the course of the future' (Zuboff 2019, 279)." [@BachmannSiegert2021, p. 154]
-- __Zukunft der Werbeindustrie liegt in effizientem Targetting__: "In this context, Bachmann (2019) argues that future public relations and advertising providers who use big data, data mining, and artificial intelligence to manage data flow most effectively will be successful in targeting actions, especially purchase." [@BachmannSiegert2021, p. 154]
-- __Die Messbarkeit von Aufmerksamkeit bringt es "näher" an das Konzept der Währung__: "Although attention has not yet been given to the properties of money in the digital age, the question remains as to whether attention has already become close to currency, as it can be measured so accurately and in a timely and individualized manner." [@BachmannSiegert2021, p. 155]</string>
 		<key>bibtex_library_path</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/BibDesk/My Library.bib</string>
 		<key>citekey_insertion</key>
@@ -7018,22 +6970,15 @@ Image Insert
 		<string>obsidian</string>
 		<key>pdf_engine</key>
 		<string>wkhtmltopdf</string>
-		<key>tags</key>
-		<string>Digitalwirtschaft, Wirtschaftssoziologie, Aufmerksamkeitsökonomie, Kommodifizierung, Währung,-Geld</string>
-		<key>underlines</key>
-		<string>none</string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
+		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
 		<string>obsidian_destination</string>
-		<string>annotations</string>
-		<string>underlines</string>
-		<string>tags</string>
-		<string>bibtex_library_path</string>
 	</array>
 	<key>version</key>
 	<string>4.7.1</string>
