@@ -151,6 +151,9 @@ function run() {
 				case "hr":
 					output = "\n---\n";
 					break;
+				case "Line Break":
+					output = "\n";
+					break;
 				case "Checkbox Question":
 					output = ">>> " + comment + "\n";
 					break;
@@ -245,10 +248,16 @@ function run() {
 			return a;
 		});
 		const taskArr = annoArr.filter(a => a.type === "Task");
-		if (taskArr.length) taskArr.unshift ( { "type": "Heading", "comment": "## Tasks" } );
+
+		if (!taskArr.length) return annoArr;
 
 		annoArr = annoArr.filter(a => a.type !== "Task");
-		return [...taskArr, ...annoArr];
+		return [
+			{ "type": "Heading", "comment": "## Tasks" },
+			...taskArr,
+			{ "type": "Line Break", "comment": "" },
+			...annoArr
+		];
 	};
 
 	// "!n"
