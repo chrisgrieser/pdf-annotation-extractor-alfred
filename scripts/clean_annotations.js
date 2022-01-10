@@ -75,15 +75,17 @@ function run() {
 	};
 
 	Array.prototype.splitOffUnderlines = function () {
-		if (!underlinesSecondOutput) return this;
+		const hasUnderlines = this.some(a => a.type === "Underline");
+		if (!underlinesSecondOutput || !hasUnderlines) {
+			setAlfredEnv("underlines", "none");
+			return this;
+		}
 
-		const arr = this.filter (a => a.type !== "Underline");
-		let underlineAnnos = this.filter (a => a.type === "Underline");
-		if (underlineAnnos) underlineAnnos = underlineAnnos.JSONtoMD();
-		else underlineAnnos = "none";
-
+		let underlineAnnos = this
+			.filter (a => a.type === "Underline")
+			.JSONtoMD();
 		setAlfredEnv("underlines", underlineAnnos);
-		return arr;
+		return this.filter (a => a.type !== "Underline");
 	};
 
 	Array.prototype.JSONtoMD = function () {

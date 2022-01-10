@@ -7007,8 +7007,7 @@ Image Insert
 - #important __Informations-Überfluss als Allokations-Problem, Erfolg von Tech-Unternehmen liegt in der Nutzung von Algorithmen zur effizienten Allokation__: "Considering that the wealth of information and the poverty of attention are two sides of the same coin, Simon saw 'a need to allocate that attention efficiently among the overabundance of information sources that might consume it' (1971, 40 f.). In the digital environment, successful companies are those which have algorithms that make it possible to automate cultural activity, which previously was an exclusive domain of humans (see Stalder 2018, 104 ff.)." [@BachmannSiegert2021, p. 153]
 - __Plattformen können die *Qualität* von Aufmerksamkeit (Näherungsweise) messen, was sie wertvoller macht__: "Platform operators offer their paying clientele much more than media reach. McQuail's statement, the 'fact of attention, often matters more than the quality of attention (which can be adequately measured)' (2010, 72) may be considered obsolete in the digital environment. (…) Not only can digital platforms measure the quality of attention, they can even better predict attentional behavior. For example, Zuboff (2019) refers to Facebook's loyalty prediction service that predicts which customers are at risk, explaining, 'The idea is that predictions can trigger advertisers to intervene promptly, targeting aggressive messages to stabilize loyalty and thus achieve guaranteed outcomes by altering the course of the future' (Zuboff 2019, 279)." [@BachmannSiegert2021, p. 154]
 - __Zukunft der Werbeindustrie liegt in effizientem Targetting__: "In this context, Bachmann (2019) argues that future public relations and advertising providers who use big data, data mining, and artificial intelligence to manage data flow most effectively will be successful in targeting actions, especially purchase." [@BachmannSiegert2021, p. 154]
-- __Die Messbarkeit von Aufmerksamkeit bringt es "näher" an das Konzept der Währung__: "Although attention has not yet been given to the properties of money in the digital age, the question remains as to whether attention has already become close to currency, as it can be measured so accurately and in a timely and individualized manner." [@BachmannSiegert2021, p. 155]
-- __bla__: "Adorno, T. W. (1963). Kann das Publikum wollen. In A. R. Katz (Ed.), Vierzehn Mutmaßungen über das 55–60). München: Deutscher Fernsehen Taschenbuch Verlag. (pp." [@BachmannSiegert2021, p. 155]</string>
+- __Die Messbarkeit von Aufmerksamkeit bringt es "näher" an das Konzept der Währung__: "Although attention has not yet been given to the properties of money in the digital age, the question remains as to whether attention has already become close to currency, as it can be measured so accurately and in a timely and individualized manner." [@BachmannSiegert2021, p. 155]</string>
 		<key>bibtex_library_path</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/BibDesk/My Library.bib</string>
 		<key>citekey_insertion</key>
@@ -7021,17 +7020,20 @@ Image Insert
 		<string>wkhtmltopdf</string>
 		<key>tags</key>
 		<string>Digitalwirtschaft, Wirtschaftssoziologie, Aufmerksamkeitsökonomie, Kommodifizierung, Währung,-Geld</string>
+		<key>underlines</key>
+		<string>none</string>
 		<key>underlines_second_output</key>
-		<string>false</string>
+		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>annotations</string>
-		<string>tags</string>
-		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
 		<string>obsidian_destination</string>
+		<string>annotations</string>
+		<string>underlines</string>
+		<string>tags</string>
+		<string>bibtex_library_path</string>
 	</array>
 	<key>version</key>
 	<string>4.7.0</string>
