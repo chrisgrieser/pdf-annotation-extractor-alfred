@@ -1,3 +1,6 @@
+- 2022-01-10	improved acode command (cheatsheet for annotaiton codes)
+- 2022-01-09	switched to different type of pseudo-Admonitions
+- 2021-12-19	release 4.6.1
 - 2021-12-19	more reliable determination of local Obsidian version
 - 2021-12-15	release 4.6
 - 2021-12-15	+ when using Drafts, open Draft after annotation extraction
