@@ -1,3 +1,7 @@
+- 2022-01-10	prevent underline-splitoff when there are no underline annotations
+- 2022-01-10	fixed annotation tags not getting properly seperated out
+- 2022-01-10	fix encoding issue
+- 2022-01-10	release 4.7.0
 - 2022-01-10	improved acode command (cheatsheet for annotaiton codes)
 - 2022-01-09	switched to different type of pseudo-Admonitions
 - 2021-12-19	release 4.6.1

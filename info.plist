@@ -7036,7 +7036,7 @@ Image Insert
 		<string>bibtex_library_path</string>
 	</array>
 	<key>version</key>
-	<string>4.7.0</string>
+	<string>4.7.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
