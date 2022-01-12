@@ -1,3 +1,5 @@
+- 2022-01-12	fix isnertion of commas when using = annotation code
+- 2022-01-12	release 4.8.0
 - 2022-01-12	support for annotation type Free Text
 - 2022-01-10	release 4.7.2
 - 2022-01-10	better display of tasks annotaitons
