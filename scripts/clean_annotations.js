@@ -300,6 +300,8 @@ function run() {
 			newKeywords = [... new Set (newKeywords)]
 				.map (kw => kw.replaceAll(" ", "-"));
 			keywords += ", " + newKeywords.join(", ");
+			if (keywords) keywords += ", " + newKeywords.join(", "); //insert comma only when there are keywords
+			else keywords = newKeywords.join(", ");
 		}
 
 		setAlfredEnv("tags", keywords); // variable name has to be changed so Alfred accepts it >:(
