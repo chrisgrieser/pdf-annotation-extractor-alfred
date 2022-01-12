@@ -1,3 +1,5 @@
+- 2022-01-12	support for annotation type Free Text
+- 2022-01-10	release 4.7.2
 - 2022-01-10	better display of tasks annotaitons
 - 2022-01-10	improved bibtex data extraction
 - 2022-01-10	annotations code "=" now accepts multiple tags at once when comma-separated
