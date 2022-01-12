@@ -44,6 +44,7 @@ function run() {
 			delete a.contents;
 			if (a.type === "Text") a.type = "Free Comment";
 			if (a.type === "StrikeOut") a.type = "Strikethrough";
+			if (a.type === "FreeText") a.type = "Free Text";
 			return a;
 		});
 	};
@@ -142,6 +143,7 @@ function run() {
 					}
 					if (!comment) output = "> ~~\""+ a.quote + "\"~~" + reference;
 					break;
+				case "Free Text":
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
 					break;
