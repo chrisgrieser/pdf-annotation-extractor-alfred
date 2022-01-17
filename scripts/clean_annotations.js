@@ -56,7 +56,7 @@ function run() {
 				.replace(/ {2,}/g, " ") // multiple spaces
 				.replace(/["„”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
-				.replace(/\u00AD/g, ""); // clean invisible characters
+				.replace(/\u00AD/g, ""); // remove invisible characters
 			return a;
 		});
 	};
