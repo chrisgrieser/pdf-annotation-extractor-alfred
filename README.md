@@ -45,8 +45,7 @@ The *correct* page numbers will automatically be determined from one of three so
 ### Annotation Codes
 Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
-- `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If jumping across pages, both pages will be included in the citation.
-- `++`: Merge with previous highlight/underline. Used for continuing a highlight on the next page. Both Pages will be included in the citation.
+- `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If used across pages, both pages will be included in the citation, and the "(…)" will be omitted, assuming the continuation of a of across page borders.
 - `? foo` **(free comments)**: Turns "foo" into a **"Pseudo-Admonitions"** [^1] (`>>> `) and move up. (Used for Introductory Comments or Questions).
 - `##`: Turns highlighted/underlined text into a **heading** that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
 - `---` **(free comments)**: Inserts a markdown **hr** (`---`) and removes the annotation.

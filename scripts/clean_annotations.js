@@ -176,22 +176,22 @@ function run() {
 	// Annotation Code Methods
 	// --------------------------------------------------------------
 
-	// "+" and "++"
+	// "+"
 	Array.prototype.mergeQuotes = function () {
-		// can start at one, since the first element cant
-		// be merged to a predecessor
+		// start at one, since the first element can't be merged to a predecessor
 		for (let i = 1; i < this.length; i++) {
 			if (this[i].type === "Free Comment" || !this[i].comment) continue;
+			if (this[i].comment !== "+") continue;
+			let connector = "";
 
-			let connector = " ";
-			if (this[i].comment === "+") connector = " (…) ";
-
-			if (this[i].comment === "++" || this[i].comment === "+") {
-				this[i-1].quote += connector + this[i].quote;
-				if (this[i-1].page !== this[i].page) this[i-1].page += "–" + this[i].page;
-				this.splice(i, 1); // remove element
-				i--; // to move index back, since element isn't there anymore
+			if (this[i-1].page !== this[i].page) { // if across pages
+				this[i-1].page += "–" + this[i].page; // merge page numbers
+				connector = " (…) ";
 			}
+			this[i-1].quote += connector + this[i].quote; // merge quotes
+
+			this.splice(i, 1); // remove current element
+			i--; // to move index back, since element isn't there anymore
 
 		}
 		return this;
