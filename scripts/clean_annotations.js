@@ -55,7 +55,8 @@ function run() {
 			a.quote = a.quote
 				.replace(/ {2,}/g, " ") // multiple spaces
 				.replace(/["„”«»]/g, "'") // quotation marks
-				.replace(/\. ?\. ?\./g, "…"); // ellipsis
+				.replace(/\. ?\. ?\./g, "…") // ellipsis
+				.replace(/\u00AD/g, ""); // clean invisible characters
 			return a;
 		});
 	};

@@ -3552,11 +3552,11 @@ tell application id focusedapp to activatetell application "System Events" to k
 				<string>{var:obsidian_destination}/{var:citekey}.md</string>
 				<key>filetext</key>
 				<string>---
-alias: "{var:title}"
+aliases: ["{var:title}"]
 tags: pdf-annotations, {var:tags}
 cssclass: pdf-annotations
 citekey: {var:citekey}
-title: "{var:title}"
+title: ["{var:title}"]
 year: {var:year}
 author: "{var:author}"
 publicationType: {var:ptype}
