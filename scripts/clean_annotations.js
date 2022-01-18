@@ -239,7 +239,7 @@ function run() {
 	};
 
 	// "?"
-	Array.prototype.customCheckboxQuestion = function () {
+	Array.prototype.admotionQuestion = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
 			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
@@ -348,7 +348,7 @@ function run() {
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
-		.customCheckboxQuestion()
+		.admotionQuestion()
 		.transformTasks()
 		.insertImageMarker()
 		.transformTag4yaml()
