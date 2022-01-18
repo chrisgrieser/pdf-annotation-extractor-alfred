@@ -90,6 +90,23 @@ function run() {
 		return this.filter (a => a.type !== "Underline");
 	};
 
+	Array.prototype.copyHighlightToSplitOffUnderline = function () {
+		if (!underlinesSecondOutput) return this;
+
+		for (let i = 0; i < this.length; i++) {
+			if (!this[i].type === "Highlight" || !this[i].comment) continue;
+			if (!this[i].comment.startsWith("_")) continue;
+			this[i].comment = this[i].comment.slice(1).trim();
+
+			const currentAnno = this[i];
+			currentAnno.type = "Underline";
+			this.splice(i+1, 0, currentAnno); // insert copy as underline at next position
+			i++; // move index further, since next item is the copy
+		}
+
+
+	};
+
 	Array.prototype.JSONtoMD = function () {
 		const arr = this.map (a => {
 			let comment, output, reference;
@@ -243,7 +260,7 @@ function run() {
 			if (a.comment.startsWith("X")) {
 				a.comment = a.comment.slice(1).trim();
 				if (a.type === "Highlight" || a.type === "Underline") {
-					a.comment += " " + a.quote;
+					a.comment += ": " + a.quote;
 					delete a.quote;
 				}
 				a.type = "Task";
@@ -327,6 +344,8 @@ function run() {
 		.transformTag4yaml()
 
 		.splitOffUnderlines()
+		.copyHighlightToSPlitOffUnderline()
+
 		.JSONtoMD();
 
 	setAlfredEnv("annotations", annotations);

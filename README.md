@@ -52,6 +52,7 @@ Insert these special codes at the **beginning** of an annotation to invoke speci
 - `X` Turns highlighted/underlines text into a **task** and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
 - `=`: Adds highlighted/underlined text as **tags** to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
 - **Images** (Obsidian only): Take a screenshot with the set hotkey you set. The image will be saved to the folder `attachments` in the Obsidian destination folder and renamed with the citekey. You can then use the annotation code `!n foo` **(free comments)** to insert the n-th image taken with the image-hotkey at the location of the comment location. "n" is the number of images taken, e.g. "!3" for the third image. "foo" will be added as image alt-text (image label).
+- `_` **(highlights only)**: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ## Extra Features
 - When using Obsidian, the wikilink is also copied to the clipboard after annotation extraction.
