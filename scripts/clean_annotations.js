@@ -10,7 +10,7 @@ function run() {
 	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
 	let citekey = "";
 	if (hasBibtexEntry) citekey = $.getenv("citekey");
-	let keywords = $.getenv("keywords");
+	const keywords = $.getenv("keywords");
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 
 	function readFile (path, encoding) {
@@ -184,10 +184,15 @@ function run() {
 					output = "\n![[" + comment + "]]\n";
 					break;
 			}
-
 			return output;
 		});
-		return arr.join("\n");
+
+		const mdText = arr
+			.join("\n")
+			.trim()
+			.replace(/\n{3,}/g, "\n\n")
+			+ "\n";
+		return mdText;
 	};
 
 	// Annotation Code Methods
@@ -354,7 +359,7 @@ function run() {
 		.transformTag4yaml()
 
 		.splitOffUnderlines()
-		.copyHighlightToSPlitOffUnderline()
+		.copyHighlightToSplitOffUnderline()
 
 		.JSONtoMD();
 
