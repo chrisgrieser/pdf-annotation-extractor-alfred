@@ -1,3 +1,5 @@
+- 2022-01-18	new underscore annotation code
+- 2022-01-17	release 4.9.0
 - 2022-01-17	consolidated annotation codes '+' and '++' into just '+'
 - 2022-01-12	release 4.8.1
 - 2022-01-12	fix isnertion of commas when using = annotation code
