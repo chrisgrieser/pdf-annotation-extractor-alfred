@@ -94,6 +94,7 @@ __6. Further steps only required for specific output types__
 - _PDF as Output Format_: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
 
 ```bash
+# with Homebrew
 brew install pandoc
 brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ```
