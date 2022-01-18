@@ -1615,7 +1615,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D3BF6586-46FD-45DF-9C14-AD3AB26CBAC2</string>
+				<string>AC67CAC6-66BC-41EE-B51F-3C3360E5AFB7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1678,7 +1678,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>D3BF6586-46FD-45DF-9C14-AD3AB26CBAC2</string>
+				<string>AC67CAC6-66BC-41EE-B51F-3C3360E5AFB7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1718,19 +1718,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>D3BF6586-46FD-45DF-9C14-AD3AB26CBAC2</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AC67CAC6-66BC-41EE-B51F-3C3360E5AFB7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -3268,23 +3255,6 @@ tesseract "$temp_image" stdout -l $ocr_languages 2&gt;&amp;1</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{date:yyyy-MM-dd}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>D3BF6586-46FD-45DF-9C14-AD3AB26CBAC2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -3582,6 +3552,36 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:mode}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string>extraction</string>
+						<key>outputlabel</key>
+						<string>screenshot</string>
+						<key>uid</key>
+						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>extraction</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>C58B057D-A71E-47AA-B819-7FAFD075CB88</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
@@ -3625,36 +3625,6 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>44776CD9-148B-4DD3-AD19-40B16312706C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:mode}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string>extraction</string>
-						<key>outputlabel</key>
-						<string>screenshot</string>
-						<key>uid</key>
-						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>extraction</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>C58B057D-A71E-47AA-B819-7FAFD075CB88</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -6436,9 +6406,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>525</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>825</integer>
 		</dict>
 		<key>C62314C8-E529-459D-8A01-B9F3001DC160</key>
 		<dict>
@@ -6493,17 +6463,6 @@ Start Annotation Export</string>
 			<integer>695</integer>
 			<key>ypos</key>
 			<integer>1665</integer>
-		</dict>
-		<key>D3BF6586-46FD-45DF-9C14-AD3AB26CBAC2</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
-			<key>note</key>
-			<string>ISOdate as filename</string>
-			<key>xpos</key>
-			<integer>740</integer>
-			<key>ypos</key>
-			<integer>720</integer>
 		</dict>
 		<key>D407E01A-667B-446E-8733-6717C1222845</key>
 		<dict>

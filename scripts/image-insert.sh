@@ -1,7 +1,12 @@
 #!/bin/zsh
 
 # filename will be citekey (or ISOdate, when no citation key available)
-filename="$*"
+if [[ "$citekey_insertion" == "none" ]] ; then
+	filename=$(date '+%Y-%m-%d')
+else
+	filename="$citekey"
+fi
+
 image_folder="${obsidian_destination/#\~/$HOME}"/attachments
 
 # count number of images for that file
