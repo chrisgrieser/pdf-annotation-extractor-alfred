@@ -1,3 +1,5 @@
+- 2022-01-18	hotfix
+- 2022-01-18	release 4.10.0
 - 2022-01-18	new underscore annotation code
 - 2022-01-17	release 4.9.0
 - 2022-01-17	consolidated annotation codes '+' and '++' into just '+'
