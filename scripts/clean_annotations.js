@@ -104,7 +104,7 @@ function run() {
 			i++; // move index further, since next item is the copy
 		}
 
-
+		return this;
 	};
 
 	Array.prototype.JSONtoMD = function () {
