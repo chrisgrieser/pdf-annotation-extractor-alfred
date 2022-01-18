@@ -302,29 +302,39 @@ function run() {
 	// "="
 	Array.prototype.transformTag4yaml = function () {
 		let newKeywords = [];
+
+		// old tags (from BibTeX library)
+		if (keywords) {
+			keywords
+				.split(",")
+				.map (kw => kw.trim())
+				.forEach (tag => newKeywords.push(tag));
+		}
+
+		// new tags (from annotations)
 		const arr = this
 			.map (a => {
 				if (a.comment?.startsWith("=")) {
+					let tags = a.comment.slice(1); // remove the "="
+					if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
+					tags
+						.split(",")
+						.map (kw => kw.trim())
+						.forEach (tag => newKeywords.push(tag));
 					a.type = "remove";
-					const comment = a.comment.slice(1); // remove the "="
-					const tags = comment.split(",");
-					tags.forEach (tag => newKeywords.push(tag.trim()) );
 				}
 				return a;
-			})
-			.filter (a => a.type !== "remove");
+			});
 
+		// Merge & Save both
 		if (newKeywords.length) {
 			newKeywords = [... new Set (newKeywords)]
 				.map (kw => kw.replaceAll(" ", "-"));
-			keywords += ", " + newKeywords.join(", ");
-			if (keywords) keywords += ", " + newKeywords.join(", "); //insert comma only when there are keywords
-			else keywords = newKeywords.join(", ");
 		}
+		setAlfredEnv("tags", newKeywords.join(", ")); // variable name has to be changed so Alfred accepts it >:(
 
-		setAlfredEnv("tags", keywords); // variable name has to be changed so Alfred accepts it >:(
-
-		return arr;
+		// return annotation array without tags
+		return arr.filter (a => a.type !== "remove");
 	};
 
 	// Main
