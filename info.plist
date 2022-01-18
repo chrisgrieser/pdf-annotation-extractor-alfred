@@ -176,7 +176,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F7B5DCA0-8A9C-451B-8B8F-1FEDB73FEB1F</string>
+				<string>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -795,19 +795,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>60875D2B-F345-4667-9631-7C7E14922640</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8050AEAF-E9FC-4CD7-8C5E-9E2E53A3B9FD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</key>
 		<array>
 			<dict>
@@ -926,16 +913,6 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>60875D2B-F345-4667-9631-7C7E14922640</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -946,12 +923,9 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-		</array>
-		<key>7E2BA1D2-5E79-4591-A327-3C8F117DE619</key>
-		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</string>
+				<string>359F151F-4012-4011-A721-327A59E0AF89</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -960,11 +934,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8050AEAF-E9FC-4CD7-8C5E-9E2E53A3B9FD</key>
+		<key>7E2BA1D2-5E79-4591-A327-3C8F117DE619</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BB342D6E-BBDA-4036-A059-36391CDB3874</string>
+				<string>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1511,31 +1485,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BB342D6E-BBDA-4036-A059-36391CDB3874</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>359F151F-4012-4011-A721-327A59E0AF89</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>BB7FDA9D-8F18-48D4-979A-A0C3D63134B7</key>
 		<array>
 			<dict>
@@ -1907,31 +1856,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>F7B5DCA0-8A9C-451B-8B8F-1FEDB73FEB1F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>AC67CAC6-66BC-41EE-B51F-3C3360E5AFB7</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>F8866F8A-C67E-4B86-BCB6-1329FD574859</key>
 		<array>
 			<dict>
@@ -1975,7 +1899,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F7B5DCA0-8A9C-451B-8B8F-1FEDB73FEB1F</string>
+				<string>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2412,6 +2336,36 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:mode}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>extraction</string>
+						<key>outputlabel</key>
+						<string>extraction</string>
+						<key>uid</key>
+						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>screenshot</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>CDCE2B95-9777-4C81-A2DD-8FE2573D4B97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alignment</key>
 				<integer>0</integer>
 				<key>backgroundcolor</key>
@@ -2559,6 +2513,27 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>ℹ️ Citekey found, but BibTeX entry has no page numbers</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>553BBAC2-1303-45B0-B3AD-CFD7C9EE891D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2630,27 +2605,6 @@ return current_file</string>
 			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
 			<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>ℹ️ Citekey found, but BibTeX entry has no page numbers</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>553BBAC2-1303-45B0-B3AD-CFD7C9EE891D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2874,50 +2828,6 @@ pdfannots "$file_path" --format json &gt; "$alfred_workflow_cache"/temp.json</st
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH=/usr/local/bin:$PATH
-
-doi="no DOI"
-hasDoiURL=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='https?://[[:graph:]]*doi.org[[:graph:]]*' $file_path`
-if [[ $hasDoiURL &gt; 0 ]]
-then
-    doi=`pdfgrep --only-matching --ignore-case --page-range=1-3 --regexp="https?://[[:graph:]]*doi.org[[:graph:]]*" $file_path | head -n 1`
-fi
-
-hasDOI=`pdfgrep --count --ignore-case --page-range=1-3 --regexp='DOI:? *[[:graph:]]*' $file_path`
-if [[ $hasDOI &gt; 0 ]]
-then
-    doiNumber=`pdfgrep --only-match --ignore-case --page-range=1-3 --regexp="DOI:? *[[:graph:]]*" $file_path | head -n 1`
-    doi=`sed -E 's/doi:? */https:\/\/doi.org\//gi' &lt;&lt;&lt; $doiNumber`
-fi
-
-if [[ $doi == "no DOI" ]]
-then
-    echo -n "no DOI"
-else
-    curl --silent -LH "Accept: application/x-bibtex" $doi | grep "pages" | cut -d "{" -f 2 | cut -d "-" -f 1
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/DOI-recognizer.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>60875D2B-F345-4667-9631-7C7E14922640</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -3015,87 +2925,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>\d+</string>
-						<key>outputlabel</key>
-						<string>worked</string>
-						<key>uid</key>
-						<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>error</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>BB342D6E-BBDA-4036-A059-36391CDB3874</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:mode}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>extraction</string>
-						<key>outputlabel</key>
-						<string>extraction</string>
-						<key>uid</key>
-						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>screenshot</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>F7B5DCA0-8A9C-451B-8B8F-1FEDB73FEB1F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>\n$</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>8050AEAF-E9FC-4CD7-8C5E-9E2E53A3B9FD</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>matchmode</key>
 				<integer>1</integer>
 				<key>matchstring</key>
@@ -3111,6 +2940,31 @@ fi</string>
 			<string>alfred.workflow.utility.replace</string>
 			<key>uid</key>
 			<string>17CE4DD3-D484-4FDD-9441-A0589B92CE38</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set focusedapp to (system attribute "focusedapp")
+
+tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -3151,141 +3005,6 @@ fi</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>86514609-4A22-4679-B595-2E96303A9132</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemAlternateNames</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>anno</string>
-				<key>limit</key>
-				<integer>0</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>scopes</key>
-				<array/>
-				<key>sortmode</key>
-				<integer>2</integer>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Extract PDF Annotations from '{query}'</string>
-				<key>types</key>
-				<array>
-					<string>com.adobe.pdf</string>
-				</array>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>set focusedapp to (system attribute "focusedapp")
-
-tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:mode}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>extraction</string>
-						<key>outputlabel</key>
-						<string>extraction</string>
-						<key>uid</key>
-						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>screenshot</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>C58B057D-A71E-47AA-B819-7FAFD075CB88</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3382,6 +3101,124 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>1F409233-6B32-4BC6-9162-D0D58C81A5F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>anno</string>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array/>
+				<key>sortmode</key>
+				<integer>2</integer>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Extract PDF Annotations from '{query}'</string>
+				<key>types</key>
+				<array>
+					<string>com.adobe.pdf</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:mode}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>extraction</string>
+						<key>outputlabel</key>
+						<string>extraction</string>
+						<key>uid</key>
+						<string>52B91EC0-6441-4016-AD9E-6674EBA287E5</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>screenshot</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>C58B057D-A71E-47AA-B819-7FAFD075CB88</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>D50E1790-47CF-40A3-BE8B-609AE5A746FF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3528,14 +3365,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>BBA749AA-EDEC-4269-AED6-E665AF904A6D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>D50E1790-47CF-40A3-BE8B-609AE5A746FF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -5736,7 +5565,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>get citekey from filename</string>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>550</integer>
 			<key>ypos</key>
 			<integer>630</integer>
 		</dict>
@@ -5745,9 +5574,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1315</integer>
+			<integer>1340</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>725</integer>
 		</dict>
 		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
 		<dict>
@@ -5832,9 +5661,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>790</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>785</integer>
+			<integer>670</integer>
 		</dict>
 		<key>39404419-C091-4379-A868-22D8A2854023</key>
 		<dict>
@@ -5915,9 +5744,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1085</integer>
+			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>820</integer>
+			<integer>705</integer>
 		</dict>
 		<key>4BF5F3D6-FF1D-4AC5-A428-7A734B6FBB16</key>
 		<dict>
@@ -5962,9 +5791,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>scroll up (helps finding first page number)</string>
 			<key>xpos</key>
-			<integer>910</integer>
+			<integer>935</integer>
 			<key>ypos</key>
-			<integer>750</integer>
+			<integer>635</integer>
 		</dict>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<dict>
@@ -5980,9 +5809,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1455</integer>
+			<integer>1555</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>425</integer>
 		</dict>
 		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
 		<dict>
@@ -6074,17 +5903,6 @@ Start Annotation Export</string>
 			<integer>60</integer>
 			<key>ypos</key>
 			<integer>1845</integer>
-		</dict>
-		<key>60875D2B-F345-4667-9631-7C7E14922640</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>Fallback: DOI recognition</string>
-			<key>xpos</key>
-			<integer>910</integer>
-			<key>ypos</key>
-			<integer>595</integer>
 		</dict>
 		<key>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</key>
 		<dict>
@@ -6204,17 +6022,6 @@ Start Annotation Export</string>
 			<integer>545</integer>
 			<key>ypos</key>
 			<integer>2020</integer>
-		</dict>
-		<key>8050AEAF-E9FC-4CD7-8C5E-9E2E53A3B9FD</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>remove \n</string>
-			<key>xpos</key>
-			<integer>1080</integer>
-			<key>ypos</key>
-			<integer>625</integer>
 		</dict>
 		<key>83D85448-CA51-4A18-87B6-0F6F02EA0D73</key>
 		<dict>
@@ -6433,9 +6240,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>Fallback: Manual Entering of Page Number</string>
 			<key>xpos</key>
-			<integer>1170</integer>
+			<integer>1195</integer>
 			<key>ypos</key>
-			<integer>820</integer>
+			<integer>705</integer>
 		</dict>
 		<key>A3D475A5-260F-4CE8-96D6-2C3D4A058444</key>
 		<dict>
@@ -6593,15 +6400,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>1025</integer>
 		</dict>
-		<key>BB342D6E-BBDA-4036-A059-36391CDB3874</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>1195</integer>
-			<key>ypos</key>
-			<integer>615</integer>
-		</dict>
 		<key>BB7FDA9D-8F18-48D4-979A-A0C3D63134B7</key>
 		<dict>
 			<key>colorindex</key>
@@ -6718,6 +6516,15 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>490</integer>
 		</dict>
+		<key>CDCE2B95-9777-4C81-A2DD-8FE2573D4B97</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<integer>1135</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
 		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
 		<dict>
 			<key>colorindex</key>
@@ -6770,9 +6577,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>925</integer>
+			<integer>950</integer>
 			<key>ypos</key>
-			<integer>895</integer>
+			<integer>780</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
@@ -6821,9 +6628,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>save citekey, pass file_path</string>
 			<key>xpos</key>
-			<integer>790</integer>
+			<integer>665</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>570</integer>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
@@ -6866,15 +6673,6 @@ these 4 above can be double-clicked to configure the formatting
 			<integer>2115</integer>
 			<key>ypos</key>
 			<integer>980</integer>
-		</dict>
-		<key>F7B5DCA0-8A9C-451B-8B8F-1FEDB73FEB1F</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
-			<key>xpos</key>
-			<integer>610</integer>
-			<key>ypos</key>
-			<integer>620</integer>
 		</dict>
 		<key>F8866F8A-C67E-4B86-BCB6-1329FD574859</key>
 		<dict>

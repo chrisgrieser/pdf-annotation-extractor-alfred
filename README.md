@@ -69,12 +69,6 @@ __2. Install Dependencies__
 Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
 
 ```bash
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install Python3
-brew install python3
-
 # Install pip3
 curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
@@ -83,7 +77,6 @@ rm get-pip.py
 # CLIs needed for Annotation Extraction
 pip3 install pdfminer.six
 pip3 install pdfannots
-brew install pdfgrep
 ```
 
 __3. Download__
