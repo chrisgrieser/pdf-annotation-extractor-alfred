@@ -1925,7 +1925,7 @@
 	<key>createdby</key>
 	<string>Chris Grieser</string>
 	<key>description</key>
-	<string>Extract Annotations as Markdown &amp; inserts Pandoc Citations with correct page numbers and more</string>
+	<string>Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -3103,11 +3103,11 @@ pdfannots "$file_path" --format json &gt; "$alfred_workflow_cache"/temp.json</st
 				<string>{var:obsidian_destination}/{var:citekey}.md</string>
 				<key>filetext</key>
 				<string>---
-aliases: ["{var:title}"]
+aliases: "{var:title}"
 tags: pdf-annotations, {var:tags}
 cssclass: pdf-annotations
 citekey: {var:citekey}
-title: ["{var:title}"]
+title: "{var:title}"
 year: {var:year}
 author: "{var:author}"
 publicationType: {var:ptype}

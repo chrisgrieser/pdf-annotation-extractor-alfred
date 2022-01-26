@@ -226,7 +226,8 @@ function run() {
 			const hLevel = a.comment.match(/^#+(?!\w)/);
 			if (hLevel) {
 				if (a.type === "Highlight" || a.type === "Underline") {
-					a.comment = hLevel[0] + " " + a.quote;
+					const headingText = a.quote.charAt(0).toUpperCase() + a.quote.substr(1).toLowerCase();
+					a.comment = hLevel[0] + " " + headingText;
 					delete a.quote;
 				}
 				a.type = "Heading";
