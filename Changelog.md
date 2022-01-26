@@ -1,3 +1,5 @@
+- 2022-01-26	release 4.11.0
+- 2022-01-26	Capitalize extracted Headings
 - 2022-01-19	release 4.10.3
 - 2022-01-19	release 4.10.2
 - 2022-01-19	'=' annotation code now works for highlights/underlines & removes duplicate tags
