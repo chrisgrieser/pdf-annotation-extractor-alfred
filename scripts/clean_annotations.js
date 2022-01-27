@@ -139,15 +139,16 @@ function run() {
 				case "Underline":
 					if (comment) {
 						output = "- "
-						+ annotationTag
-						+ "__" + comment + "__: "
-						+ "\"" + a.quote + "\""
-						+ reference;
+							+ annotationTag
+							+ "__" + comment + "__: "
+							+ "\"" + a.quote + "\""
+							+ reference;
+						if (/^\d+\./.test(comment)) output.slice(2); // enumerations do not get a bullet
 					} else if (!comment && annotationTag) {
 						output = "- "
-						+ annotationTag
-						+ " \"" + a.quote + "\""
-						+ reference;
+							+ annotationTag
+							+ " \"" + a.quote + "\""
+							+ reference;
 					}
 					else if (!comment && !annotationTag) output = "> \""+ a.quote + "\"" + reference;
 					break;
