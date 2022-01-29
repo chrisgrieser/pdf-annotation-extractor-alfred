@@ -3112,6 +3112,7 @@ year: {var:year}
 author: "{var:author}"
 publicationType: {var:ptype}
 url: {var:url}
+creation-date: {date:yyyy-MM-dd}
 ---
 
 # {var:citekey}
