@@ -50,7 +50,8 @@ function run() {
 	};
 
 	Array.prototype.cleanBrokenOCR = function () {
-		return this.filter (a => /^\s$/.test(a.comment));
+		const arr = this.filter (a => !(a.type === "Free Text" && !a.comment));
+		return arr;
 	};
 
 	Array.prototype.cleanQuoteKey = function () {
@@ -120,6 +121,14 @@ function run() {
 			if (hasBibtexEntry) reference = " [@" + citekey + ", p. " + a.page + "]";
 			else reference = "";
 
+			function bulletHandling(str, comment_, markup) {
+				if (/^\d\. /.test(comment_)) str = str.slice(2); // enumerations do not get a bullet
+				str = str
+					.replaceAll("\n", markup + "\n" + markup) // for multiline-comments
+					.replace (/(..?)(\d\. )/g, "$2$1"); // valid markup of enumerations
+				return str;
+			}
+
 			// type specific output
 			switch (a.type) {
 				case "Highlight":
@@ -130,7 +139,7 @@ function run() {
 							+ "__" + comment + "__: "
 							+ "\"" + a.quote + "\""
 							+ reference;
-							if (/^\d\./.test(comment)) output.slice(2); // enumerations do not get a bullet
+						output = bulletHandling(output, comment, "__");
 					} else if (!comment && annotationTag) {
 						output = "- "
 							+ annotationTag
@@ -152,7 +161,7 @@ function run() {
 				case "Free Text":
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
-					if (/^\d\./.test(comment)) output.slice(2); // enumerations do not get a bullet
+					output = bulletHandling(output, comment, "*");
 					break;
 				case "Heading":
 					output = "\n" + comment;
@@ -279,7 +288,7 @@ function run() {
 	Array.prototype.insertImageMarker = function () {
 		let filename;
 		if (hasBibtexEntry) filename = citekey;
-		else filename = (new Date()).toISOString().slice(0, 10); //ISO date
+		else filename = (new Date()).toISOString().slice(0, 10); // ISO date
 
 		return this.map (a => {
 			if (!a.comment) return a;
