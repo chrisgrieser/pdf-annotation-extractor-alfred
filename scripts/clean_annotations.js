@@ -90,23 +90,6 @@ function run() {
 		return this.filter (a => a.type !== "Underline");
 	};
 
-	Array.prototype.copyHighlightToSplitOffUnderline = function () {
-		if (!underlinesSecondOutput) return this;
-
-		for (let i = 0; i < this.length; i++) {
-			if (!this[i].type === "Highlight" || !this[i].comment) continue;
-			if (!this[i].comment.startsWith("_")) continue;
-			this[i].comment = this[i].comment.slice(1).trim();
-
-			const currentAnno = this[i];
-			currentAnno.type = "Underline";
-			this.splice(i+1, 0, currentAnno); // insert copy as underline at next position
-			i++; // move index further, since next item is the copy
-		}
-
-		return this;
-	};
-
 	Array.prototype.JSONtoMD = function () {
 		const arr = this.map (a => {
 			let comment, output, reference;
@@ -143,7 +126,7 @@ function run() {
 							+ "__" + comment + "__: "
 							+ "\"" + a.quote + "\""
 							+ reference;
-						if (/^\d+\./.test(comment)) output.slice(2); // enumerations do not get a bullet
+							if (/^\d\./.test(comment)) output.slice(2); // enumerations do not get a bullet
 					} else if (!comment && annotationTag) {
 						output = "- "
 							+ annotationTag
@@ -165,6 +148,7 @@ function run() {
 				case "Free Text":
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
+					if (/^\d\./.test(comment)) output.slice(2); // enumerations do not get a bullet
 					break;
 				case "Heading":
 					output = "\n" + comment;
@@ -342,6 +326,24 @@ function run() {
 
 		// return annotation array without tags
 		return arr.filter (a => a.type !== "remove");
+	};
+
+	// "_"
+	Array.prototype.copyHighlightToSplitOffUnderline = function () {
+		if (!underlinesSecondOutput) return this;
+
+		for (let i = 0; i < this.length; i++) {
+			if (!this[i].type === "Highlight" || !this[i].comment) continue;
+			if (!this[i].comment.startsWith("_")) continue;
+			this[i].comment = this[i].comment.slice(1).trim();
+
+			const currentAnno = this[i];
+			currentAnno.type = "Underline";
+			this.splice(i+1, 0, currentAnno); // insert copy as underline at next position
+			i++; // move index further, since next item is the copy
+		}
+
+		return this;
 	};
 
 	// Main
