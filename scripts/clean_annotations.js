@@ -49,6 +49,10 @@ function run() {
 		});
 	};
 
+	Array.prototype.cleanBrokenOCR = function () {
+		return this.filter (a => /^\s$/.test(a.comment));
+	};
+
 	Array.prototype.cleanQuoteKey = function () {
 		return this.map (a => {
 			if (!a.quote) return a; // free comments have no text
@@ -230,7 +234,7 @@ function run() {
 	};
 
 	// "?"
-	Array.prototype.admotionQuestion = function () {
+	Array.prototype.admonitionQuestion = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
 			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
@@ -275,7 +279,7 @@ function run() {
 	Array.prototype.insertImageMarker = function () {
 		let filename;
 		if (hasBibtexEntry) filename = citekey;
-		else filename = (new Date()).toISOString().slice(0, 10);
+		else filename = (new Date()).toISOString().slice(0, 10); //ISO date
 
 		return this.map (a => {
 			if (!a.comment) return a;
@@ -351,13 +355,14 @@ function run() {
 
 	const annotations = JSON.parse(readFile(inputFile))
 		.betterKeys()
+		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
 
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
-		.admotionQuestion()
+		.admonitionQuestion()
 		.transformTasks()
 		.insertImageMarker()
 		.transformTag4yaml()
