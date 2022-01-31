@@ -61,7 +61,8 @@ function run() {
 				.replace(/ {2,}/g, " ") // multiple spaces
 				.replace(/["„”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
-				.replace(/\u00AD/g, ""); // remove invisible characters
+				.replace(/\u00AD/g, "") // remove invisible character
+				.replace(/(\w)[.,]\d/g, "$1"); // remove footnotes from quote
 			return a;
 		});
 	};
@@ -224,7 +225,8 @@ function run() {
 			const hLevel = a.comment.match(/^#+(?!\w)/);
 			if (hLevel) {
 				if (a.type === "Highlight" || a.type === "Underline") {
-					const headingText = a.quote.charAt(0).toUpperCase() + a.quote.substr(1).toLowerCase();
+					let headingText = a.quote;
+					if (headingText.charAt(3) === headingText.charAt(3).toUpperCase()) headingText = a.quote.charAt(0).toUpperCase() + a.quote.substr(1).toLowerCase();
 					a.comment = hLevel[0] + " " + headingText;
 					delete a.quote;
 				}
