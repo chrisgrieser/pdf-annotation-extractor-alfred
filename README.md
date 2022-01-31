@@ -24,7 +24,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 <!-- /MarkdownTOC -->
 
 ## How to Use
-- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used. 
+- Use the **hotkey** to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
 
 ### Annotation Types extracted
 - Highlights
@@ -46,7 +46,7 @@ The *correct* page numbers will automatically be determined from one of three so
 Insert these special codes at the **beginning** of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
 - `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If used across pages, both pages will be included in the citation, and the "(…)" will be omitted, assuming the continuation of a of across page borders.
-- `? foo` **(free comments)**: Turns "foo" into a **"Pseudo-Admonitions"** [^1] (`>>> `) and move up. (Used for Introductory Comments or Questions).
+- `? foo` **(free comments)**: Turns "foo" into a **"Pseudo-Admonitions"** [^1] (`>>>`) and move up. (Used for Introductory Comments or Questions).
 - `##`: Turns highlighted/underlined text into a **heading** that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
 - `---` **(free comments)**: Inserts a markdown **hr** (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a **task** and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
@@ -102,7 +102,7 @@ brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 ## Configuration
 _Use the Alfred keyword `aconf` for the configuration of this workflow._
 
-- The output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended. 
+- The output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
 - Set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore: `{citekey}_{...}.pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 - In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
 - The Obsidian destination must be a folder in your vault.
@@ -113,7 +113,7 @@ _Use the Alfred keyword `aconf` for the configuration of this workflow._
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like **Skim** do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - The workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all annotations that are "image" or "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview or PDF Expert, most likely the Alfred app does not have permission to access them. You can give Alfred permission in the Mac OS System Settings:
-<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%> 
+<img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
 
 When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach the log file.
 

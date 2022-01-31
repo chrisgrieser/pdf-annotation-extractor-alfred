@@ -1,3 +1,7 @@
+- 2022-01-31	release 4.12.0
+- 2022-01-31	clean broken ocr
+- 2022-01-31	ordered lists in comments don't get bullets
+- 2022-01-27	enumration-comments do not get a bullet point anymore
 - 2022-01-26	release 4.11.0
 - 2022-01-26	Capitalize extracted Headings
 - 2022-01-19	release 4.10.3
