@@ -83,16 +83,27 @@ function run() {
 	};
 
 	Array.prototype.splitOffUnderlines = function () {
-		const hasUnderlines = this.some(a => a.type === "Underline");
-		if (!underlinesSecondOutput || !hasUnderlines) {
+		if (!underlinesSecondOutput) {
+			setAlfredEnv("underlines", "none");
+			return this;
+		}
+		const underlineAnnos = this.filter (a => a.type === "Underline");
+
+		const underScoreHls = [];
+		this.forEach (anno => {
+			if (!anno.type === "Highlight" || !anno.comment) return;
+			if (!anno.comment.startsWith("_")) return;
+			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
+			underScoreHls.push(anno);
+		});
+
+		const totalSplitOff = [...underlineAnnos, ...underScoreHls];
+		if (!totalSplitOff.length) {
 			setAlfredEnv("underlines", "none");
 			return this;
 		}
 
-		const underlineAnnos = this
-			.filter (a => a.type === "Underline")
-			.JSONtoMD();
-		setAlfredEnv("underlines", underlineAnnos);
+		setAlfredEnv("underlines", totalSplitOff.JSONtoMD());
 		return this.filter (a => a.type !== "Underline");
 	};
 
@@ -226,7 +237,7 @@ function run() {
 			if (hLevel) {
 				if (a.type === "Highlight" || a.type === "Underline") {
 					let headingText = a.quote;
-					if (headingText.charAt(3) === headingText.charAt(3).toUpperCase()) headingText = a.quote.charAt(0).toUpperCase() + a.quote.substr(1).toLowerCase();
+					if (headingText === headingText.toUpperCase()) headingText = a.quote.charAt(0).toUpperCase() + a.quote.substr(1).toLowerCase();
 					a.comment = hLevel[0] + " " + headingText;
 					delete a.quote;
 				}
@@ -343,24 +354,6 @@ function run() {
 		return arr.filter (a => a.type !== "remove");
 	};
 
-	// "_"
-	Array.prototype.copyHighlightToSplitOffUnderline = function () {
-		if (!underlinesSecondOutput) return this;
-
-		for (let i = 0; i < this.length; i++) {
-			if (!this[i].type === "Highlight" || !this[i].comment) continue;
-			if (!this[i].comment.startsWith("_")) continue;
-			this[i].comment = this[i].comment.slice(1).trim();
-
-			const currentAnno = this[i];
-			currentAnno.type = "Underline";
-			this.splice(i+1, 0, currentAnno); // insert copy as underline at next position
-			i++; // move index further, since next item is the copy
-		}
-
-		return this;
-	};
-
 	// Main
 	// --------------------------------------------------------------
 
@@ -379,8 +372,6 @@ function run() {
 		.transformTag4yaml()
 
 		.splitOffUnderlines()
-		.copyHighlightToSplitOffUnderline()
-
 		.JSONtoMD();
 
 	setAlfredEnv("annotations", annotations);
