@@ -293,7 +293,8 @@ function run() {
 			{ "type": "Heading", "comment": "## Tasks" },
 			...taskArr,
 			{ "type": "Line Break", "comment": "" },
-			...annoArr
+			...annoArr,
+			{ "type": "hr", "comment": "" },
 		];
 	};
 
