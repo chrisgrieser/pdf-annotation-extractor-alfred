@@ -1,3 +1,8 @@
+- 2022-02-23	release 4.12.1
+- 2022-02-22	heading transformation to titlecase whken it is all uppercase
+- 2022-02-21	simplify installation
+- 2022-02-01	fixed titlecasing and uncerscroe-splitoffs
+- 2022-01-31	remove footnotes from highlighted text
 - 2022-01-31	release 4.12.0
 - 2022-01-31	clean broken ocr
 - 2022-01-31	ordered lists in comments don't get bullets
