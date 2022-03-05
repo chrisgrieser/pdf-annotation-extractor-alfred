@@ -6652,7 +6652,7 @@ Image Insert
 	<key>variables</key>
 	<dict>
 		<key>bibtex_library_path</key>
-		<string>~/Library/Mobile Documents/com~apple~CloudDocs/BibDesk/My Library.bib</string>
+		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
 		<string>filename</string>
 		<key>obsidian_destination</key>
@@ -6660,7 +6660,7 @@ Image Insert
 		<key>output_style</key>
 		<string>obsidian</string>
 		<key>pdf_engine</key>
-		<string>wkhtmltopdf</string>
+		<string>pdflatex</string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>

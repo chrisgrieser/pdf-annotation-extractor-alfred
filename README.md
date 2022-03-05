@@ -27,7 +27,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 <!-- /MarkdownTOC -->
 
 ## How to Use
-- Use the __hotkey__ to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
+- Use the hotkey to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
 
 ### Annotation Types extracted
 - Highlights
@@ -85,8 +85,8 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 5. Set BibTeX Library Path
 	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 
-6. Further steps only required for specific output types
-	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder .
+6. Optional: only required for specific output types
+	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
 	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
 
 	```bash
@@ -111,7 +111,7 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - When the hotkey does not work when triggered in Preview or PDF Expert, most likely the Alfred app does not have permission to access them. You can give Alfred permission in the Mac OS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
 
-When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues). Be sure to include screenshots and/or a debugging log, as I will not be able to help you otherwise. You can get a debugging log by opening the workflow in Alfred preferences and pressing `cmd + D`. A small window will open up which will log everything happening during the execution of the Workflow. Use the malfunctioning part of the workflow once more, copy the content of the log window, and attach the log file.
+ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
 
 ## Credits
 Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible. Also thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
@@ -120,8 +120,8 @@ Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) wit
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
 
 ### Profiles
-- Discord: `@pseudometa#9546`
 - [Academic Website](https://chris-grieser.de/)
+- [Discord](https://discordapp.com/users/462774483044794368/)
 - [GitHub](https://github.com/chrisgrieser/)
 - [Twitter](https://twitter.com/pseudo_meta)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
@@ -133,4 +133,4 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 
 [⬆️ Go Back to Top](#Table-of-Contents)
 
-[^1]: These are a feature exclusive to Obsidian with [certain themes](https://github.com/chrisgrieser/shimmering-focus).
+[^1]: These are exclusive to Obsidian with [certain themes](https://github.com/chrisgrieser/shimmering-focus).
