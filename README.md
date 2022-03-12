@@ -19,7 +19,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - [Requirements & Installation](#requirements--installation)
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
+- [Thanks & Credits](#thanks--credits)
 - [About the Developer](#about-the-developer)
 	- [Profiles](#profiles)
 	- [Donate](#donate)
@@ -64,10 +64,10 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 ## Requirements & Installation
 
 1. Requirements
-	- Alfred (Mac only)
 	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 	- References saved as BibTeX-Library (`.bib`)
 2. Install Dependencies
+	- Install [Homebrew](https://brew.sh/).
 	- Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
 
 	```bash
@@ -90,7 +90,6 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
 
 	```bash
-	# with Homebrew
 	brew install pandoc
 	brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
 	```
@@ -113,8 +112,10 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 
 ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
 
-## Credits
-Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible. Also thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
+## Thanks & Credits
+- Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
+- Also thanks to @StPag from the Obsidian Discord Server for his ideas on annotation codes.
+- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik - Flaticon.</a>
 
 ## About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
