@@ -2140,7 +2140,7 @@ return current_file</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>relatedApps</key>
 				<array>
 					<string>com.apple.finder</string>
@@ -2356,7 +2356,7 @@ return current_file</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>relatedApps</key>
 				<array>
 					<string>com.readdle.PDFExpert-Mac</string>
