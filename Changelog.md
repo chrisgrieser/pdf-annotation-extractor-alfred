@@ -1,3 +1,7 @@
+- 2022-03-28	release 4.13.0
+- 2022-03-28	changed Pseudo-Admonitions to Obsidian Callout Syntax
+- 2022-03-14	improved release workflow
+- 2022-03-12	credits for icons
 - 2022-02-23	release 4.12.1
 - 2022-02-22	heading transformation to titlecase whken it is all uppercase
 - 2022-02-21	simplify installation

@@ -83,7 +83,7 @@ function run() {
 		return this
 			// in case the page numbers have names like "image 1" instead of integers
 			.map (a => {
-				if (typeof(a.page) === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
+				if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
 				return a;
 			})
 			.map (a => {
@@ -306,7 +306,7 @@ function run() {
 			...taskArr,
 			{ "type": "Line Break", "comment": "" },
 			...annoArr,
-			{ "type": "hr", "comment": "" },
+			{ "type": "hr", "comment": "" }
 		];
 	};
 
@@ -314,7 +314,7 @@ function run() {
 	Array.prototype.insertImageMarker = function () {
 		let filename;
 		if (hasBibtexEntry) filename = citekey;
-		else filename = (new Date()).toISOString().slice(0, 10); // ISO date
+		else filename = new Date().toISOString().slice(0, 10); // ISO date
 
 		return this.map (a => {
 			if (!a.comment) return a;
