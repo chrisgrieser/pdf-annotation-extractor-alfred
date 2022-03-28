@@ -42,14 +42,14 @@ The *correct* page numbers will automatically be determined from one of three so
 1. the BibTeX-Library
 2. DOI found in the PDF
 3. Prompt to manually enter the page number.
-	- Enter the __true page number of your first PDF page__. *Example:__ if the first PDF page represents the page number 104, you have to enter `104`.
-	- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF *would have*. *Example:* You PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
+	- Enter the __true page number of your first PDF page__. *Example*:__ if the first PDF page represents the page number 104, you have to enter `104`.
+	- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example:* Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
 
 ### Annotation Codes
 Insert these special codes at the __beginning__ of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
 - `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If used across pages, both pages will be included in the citation, and the "(…)" will be omitted, assuming the continuation of a of across page borders.
-- `? foo` __(free comments)__: Turns "foo" into a __"Pseudo-Admonitions"__ [^1] (`>>>`) and move up. (Used for Introductory Comments or Questions).
+- `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax).
 - `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
 - `---` __(free comments)__: Inserts a markdown __hr__ (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a __task__ and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
@@ -133,5 +133,3 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [Ko-Fi](https://ko-fi.com/pseudometa) <!-- markdown-link-check-disable-line -->
 
 [⬆️ Go Back to Top](#Table-of-Contents)
-
-[^1]: These are exclusive to Obsidian with [certain themes](https://github.com/chrisgrieser/shimmering-focus).

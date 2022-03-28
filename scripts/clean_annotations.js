@@ -196,8 +196,8 @@ function run() {
 				case "Line Break":
 					output = "\n";
 					break;
-				case "Checkbox Question":
-					output = ">>> " + comment + "\n";
+				case "Question Callout":
+					output = "> [!QUESTION]\n> " + comment + "\n";
 					break;
 				case "Task":
 					output = "- [ ] " + comment;
@@ -268,17 +268,17 @@ function run() {
 	};
 
 	// "?"
-	Array.prototype.admonitionQuestion = function () {
+	Array.prototype.questionCallout = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
 			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
-				a.type = "Checkbox Question";
+				a.type = "Question Callout";
 				a.comment = a.comment.slice(1).trim();
 			}
 			return a;
 		});
-		const pseudoAdmos = annoArr.filter(a => a.type === "Checkbox Question");
-		annoArr = annoArr.filter(a => a.type !== "Checkbox Question");
+		const pseudoAdmos = annoArr.filter(a => a.type === "Question Callout");
+		annoArr = annoArr.filter(a => a.type !== "Question Callout");
 		return [...pseudoAdmos, ...annoArr];
 	};
 
@@ -379,7 +379,7 @@ function run() {
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
-		.admonitionQuestion()
+		.questionCallout()
 		.transformTasks()
 		.insertImageMarker()
 		.transformTag4yaml()
