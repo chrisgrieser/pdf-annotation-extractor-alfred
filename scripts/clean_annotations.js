@@ -212,7 +212,7 @@ function run() {
 		const mdText = arr
 			.join("\n")
 			.trim()
-			.replace(/\n{3,}/g, "\n\n")
+			.replace(/\n{3,}/g, "\n\n") // needed in case the annotaitons add line breaks
 			+ "\n";
 		return mdText;
 	};
@@ -333,7 +333,7 @@ function run() {
 	Array.prototype.transformTag4yaml = function () {
 		let newKeywords = [];
 
-		// old tags (from BibTeX library)
+		// existing tags (from BibTeX library)
 		if (keywords) {
 			keywords
 				.split(",")
@@ -341,7 +341,7 @@ function run() {
 				.forEach (tag => newKeywords.push(tag));
 		}
 
-		// new tags (from annotations)
+		// addtional tags (from annotations)
 		const arr = this
 			.map (a => {
 				if (a.comment?.startsWith("=")) {
