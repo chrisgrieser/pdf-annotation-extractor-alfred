@@ -139,7 +139,7 @@ The Images will be inserted in the markdown file with the `![[ ]]` syntax.
 ## Thanks & Credits
 - Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
 - Also many thanks to [@mgmeyers for pdf-annots2json](https://github.com/mgmeyers/pdf-annots2json/), which streamlined this workflow *even further*.
-- I also thank [@StPag](https://github.com/stpag) for his ideas on annotation codes.
+- I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on annotation codes.
 - <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik - Flaticon.</a>
 
 ## About the Developer
