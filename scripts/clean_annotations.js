@@ -12,6 +12,7 @@ function run() {
 	if (hasBibtexEntry) citekey = $.getenv("citekey");
 	const keywords = $.getenv("keywords");
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
+	const extractorCLI = $.getenv("extractor_cli");
 
 	function readFile (path, encoding) {
 		if (!encoding) encoding = $.NSUTF8StringEncoding;
@@ -41,10 +42,15 @@ function run() {
 		return capitalized;
 	};
 
+	function setFilename () {
+		if (hasBibtexEntry) return citekey;
+		return new Date().toISOString().slice(0, 10); // eslint-disable-line newline-per-chained-call
+	}
+
 	// Core Methods
 	// --------------------------------------------------------------
 
-	Array.prototype.betterKeys = function () {
+	Array.prototype.adapter4pdfannots = function () {
 		return this.map (a => {
 			delete a.start_xy;
 			delete a.author;
@@ -57,6 +63,36 @@ function run() {
 			if (a.type === "Text") a.type = "Free Comment";
 			if (a.type === "StrikeOut") a.type = "Strikethrough";
 			if (a.type === "FreeText") a.type = "Free Text";
+			return a;
+		});
+	};
+
+	Array.prototype.adapter4pdfannots2json = function () {
+		// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
+		return this.map (a => {
+			delete a.date;
+			delete a.color;
+
+			a.quote = a.annotatedText;
+			delete a.annotatedText;
+
+			switch (a.type) {
+				case "text":
+					a.type = "Free Comment";
+					break;
+				case "strike":
+					a.type = "Strikethrough";
+					break;
+				case "highlight":
+					a.type = "Highlight";
+					break;
+				case "underline":
+					a.type = "underline";
+					break;
+				case "image":
+					a.type = "Image";
+					break;
+			}
 			return a;
 		});
 	};
@@ -74,7 +110,8 @@ function run() {
 				.replace(/["„”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
 				.replace(/\u00AD/g, "") // remove invisible character
-				.replace(/(\w)[.,]\d/g, "$1"); // remove footnotes from quote
+				.replace(/(\w)[.,]\d/g, "$1") // remove footnotes from quote
+				.replaceAll ("\\u0026", "&"); // resolve
 			return a;
 		});
 	};
@@ -311,10 +348,8 @@ function run() {
 	};
 
 	// "!n"
-	Array.prototype.insertImageMarker = function () {
-		let filename;
-		if (hasBibtexEntry) filename = citekey;
-		else filename = new Date().toISOString().slice(0, 10); // ISO date
+	Array.prototype.insertImageMarker4pdfannots = function () {
+		const filename = setFilename();
 
 		return this.map (a => {
 			if (!a.comment) return a;
@@ -325,6 +360,19 @@ function run() {
 				const imageAlias = imageStr[2];
 				a.comment = filename + "_image"+ imageNo + ".png|"+ imageAlias;
 			}
+			return a;
+		});
+	};
+
+	// pdfannots images (rectangle)
+	Array.prototype.insertImageMarker4pdfannots2json = function () {
+		const filename = setFilename();
+
+		return this.map (a => {
+			if (a.type !== "Image") return a;
+
+			const imageNo = a.imagePath.replace(/.*\/.+?-(\d).*/, "$1");
+			a.comment = `${filename}_image${imageNo}.png`;
 			return a;
 		});
 	};
@@ -370,20 +418,27 @@ function run() {
 	// Main
 	// --------------------------------------------------------------
 
-	const annotations = JSON.parse(readFile(inputFile))
-		.betterKeys()
+	let annotations = JSON.parse(readFile(inputFile));
+
+	if (extractorCLI === "pdfannots") annotations = annotations.adapter4pdfannots();
+	else annotations = annotations.adapter4pdfannots2json();
+
+	annotations = annotations
 		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
-
+		// --------
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
 		.questionCallout()
 		.transformTasks()
-		.insertImageMarker()
-		.transformTag4yaml()
+		.transformTag4yaml();
 
+	if (extractorCLI === "pdfannots") annotations = annotations.insertImageMarker4pdfannots();
+	else annotations = annotations.insertImageMarker4pdfannots2json();
+
+	annotations = annotations
 		.splitOffUnderlines()
 		.JSONtoMD();
 

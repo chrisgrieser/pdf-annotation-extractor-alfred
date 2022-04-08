@@ -210,6 +210,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>215DAF1C-5259-4199-8757-4A221622DEBC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
 		<array>
 			<dict>
@@ -744,6 +757,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>09E2E51E-0A47-4FA6-9C66-B01FED274D9F</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>215DAF1C-5259-4199-8757-4A221622DEBC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>60DBB37A-7508-4479-AC36-B2B8BE7FA4D6</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -2845,21 +2870,15 @@ return current_file</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
-
-python3 -c "import pdfminer" 
-
-mkdir -p "$alfred_workflow_cache"
-
-pdfannots "$file_path" --format json &gt; "$alfred_workflow_cache"/temp.json</string>
+				<string></string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>scripts/run-extraction.sh</string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -4153,7 +4172,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification (or disabling Bibliography Extraction)","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification (or disabling Bibliography Extraction)","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"},{"title":"⚙️ Extractor CLI","arg":"extractor","subtitle":"currently: {var:extractor_cli}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -4801,6 +4820,20 @@ fi</string>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
+						<string>extractor</string>
+						<key>outputlabel</key>
+						<string>extractor</string>
+						<key>uid</key>
+						<string>60DBB37A-7508-4479-AC36-B2B8BE7FA4D6</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
 						<string>run</string>
 						<key>outputlabel</key>
 						<string>run</string>
@@ -5342,6 +5375,36 @@ tell application id "com.runningwithcrayons.Alfred" to set configuration "underl
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>set oldValue to (system attribute "extractor_cli")
+if (oldValue = "pdfannots")
+	set newValue to "pdf-annots2json"
+else
+	set newValue to "pdfannots"
+end if
+
+tell application id "com.runningwithcrayons.Alfred" to set configuration "extractor_cli" to value newValue in workflow (system attribute "alfred_workflow_bundleid")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>215DAF1C-5259-4199-8757-4A221622DEBC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>externaltriggerid</key>
 				<string>run-from-aconf</string>
 				<key>passinputasargument</key>
@@ -5500,6 +5563,17 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>ypos</key>
 			<integer>850</integer>
 		</dict>
+		<key>215DAF1C-5259-4199-8757-4A221622DEBC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>toggle the value</string>
+			<key>xpos</key>
+			<integer>290</integer>
+			<key>ypos</key>
+			<integer>2385</integer>
+		</dict>
 		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
 		<dict>
 			<key>colorindex</key>
@@ -5518,7 +5592,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>2250</integer>
+			<integer>2245</integer>
 		</dict>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<dict>
@@ -6338,9 +6412,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>285</integer>
+			<integer>200</integer>
 			<key>ypos</key>
-			<integer>2550</integer>
+			<integer>2665</integer>
 		</dict>
 		<key>BF54BDB0-A9D8-4AB8-9ACE-80B874B72F26</key>
 		<dict>
@@ -6470,9 +6544,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>205</integer>
 			<key>ypos</key>
-			<integer>2385</integer>
+			<integer>2520</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
@@ -6655,6 +6729,8 @@ Image Insert
 		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
 		<string>filename</string>
+		<key>extractor_cli</key>
+		<string>pdf-annots2json</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>output_style</key>
@@ -6666,6 +6742,7 @@ Image Insert
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
+		<string>extractor_cli</string>
 		<string>bibtex_library_path</string>
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
