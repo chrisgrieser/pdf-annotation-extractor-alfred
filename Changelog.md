@@ -1,3 +1,5 @@
+- 2022-04-08	release 5.0.0
+- 2022-04-08	add support for pdf-annots2json as alternative extraction engine (@mgmeyers)
 - 2022-03-28	release 4.13.0
 - 2022-03-28	changed Pseudo-Admonitions to Obsidian Callout Syntax
 - 2022-03-14	improved release workflow

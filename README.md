@@ -67,12 +67,12 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 The Images will be inserted in the markdown file with the `![[ ]]` syntax.
 
 ### Extraction CLI: `pdf-annots2json` (recommended)
-- Any "rectangle" type annotation in the PDF will be extracted as image. 
+- Any "rectangle" type annotation in the PDF will be extracted as image.
 - No image alt-text (image label) of any kind is added.
 - Result in the document: `![[filename.png]]`
 
 ### Extraction CLI: `pdfannots`
-- Take a screenshot with the hotkey you set. Then use the annotation code `!n` __(free comments)__ (also copied to your clipboard) to insert the n-th image taken with the image-hotkey at the location of the comment location. "n" is the number of images taken, e.g. "!3" for the third image. 
+- Take a screenshot with the hotkey you set. Then use the annotation code `!n` __(free comments)__ (also copied to your clipboard) to insert the n-th image taken with the image-hotkey at the location of the comment location. "n" is the number of images taken, e.g. "!3" for the third image.
 - Entering `!n foobar` in the free comment will add "foobar" as alt-text for the image.
 - Result in the document: `![[filename.png|alt-text]]`
 
@@ -89,7 +89,7 @@ The Images will be inserted in the markdown file with the `![[ ]]` syntax.
 	1. `pdfannots`
 		- Install [Homebrew](https://brew.sh/).
 		- Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
-	
+
 		```bash
 		brew install python3 # newer version of pip3 needed
 		pip3 install pdfannots
@@ -152,7 +152,7 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [GitHub](https://github.com/chrisgrieser/)
 - [Twitter](https://twitter.com/pseudo_meta)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
-- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/) 
+- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
 ### Donate
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
