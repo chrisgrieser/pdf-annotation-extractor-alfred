@@ -2724,43 +2724,6 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:annotations}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>22C43488-3D00-4C04-B5E2-318560A8B196</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:file_path}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>citekey</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2827,6 +2790,43 @@ return current_file</string>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>BBA749AA-EDEC-4269-AED6-E665AF904A6D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:annotations}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>22C43488-3D00-4C04-B5E2-318560A8B196</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:file_path}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>citekey</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -6367,7 +6367,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>2115</integer>
 			<key>ypos</key>
-			<integer>570</integer>
+			<integer>560</integer>
 		</dict>
 		<key>BC076709-F221-436F-88DE-401BA8D595DA</key>
 		<dict>
@@ -6692,7 +6692,7 @@ Image Insert
 		<key>citekey_insertion</key>
 		<string>no_bibliography_extraction</string>
 		<key>extractor_cli</key>
-		<string>pdf-annots2json</string>
+		<string>pdfannots</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>output_style</key>

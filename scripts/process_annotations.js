@@ -7,12 +7,25 @@ function run() {
 	//---------------------------------------------------------------
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
-	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
-	let citekey = "";
-	if (hasBibtexEntry) citekey = $.getenv("citekey");
-	const keywords = $.getenv("keywords");
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const extractorCLI = $.getenv("extractor_cli");
+
+	let citekey = "";
+	let keywords = "";
+	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
+	if (hasBibtexEntry) {
+		citekey = $.getenv("citekey");
+		keywords = $.getenv("keywords");
+	}
+
+	console.log([
+		firstPageNo,
+		underlinesSecondOutput,
+		hasBibtexEntry,
+		keywords,
+		inputFile,
+		extractorCLI
+	].join("; "));
 
 	function readFile (path, encoding) {
 		if (!encoding) encoding = $.NSUTF8StringEncoding;
