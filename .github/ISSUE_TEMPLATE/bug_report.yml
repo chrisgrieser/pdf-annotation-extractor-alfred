@@ -47,3 +47,5 @@ body:
       options:
         - label: I have [updated to the latest version](https://github.com/chrisgrieser/shimmering-obsidian/releases/latest) of this workflow.
           required: true
+        - label: "I checked out the available options under `aconf` and there isn't one that enables the desired behavior."
+          required: true
