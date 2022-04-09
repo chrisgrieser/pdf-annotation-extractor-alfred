@@ -47,8 +47,22 @@ function run() {
 		return new Date().toISOString().slice(0, 10); // eslint-disable-line newline-per-chained-call
 	}
 
-	// Core Methods
+	// Adapter Methods
 	// --------------------------------------------------------------
+
+	/*
+	The script requires annotation-jsons with the following signature:
+	- "type" values need to be lower-cased
+	- "comment" denotes user-written text
+	- "quote" denotes the marked text from the pdf
+	[
+		{
+			"type": "Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough",
+			"comment": string,
+			"quote": string,
+		},
+	]
+	*/
 
 	Array.prototype.adapter4pdfannots = function () {
 		return this.map (a => {
@@ -86,7 +100,7 @@ function run() {
 					a.type = "Highlight";
 					break;
 				case "underline":
-					a.type = "underline";
+					a.type = "Underline";
 					break;
 				case "image":
 					a.type = "Image";
@@ -95,6 +109,10 @@ function run() {
 			return a;
 		});
 	};
+
+	// Adapter Methods
+	// --------------------------------------------------------------
+
 
 	Array.prototype.cleanBrokenOCR = function () {
 		const arr = this.filter (a => !(a.type === "Free Text" && !a.comment));

@@ -2940,7 +2940,7 @@ return current_file</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>scripts/clean_annotations.js</string>
+				<string>scripts/process_annotations.js</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -4172,7 +4172,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification (or disabling Bibliography Extraction)","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"},{"title":"⚙️ Extractor CLI","arg":"extractor","subtitle":"currently: {var:extractor_cli}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification \/ Disabe Bibliography Use","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"},{"title":"⚙️ Extractor CLI","arg":"extractor","subtitle":"currently: {var:extractor_cli}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -4892,7 +4892,7 @@ end run</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"✍️ Manual Input","arg":"manually","subtitle":"enter the reference manually before extraction"},{"title":"🤖 Automatically from Filename","arg":"filename","subtitle":"filename *must* begin with a citekey, followed by an underscore \"[citekey]_[...].pdf\""},{"title":"⛔️ Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BiBTeX Lirbary (e.g. manuscripts from colleagues)"}]</string>
+				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename *must* begin with a citekey, followed by an underscore \"[citekey]_[...].pdf\""},{"title":"📄 Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BibTeX Library"}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -5961,8 +5961,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>run pdfannots 
-(= extracts annotations)</string>
+			<string>run extraction</string>
 			<key>xpos</key>
 			<integer>1795</integer>
 			<key>ypos</key>
@@ -6160,7 +6159,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>clean annotations</string>
+			<string>process annotations</string>
 			<key>xpos</key>
 			<integer>1940</integer>
 			<key>ypos</key>
