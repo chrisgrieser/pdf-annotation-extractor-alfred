@@ -66,11 +66,14 @@ function run() {
 	- "type" values need to be lower-cased
 	- "comment" denotes user-written text
 	- "quote" denotes the marked text from the pdf
+	- "color" denotes a color range
 	[
 		{
 			"type": "Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough",
-			"comment": string,
-			"quote": string,
+			"comment"?: string,
+			"quote"?: string,
+			"color"?: string,
+			"imagePath"?: string,
 		},
 	]
 	*/
@@ -375,7 +378,7 @@ function run() {
 		];
 	};
 
-	// "!n"
+	// "!n" pdfanots images (screenshot-based)
 	Array.prototype.insertImageMarker4pdfannots = function () {
 		return this.map (a => {
 			if (!a.comment) return a;
@@ -390,7 +393,7 @@ function run() {
 		});
 	};
 
-	// pdfannots images (rectangle)
+	// pdf-annots2json images (rectangle annotations)
 	Array.prototype.insertImageMarker4pdfannots2json = function () {
 		return this.map (a => {
 			if (a.type !== "Image") return a;
