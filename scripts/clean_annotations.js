@@ -71,7 +71,6 @@ function run() {
 		// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
 		return this.map (a => {
 			delete a.date;
-			delete a.color;
 
 			a.quote = a.annotatedText;
 			delete a.annotatedText;
