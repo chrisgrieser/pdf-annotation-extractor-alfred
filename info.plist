@@ -2605,6 +2605,10 @@ return current_file</string>
 				<dict>
 					<key>author</key>
 					<string>{var:split4}</string>
+					<key>filename</key>
+					<string>{var:citekey}</string>
+					<key>first_page_no</key>
+					<string>{var:split1}</string>
 					<key>keywords</key>
 					<string>{var:split3}</string>
 					<key>ptype</key>
@@ -3106,7 +3110,7 @@ return current_file</string>
 				<key>createintermediatefolders</key>
 				<true/>
 				<key>filename</key>
-				<string>{var:obsidian_destination}/{var:citekey}.md</string>
+				<string>{var:obsidian_destination}/{var:filename}.md</string>
 				<key>filetext</key>
 				<string>---
 aliases: "{var:title}"
@@ -3806,6 +3810,8 @@ url: {var:url}
 				<false/>
 				<key>variables</key>
 				<dict>
+					<key>filename</key>
+					<string>{date:yyyy-MM-dd}</string>
 					<key>title</key>
 					<string>{query}</string>
 				</dict>
@@ -5473,7 +5479,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1290</integer>
+			<integer>1250</integer>
 			<key>ypos</key>
 			<integer>490</integer>
 		</dict>
@@ -5828,7 +5834,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>saves filename as title</string>
+			<string>saves input-filename as title &amp; isodate as filename</string>
 			<key>xpos</key>
 			<integer>815</integer>
 			<key>ypos</key>
@@ -5849,8 +5855,10 @@ Start Annotation Export</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
+			<key>note</key>
+			<string>filepath to filename</string>
 			<key>xpos</key>
-			<integer>740</integer>
+			<integer>725</integer>
 			<key>ypos</key>
 			<integer>965</integer>
 		</dict>
@@ -6168,8 +6176,10 @@ Start Annotation Export</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
+			<key>note</key>
+			<string>assign output variables</string>
 			<key>xpos</key>
-			<integer>1350</integer>
+			<integer>1330</integer>
 			<key>ypos</key>
 			<integer>490</integer>
 		</dict>

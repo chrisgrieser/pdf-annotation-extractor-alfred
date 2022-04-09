@@ -12,11 +12,13 @@ function run() {
 
 	let citekey = "";
 	let keywords = "";
+	let filename;
 	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
 	if (hasBibtexEntry) {
 		citekey = $.getenv("citekey");
+		filename = citekey;
 		keywords = $.getenv("keywords");
-	}
+	} else filename = new Date().toISOString().slice(0, 10); // eslint-disable-line newline-per-chained-call
 
 	console.log([
 		firstPageNo,
@@ -55,10 +57,6 @@ function run() {
 		return capitalized;
 	};
 
-	function setFilename () {
-		if (hasBibtexEntry) return citekey;
-		return new Date().toISOString().slice(0, 10); // eslint-disable-line newline-per-chained-call
-	}
 
 	// Adapter Methods
 	// --------------------------------------------------------------
@@ -379,8 +377,6 @@ function run() {
 
 	// "!n"
 	Array.prototype.insertImageMarker4pdfannots = function () {
-		const filename = setFilename();
-
 		return this.map (a => {
 			if (!a.comment) return a;
 			const imageStr = a.comment.match (/^!(\d+) ?(.*)/);
@@ -388,7 +384,7 @@ function run() {
 				a.type = "Image";
 				const imageNo = imageStr[1];
 				const imageAlias = imageStr[2];
-				a.comment = filename + "_image"+ imageNo + ".png|"+ imageAlias;
+				a.comment = `${filename}_image${imageNo}.png|${imageAlias}`;
 			}
 			return a;
 		});
@@ -396,8 +392,6 @@ function run() {
 
 	// pdfannots images (rectangle)
 	Array.prototype.insertImageMarker4pdfannots2json = function () {
-		const filename = setFilename();
-
 		return this.map (a => {
 			if (a.type !== "Image") return a;
 
