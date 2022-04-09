@@ -1,3 +1,6 @@
+- 2022-04-09	release 5.0.1
+- 2022-04-09	clarify some descriptions
+- 2022-04-08	fix link
 - 2022-04-08	release 5.0.0
 - 2022-04-08	add support for pdf-annots2json as alternative extraction engine (@mgmeyers)
 - 2022-03-28	release 4.13.0
