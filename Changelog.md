@@ -1,3 +1,4 @@
+- 2022-04-09	release 5.0.3
 - 2022-04-09	release 5.0.2
 - 2022-04-09	fix missing keywords for no-bibliography extractions
 - 2022-04-09	safeguard when there are no images
