@@ -3829,13 +3829,13 @@ url: {var:url}
 				<key>matchmode</key>
 				<integer>1</integer>
 				<key>matchstring</key>
-				<string>.*\/</string>
+				<string>.*\/(.*)\..*</string>
 				<key>regexcaseinsensitive</key>
 				<false/>
 				<key>regexmultiline</key>
 				<false/>
 				<key>replacestring</key>
-				<string></string>
+				<string>$1</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.replace</string>

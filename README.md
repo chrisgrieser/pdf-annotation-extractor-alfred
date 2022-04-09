@@ -11,7 +11,9 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 <!-- MarkdownTOC -->
 
+- [Requirements & Installation](#requirements--installation)
 - [How to Use](#how-to-use)
+	- [Basics](#basics)
 	- [Annotation Types extracted](#annotation-types-extracted)
 	- [Automatic Page Number Identification](#automatic-page-number-identification)
 	- [Annotation Codes](#annotation-codes)
@@ -19,7 +21,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- [Extraction CLI: `pdf-annots2json` \(recommended\)](#extraction-cli-pdf-annots2json-recommended)
 	- [Extraction CLI: `pdfannots`](#extraction-cli-pdfannots)
 - [Extra Features](#extra-features)
-- [Requirements & Installation](#requirements--installation)
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
 - [Thanks & Credits](#thanks--credits)
@@ -29,8 +30,49 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 <!-- /MarkdownTOC -->
 
+## Requirements & Installation
+
+1. Requirements
+	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
+	- References saved as BibTeX-Library (`.bib`)
+2. Install Dependencies, *either*
+	1. `pdfannots`
+		- Install [Homebrew](https://brew.sh/).
+		- Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
+
+		```bash
+		brew install python3 # newer version of pip3 needed
+		pip3 install pdfannots
+		```
+
+	2. `pdf-annots2json`
+		- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
+		- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
+		- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
+
+3. Download this Alfred Workflow
+	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
+
+4. Required Configuration
+	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
+	- using the `aconf` command, select `Extractor CLI` and select `pdf-annots2json` or `pdfannots`, depending on which one you installed.
+	- set the Hotkey by double-clicking this field:
+	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
+
+5. Optional: only required for specific output types
+	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
+	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
+
+	```bash
+	brew install pandoc
+	brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
+	```
+
 ## How to Use
+
+### Basics
 - Use the hotkey to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
+- Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
 
 ### Annotation Types extracted
 - Highlights
@@ -79,44 +121,6 @@ The Images will be inserted in the markdown file with the `![[ ]]` syntax.
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.
 - With the output type set to Obsidian or Markdown, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
-
-## Requirements & Installation
-
-1. Requirements
-	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
-	- References saved as BibTeX-Library (`.bib`)
-2. Install Dependencies, *either*
-	1. `pdfannots`
-		- Install [Homebrew](https://brew.sh/).
-		- Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
-
-		```bash
-		brew install python3 # newer version of pip3 needed
-		pip3 install pdfannots
-		```
-
-	2. `pdf-annots2json`
-		- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
-		- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
-		- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
-
-3. Download this Alfred Workflow
-	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
-
-4. Required Configuration
-	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
-	- using the `aconf` command, select `Extractor CLI` and select `pdf-annots2json` or `pdfannots`, depending on which one you installed.
-	- set the Hotkey by double-clicking this field:
-	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
-
-5. Optional: only required for specific output types
-	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
-	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
-
-	```bash
-	brew install pandoc
-	brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
-	```
 
 ## Configuration
 *Use the Alfred keyword `aconf` for the configuration of this workflow.*
