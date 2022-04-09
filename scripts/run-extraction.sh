@@ -28,6 +28,10 @@ else
 fi
 
 cd "$image_folder/image_temp" || exit 1
+# shellcheck disable=SC2012
+NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
+[[ $NUMBER_OF_IMAGES == 0 ]] && exit 0
+
 for image in *; do
 	clean_name="$(echo "$image" | cut -d- -f-2 | tr -d "-").png"
 	mv "$image" ../"${filename}_$clean_name"

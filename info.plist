@@ -471,7 +471,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</string>
+				<string>39404419-C091-4379-A868-22D8A2854023</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -483,7 +483,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>39404419-C091-4379-A868-22D8A2854023</string>
+				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1063,19 +1063,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FBFAD844-0211-4F50-B344-6AAD97D41894</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -3385,60 +3372,26 @@ tell application id focusedapp to activatetell application "System Events" to k
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>68</integer>
 				<key>script</key>
-				<string></string>
+				<string>tell application id "com.runningwithcrayons.Alfred" to remove configuration "tags" in workflow (system attribute "alfred_workflow_bundleid")
+
+tell application id "com.runningwithcrayons.Alfred" to remove configuration "underlines" in workflow (system attribute "alfred_workflow_bundleid")
+
+tell application id "com.runningwithcrayons.Alfred" to remove configuration "annotations" in workflow (system attribute "alfred_workflow_bundleid")</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>scripts/create-new-draft.sh</string>
+				<string>scripts/finish-and-debug.js</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
+			<string>39404419-C091-4379-A868-22D8A2854023</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{var:underlines}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3545,33 +3498,6 @@ pandoc ~'/Library/Application Support/Alfred/Workflow Data/de.chris-grieser.pdf-
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to remove configuration "tags" in workflow (system attribute "alfred_workflow_bundleid")
-
-tell application id "com.runningwithcrayons.Alfred" to remove configuration "underlines" in workflow (system attribute "alfred_workflow_bundleid")
-
-tell application id "com.runningwithcrayons.Alfred" to remove configuration "annotations" in workflow (system attribute "alfred_workflow_bundleid")</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/finish-and-debug.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>39404419-C091-4379-A868-22D8A2854023</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -3629,17 +3555,17 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>1</integer>
+						<integer>0</integer>
 						<key>matchstring</key>
 						<string>none</string>
 						<key>outputlabel</key>
-						<string>underlines</string>
+						<string>no</string>
 						<key>uid</key>
 						<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>--</string>
+				<string>yes</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -3750,6 +3676,50 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>4683ABC7-8419-41CB-BD41-FA122EA45915</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/create-new-draft.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>*️⃣ Underlines saved in Drafts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -5659,9 +5629,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>remove temporary environment variables &amp; debug</string>
 			<key>xpos</key>
-			<integer>3665</integer>
+			<integer>3670</integer>
 			<key>ypos</key>
-			<integer>825</integer>
+			<integer>795</integer>
 		</dict>
 		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
 		<dict>
@@ -5730,8 +5700,10 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
+			<key>note</key>
+			<string>underlines</string>
 			<key>xpos</key>
-			<integer>3230</integer>
+			<integer>3245</integer>
 			<key>ypos</key>
 			<integer>830</integer>
 		</dict>
@@ -5807,9 +5779,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>3385</integer>
+			<integer>3360</integer>
 			<key>ypos</key>
-			<integer>735</integer>
+			<integer>880</integer>
 		</dict>
 		<key>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</key>
 		<dict>
@@ -6075,15 +6047,6 @@ Start Annotation Export</string>
 			<integer>555</integer>
 			<key>ypos</key>
 			<integer>1530</integer>
-		</dict>
-		<key>8F27876A-B454-4053-BDD7-8B8F9FFD50EB</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>3325</integer>
-			<key>ypos</key>
-			<integer>765</integer>
 		</dict>
 		<key>92AB51FB-020B-47D9-8AD3-3D1A351C6867</key>
 		<dict>
@@ -6516,9 +6479,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>3530</integer>
+			<integer>3500</integer>
 			<key>ypos</key>
-			<integer>735</integer>
+			<integer>880</integer>
 		</dict>
 		<key>CEE857E8-C78A-4CBD-95F0-DBD8681822E0</key>
 		<dict>
@@ -6727,7 +6690,7 @@ Image Insert
 		<key>bibtex_library_path</key>
 		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
-		<string>filename</string>
+		<string>no_bibliography_extraction</string>
 		<key>extractor_cli</key>
 		<string>pdf-annots2json</string>
 		<key>obsidian_destination</key>
@@ -6737,7 +6700,7 @@ Image Insert
 		<key>pdf_engine</key>
 		<string>pdflatex</string>
 		<key>underlines_second_output</key>
-		<string>true</string>
+		<string>false</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
