@@ -106,12 +106,10 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ## Extracting Images
-Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`
-
-The Images will be inserted in the markdown file with the `![[ ]]` syntax.
+Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`. The images will be embedded in the markdown file with the `![[ ]]` syntax.
 
 ### Extraction CLI: `pdf-annots2json` (recommended)
-- Any "rectangle" type annotation in the PDF will be extracted as image.
+- Any rectangle` type annotation in the PDF will be extracted as image.
 - No image alt-text (image label) of any kind is added.
 - Result in the document: `![[filename.png]]`
 
