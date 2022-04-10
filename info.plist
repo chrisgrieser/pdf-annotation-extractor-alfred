@@ -4148,7 +4148,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification \/ Disabe Bibliography Use","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Use Underlines as 2nd Output (currently only Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"},{"title":"⚙️ Extractor CLI","arg":"extractor","subtitle":"currently: {var:extractor_cli}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification \/ Disable Bibliography Use","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"},{"title":"⚙️ Extractor CLI","arg":"extractor","subtitle":"currently: {var:extractor_cli}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -6700,9 +6700,9 @@ Image Insert
 		<key>bibtex_library_path</key>
 		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
-		<string>no_bibliography_extraction</string>
+		<string>filename</string>
 		<key>extractor_cli</key>
-		<string>pdfannots</string>
+		<string>pdf-annots2json</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>output_style</key>
@@ -6710,7 +6710,7 @@ Image Insert
 		<key>pdf_engine</key>
 		<string>pdflatex</string>
 		<key>underlines_second_output</key>
-		<string>false</string>
+		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
