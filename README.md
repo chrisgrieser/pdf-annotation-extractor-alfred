@@ -97,7 +97,7 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 
 - `+`: Merge with previous highlight/underline and puts a "(…)" in between. Used for jumping sections on the same page. If used across pages, both pages will be included in the citation, and the "(…)" will be omitted, assuming the continuation of a of across page borders.
 - `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax).
-- `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). Free comments can be sued for manual headings not appearing in text.
+- `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). 
 - `---` __(free comments)__: Inserts a markdown __hr__ (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a __task__ and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
 - `=`: Adds highlighted/underlined text as __tags__ to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
