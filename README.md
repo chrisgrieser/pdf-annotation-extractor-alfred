@@ -96,10 +96,10 @@ The *correct* page numbers will automatically be determined from one of three so
 Insert these special codes at the __beginning__ of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
 - `+`: Merge this highlight/underline with the previous highlight/underline.
-	- Both annotations on the same page: will put a "(…)" in between them. This is useful to leave out certain parts of text.  Used for jumping sections on the same page. 
+	- Both annotations on the same page: will put a "(…)" in between them. This is useful to leave out certain parts of text.  Used for jumping sections on the same page.
 	- The second annotation is on the following page: Assuming a continuation of a highlight/underline across page borders, this will not insert a "(…)". However, both pages will be inserted in the Pandoc citation, e.g. `[Grieser2020, p. 14-15]`.
 - `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax).
-- `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required). 
+- `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required).
 - `---` __(free comments)__: Inserts a markdown __hr__ (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a __task__ and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
 - `=`: Adds highlighted/underlined text as __tags__ to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
