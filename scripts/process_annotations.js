@@ -18,7 +18,14 @@ function run() {
 		citekey = $.getenv("citekey");
 		filename = citekey;
 		keywords = $.getenv("keywords");
-	} else filename = new Date().toISOString().slice(0, 10); // eslint-disable-line newline-per-chained-call
+	} else {
+		filename = new Date()
+			.toISOString()
+			.slice(0, 19) // eslint-disable-line no-magic-numbers
+			.replace("T", " ")
+			.replaceAll (":", "-")
+			+ "_annotations";
+	}
 
 	console.log([
 		firstPageNo,

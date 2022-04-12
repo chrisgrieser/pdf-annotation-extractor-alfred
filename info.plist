@@ -3811,7 +3811,7 @@ url: {var:url}
 				<key>variables</key>
 				<dict>
 					<key>filename</key>
-					<string>{date:yyyy-MM-dd}</string>
+					<string>{date:yyyy-MM-dd HH-mm-ss}_annotations</string>
 					<key>title</key>
 					<string>{query}</string>
 				</dict>
