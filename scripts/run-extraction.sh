@@ -11,11 +11,10 @@ if [[ "$extractor_cli" == "pdfannots" ]]; then
 fi
 
 # pdf-annots2json
-
-image_folder="${obsidian_destination/#\~/$HOME}"/attachments
+IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}"/attachments
 
 pdf-annots2json "$file_path" \
-	--image-output-path="$image_folder/image_temp" \
+	--image-output-path="$IMAGE_FOLDER/image_temp" \
 	--image-format="png" \
 	--image-base-name="image" \
 	> "$alfred_workflow_cache"/temp.json
@@ -27,12 +26,18 @@ else
 	filename="$citekey"
 fi
 
-cd "$image_folder/image_temp" || exit 1
+cd "$IMAGE_FOLDER/image_temp" || exit 1
+
+# abort if no images
 # shellcheck disable=SC2012
 NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 [[ $NUMBER_OF_IMAGES == 0 ]] && exit 0
 
+# rename & move images
 for image in *; do
 	clean_name="$(echo "$image" | cut -d- -f-2 | tr -d "-").png"
 	mv "$image" ../"${filename}_$clean_name"
 done
+
+# remove temp folder
+rm "$IMAGE_FOLDER/image_temp"
