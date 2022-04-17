@@ -107,7 +107,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 
 - Any `rectangle` type annotation in the PDF will be extracted as image.
 - If the rectangle annotation has any comment, it will be used as the alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
-- When the rectangle annotation has *exactly* the comment `ocr`, the OCR text of the image will also be extracted. Requires [Tesseract](https://github.com/tesseract-ocr/tesseract). 
+- When the rectangle annotation has *exactly* the comment `ocr`, the OCR text of the image will also be extracted. Requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
 
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.

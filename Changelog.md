@@ -1,3 +1,5 @@
+- 2022-04-17	release 6.1.0
+- 2022-04-17	minor improvements to image extraction
 - 2022-04-17	release 6.0.0
 - 2022-04-17	fix date-timezone-issues
 - 2022-04-17	drop support for pdfannots, add ocr image feature from upstream
