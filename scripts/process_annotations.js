@@ -8,7 +8,6 @@ function run() {
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
-	const extractorCLI = $.getenv("extractor_cli");
 
 	let citekey = "";
 	let keywords = "";
@@ -20,10 +19,8 @@ function run() {
 		keywords = $.getenv("keywords");
 	} else {
 		filename = new Date()
-			.toISOString()
-			.slice(0, 19) // eslint-disable-line no-magic-numbers
-			.replace("T", " ")
-			.replaceAll (":", "-")
+			.toLocaleString("en-GB") // to avoid AM/PM
+			.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2}).*/, "$3-$2-$1_$4-$5") // sortable
 			+ "_annotations";
 	}
 
@@ -32,8 +29,7 @@ function run() {
 		underlinesSecondOutput,
 		hasBibtexEntry,
 		keywords,
-		inputFile,
-		extractorCLI
+		inputFile
 	].join("; "));
 
 	function readFile (path, encoding) {
@@ -374,12 +370,13 @@ function run() {
 
 	// pdf-annots2json images (rectangle annotations)
 	Array.prototype.insertImage4pdfannots2json = function () {
+		let i = 1;
 		return this.map (a => {
 			if (a.type !== "Image") return a;
 
-			const imageNo = a.imagePath.replace(/.*\/.+?-(\d).*/, "$1");
-			a.image = `${filename}_image${imageNo}.png`;
-			delete a.imagePath;
+			a.image = `${filename}_image${i}.png`;
+			i++;
+
 			if (!a.comment) return a;
 
 			if (a.comment.startsWith("|")) a.image += a.comment; // add alias
@@ -428,27 +425,23 @@ function run() {
 	// Main
 	// --------------------------------------------------------------
 
-	let annotations = JSON.parse(readFile(inputFile));
-
-	if (extractorCLI === "pdfannots") annotations = annotations.adapter4pdfannots();
-	else annotations = annotations.adapter4pdfannots2json();
-
-	annotations = annotations
+	const annotations = JSON.parse(readFile(inputFile))
+		// process input
+		.adapter4pdfannots2json()
 		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
-		// --------
+
+		// annotation codes & Images
 		.mergeQuotes()
 		.transformHeadings()
 		.transformHr()
 		.questionCallout()
 		.transformTasks()
-		.transformTag4yaml();
+		.transformTag4yaml()
+		.insertImage4pdfannots2json()
 
-	if (extractorCLI === "pdfannots") annotations = annotations.insertImageMarker4pdfannots();
-	else annotations = annotations.insertImage4pdfannots2json();
-
-	annotations = annotations
+		// finalize
 		.splitOffUnderlines()
 		.JSONtoMD();
 

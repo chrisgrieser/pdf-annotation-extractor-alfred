@@ -634,19 +634,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5CD2A338-D3D9-4BEC-BD7F-C3F6080A106D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4683ABC7-8419-41CB-BD41-FA122EA45915</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5EC31DE6-0D3A-4BCC-A6E8-6D30FD19D336</key>
 		<array>
 			<dict>
@@ -664,7 +651,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5CD2A338-D3D9-4BEC-BD7F-C3F6080A106D</string>
+				<string>DED939A6-D2E6-4EEE-A53C-8D12EFC36492</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1591,6 +1578,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>AABC95FB-83C7-4B42-B3F1-B7838A8E5C44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DED939A6-D2E6-4EEE-A53C-8D12EFC36492</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2766,33 +2766,6 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "System Events" to set frontApp to (name of first process where it is frontmost)
-
-if (frontApp is "PDF Expert or 
-
-tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/scroll-up.applescript</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>passthroughargument</key>
@@ -2825,7 +2798,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 				<string>---
 aliases: "{var:title}"
 tags: pdf-annotations, {var:tags}
-cssclass: pdf-annotations
 citekey: {var:citekey}
 title: "{var:title}"
 year: {var:year}
@@ -2926,24 +2898,29 @@ app.openLocation(urlscheme);</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
+				<key>concurrently</key>
 				<false/>
-				<key>variables</key>
-				<dict>
-					<key>filename</key>
-					<string>{date:yyyy-MM-dd HH-mm-ss}_annotations</string>
-					<key>title</key>
-					<string>{query}</string>
-				</dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "System Events" to set frontApp to (name of first process where it is frontmost)
+
+if (frontApp is "PDF Expert or 
+
+tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/scroll-up.applescript</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>5CD2A338-D3D9-4BEC-BD7F-C3F6080A106D</string>
+			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3024,6 +3001,28 @@ app.openLocation(urlscheme);</string>
 			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>filename</key>
+					<string>{date:yyyy-MM-dd_HH-mm}_annotations</string>
+					<key>title</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>DED939A6-D2E6-4EEE-A53C-8D12EFC36492</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -5307,9 +5306,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>scroll up (helps finding first page number)</string>
 			<key>xpos</key>
-			<integer>1255</integer>
+			<integer>1175</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>700</integer>
 		</dict>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<dict>
@@ -5370,17 +5369,6 @@ Start Annotation Export</string>
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>150</integer>
-		</dict>
-		<key>5CD2A338-D3D9-4BEC-BD7F-C3F6080A106D</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>saves input-filename as title &amp; isodate as filename</string>
-			<key>xpos</key>
-			<integer>640</integer>
-			<key>ypos</key>
-			<integer>730</integer>
 		</dict>
 		<key>5EC31DE6-0D3A-4BCC-A6E8-6D30FD19D336</key>
 		<dict>
@@ -5996,6 +5984,15 @@ Start Annotation Export</string>
 			<integer>245</integer>
 			<key>ypos</key>
 			<integer>2390</integer>
+		</dict>
+		<key>DED939A6-D2E6-4EEE-A53C-8D12EFC36492</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>730</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>

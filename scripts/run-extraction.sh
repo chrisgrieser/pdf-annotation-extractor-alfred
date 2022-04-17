@@ -3,33 +3,30 @@
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 mkdir -p "$alfred_workflow_cache"
 
-IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}"/attachments
+IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
+mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
 # also ocr images when tesseract installed
 if which tesseract ; then
 	pdf-annots2json "$file_path" \
-		--image-output-path="$IMAGE_FOLDER/image_temp" \
+		--image-output-path=./ \
 		--image-format="png" \
-		--image-base-name="image" \
 		--attempt-ocr \
 		--ocr-lang="$ocr_lang" \
 		> "$alfred_workflow_cache"/temp.json
 else
 	pdf-annots2json "$file_path" \
-		--image-output-path="$IMAGE_FOLDER/image_temp" \
+		--image-output-path=./ \
 		--image-format="png" \
-		--image-base-name="image" \
 		> "$alfred_workflow_cache"/temp.json
 fi
 
-# move images properly renamed up
-if [[ "$citekey_insertion" == "none" ]] ; then
-	filename=$(date '+%Y-%m-%d')
+if [[ "$citekey_insertion" = "no_bibliography_extraction" ]] ; then
+	IMAGE_BASE_NAME=$(date '+%Y-%m-%d_%H-%M')_annotations
 else
-	filename="$citekey"
+	IMAGE_BASE_NAME="$citekey"
 fi
 
-cd "$IMAGE_FOLDER/image_temp" || exit 1
 
 # abort if no images
 # shellcheck disable=SC2012
@@ -37,10 +34,11 @@ NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 [[ $NUMBER_OF_IMAGES == 0 ]] && exit 0
 
 # rename & move images
+i=1
 for image in *; do
-	clean_name="$(echo "$image" | cut -d- -f-2 | tr -d "-").png"
-	mv "$image" ../"${filename}_$clean_name"
+	mv "$image" ../"${IMAGE_BASE_NAME}_image$i.png"
+	i=$((i + 1))
 done
 
 # remove temp folder
-rm "$IMAGE_FOLDER/image_temp"
+rmdir "$IMAGE_FOLDER"
