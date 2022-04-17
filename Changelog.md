@@ -1,3 +1,7 @@
+- 2022-04-17	release 6.0.0
+- 2022-04-17	fix date-timezone-issues
+- 2022-04-17	drop support for pdfannots, add ocr image feature from upstream
+- 2022-04-17	update for new pdfannots version
 - 2022-04-12	release 5.0.5
 - 2022-04-12	fix
 - 2022-04-10	release 5.0.4
