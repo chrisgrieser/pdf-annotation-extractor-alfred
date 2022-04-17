@@ -77,7 +77,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - Underlines
 - Free Comments
 - Strikethroughs
-- Rectangles as Images, OCR the images.
+- Rectangles as Images (with optional OCR for the images)
 
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
@@ -98,7 +98,7 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax).
 - `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required).
 - `---` __(free comments)__: Inserts a markdown __hr__ (`---`) and removes the annotation.
-- `X` Turns highlighted/underlines text into a __task__ and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
+- `X` Turns highlighted/underlines text into a markdown __task__ (`- [ ]`) and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
 - `=`: Adds highlighted/underlined text as __tags__ to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
@@ -106,8 +106,8 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`. The images will be embedded in the markdown file with the `![[ ]]` syntax, e.g. `![[filename.png|foobar]]`
 
 - Any `rectangle` type annotation in the PDF will be extracted as image.
-- Annotating the rectangle with the comment `|foobar` will add "foobar" as alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
-- Extract the OCR text from any image, whose rectangular comment is exactly `ocr`. It will be added below the image.
+- If the rectangle annotation has any comment, it will be used as the alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
+- When the rectangle annotation has *exactly* the comment `ocr`, the OCR text of the image will also be extracted. Requires [Tesseract](https://github.com/tesseract-ocr/tesseract). 
 
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.
@@ -133,8 +133,8 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
 
 ## Thanks & Credits
-- Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots) without which this Alfred Workflow would not be possible.
-- Also many thanks to [@mgmeyers for pdf-annots2json](https://github.com/mgmeyers/pdf-annots2json/), which streamlined this workflow *even further*.
+- Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots), which caused me to develop this workflow (even though it does not use `pdfannots` anymore).
+- Also many thanks to [@mgmeyers for pdf-annots2json](https://github.com/mgmeyers/pdf-annots2json/), which enabled many improvements to this workflow.
 - I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on annotation codes.
 - <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik - Flaticon.</a>
 

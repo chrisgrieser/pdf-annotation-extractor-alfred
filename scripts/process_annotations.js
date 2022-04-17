@@ -345,7 +345,7 @@ function run() {
 	Array.prototype.transformTasks = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
-			if (a.comment.startsWith("X")) {
+			if (a.comment.charAt(0).toLowerCase() === "x") { // case-insensitive matching
 				a.comment = a.comment.slice(1).trim();
 				if (a.type === "Highlight" || a.type === "Underline") {
 					a.comment += ": " + a.quote;
@@ -376,11 +376,9 @@ function run() {
 			if (a.type !== "Image") return a;
 
 			a.image = `${filename}_image${i}.png`;
+			if (a.comment) if (a.comment !== "ocr") a.image += "|" + a.comment; // add alias
 			i++;
 
-			if (!a.comment) return a;
-
-			if (a.comment.startsWith("|")) a.image += a.comment; // add alias
 			return a;
 		});
 	};
