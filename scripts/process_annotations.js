@@ -265,6 +265,7 @@ function run() {
 					break;
 				case "Image":
 					output = "\n![[" + a.image + "]]\n";
+					if (comment === "ocr") output += "\n- " + a.ocrText;
 					break;
 			}
 			return output;

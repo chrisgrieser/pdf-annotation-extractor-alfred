@@ -8,9 +8,9 @@ Automatically determines correct page numbers, merges highlights across page bre
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
 ## Table of Contents
-
 <!-- MarkdownTOC -->
 
+- [Breaking Changes in Version 6.0](#breaking-changes-in-version-60)
 - [Requirements & Installation](#requirements--installation)
 - [How to Use](#how-to-use)
 	- [Basics](#basics)
@@ -27,6 +27,13 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- [Donate](#donate)
 
 <!-- /MarkdownTOC -->
+
+## Breaking Changes in Version 6.0
+⚠️ The newest version 6.0 requires `pdf-annot2json` instead of `pdfannots` as it has more features.
+
+1. Install `pdf-annot2json`, [as explained here](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#requirements--installation).
+2. Check out the [new image extraction features now available with it](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#extracting-images)
+3. Support for `pdfannots` is dropped (can be uninstalled), and so is support for `Free Text` annotation types and the screenshot-to-image-feature previously used.
 
 ## Requirements & Installation
 

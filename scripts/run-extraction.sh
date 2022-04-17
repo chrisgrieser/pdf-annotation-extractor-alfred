@@ -3,14 +3,6 @@
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 mkdir -p "$alfred_workflow_cache"
 
-# pdfannots
-if [[ "$extractor_cli" == "pdfannots" ]]; then
-	python3 -c "import pdfminer"
-	pdfannots "$file_path" --format json > "$alfred_workflow_cache"/temp.json
-	exit 0
-fi
-
-# pdf-annots2json
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}"/attachments
 
 # also ocr images when tesseract installed
