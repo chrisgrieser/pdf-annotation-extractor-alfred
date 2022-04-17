@@ -5121,7 +5121,7 @@ end run</string>
 				<key>text</key>
 				<string>'{query}'</string>
 				<key>title</key>
-				<string>✅ Obsidian Destination Folder set</string>
+				<string>✅ BibTeX file set</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -5311,6 +5311,14 @@ end run</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
@@ -5339,14 +5347,6 @@ tell application id "com.runningwithcrayons.Alfred" to set configuration "underl
 			<string>24D55235-69D3-48FA-B0A2-8D061B12209D</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -5407,9 +5407,8 @@ tell application id "com.runningwithcrayons.Alfred" to set configuration "extrac
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>⚠️ Please update to pdfannots the latest version of pdfannots, since the new features in verison 5.0 rely on them. 
+	<string>⚠️ The newest version 6.0 uses `pdf-annot2json` instead of `pdfannots` as it has more features. 
 
-`pip3 install --upgrade pdfannots`
 
 --------------------------------------------------------------
 
@@ -5548,7 +5547,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>2385</integer>
+			<integer>2505</integer>
 		</dict>
 		<key>22C43488-3D00-4C04-B5E2-318560A8B196</key>
 		<dict>
@@ -5568,7 +5567,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>xpos</key>
 			<integer>290</integer>
 			<key>ypos</key>
-			<integer>2245</integer>
+			<integer>2365</integer>
 		</dict>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<dict>
@@ -6386,7 +6385,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>200</integer>
 			<key>ypos</key>
-			<integer>2665</integer>
+			<integer>2785</integer>
 		</dict>
 		<key>BF54BDB0-A9D8-4AB8-9ACE-80B874B72F26</key>
 		<dict>
@@ -6518,7 +6517,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>205</integer>
 			<key>ypos</key>
-			<integer>2520</integer>
+			<integer>2640</integer>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
@@ -6705,6 +6704,8 @@ Image Insert
 		<string>pdf-annots2json</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
+		<key>ocr_lang</key>
+		<string>eng+deu</string>
 		<key>output_style</key>
 		<string>obsidian</string>
 		<key>pdf_engine</key>

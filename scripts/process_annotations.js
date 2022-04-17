@@ -86,23 +86,6 @@ function run() {
 	]
 	*/
 
-	Array.prototype.adapter4pdfannots = function () {
-		return this.map (a => {
-			delete a.start_xy;
-			delete a.author;
-			delete a.created;
-
-			a.quote = a.text;
-			a.comment = a.contents;
-			delete a.text;
-			delete a.contents;
-			if (a.type === "Text") a.type = "Free Comment";
-			if (a.type === "StrikeOut") a.type = "Strikethrough";
-			if (a.type === "FreeText") a.type = "Free Text";
-			return a;
-		});
-	};
-
 	Array.prototype.adapter4pdfannots2json = function () {
 		// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
 		return this.map (a => {
@@ -261,7 +244,6 @@ function run() {
 					}
 					if (!comment) output = "> ~~\""+ a.quote + "\"~~" + reference;
 					break;
-				case "Free Text":
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
 					output = bulletHandling(output, comment, "*");
@@ -282,7 +264,7 @@ function run() {
 					output = "- [ ] " + comment;
 					break;
 				case "Image":
-					output = "\n![[" + comment + "]]\n";
+					output = "\n![[" + a.image + "]]\n";
 					break;
 			}
 			return output;
@@ -389,28 +371,17 @@ function run() {
 		];
 	};
 
-	// "!n" pdfanots images (screenshot-based)
-	Array.prototype.insertImageMarker4pdfannots = function () {
-		return this.map (a => {
-			if (!a.comment) return a;
-			const imageStr = a.comment.match (/^!(\d+) ?(.*)/);
-			if (a.type === "Free Comment" && imageStr) {
-				a.type = "Image";
-				const imageNo = imageStr[1];
-				const imageAlias = imageStr[2];
-				a.comment = `${filename}_image${imageNo}.png|${imageAlias}`;
-			}
-			return a;
-		});
-	};
-
 	// pdf-annots2json images (rectangle annotations)
 	Array.prototype.insertImage4pdfannots2json = function () {
 		return this.map (a => {
 			if (a.type !== "Image") return a;
 
 			const imageNo = a.imagePath.replace(/.*\/.+?-(\d).*/, "$1");
-			a.comment = `${filename}_image${imageNo}.png`;
+			a.image = `${filename}_image${imageNo}.png`;
+			delete a.imagePath;
+			if (!a.comment) return a;
+
+			if (a.comment.startsWith("|")) a.image += a.comment; // add alias
 			return a;
 		});
 	};

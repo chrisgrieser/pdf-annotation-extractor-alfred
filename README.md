@@ -18,8 +18,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- [Automatic Page Number Identification](#automatic-page-number-identification)
 	- [Annotation Codes](#annotation-codes)
 - [Extracting Images](#extracting-images)
-	- [Extraction CLI: `pdf-annots2json` \(recommended\)](#extraction-cli-pdf-annots2json-recommended)
-	- [Extraction CLI: `pdfannots`](#extraction-cli-pdfannots)
 - [Extra Features](#extra-features)
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
@@ -35,20 +33,10 @@ Automatically determines correct page numbers, merges highlights across page bre
 1. Requirements
 	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 	- References saved as BibTeX-Library (`.bib`)
-2. Install Dependencies, *either*
-	1. `pdfannots`
-		- Install [Homebrew](https://brew.sh/).
-		- Don't be discouraged if you are not familiar with the Terminal. Just copy-paste the following code into your Terminal and press enter – there is nothing more you have to do. (It may take a moment to download and install everything.)
-
-		```bash
-		brew install python3 # newer version of pip3 needed
-		pip3 install pdfannots
-		```
-
-	2. `pdf-annots2json`
-		- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
-		- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
-		- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
+2. Install Dependencies `pdf-annots2json`
+	- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
+	- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
+	- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
 
 3. Download this Alfred Workflow
 	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
@@ -59,13 +47,16 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
-5. Optional: only required for specific output types
+5. Optional: Additional Requirements for certain use cases
 	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
+	- *Run OCR on extracted Images*: requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
 	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
 
 	```bash
 	brew install pandoc
 	brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
+	brew install tesseract
+	brew install tesseract-lang #only for non-English
 	```
 
 ## How to Use
@@ -79,8 +70,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - Underlines
 - Free Comments
 - Strikethroughs
-- Rectangles as Images (Extraction CLI: `pdf-annots2json`)
-- Free Text (Extraction CLI: `pdfannots`)
+- Rectangles as Images, OCR the images.
 
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
@@ -106,17 +96,11 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ## Extracting Images
-Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`. The images will be embedded in the markdown file with the `![[ ]]` syntax.
+Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`. The images will be embedded in the markdown file with the `![[ ]]` syntax, e.g. `![[filename.png|foobar]]`
 
-### Extraction CLI: `pdf-annots2json` (recommended)
-- Any rectangle` type annotation in the PDF will be extracted as image.
-- No image alt-text (image label) of any kind is added.
-- Result in the document: `![[filename.png]]`
-
-### Extraction CLI: `pdfannots`
-- Take a screenshot with the hotkey you set. Then use the annotation code `!n` __(free comments)__ (also copied to your clipboard) to insert the n-th image taken with the image-hotkey at the location of the comment location. "n" is the number of images taken, e.g. "!3" for the third image.
-- Entering `!n foobar` in the free comment will add "foobar" as alt-text for the image.
-- Result in the document: `![[filename.png|alt-text]]`
+- Any `rectangle` type annotation in the PDF will be extracted as image.
+- Annotating the rectangle with the comment `|foobar` will add "foobar" as alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
+- Extract the OCR text from any image, whose rectangular comment is exactly `ocr`. It will be added below the image.
 
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.
@@ -130,6 +114,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 - In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
 - The Obsidian destination must be a folder in your vault.
 - Select whether any annotations of the type `underlines` should be split off and moved to a second output instead (currently only Drafts is supported).
+- Set the languages for the OCR on images. For the required language code, [refer to the tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html).
 
 ## Troubleshooting
 - Upgrade to the newest version of pdfannots: `pip3 install --upgrade pdfannots`, or [download the latest release of `pdf-annots2json`](https://github.com/mgmeyers/pdf-annots2json/releases/latest).

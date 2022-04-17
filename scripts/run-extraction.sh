@@ -13,11 +13,22 @@ fi
 # pdf-annots2json
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}"/attachments
 
-pdf-annots2json "$file_path" \
-	--image-output-path="$IMAGE_FOLDER/image_temp" \
-	--image-format="png" \
-	--image-base-name="image" \
-	> "$alfred_workflow_cache"/temp.json
+# also ocr images when tesseract installed
+if which tesseract ; then
+	pdf-annots2json "$file_path" \
+		--image-output-path="$IMAGE_FOLDER/image_temp" \
+		--image-format="png" \
+		--image-base-name="image" \
+		--attempt-ocr \
+		--ocr-lang="$ocr_lang" \
+		> "$alfred_workflow_cache"/temp.json
+else
+	pdf-annots2json "$file_path" \
+		--image-output-path="$IMAGE_FOLDER/image_temp" \
+		--image-format="png" \
+		--image-base-name="image" \
+		> "$alfred_workflow_cache"/temp.json
+fi
 
 # move images properly renamed up
 if [[ "$citekey_insertion" == "none" ]] ; then
