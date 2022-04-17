@@ -73,14 +73,15 @@ function run() {
 	- "type" values need to be lower-cased
 	- "comment" denotes user-written text
 	- "quote" denotes the marked text from the pdf
-	- "color" denotes a color range
+	- "colorCategory" denotes a color range
 	[
 		{
 			"type": "Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough",
 			"comment"?: string,
 			"quote"?: string,
-			"color"?: string,
+			"colorCategory"?: string,
 			"imagePath"?: string,
+			"ocrText"?: string,
 		},
 	]
 	*/
@@ -106,6 +107,10 @@ function run() {
 		// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
 		return this.map (a => {
 			delete a.date;
+			delete a.id;
+			delete a.y;
+			delete a.x;
+			delete a.color;
 
 			a.quote = a.annotatedText;
 			delete a.annotatedText;
@@ -136,8 +141,7 @@ function run() {
 
 
 	Array.prototype.cleanBrokenOCR = function () {
-		const arr = this.filter (a => !(a.type === "Free Text" && !a.comment));
-		return arr;
+		return this.filter (a => !(a.type === "Free Text" && !a.comment));
 	};
 
 	Array.prototype.cleanQuoteKey = function () {
@@ -401,7 +405,7 @@ function run() {
 	};
 
 	// pdf-annots2json images (rectangle annotations)
-	Array.prototype.insertImageMarker4pdfannots2json = function () {
+	Array.prototype.insertImage4pdfannots2json = function () {
 		return this.map (a => {
 			if (a.type !== "Image") return a;
 
@@ -470,7 +474,7 @@ function run() {
 		.transformTag4yaml();
 
 	if (extractorCLI === "pdfannots") annotations = annotations.insertImageMarker4pdfannots();
-	else annotations = annotations.insertImageMarker4pdfannots2json();
+	else annotations = annotations.insertImage4pdfannots2json();
 
 	annotations = annotations
 		.splitOffUnderlines()
