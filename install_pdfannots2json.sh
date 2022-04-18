@@ -1,4 +1,13 @@
-#!/bin/zsh
+#!/bin/bash
+
+# --------------------------
+
+# run this by copypasting this into the terminal:
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
+
+# --------------------------
+
+sudo -v
 
 if [[ $(uname -p) == "arm" ]]; then
 	PROCESSOR="M1"
