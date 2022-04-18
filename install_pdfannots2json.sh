@@ -2,8 +2,8 @@
 
 # --------------------------
 
-# run this by copypasting this into the terminal:
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
+# run this by copypasting this into the terminal. (you will need to enter your password afterwards)
+# sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
 
 # --------------------------
 

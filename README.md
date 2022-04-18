@@ -44,6 +44,11 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
 	- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
 	- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
+	- You can also install pdf-annots2json by copypasting this into the terminal and then entering your password:
+	
+	```bash
+	sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
+	```
 
 3. Download this Alfred Workflow
 	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
