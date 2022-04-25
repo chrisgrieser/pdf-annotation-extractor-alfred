@@ -219,7 +219,7 @@ function run() {
 					if (comment) {
 						output = "- "
 							+ annotationTag
-							+ "__" + comment + "__: "
+							+ "__" + comment + ":__ "
 							+ "\"" + a.quote + "\""
 							+ reference;
 						output = bulletHandling(output, comment, "__");
