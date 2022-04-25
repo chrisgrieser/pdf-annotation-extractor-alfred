@@ -45,7 +45,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
 	- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
 	- You can also install pdf-annots2json by copypasting this into the terminal and then entering your password:
-	
+
 	```bash
 	sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
 	```

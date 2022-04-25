@@ -119,7 +119,6 @@ function run() {
 	// Adapter Methods
 	// --------------------------------------------------------------
 
-
 	Array.prototype.cleanBrokenOCR = function () {
 		return this.filter (a => !(a.type === "Free Text" && !a.comment));
 	};

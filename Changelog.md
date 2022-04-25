@@ -1,3 +1,5 @@
+- 2022-04-25	release 6.1.1
+- 2022-04-18	add install script for the end user
 - 2022-04-17	release 6.1.0
 - 2022-04-17	minor improvements to image extraction
 - 2022-04-17	release 6.0.0
