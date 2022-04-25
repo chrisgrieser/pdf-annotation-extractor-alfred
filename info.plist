@@ -2993,7 +2993,7 @@ tell application id focusedapp to activatetell application "System Events" to k
 					<string>com.adobe.pdf</string>
 				</array>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.filefilter</string>
