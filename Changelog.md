@@ -1,3 +1,5 @@
+- 2022-05-02	release 6.1.2
+- 2022-05-01	updated info for new pdfannots release
 - 2022-05-01	release 6.1.0
 - 2022-05-01	change pdf-annots2json to pdfannots2json due to its name change
 - 2022-04-25	release 6.1.1

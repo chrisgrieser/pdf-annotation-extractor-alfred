@@ -37,7 +37,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- References saved as BibTeX-Library (`.bib`)
 2. Install [Homebrew](https://brew.sh/).
 3. Install `pdfannots2json` by pasting the following into you Terminal:
-	
+
 	```bash
 	brew tap mgmeyers/pdfannots2json
 	brew install pdfannots2json
