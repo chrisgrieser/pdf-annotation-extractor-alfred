@@ -40,11 +40,11 @@ Automatically determines correct page numbers, merges highlights across page bre
 1. Requirements
 	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 	- References saved as BibTeX-Library (`.bib`)
-2. Install Dependencies `pdf-annots2json`
-	- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdf-annots2json.Mac.Intel.tar.gz` or `pdf-annots2json.Mac.M1.tar.gz`, depending on your Mac.
+2. Install Dependencies `pdfannots2json`
+	- [Download the latest release](https://github.com/mgmeyers/pdfannots2json/releases/latest), either `pdfannots2json.Mac.Intel.tar.gz` or `pdfannots2json.Mac.M1.tar.gz`, depending on your Mac.
 	- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
 	- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
-	- You can also install pdf-annots2json by copypasting this into the terminal and then entering your password:
+	- You can also install `pdfannots2json` by copypasting this into the terminal and then entering your password:
 
 	```bash
 	sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
@@ -55,7 +55,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 4. Required Configuration
 	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
-	- using the `aconf` command, select `Extractor CLI` and select `pdf-annots2json` or `pdfannots`, depending on which one you installed.
 	- set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
@@ -129,7 +128,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 - Set the languages for the OCR on images. For the required language code, [refer to the tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html).
 
 ## Troubleshooting
-- Upgrade to the newest version of pdfannots: `pip3 install --upgrade pdfannots`, or [download the latest release of `pdf-annots2json`](https://github.com/mgmeyers/pdf-annots2json/releases/latest).
+- [Download the latest release of `pdfannots2json`](https://github.com/mgmeyers/pdfannots2json/releases/latest).
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all annotations that are "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview or PDF Expert, most likely the Alfred app does not have permission to access them. You can give Alfred permission in the Mac OS System Settings:
@@ -139,9 +138,9 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 
 ## Thanks & Credits
 - Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots), which caused me to develop this workflow (even though it does not use `pdfannots` anymore).
-- Also many thanks to [@mgmeyers for pdf-annots2json](https://github.com/mgmeyers/pdf-annots2json/), which enabled many improvements to this workflow.
+- Also many thanks to [@mgmeyers for pdfannots2json](https://github.com/mgmeyers/pdfannots2json/), which enabled many improvements to this workflow.
 - I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on annotation codes.
-- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik - Flaticon.</a>
+- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon.</a>
 
 ## About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!

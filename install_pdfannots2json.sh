@@ -13,8 +13,10 @@ else
 	PROCESSOR="Intel"
 fi
 
-curl -OL "https://github.com/mgmeyers/pdf-annots2json/releases/latest/download/pdf-annots2json.Mac.$PROCESSOR.tar.gz"
-tar -xjf pdf-annots2json.Mac.M1.tar.gz || exit 1
-rm -f pdf-annots2json.Mac.M1.tar.gz
-sudo mv -f -v pdf-annots2json /usr/local/bin/
-pdf-annots2json --version
+DL_FILENAME="pdfannots2json.Mac.$PROCESSOR.tar.gz"
+
+curl -OL "https://github.com/mgmeyers/pdf-annots2json/releases/latest/download/$DL_FILENAME"
+tar -xjf "$DL_FILENAME" || exit 1
+rm -f "$DL_FILENAME"
+sudo mv -f -v pdfannots2json /usr/local/bin/
+pdfannots2json --version

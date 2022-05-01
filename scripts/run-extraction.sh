@@ -8,14 +8,14 @@ mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
 # also ocr images when tesseract installed
 if which tesseract ; then
-	pdf-annots2json "$file_path" \
+	pdfannots2json "$file_path" \
 		--image-output-path=./ \
 		--image-format="png" \
 		--attempt-ocr \
 		--ocr-lang="$ocr_lang" \
 		> "$alfred_workflow_cache"/temp.json
 else
-	pdf-annots2json "$file_path" \
+	pdfannots2json "$file_path" \
 		--image-output-path=./ \
 		--image-format="png" \
 		> "$alfred_workflow_cache"/temp.json

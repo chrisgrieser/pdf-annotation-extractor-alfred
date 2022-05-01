@@ -24,15 +24,6 @@ function run() {
 			+ "_annotations";
 	}
 
-
-	console.log([
-		firstPageNo,
-		underlinesSecondOutput,
-		hasBibtexEntry,
-		keywords,
-		inputFile
-	].join("; "));
-
 	function readFile (path, encoding) {
 		if (!encoding) encoding = $.NSUTF8StringEncoding;
 		const fm = $.NSFileManager.defaultManager;
@@ -62,7 +53,7 @@ function run() {
 	};
 
 
-	// Adapter Methods
+	// Adapter Method
 	// --------------------------------------------------------------
 
 	/*
@@ -83,8 +74,8 @@ function run() {
 	]
 	*/
 
+	// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
 	Array.prototype.adapter4pdfannots2json = function () {
-		// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
 		return this.map (a => {
 			delete a.date;
 			delete a.id;
@@ -369,7 +360,7 @@ function run() {
 		];
 	};
 
-	// pdf-annots2json images (rectangle annotations)
+	// pdfannots2json images (rectangle annotations)
 	Array.prototype.insertImage4pdfannots2json = function () {
 		let i = 1;
 		return this.map (a => {
