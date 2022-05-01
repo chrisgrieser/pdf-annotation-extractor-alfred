@@ -29,36 +29,29 @@ Automatically determines correct page numbers, merges highlights across page bre
 <!-- /MarkdownTOC -->
 
 ## Breaking Changes in Version 6.0
-⚠️ The newest version 6.0 requires `pdf-annot2json` instead of `pdfannots` as it has more features.
-
-1. Install `pdf-annot2json`, [as explained here](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#requirements--installation).
-2. Check out the [new image extraction features now available with it](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#extracting-images)
-3. Support for `pdfannots` is dropped (can be uninstalled), and so is support for `Free Text` annotation types and the screenshot-to-image-feature previously used.
+⚠️ The newest version 6.0 requires `pdfannot2json` instead of `pdfannots` as it has more features.
 
 ## Requirements & Installation
-
 1. Requirements
 	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 	- References saved as BibTeX-Library (`.bib`)
-2. Install Dependencies `pdfannots2json`
-	- [Download the latest release](https://github.com/mgmeyers/pdf-annots2json/releases/latest), either `pdfannots2json.Mac.Intel.tar.gz` or `pdfannots2json.Mac.M1.tar.gz`, depending on your Mac.
-	- Uncompress the file, and move it into `/usr/local/bin/`. (You may need to enter your Mac's password.)
-	- Right-click the file, select open, confirm that you trust the source. (This is needed due to macOS security features.)
-	- You can also install `pdfannots2json` by copypasting this into the terminal and then entering your password:
-
+2. Install [Homebrew](https://brew.sh/).
+3. Install `pdfannots2json` by pasting the following into you Terminal:
+	
 	```bash
-	sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisgrieser/pdf-annotation-extractor-alfred/main/install_pdfannots2json.sh)"
+	brew tap mgmeyers/pdfannots2json
+	brew install pdfannots2json
 	```
 
-3. Download this Alfred Workflow
+4. Download this Alfred Workflow
 	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
 
-4. Required Configuration
+5. Required Configuration
 	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 	- set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
-5. Optional: Additional Requirements for certain use cases
+6. Optional: Additional Requirements for certain use cases
 	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
 	- *Run OCR on extracted Images*: requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
 	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
@@ -128,7 +121,12 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 - Set the languages for the OCR on images. For the required language code, [refer to the tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html).
 
 ## Troubleshooting
-- [Download the latest release of `pdfannots2json`](https://github.com/mgmeyers/pdf-annots2json/releases/latest).
+- Update to the latest version of `pdfannots2json` by running the following Terminal command:
+
+	```bash
+	brew upgrade pdfannots2json
+	```
+
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all annotations that are "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview or PDF Expert, most likely the Alfred app does not have permission to access them. You can give Alfred permission in the Mac OS System Settings:
