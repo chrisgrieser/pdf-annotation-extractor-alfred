@@ -4,7 +4,6 @@
 
 An [Alfred Workflow](https://www.alfredapp.com/) to extract Annotations as Markdown & insert Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file, or simply the clipboard.
 
-
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
@@ -81,7 +80,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
 ### Automatic Page Number Identification
-The *correct* page numbers will automatically from the BibTex Library. If there is no start-page information in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually. 
+The *correct* page numbers will automatically from the BibTex Library. If there is no start-page information in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually.
 - Enter the __true page number of your first PDF page__. *Example*:__ if the first PDF page represents the page number 104, you have to enter `104`.
 - In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example:* Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
 

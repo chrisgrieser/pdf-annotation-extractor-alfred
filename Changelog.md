@@ -1,3 +1,6 @@
+- 2022-05-02	release 6.2.0
+- 2022-05-02	automatic citekey identification accepts pdfs solely named with citekey
+- 2022-05-02	implement #7
 - 2022-05-02	release 6.1.2
 - 2022-05-01	updated info for new pdfannots release
 - 2022-05-01	release 6.1.0
