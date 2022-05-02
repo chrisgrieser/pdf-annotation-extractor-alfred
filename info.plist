@@ -2748,7 +2748,7 @@ return current_file</string>
 				<key>matchmode</key>
 				<integer>1</integer>
 				<key>matchstring</key>
-				<string>.*\/(.*?)_.*\.pdf</string>
+				<string>.*\/(.*?)(_.*)?\.pdf</string>
 				<key>regexcaseinsensitive</key>
 				<false/>
 				<key>regexmultiline</key>
@@ -4456,7 +4456,7 @@ end run</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename *must* begin with a citekey, followed by an underscore \"[citekey]_[...].pdf\""},{"title":"📄 Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BibTeX Library"}]</string>
+				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename *must* begin exactly with the citekey, optinally followed by an underscore and some text: \"{citekey}_{...}.pdf\""},{"title":"📄 Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BibTeX Library"}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>

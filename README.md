@@ -16,6 +16,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- [Basics](#basics)
 	- [Annotation Types extracted](#annotation-types-extracted)
 	- [Automatic Page Number Identification](#automatic-page-number-identification)
+	- [Automatic Citekey Identification](#automatic-citekey-identification)
 	- [Annotation Codes](#annotation-codes)
 - [Extracting Images](#extracting-images)
 - [Extra Features](#extra-features)
@@ -79,12 +80,14 @@ Automatically determines correct page numbers, merges highlights across page bre
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
 ### Automatic Page Number Identification
-The *correct* page numbers will automatically be determined from one of three sources  and inserted into the references as Pandoc Citations, with descending priority:
-1. the BibTeX-Library
-2. DOI found in the PDF
-3. Prompt to manually enter the page number.
-	- Enter the __true page number of your first PDF page__. *Example*:__ if the first PDF page represents the page number 104, you have to enter `104`.
-	- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example:* Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
+The *correct* page numbers will automatically from the BibTex Library. If there is no start-page information in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually. 
+- Enter the __true page number of your first PDF page__. *Example*:__ if the first PDF page represents the page number 104, you have to enter `104`.
+- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example:* Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
+
+### Automatic Citekey Identification
+If the filename of the pdf is *exactly* the citekey (optionally followed by an underscore and some text like `{citekey}_{title}.pdf`), the citekey for the bibliographic information will be automatically determined. Otherwise, you have to enter the citekey manually. (You can turn off automatic citekey identification via `aconf`, see (section Configuration)[#configuration].)
+
+You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 
 ### Annotation Codes
 Insert these special codes at the __beginning__ of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
@@ -92,7 +95,7 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `+`: Merge this highlight/underline with the previous highlight/underline.
 	- Both annotations on the same page: will put a "(…)" in between them. This is useful to leave out certain parts of text.  Used for jumping sections on the same page.
 	- The second annotation is on the following page: Assuming a continuation of a highlight/underline across page borders, this will not insert a "(…)". However, both pages will be inserted in the Pandoc citation, e.g. `[Grieser2020, p. 14-15]`.
-- `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax).
+- `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax.)
 - `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required).
 - `---` __(free comments)__: Inserts a markdown __hr__ (`---`) and removes the annotation.
 - `X` Turns highlighted/underlines text into a markdown __task__ (`- [ ]`) and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
@@ -114,7 +117,6 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 *Use the Alfred keyword `aconf` for the configuration of this workflow.*
 
 - The output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
-- Set whether citekeys should be entered manually or determined automatically via filename. The latter requires a filename beginning with the citekey, followed by an underscore: `{citekey}_{...}.pdf`. You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 - In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
 - The Obsidian destination must be a folder in your vault.
 - Select whether any annotations of the type `underlines` should be split off and moved to a second output instead (currently only Drafts is supported).
