@@ -89,7 +89,9 @@ function run() {
 	const array = bibtexEntry.split("\r");
 	array.forEach(property => {
 
-		if (/\stitle =/i.test(property)) title = extract(property).replaceAll("\"", "'"); // to avoid invalid yaml, since title is wrapped in ""
+		if (/\stitle =/i.test(property)) title = extract(property)
+			.replaceAll("\"", "'") // to avoid invalid yaml, since title is wrapped in ""
+			.replaceAll(":", "."); // to avoid invalid yaml
 		else if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
 		else if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
 		else if (property.includes("author =")) author = extract(property);
