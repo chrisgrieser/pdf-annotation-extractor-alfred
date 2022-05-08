@@ -2799,7 +2799,6 @@ return current_file</string>
 aliases: "{var:title}"
 tags: pdf-annotations, {var:tags}
 citekey: {var:citekey}
-title: "{var:title}"
 year: {var:year}
 author: "{var:author}"
 publicationType: {var:ptype}
