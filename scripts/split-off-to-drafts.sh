@@ -2,7 +2,7 @@
 # shellcheck disable=SC2154
 
 # using '"' somehow leads to a parsing error, so this needs to be translated
-annos=$(echo "$*" | tr '"' "'")
+annos=$(echo "$underlines" | tr '"' "'")
 
 # insert Citekey and title
 input="# $citekey\n_${title}_\n\n$annos"

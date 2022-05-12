@@ -3339,7 +3339,7 @@ pandoc ~'/Library/Application Support/Alfred/Workflow Data/de.chris-grieser.pdf-
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>scripts/create-new-draft.sh</string>
+				<string>scripts/split-off-to-drafts.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -4455,7 +4455,7 @@ end run</string>
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename *must* begin exactly with the citekey, optinally followed by an underscore and some text: \"{citekey}_{...}.pdf\""},{"title":"📄 Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BibTeX Library"}]</string>
+				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename must exactly be the citekey, optionally followed by an underscore &amp; some text \"{citekey}_{...}.pdf\""},{"title":"📄 Extract without bibliography retrieval","arg":"no_bibliography_extraction","subtitle":"for PDFs that are not in your BibTeX Library"}]</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -5868,7 +5868,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<integer>2120</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>560</integer>
 		</dict>
 		<key>BC076709-F221-436F-88DE-401BA8D595DA</key>
 		<dict>
@@ -6165,7 +6165,7 @@ these 4 above can be double-clicked to configure the formatting
 		<key>ocr_lang</key>
 		<string>eng+deu</string>
 		<key>output_style</key>
-		<string>obsidian</string>
+		<string>drafts</string>
 		<key>pdf_engine</key>
 		<string>pdflatex</string>
 		<key>underlines_second_output</key>
