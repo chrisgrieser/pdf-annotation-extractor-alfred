@@ -123,8 +123,8 @@ function run() {
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
 				.replace(/\u00AD/g, "") // remove invisible character
 				.replace(/(\w)[.,]\d/g, "$1") // remove footnotes from quote
-				.replaceAll ("\\u0026", "&") // resolve & symbol
-				.replace (/(?!^)- (?=\w)/gm, ""); // remove leftover hyphens, regex uses hack to treat lookahead as lookaround https://stackoverflow.com/a/43232659
+				.replaceAll ("\\u0026", "&") // resolve "&"-symbol
+				.replace (/(?!^)(\S)-\s+(?=\w)/gm, "$1"); // remove leftover hyphens, regex uses hack to treat lookahead as lookaround https://stackoverflow.com/a/43232659
 			return a;
 		});
 	};
