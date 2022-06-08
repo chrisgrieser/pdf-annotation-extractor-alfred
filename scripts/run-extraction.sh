@@ -1,25 +1,32 @@
 #!/bin/zsh
-# shellcheck disable=SC2154
+# shellcheck disable=SC2086
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 mkdir -p "$alfred_workflow_cache"
 
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
-# also ocr images when tesseract installed
-if which tesseract ; then
-	pdfannots2json "$file_path" \
-		--image-output-path=./ \
-		--image-format="png" \
-		--attempt-ocr \
-		--ocr-lang="$ocr_lang" \
-		> "$alfred_workflow_cache"/temp.json
+if [[ "$only_recent_annos" = "true" ]]; then
+	RECENT_ANNOS="--ignore-before=$(date -v-3d +%F)"
 else
-	pdfannots2json "$file_path" \
-		--image-output-path=./ \
-		--image-format="png" \
-		> "$alfred_workflow_cache"/temp.json
+	RECENT_ANNOS=""
 fi
+
+if which tesseract ; then
+	USE_OCR="--attempt-ocr --ocr-lang=$ocr_lang"
+else
+	USE_OCR=""
+fi
+
+# ------------------------------------------------------------------------------
+# run extraction
+# no double-quotting of $RECENT_ANNOS $USE_OCR, so the options are properly
+# as options (with spaces inside them) or as nothing (instead of empty string)
+pdfannots2json "$file_path" --image-output-path=./ --image-format="png" \
+	$RECENT_ANNOS $USE_OCR \
+	> "$alfred_workflow_cache"/temp.json
+
+# ------------------------------------------------------------------------------
 
 if [[ "$citekey_insertion" = "no_bibliography_extraction" ]] ; then
 	IMAGE_BASE_NAME=$(date '+%Y-%m-%d_%H-%M')_annotations

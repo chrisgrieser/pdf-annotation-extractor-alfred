@@ -736,6 +736,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>24D55235-69D3-48FA-B0A2-8D061B12209D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>A5FB27E5-B7FB-44D7-BB3A-F5286EB6C47B</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>D407E01A-667B-446E-8733-6717C1222845</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -3749,7 +3761,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification \/ Disable Bibliography Use","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines","subtitle":"currently: {var:underlines_second_output}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification \/ Disable Bibliography Use","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"🏎 PDF Engine (when Output Style is PDF)","arg":"pdfengine","subtitle":"currently: {var:pdf_engine}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines_second_output","subtitle":"currently: {var:underlines_second_output}"},{"title":"🕑 Extract only Annotations done in last 3 days","arg":"only_recent_annos","subtitle":"currently: {var:only_recent_annos}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>runningsubtext</key>
@@ -4383,11 +4395,25 @@ fi</string>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>underlines</string>
+						<string>underlines_second_output</string>
 						<key>outputlabel</key>
-						<string>underlines</string>
+						<string>underlines_second_output</string>
 						<key>uid</key>
 						<string>09E2E51E-0A47-4FA6-9C66-B01FED274D9F</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>only_recent_annos</string>
+						<key>outputlabel</key>
+						<string>only_recent_annos</string>
+						<key>uid</key>
+						<string>A5FB27E5-B7FB-44D7-BB3A-F5286EB6C47B</string>
 					</dict>
 					<dict>
 						<key>inputstring</key>
@@ -4905,20 +4931,13 @@ end run</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>set oldValue to (system attribute "underlines_second_output")
-if (oldValue = "true")
-	set newValue to "false"
-else
-	set newValue to "true"
-end if
-
-tell application id "com.runningwithcrayons.Alfred" to set configuration "underlines_second_output" to value newValue in workflow (system attribute "alfred_workflow_bundleid")</string>
+				<string></string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>toggle-value.applescript</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -5115,7 +5134,7 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>toggle the value</string>
 			<key>xpos</key>
-			<integer>295</integer>
+			<integer>305</integer>
 			<key>ypos</key>
 			<integer>2250</integer>
 		</dict>
@@ -5875,9 +5894,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>245</integer>
 			<key>ypos</key>
-			<integer>2535</integer>
+			<integer>2690</integer>
 		</dict>
 		<key>BF8186EC-113D-4B38-8C4D-069F8CA540A5</key>
 		<dict>
@@ -5980,9 +5999,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>2390</integer>
+			<integer>2545</integer>
 		</dict>
 		<key>DED939A6-D2E6-4EEE-A53C-8D12EFC36492</key>
 		<dict>
@@ -6164,6 +6183,8 @@ these 4 above can be double-clicked to configure the formatting
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>ocr_lang</key>
 		<string>eng+deu</string>
+		<key>only_recent_annos</key>
+		<string>true</string>
 		<key>output_style</key>
 		<string>drafts</string>
 		<key>pdf_engine</key>
@@ -6177,6 +6198,7 @@ these 4 above can be double-clicked to configure the formatting
 		<string>underlines_second_output</string>
 		<string>pdf_engine</string>
 		<string>obsidian_destination</string>
+		<string>only_recent_annos</string>
 	</array>
 	<key>version</key>
 	<string>6.2.0</string>
