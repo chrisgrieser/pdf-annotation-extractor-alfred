@@ -7,7 +7,8 @@ IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
 if [[ "$only_recent_annos" = "true" ]]; then
-	RECENT_ANNOS="--ignore-before=$(date -v-3d +%F)"
+	# uses DATE 23:59
+	RECENT_ANNOS="--ignore-before=$(date -v-4d +%F)"
 else
 	RECENT_ANNOS=""
 fi
