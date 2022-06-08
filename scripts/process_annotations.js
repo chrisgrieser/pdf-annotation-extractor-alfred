@@ -11,21 +11,9 @@ function run() {
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 
-
-	let citekey = "";
-	let keywords = "";
-	let filename;
-	const hasBibtexEntry = $.getenv("citekey_insertion") !== "no_bibliography_extraction";
-	if (hasBibtexEntry) {
-		citekey = $.getenv("citekey");
-		filename = citekey;
-		keywords = $.getenv("keywords");
-	} else {
-		filename = new Date()
-			.toLocaleString("en-GB") // to avoid AM/PM
-			.replace(/(\d{2})\/(\d{2})\/(\d{4}), (\d{2}):(\d{2}).*/, "$3-$2-$1_$4-$5") // sortable
-			+ "_annotations";
-	}
+	const citekey = $.getenv("citekey");
+	const filename = citekey;
+	const keywords = $.getenv("keywords");
 
 	function readFile (path, encoding) {
 		if (!encoding) encoding = $.NSUTF8StringEncoding;
@@ -34,10 +22,6 @@ function run() {
 		const str = $.NSString.alloc.initWithDataEncoding(data, encoding);
 		return ObjC.unwrap(str);
 	}
-
-	// function readFile (path) {
-	// 	return app.doShellSchript (`cat "${path}"`).replaceAll("\r", "\n");
-	// }
 
 	function setAlfredEnv (envVar, newValue) {
 		Application("com.runningwithcrayons.Alfred").setConfiguration (envVar, {
@@ -178,7 +162,7 @@ function run() {
 
 	Array.prototype.JSONtoMD = function () {
 		const arr = this.map (a => {
-			let comment, output, reference;
+			let comment, output;
 			let annotationTag = "";
 
 			// uncommented highlights or underlines
@@ -199,8 +183,7 @@ function run() {
 			else annotationTag = "";
 
 			// Pandoc Citation
-			if (hasBibtexEntry) reference = " [@" + citekey + ", p. " + a.page + "]";
-			else reference = "";
+			const reference = " [@" + citekey + ", p. " + a.page + "]";
 
 			function bulletHandling(str, comment_, markup) {
 				if (/^\d\. /.test(comment_)) str = str.slice(2); // enumerations do not get a bullet
@@ -442,5 +425,5 @@ function run() {
 		.splitOffUnderlines()
 		.JSONtoMD();
 
-	setAlfredEnv("annotations", annotations);
+	return annotations;
 }

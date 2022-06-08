@@ -12,7 +12,6 @@ function run () {
 	// remove config
 	Application("com.runningwithcrayons.Alfred").removeConfiguration("underlines", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
 	Application("com.runningwithcrayons.Alfred").removeConfiguration("tags", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
-	Application("com.runningwithcrayons.Alfred").removeConfiguration("annotations", { inWorkflow: $.getenv("alfred_workflow_bundleid") } );
 
 	// stop when no debugging required https://www.alfredapp.com/help/workflows/script-environment-variables/
 	if ($.getenv("alfred_debug") !== "1") return;

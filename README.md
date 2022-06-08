@@ -10,7 +10,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 ## Table of Contents
 <!-- MarkdownTOC -->
 
-- [Breaking Changes in Version 6.0](#breaking-changes-in-version-60)
+- [Breaking Changes](#breaking-changes)
 - [Requirements & Installation](#requirements--installation)
 - [How to Use](#how-to-use)
 	- [Basics](#basics)
@@ -29,8 +29,10 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 <!-- /MarkdownTOC -->
 
-## Breaking Changes in Version 6.0
+## Breaking Changes
 ⚠️ The newest version 6.0 requires `pdfannot2json` instead of `pdfannots` as it has more features.
+
+⚠️ With 6.3 some niche features (PDF output, clipboard output, annotations from PDFs not in the BibTeX library) I personally never use have been removed, since I am simply not able to maintain them anymore given my time capacities. Use an older release (up to 6.2) if you want to continue using those features.
 
 ## Requirements & Installation
 1. Requirements
@@ -51,9 +53,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
 	- set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
-
-6. Optional: Additional Requirements for certain use cases
-	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
 
 ## How to Use
 
@@ -107,6 +106,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 *Use the Alfred keyword `aconf` for the configuration of this workflow.*
 
 - The output format (Markdown, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
+	- Note that Obsidian as output format requires that you also set a destination folder.
 - In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
 - The Obsidian destination must be a folder in your vault.
 - Select whether any annotations of the type `underlines` should be split off and moved to a second output instead (currently only Drafts is supported).
