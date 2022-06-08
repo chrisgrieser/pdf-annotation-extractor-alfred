@@ -1,3 +1,9 @@
+- 2022-06-08	release 6.3.0
+- 2022-06-08	improved callout extraction
+- 2022-06-08	remove pdf & clipboard output, image OCR as unused
+- 2022-06-08	added option to only extract recent annotations
+- 2022-06-01	slightly improved hyphenation removal
+- 2022-05-03	prevent invalid metadata
 - 2022-05-02	release 6.2.0
 - 2022-05-02	automatic citekey identification accepts pdfs solely named with citekey
 - 2022-05-02	implement #7
