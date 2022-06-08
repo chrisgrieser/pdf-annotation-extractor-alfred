@@ -1027,7 +1027,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E0F0D4B6-780B-4805-A393-7E2D38350308</string>
+				<string>C62314C8-E529-459D-8A01-B9F3001DC160</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1401,35 +1401,6 @@
 			<string>C15A23BF-194F-4054-A4D9-B8CEA4CBE6A4</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>E0F0D4B6-780B-4805-A393-7E2D38350308</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -4214,7 +4185,7 @@ Chris Grieser https://chris-grieser.de/</string>
 
 Start Annotation Export</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>15</integer>
 			<key>ypos</key>
 			<integer>150</integer>
 		</dict>
@@ -4719,13 +4690,6 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>615</integer>
 		</dict>
-		<key>E0F0D4B6-780B-4805-A393-7E2D38350308</key>
-		<dict>
-			<key>xpos</key>
-			<integer>520</integer>
-			<key>ypos</key>
-			<integer>60</integer>
-		</dict>
 		<key>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</key>
 		<dict>
 			<key>colorindex</key>
@@ -4844,12 +4808,12 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
+		<string>underlines_second_output</string>
 		<string>output_style</string>
-		<string>bibtex_library_path</string>
 		<string>only_recent_annos</string>
 		<string>pdf_folder_highlights_app</string>
+		<string>bibtex_library_path</string>
 		<string>obsidian_destination</string>
-		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
 	<string>6.4.0</string>
