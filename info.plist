@@ -4816,7 +4816,7 @@ Start Annotation Export</string>
 		<string>obsidian_destination</string>
 	</array>
 	<key>version</key>
-	<string>6.4.0</string>
+	<string>6.4.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
