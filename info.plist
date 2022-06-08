@@ -5490,9 +5490,9 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>bibtex_library_path</string>
 		<string>only_recent_annos</string>
 		<string>underlines_second_output</string>
+		<string>bibtex_library_path</string>
 		<string>obsidian_destination</string>
 	</array>
 	<key>version</key>

@@ -2,12 +2,15 @@
 function run() {
 	ObjC.import("stdlib");
 	ObjC.import("Foundation");
+	const app = Application.currentApplication();
+	app.includeStandardAdditions = true;
 
 	// import Alfred variables
 	//---------------------------------------------------------------
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
+
 
 	let citekey = "";
 	let keywords = "";
@@ -31,6 +34,10 @@ function run() {
 		const str = $.NSString.alloc.initWithDataEncoding(data, encoding);
 		return ObjC.unwrap(str);
 	}
+
+	// function readFile (path) {
+	// 	return app.doShellSchript (`cat "${path}"`).replaceAll("\r", "\n");
+	// }
 
 	function setAlfredEnv (envVar, newValue) {
 		Application("com.runningwithcrayons.Alfred").setConfiguration (envVar, {
@@ -107,7 +114,7 @@ function run() {
 		});
 	};
 
-	// Adapter Methods
+	// Core Methods
 	// --------------------------------------------------------------
 
 	Array.prototype.cleanBrokenOCR = function () {
@@ -246,7 +253,8 @@ function run() {
 					output = "\n";
 					break;
 				case "Question Callout":
-					output = "> [!QUESTION]\n> " + comment + "\n";
+					comment = comment.replace(/^/gm, "> "); // blockquoted comment
+					output = "> [!QUESTION]\n" + comment + "\n";
 					break;
 				case "Task":
 					output = "- [ ] " + comment;
@@ -261,7 +269,7 @@ function run() {
 		const mdText = arr
 			.join("\n")
 			.trim()
-			.replace(/\n{3,}/g, "\n\n") // needed in case the annotaitons add line breaks
+			.replace(/\n{3,}/g, "\n\n") // needed in case the annotations add line breaks
 			+ "\n";
 		return mdText;
 	};
