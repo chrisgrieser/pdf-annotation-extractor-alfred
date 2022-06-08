@@ -253,7 +253,6 @@ function run() {
 					break;
 				case "Image":
 					output = "\n![[" + a.image + "]]\n";
-					if (comment === "ocr") output += "\n- " + a.ocrText;
 					break;
 			}
 			return output;
@@ -367,7 +366,7 @@ function run() {
 			if (a.type !== "Image") return a;
 
 			a.image = `${filename}_image${i}.png`;
-			if (a.comment) if (a.comment !== "ocr") a.image += "|" + a.comment; // add alias
+			if (a.comment) a.image += "|" + a.comment; // add alias
 			i++;
 
 			return a;

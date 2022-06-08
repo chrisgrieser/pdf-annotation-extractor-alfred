@@ -54,15 +54,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 6. Optional: Additional Requirements for certain use cases
 	- *Obsidian as Output*: Use the `aconf` command, select `Obsidian Destination`, and then search/select the folder.
-	- *Run OCR on extracted Images*: requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
-	- *PDF as Output Format*: Install Pandoc and a [PDF-Engine](https://pandoc.org/MANUAL.html#option--pdf-engine) of your choice.
-
-	```bash
-	brew install pandoc
-	brew install wkhtmltopdf # can be changed to a pdf-engine of your choice
-	brew install tesseract
-	brew install tesseract-lang #only for non-English
-	```
 
 ## How to Use
 
@@ -75,14 +66,14 @@ Automatically determines correct page numbers, merges highlights across page bre
 - Underlines
 - Free Comments
 - Strikethroughs
-- Rectangles as Images (with optional OCR for the images)
+- Rectangles as Images
 
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
 ### Automatic Page Number Identification
 The *correct* page numbers will automatically from the BibTex Library. If there is no start-page information in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually.
 - Enter the __true page number of your first PDF page__. *Example*:__ if the first PDF page represents the page number 104, you have to enter `104`.
-- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example:* Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.
+- In case there is content before the actual text (e.g. a foreword or a Table of Contents), the first true page often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example: Your PDF is a book which has a foreword, and uses roman numbers for it; true page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.*
 
 ### Automatic Citekey Identification
 If the filename of the pdf is *exactly* the citekey (optionally followed by an underscore and some text like `{citekey}_{title}.pdf`), the citekey for the bibliographic information will be automatically determined. Otherwise, you have to enter the citekey manually. (You can turn off automatic citekey identification via `aconf`, see (section Configuration)[#configuration].)
@@ -107,7 +98,6 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 
 - Any `rectangle` type annotation in the PDF will be extracted as image.
 - If the rectangle annotation has any comment, it will be used as the alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
-- When the rectangle annotation has *exactly* the comment `ocr`, the OCR text of the image will also be extracted. Requires [Tesseract](https://github.com/tesseract-ocr/tesseract).
 
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.
@@ -116,11 +106,10 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 ## Configuration
 *Use the Alfred keyword `aconf` for the configuration of this workflow.*
 
-- The output format (PDF, Markdown, Clipboard, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
+- The output format (Markdown, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
 - In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
 - The Obsidian destination must be a folder in your vault.
 - Select whether any annotations of the type `underlines` should be split off and moved to a second output instead (currently only Drafts is supported).
-- Set the languages for the OCR on images. For the required language code, [refer to the tesseract documentation](https://tesseract-ocr.github.io/tessdoc/Data-Files-in-different-versions.html).
 
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following Terminal command:

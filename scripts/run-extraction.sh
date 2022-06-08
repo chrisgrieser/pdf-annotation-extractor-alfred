@@ -6,26 +6,15 @@ mkdir -p "$alfred_workflow_cache"
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
-if [[ "$only_recent_annos" = "true" ]]; then
-	# uses DATE 23:59
-	RECENT_ANNOS="--ignore-before=$(date -v-4d +%F)"
-else
-	RECENT_ANNOS=""
-fi
-
-if which tesseract ; then
-	USE_OCR="--attempt-ocr --ocr-lang=$ocr_lang"
-else
-	USE_OCR=""
-fi
-
 # ------------------------------------------------------------------------------
 # run extraction
-# no double-quotting of $RECENT_ANNOS $USE_OCR, so the options are properly
-# as options (with spaces inside them) or as nothing (instead of empty string)
-pdfannots2json "$file_path" --image-output-path=./ --image-format="png" \
-	$RECENT_ANNOS $USE_OCR \
-	> "$alfred_workflow_cache"/temp.json
+
+if [[ "$only_recent_annos" = "true" ]]; then
+	RECENT_DATE="$(date -v-4d +%F)" # --ignore-before uses DATE 23:59
+	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE"  | tee "$alfred_workflow_cache/temp.json"
+else
+	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" | tee "$alfred_workflow_cache/temp.json"
+fi
 
 # ------------------------------------------------------------------------------
 
@@ -34,7 +23,6 @@ if [[ "$citekey_insertion" = "no_bibliography_extraction" ]] ; then
 else
 	IMAGE_BASE_NAME="$citekey"
 fi
-
 
 # abort if no images
 # shellcheck disable=SC2012
