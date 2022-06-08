@@ -1,3 +1,5 @@
+- 2022-06-09	release 6.4.0
+- 2022-06-09	support for triggering from Highlights.app
 - 2022-06-09	release 6.3.2
 - 2022-06-08	release 6.3.1
 - 2022-06-08	release 6.3.0
