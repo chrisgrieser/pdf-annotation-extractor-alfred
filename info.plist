@@ -8,19 +8,6 @@
 	<string>Academic</string>
 	<key>connections</key>
 	<dict>
-		<key>000BB652-39B5-43A4-A41C-CCAC26C3E81D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C62314C8-E529-459D-8A01-B9F3001DC160</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
 		<array>
 			<dict>
@@ -300,86 +287,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>000BB652-39B5-43A4-A41C-CCAC26C3E81D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>8E300276-EDC0-4AF3-99F8-19FE89DCA0E7</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>42915FB0-AFE5-4D99-8889-AD19914705F1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>9A5151BD-E5F8-42DD-914C-33E27117FBA1</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>42915FB0-AFE5-4D99-8889-AD19914705F1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C62314C8-E529-459D-8A01-B9F3001DC160</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>08712C17-8B29-45BB-8EBA-59E3929C88E0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>C62314C8-E529-459D-8A01-B9F3001DC160</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -546,7 +458,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</string>
+				<string>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1111,6 +1023,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0F0D4B6-780B-4805-A393-7E2D38350308</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B2E63790-BE81-4BCA-971E-E93C887F6262</key>
 		<array>
 			<dict>
@@ -1436,64 +1361,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "Finder" to close window 1
-tell application "PDF Expert" to activate</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>08712C17-8B29-45BB-8EBA-59E3929C88E0</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "System Events"
-	tell process "PDF Expert"
-		set frontmost to true
-		click menu item "Save" of menu "File" of menu bar 1
-		click menu item "Show in Finder" of menu "File" of menu bar 1
-	end tell
-end tell
-delay 0.5
-
-tell application "Finder" to set sel to selectionif ((count sel) &gt; 1) then	set firstItem to item 1 of sel	set result to POSIX path of (firstItem as text)else	set result to POSIX path of (sel as text)end if
-
-return result</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -1538,88 +1405,54 @@ return result</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "Preview" 
-	save the front document
-	set current_file to path of front document
-end tell
-
-return current_file</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
 				<string></string>
-				<key>type</key>
-				<integer>6</integer>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.largetype</string>
 			<key>uid</key>
-			<string>000BB652-39B5-43A4-A41C-CCAC26C3E81D</string>
+			<string>E0F0D4B6-780B-4805-A393-7E2D38350308</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:focusedapp}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>com.readdle.PDFExpert-Mac</string>
-						<key>outputlabel</key>
-						<string>PDF Expert</string>
-						<key>uid</key>
-						<string>847852E7-9693-45D1-AE22-00E088A8B7D2</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:focusedapp}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>com.apple.Preview</string>
-						<key>outputlabel</key>
-						<string>Preview</string>
-						<key>uid</key>
-						<string>8E300276-EDC0-4AF3-99F8-19FE89DCA0E7</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:focusedapp}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>com.apple.Finder</string>
-						<key>outputlabel</key>
-						<string>Finder</string>
-						<key>uid</key>
-						<string>9A5151BD-E5F8-42DD-914C-33E27117FBA1</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>--</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/get-pdf-path.applescript</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</string>
+			<string>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1646,7 +1479,7 @@ return current_file</string>
 				<array>
 					<string>com.apple.finder</string>
 					<string>com.readdle.PDFExpert-Mac</string>
-					<string>com.apple.Preview</string>
+					<string>net.highlightsapp.universal</string>
 				</array>
 				<key>relatedAppsMode</key>
 				<integer>1</integer>
@@ -1657,6 +1490,27 @@ return current_file</string>
 			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>⚠️ File is not a PDF</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1712,27 +1566,6 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>⚠️ File is not a PDF</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>soundname</key>
 				<string>Basso</string>
 				<key>systemsound</key>
@@ -1744,29 +1577,6 @@ return current_file</string>
 			<string>65E7AED3-BD1F-43E5-908F-09636A52A2A6</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "Finder" to set sel to selectionif ((count sel) &gt; 1) then	set firstItem to item 1 of sel	return POSIX path of (firstItem as text)else	return POSIX path of (sel as text)end if</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>42915FB0-AFE5-4D99-8889-AD19914705F1</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1817,29 +1627,6 @@ return current_file</string>
 			<string>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/read-bibtex-library.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1904,23 +1691,6 @@ return current_file</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>delimiter</key>
-				<string>;;</string>
-				<key>trimarguments</key>
-				<true/>
-				<key>variableprefix</key>
-				<string>split</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.split</string>
-			<key>uid</key>
-			<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
@@ -1934,6 +1704,23 @@ return current_file</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>C7679DCD-1436-41BF-80EE-FAE5C4DB3638</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>;;</string>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>split</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2048,6 +1835,29 @@ return current_file</string>
 			<string>35144697-AB0F-4433-872A-44BC27DFF752</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/read-bibtex-library.js</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -4087,29 +3897,19 @@ end run</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>⚠️ The newest version 6.0 requires `pdf-annot2json` instead of `pdfannots` as it has more features.
+	<string>Changelog
+=========
+https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md
 
-1. Install `pdf-annot2json`, [as explained here](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#requirements--installation).
-2. Check out the [new image extraction features now available with it](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred#extracting-images)
-3. Support for `pdfannots` is dropped (can be uninstalled), and so is support for `Free Text` annotation types and the screenshot-to-image-feature previously used.
+Documentation
+=============
+https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
 
-
---------------------------------------------------------------
-
-Documentation: https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
-
-Created by Chris Grieser https://chris-grieser.de/</string>
+Created by 
+===========
+Chris Grieser https://chris-grieser.de/</string>
 	<key>uidata</key>
 	<dict>
-		<key>000BB652-39B5-43A4-A41C-CCAC26C3E81D</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>135</integer>
-		</dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
 		<dict>
 			<key>colorindex</key>
@@ -4137,25 +3937,14 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>ypos</key>
 			<integer>605</integer>
 		</dict>
-		<key>08712C17-8B29-45BB-8EBA-59E3929C88E0</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>note</key>
-			<string>close Finder Window</string>
-			<key>xpos</key>
-			<integer>655</integer>
-			<key>ypos</key>
-			<integer>10</integer>
-		</dict>
 		<key>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1250</integer>
+			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>500</integer>
 		</dict>
 		<key>0A6D99B4-1E5E-470A-A319-D3C031FCC24B</key>
 		<dict>
@@ -4171,9 +3960,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>725</integer>
+			<integer>525</integer>
 			<key>ypos</key>
-			<integer>155</integer>
+			<integer>170</integer>
 		</dict>
 		<key>0BAD7D58-975F-45DD-AA9E-0369F9091F9F</key>
 		<dict>
@@ -4238,9 +4027,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1355</integer>
+			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>310</integer>
+			<integer>305</integer>
 		</dict>
 		<key>280875D9-6878-4994-8CC2-C08DF9543A64</key>
 		<dict>
@@ -4307,27 +4096,9 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1525</integer>
+			<integer>1385</integer>
 			<key>ypos</key>
-			<integer>385</integer>
-		</dict>
-		<key>3F82E4B3-35F6-42BC-9A44-6AF78A84E46A</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>330</integer>
-			<key>ypos</key>
-			<integer>140</integer>
-		</dict>
-		<key>42915FB0-AFE5-4D99-8889-AD19914705F1</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>250</integer>
+			<integer>395</integer>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
@@ -4337,15 +4108,6 @@ Created by Chris Grieser https://chris-grieser.de/</string>
 			<integer>850</integer>
 			<key>ypos</key>
 			<integer>1860</integer>
-		</dict>
-		<key>43F4A0D1-31AB-4E44-A4A8-69AED6D51764</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>10</integer>
 		</dict>
 		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
 		<dict>
@@ -4501,9 +4263,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1530</integer>
+			<integer>1285</integer>
 			<key>ypos</key>
-			<integer>245</integer>
+			<integer>240</integer>
 		</dict>
 		<key>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</key>
 		<dict>
@@ -4541,9 +4303,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>page numbers</string>
 			<key>xpos</key>
-			<integer>1410</integer>
+			<integer>1270</integer>
 			<key>ypos</key>
-			<integer>480</integer>
+			<integer>490</integer>
 		</dict>
 		<key>7E2BA1D2-5E79-4591-A327-3C8F117DE619</key>
 		<dict>
@@ -4570,9 +4332,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1355</integer>
+			<integer>1110</integer>
 			<key>ypos</key>
-			<integer>170</integer>
+			<integer>165</integer>
 		</dict>
 		<key>8636D1A0-E85B-4961-8445-DBBC255E8354</key>
 		<dict>
@@ -4610,9 +4372,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>citekey found</string>
 			<key>xpos</key>
-			<integer>1000</integer>
+			<integer>985</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>480</integer>
 		</dict>
 		<key>8DD65E80-0A92-4F06-A75F-2B7F9571157A</key>
 		<dict>
@@ -4661,9 +4423,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>read metadata from bibtex library</string>
 			<key>xpos</key>
-			<integer>770</integer>
+			<integer>790</integer>
 			<key>ypos</key>
-			<integer>435</integer>
+			<integer>540</integer>
 		</dict>
 		<key>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</key>
 		<dict>
@@ -4719,9 +4481,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>assign output variables</string>
 			<key>xpos</key>
-			<integer>1330</integer>
+			<integer>1190</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>500</integer>
 		</dict>
 		<key>A37D8724-7F84-4931-B412-68377C99A6EA</key>
 		<dict>
@@ -4812,6 +4574,17 @@ Start Annotation Export</string>
 			<key>ypos</key>
 			<integer>15</integer>
 		</dict>
+		<key>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>get file path</string>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
 		<key>B2E63790-BE81-4BCA-971E-E93C887F6262</key>
 		<dict>
 			<key>colorindex</key>
@@ -4886,9 +4659,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>645</integer>
+			<integer>465</integer>
 			<key>ypos</key>
-			<integer>165</integer>
+			<integer>180</integer>
 		</dict>
 		<key>C7679DCD-1436-41BF-80EE-FAE5C4DB3638</key>
 		<dict>
@@ -4945,6 +4718,13 @@ Start Annotation Export</string>
 			<integer>1560</integer>
 			<key>ypos</key>
 			<integer>615</integer>
+		</dict>
+		<key>E0F0D4B6-780B-4805-A393-7E2D38350308</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>60</integer>
 		</dict>
 		<key>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</key>
 		<dict>
@@ -5047,9 +4827,6 @@ Start Annotation Export</string>
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>annotations</key>
-		<string>- __fffff:__ "ives Handeln unternehmerischer Gruppen. Eine Engführung von Innovation im Diskurs zu Unternehmertum, so wird gezeigt, verhindert es, die innovative Kapazität unternehmerischer Gruppen passend zu greifen. Neue Perspektiven auf Innovation können dieses Spannungsve" [@StammGutzeit2019, p. 1]
-</string>
 		<key>bibtex_library_path</key>
 		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
@@ -5060,16 +4837,19 @@ Start Annotation Export</string>
 		<string>false</string>
 		<key>output_style</key>
 		<string>obsidian</string>
+		<key>pdf_folder_highlights_app</key>
+		<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
 		<key>underlines_second_output</key>
 		<string>false</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>annotations</string>
+		<string>output_style</string>
 		<string>bibtex_library_path</string>
-		<string>underlines_second_output</string>
 		<string>only_recent_annos</string>
+		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>
+		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
 	<string>6.3.2</string>

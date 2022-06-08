@@ -51,13 +51,14 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 5. Required Configuration
 	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
+	- using `aconf`, set an output style (Obsidian, Drafts, or Markdown File). Note that Obsidian as output format requires that you also set a destination folder.
 	- set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
 ## How to Use
 
 ### Basics
-- Use the hotkey to trigger the Annotation Extraction of the frontmost document of Preview or PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
+- Use the hotkey to trigger the Annotation Extraction of the frontmost document of PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
 - Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
 
 ### Annotation Types extracted
@@ -103,13 +104,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 - With the output type set to Obsidian or Markdown, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
 
 ## Configuration
-*Use the Alfred keyword `aconf` for the configuration of this workflow.*
-
-- The output format (Markdown, [Drafts](https://getdrafts.com/), or [Obsidian](https://obsidian.md/)). When selecting Markdown or Obsidian as output format, a YAML-Header with information from your BibTeX Library will be prepended.
-	- Note that Obsidian as output format requires that you also set a destination folder.
-- In case you are the PDF is not part of your BibTeX Library (e.g., a manuscript from colleague), you can also choose to deactivate the usage of BibTeX metadata and citekeys.
-- The Obsidian destination must be a folder in your vault.
-- Select whether any annotations of the type `underlines` should be split off and moved to a second output instead (currently only Drafts is supported).
+Use the Alfred keyword `aconf` to configure this workflow. The various options are explained there.
 
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following Terminal command:
@@ -120,7 +115,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all annotations that are "free form" and the workflow should work.
-- When the hotkey does not work when triggered in Preview or PDF Expert, most likely the Alfred app does not have permission to access them. You can give Alfred permission in the Mac OS System Settings:
+- When the hotkey does not work when triggered in PDF Expert, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the Mac OS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
 
 ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
