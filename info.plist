@@ -4808,11 +4808,11 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>underlines_second_output</string>
 		<string>output_style</string>
 		<string>only_recent_annos</string>
-		<string>pdf_folder_highlights_app</string>
 		<string>bibtex_library_path</string>
+		<string>underlines_second_output</string>
+		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>
 	</array>
 	<key>version</key>
