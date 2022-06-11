@@ -32,14 +32,14 @@ Automatically determines correct page numbers, merges highlights across page bre
 ## Breaking Changes
 ⚠️ The newest version 6.0 requires `pdfannot2json` instead of `pdfannots` as it has more features.
 
-⚠️ With 6.3 some niche features (PDF output, clipboard output, annotations from PDFs not in the BibTeX library) I personally never use have been removed, since I am simply not able to maintain them anymore given my time capacities. Use an older release (up to 6.2) if you want to continue using those features.
+⚠️ With 6.3 some niche features (PDF output, clipboard output, annotations from PDFs not in the BibTeX library) I personally never use have been removed, since I am simply not able to maintain them anymore given my time capacities. Use an older release (up to 6.2) if you want to continue using those features; also many PDF Readers like PDF Expert or Highlights are able to do exactly that.
 
 ## Requirements & Installation
 1. Requirements
 	- [Alfred Powerpack](https://www.alfredapp.com/shop/) (~30€)
 	- References saved as BibTeX-Library (`.bib`)
 2. Install [Homebrew](https://brew.sh/).
-3. Install `pdfannots2json` by pasting the following into you Terminal:
+3. Install `pdfannots2json` by pasting the following into your terminal:
 
 	```bash
 	brew tap mgmeyers/pdfannots2json
@@ -50,9 +50,9 @@ Automatically determines correct page numbers, merges highlights across page bre
 	- Download and install the [PDF Annotation Extractor Workflow](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/) by double-clicking it.
 
 5. Required Configuration
-	- using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file
-	- using `aconf`, set an output style (Obsidian, Drafts, or Markdown File). Note that Obsidian as output format requires that you also set a destination folder.
-	- set the Hotkey by double-clicking this field:
+	- Using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file. The file has to be in your Alfred Search Scope for this to work; alternatively you can also set the path manually. ([➡️ How to set environment variables in Alfred](https://www.alfredapp.com/help/workflows/advanced/variables/#environment)).
+	- Using `aconf`, set an output style (Obsidian, Drafts, or Markdown File). Note that Obsidian as output format requires that you also set a destination folder.
+	- Set the Hotkey by double-clicking this field:
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
 ## How to Use
