@@ -4794,7 +4794,7 @@ Start Annotation Export</string>
 		<key>bibtex_library_path</key>
 		<string>~/.pandoc/main-bibliography.bib</string>
 		<key>citekey_insertion</key>
-		<string>filename</string>
+		<string>manually</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>only_recent_annos</key>
@@ -4808,9 +4808,9 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>output_style</string>
 		<string>only_recent_annos</string>
 		<string>bibtex_library_path</string>
+		<string>output_style</string>
 		<string>underlines_second_output</string>
 		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>

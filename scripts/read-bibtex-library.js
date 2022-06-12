@@ -10,17 +10,23 @@ function run() {
 	const citekey = $.getenv("citekey");
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, homepath);
 
+	const fileExists = Application("Finder").exists(Path(bibtexLibraryPath));
+
+	if (!fileExists) {
+		const errorMsg = `No BibTeX File found at "${bibtexLibraryPath}".\n\n Make sure you have entered the full path to the file, if you entered it manually.`;
+		return errorMsg;
+	}
+
 	// read BibTeX-entry
 	let bibtexEntry = app.doShellScript(
-		"cat \"" + bibtexLibraryPath + "\"| "
-		+ "{ grep -E -i -A 20 \"{" + citekey + ",$\"|| true; }"
+		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
 	);
 
 	if (bibtexEntry === "") {
 		const citekeyInsertion = $.getenv("citekey_insertion");
 		let errorMsg = "No citekey found.\n\n";
-		if (citekeyInsertion === "filename")	errorMsg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'";
-		if (citekeyInsertion === "manually")	errorMsg += "Check your BibTeX Library for the correct citekey.";
+		if (citekeyInsertion === "filename") errorMsg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'";
+		if (citekeyInsertion === "manually") errorMsg += "Check your BibTeX Library for the correct citekey.";
 		return errorMsg;
 	}
 
