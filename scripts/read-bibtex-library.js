@@ -19,6 +19,7 @@ function run() {
 
 	// read BibTeX-entry
 	let bibtexEntry = app.doShellScript(
+		// --max-count is needed in case of duplicate citekeys
 		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
 	);
 
