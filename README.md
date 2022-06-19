@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
-An [Alfred Workflow](https://www.alfredapp.com/) to extract Annotations as Markdown & insert Pandoc Citations as References. Outputs Annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), PDF, Markdown file, or simply the clipboard.
+An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References. Outputs annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), or a Markdown file. 
 
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
@@ -57,6 +57,8 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 ## How to Use
 
+The PDF Annotation Extractor works on any PDF that has valid annotations saved *in the PDF file*. Some PDF readers like __Skim__ or __Zotero 6__ do not store annotations int eh PDF itself by default, but usually, you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
+
 ### Basics
 - Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder. (If PDF Expert is the frontmost app, it also works with the frontmost document.)
 - Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
@@ -101,7 +103,7 @@ Both alternatives work only in Obsidian, the respective images will be saved in 
 
 ## Extra Features
 - When using Obsidian, the wikilink (`[[filename]]`) is also copied to the clipboard after annotation extraction, for convenient adding to a Map of Content.
-- With the output type set to Obsidian or Markdown, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
+- With the output type set to Obsidian or Markdown file, a YAML-Header with bibliographic information (author, title, citekey, year, keywords, etc.) is also prepended.
 
 ## Configuration
 Use the Alfred keyword `aconf` to configure this workflow. The various options are explained there.
