@@ -58,7 +58,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 ## How to Use
 
 ### Basics
-- Use the hotkey to trigger the Annotation Extraction of the frontmost document of PDF Expert. In case Finder is the frontmost app, the currently selected PDF file will be used.
+- Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder. (If PDF Expert is the frontmost app, it also works with the frontmost document.)
 - Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
 
 ### Annotation Types extracted
