@@ -1,3 +1,6 @@
+- 2022-06-28	release 9.6.0
+- 2022-06-28	readme update for Alfred 5
+- 2022-06-12	check for library existence & fix #9
 - 2022-06-12	release 9.5.8
 - 2022-06-09	release 6.4.1
 - 2022-06-09	release 6.4.0
