@@ -1505,6 +1505,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>--</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1621,6 +1623,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>worked</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1651,6 +1655,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>error</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1683,6 +1689,8 @@
 			<dict>
 				<key>delimiter</key>
 				<string>;;</string>
+				<key>outputas</key>
+				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -1980,6 +1988,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>empty</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2010,6 +2020,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>empty</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2106,6 +2118,8 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 				</array>
 				<key>elselabel</key>
 				<string>filename</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2184,6 +2198,8 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 				</array>
 				<key>elselabel</key>
 				<string>--</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2361,6 +2377,8 @@ app.openLocation(urlscheme);</string>
 				</array>
 				<key>elselabel</key>
 				<string>yes</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2671,6 +2689,8 @@ url: {var:url}
 				</array>
 				<key>elselabel</key>
 				<string>no number</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2720,6 +2740,8 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>run-from-aconf</string>
 			</dict>
@@ -2805,6 +2827,8 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>number-input-loop</string>
 			</dict>
@@ -2818,6 +2842,8 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>aconf-loop</string>
 			</dict>
@@ -2841,6 +2867,8 @@ url: {var:url}
 				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines_second_output","subtitle":"currently: {var:underlines_second_output}"},{"title":"🕑 Extract only Annotations done in last 3 days","arg":"only_recent_annos","subtitle":"currently: {var:only_recent_annos}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
+				<key>matchmode</key>
+				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -2940,6 +2968,8 @@ url: {var:url}
 				<false/>
 				<key>items</key>
 				<string>[{"title":"Markdown File","arg":"markdown"},{"title":"Export to Obsidian","arg":"obsidian","subtitle":"requires selected Obsidian Vault"},{"title":"Export to Drafts","arg":"drafts"}]</string>
+				<key>matchmode</key>
+				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -2992,6 +3022,8 @@ url: {var:url}
 				</array>
 				<key>elselabel</key>
 				<string>others</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -3022,6 +3054,8 @@ url: {var:url}
 				</array>
 				<key>elselabel</key>
 				<string>vault set</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -3317,6 +3351,8 @@ fi</string>
 				</array>
 				<key>elselabel</key>
 				<string>exit</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -3336,6 +3372,8 @@ fi</string>
 				<false/>
 				<key>items</key>
 				<string>[{"title":"✍️ Manually Enter Citekey","arg":"manually","subtitle":"enter the citekey manually before extraction"},{"title":"🤖 Retrieve Citekey Automatically from Filename","arg":"filename","subtitle":"filename must exactly be the citekey, optionally followed by an underscore &amp; some text \"{citekey}_{...}.pdf\""}]</string>
+				<key>matchmode</key>
+				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>subtext</key>
@@ -3868,17 +3906,13 @@ end run</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Changelog
-=========
-https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md
+	<string># PDF Annotation Extractor
+*Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.*
 
-Documentation
-=============
-https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
-
-Created by 
-===========
-Chris Grieser https://chris-grieser.de/</string>
+## Info
+- [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
+- [Changelog](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md)
+- [Donate](https://ko-fi.com/pseudometa)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
@@ -3886,81 +3920,81 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>1680</integer>
+			<real>1680</real>
 		</dict>
 		<key>00D4341E-299D-4AA6-9831-81EB643F68E0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>1890</integer>
+			<real>1890</real>
 		</dict>
 		<key>00DBF7D8-B695-4BE6-B88D-1822E6C537A1</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>2270</integer>
+			<real>2270</real>
 			<key>ypos</key>
-			<integer>605</integer>
+			<real>605</real>
 		</dict>
 		<key>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1110</integer>
+			<real>1110</real>
 			<key>ypos</key>
-			<integer>500</integer>
+			<real>500</real>
 		</dict>
 		<key>0A6D99B4-1E5E-470A-A319-D3C031FCC24B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>2270</integer>
+			<real>2270</real>
 			<key>ypos</key>
-			<integer>845</integer>
+			<real>845</real>
 		</dict>
 		<key>0B185B98-4066-4CB1-9724-AA64206396DF</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>525</integer>
+			<real>525</real>
 			<key>ypos</key>
-			<integer>170</integer>
+			<real>170</real>
 		</dict>
 		<key>0BAD7D58-975F-45DD-AA9E-0369F9091F9F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>350</integer>
+			<real>350</real>
 			<key>ypos</key>
-			<integer>520</integer>
+			<real>520</real>
 		</dict>
 		<key>106248DA-2DCF-477E-AD35-D8CC6F19792F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>3190</integer>
+			<real>3190</real>
 			<key>ypos</key>
-			<integer>665</integer>
+			<real>665</real>
 		</dict>
 		<key>16FA7093-5581-48A2-A62F-FF26CE113297</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>640</integer>
+			<real>640</real>
 			<key>ypos</key>
-			<integer>2120</integer>
+			<real>2120</real>
 		</dict>
 		<key>17CE4DD3-D484-4FDD-9441-A0589B92CE38</key>
 		<dict>
@@ -3969,18 +4003,18 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>get citekey from filename</string>
 			<key>xpos</key>
-			<integer>545</integer>
+			<real>545</real>
 			<key>ypos</key>
-			<integer>660</integer>
+			<real>660</real>
 		</dict>
 		<key>1F409233-6B32-4BC6-9162-D0D58C81A5F1</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1540</integer>
+			<real>1540</real>
 			<key>ypos</key>
-			<integer>850</integer>
+			<real>850</real>
 		</dict>
 		<key>24D55235-69D3-48FA-B0A2-8D061B12209D</key>
 		<dict>
@@ -3989,27 +4023,27 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>toggle the value</string>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>2250</integer>
+			<real>2250</real>
 		</dict>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1110</integer>
+			<real>1110</real>
 			<key>ypos</key>
-			<integer>305</integer>
+			<real>305</real>
 		</dict>
 		<key>280875D9-6878-4994-8CC2-C08DF9543A64</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>2965</integer>
+			<real>2965</real>
 			<key>ypos</key>
-			<integer>805</integer>
+			<real>805</real>
 		</dict>
 		<key>295DD35F-44FB-4D24-AAB6-58B62558CB3C</key>
 		<dict>
@@ -4018,9 +4052,9 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>save output-variable</string>
 			<key>xpos</key>
-			<integer>1335</integer>
+			<real>1335</real>
 			<key>ypos</key>
-			<integer>1685</integer>
+			<real>1685</real>
 		</dict>
 		<key>29B1E708-A231-4989-9463-0AD74C394DAA</key>
 		<dict>
@@ -4029,27 +4063,27 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>citekey insertion</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<real>332</real>
 			<key>ypos</key>
-			<integer>635</integer>
+			<real>635</real>
 		</dict>
 		<key>313BD95C-66F6-4C5C-A3C8-57796D8814AC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>850</integer>
+			<real>850</real>
 			<key>ypos</key>
-			<integer>2120</integer>
+			<real>2120</real>
 		</dict>
 		<key>35144697-AB0F-4433-872A-44BC27DFF752</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>2965</integer>
+			<real>2965</real>
 			<key>ypos</key>
-			<integer>525</integer>
+			<real>525</real>
 		</dict>
 		<key>39404419-C091-4379-A868-22D8A2854023</key>
 		<dict>
@@ -4058,27 +4092,27 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>remove temporary environment variables &amp; debug</string>
 			<key>xpos</key>
-			<integer>3765</integer>
+			<real>3765</real>
 			<key>ypos</key>
-			<integer>635</integer>
+			<real>635</real>
 		</dict>
 		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1385</integer>
+			<real>1385</real>
 			<key>ypos</key>
-			<integer>395</integer>
+			<real>395</real>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>850</integer>
+			<real>850</real>
 			<key>ypos</key>
-			<integer>1860</integer>
+			<real>1860</real>
 		</dict>
 		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
 		<dict>
@@ -4087,45 +4121,45 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>underlines</string>
 			<key>xpos</key>
-			<integer>3340</integer>
+			<real>3341</real>
 			<key>ypos</key>
-			<integer>680</integer>
+			<real>680</real>
 		</dict>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1325</integer>
+			<real>1325</real>
 			<key>ypos</key>
-			<integer>860</integer>
+			<real>860</real>
 		</dict>
 		<key>4BF5F3D6-FF1D-4AC5-A428-7A734B6FBB16</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>930</integer>
+			<real>930</real>
 			<key>ypos</key>
-			<integer>1595</integer>
+			<real>1595</real>
 		</dict>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1005</integer>
+			<real>1005</real>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<real>1070</real>
 		</dict>
 		<key>500D577E-3053-4867-AE40-34FFB75A5D09</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>2120</integer>
+			<real>2120</real>
 		</dict>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<dict>
@@ -4134,18 +4168,18 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>scroll up (helps finding first page number)</string>
 			<key>xpos</key>
-			<integer>1175</integer>
+			<real>1175</real>
 			<key>ypos</key>
-			<integer>700</integer>
+			<real>700</real>
 		</dict>
 		<key>5508A734-A564-49AC-9939-D2B126FDCB74</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>160</integer>
+			<real>160</real>
 			<key>ypos</key>
-			<integer>1035</integer>
+			<real>1035</real>
 		</dict>
 		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
 		<dict>
@@ -4154,27 +4188,27 @@ Chris Grieser https://chris-grieser.de/</string>
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>3455</integer>
+			<real>3455</real>
 			<key>ypos</key>
-			<integer>720</integer>
+			<real>720</real>
 		</dict>
 		<key>5873E5A0-B91E-4DEC-98AB-BAB457CC622E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1270</integer>
+			<real>1270</real>
 			<key>ypos</key>
-			<integer>2280</integer>
+			<real>2280</real>
 		</dict>
 		<key>5B1B6BE2-F99E-4E40-904F-60B7DDC2AFC3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>805</integer>
+			<real>805</real>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<real>1670</real>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -4185,18 +4219,18 @@ Chris Grieser https://chris-grieser.de/</string>
 
 Start Annotation Export</string>
 			<key>xpos</key>
-			<integer>15</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>150</integer>
+			<real>150</real>
 		</dict>
 		<key>5E57A409-3BDD-4EE7-8AB8-B21391A7D298</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>2095</integer>
+			<real>2095</real>
 			<key>ypos</key>
-			<integer>790</integer>
+			<real>790</real>
 		</dict>
 		<key>5EC31DE6-0D3A-4BCC-A6E8-6D30FD19D336</key>
 		<dict>
@@ -4205,18 +4239,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>remove \n</string>
 			<key>xpos</key>
-			<integer>785</integer>
+			<real>785</real>
 			<key>ypos</key>
-			<integer>2150</integer>
+			<real>2150</real>
 		</dict>
 		<key>602D972B-BB63-496F-B96B-C4207E25422E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>60</integer>
+			<real>60</real>
 			<key>ypos</key>
-			<integer>1845</integer>
+			<real>1845</real>
 		</dict>
 		<key>61BD40E7-9BE8-4B06-B5D9-68CAD038F984</key>
 		<dict>
@@ -4225,18 +4259,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>space for auto-search</string>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<real>1065</real>
 		</dict>
 		<key>65E7AED3-BD1F-43E5-908F-09636A52A2A6</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1285</integer>
+			<real>1285</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 		<key>704D82ED-4B89-4C52-AD40-B3ABA9DCD7DA</key>
 		<dict>
@@ -4245,27 +4279,27 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>run extraction</string>
 			<key>xpos</key>
-			<integer>1795</integer>
+			<real>1795</real>
 			<key>ypos</key>
-			<integer>585</integer>
+			<real>585</real>
 		</dict>
 		<key>7173D535-8A59-4C7A-9DCE-FEFDD9EF8499</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>2095</integer>
+			<real>2095</real>
 			<key>ypos</key>
-			<integer>905</integer>
+			<real>905</real>
 		</dict>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>730</integer>
+			<real>730</real>
 		</dict>
 		<key>7D407AFC-B0A7-4ABD-A235-5ADF18B6ADF1</key>
 		<dict>
@@ -4274,9 +4308,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>page numbers</string>
 			<key>xpos</key>
-			<integer>1270</integer>
+			<real>1271</real>
 			<key>ypos</key>
-			<integer>490</integer>
+			<real>490</real>
 		</dict>
 		<key>7E2BA1D2-5E79-4591-A327-3C8F117DE619</key>
 		<dict>
@@ -4285,36 +4319,36 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>replace home with ~</string>
 			<key>xpos</key>
-			<integer>545</integer>
+			<real>545</real>
 			<key>ypos</key>
-			<integer>2020</integer>
+			<real>2020</real>
 		</dict>
 		<key>83D85448-CA51-4A18-87B6-0F6F02EA0D73</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1535</integer>
+			<real>1535</real>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<real>1065</real>
 		</dict>
 		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1110</integer>
+			<real>1110</real>
 			<key>ypos</key>
-			<integer>165</integer>
+			<real>165</real>
 		</dict>
 		<key>8636D1A0-E85B-4961-8445-DBBC255E8354</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>1990</integer>
+			<real>1990</real>
 		</dict>
 		<key>86514609-4A22-4679-B595-2E96303A9132</key>
 		<dict>
@@ -4323,18 +4357,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>saves file_path</string>
 			<key>xpos</key>
-			<integer>245</integer>
+			<real>245</real>
 			<key>ypos</key>
-			<integer>645</integer>
+			<real>645</real>
 		</dict>
 		<key>8A4954AF-5DEE-4D1C-B469-9C7509FFD706</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1495</integer>
+			<real>1495</real>
 			<key>ypos</key>
-			<integer>1800</integer>
+			<real>1800</real>
 		</dict>
 		<key>8D6FF67C-CE9A-47BD-8EB3-0D073F0C1F87</key>
 		<dict>
@@ -4343,18 +4377,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>citekey found</string>
 			<key>xpos</key>
-			<integer>985</integer>
+			<real>986</real>
 			<key>ypos</key>
-			<integer>480</integer>
+			<real>480</real>
 		</dict>
 		<key>8DD65E80-0A92-4F06-A75F-2B7F9571157A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>555</integer>
+			<real>555</real>
 			<key>ypos</key>
-			<integer>1655</integer>
+			<real>1655</real>
 		</dict>
 		<key>92AB51FB-020B-47D9-8AD3-3D1A351C6867</key>
 		<dict>
@@ -4363,18 +4397,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>remove \n</string>
 			<key>xpos</key>
-			<integer>785</integer>
+			<real>785</real>
 			<key>ypos</key>
-			<integer>2020</integer>
+			<real>2020</real>
 		</dict>
 		<key>93AA67C4-5283-4131-BBCA-FDED34162A98</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>1860</integer>
+			<real>1860</real>
 		</dict>
 		<key>972267FB-A5B1-42A6-86D7-91ED0A815777</key>
 		<dict>
@@ -4383,9 +4417,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>2435</integer>
+			<real>2435</real>
 			<key>ypos</key>
-			<integer>1800</integer>
+			<real>1800</real>
 		</dict>
 		<key>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</key>
 		<dict>
@@ -4394,18 +4428,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>read metadata from bibtex library</string>
 			<key>xpos</key>
-			<integer>790</integer>
+			<real>790</real>
 			<key>ypos</key>
-			<integer>540</integer>
+			<real>540</real>
 		</dict>
 		<key>980E29C0-7C48-4E45-8D6B-C3F3714DE98F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1615</integer>
+			<real>1615</real>
 			<key>ypos</key>
-			<integer>1645</integer>
+			<real>1645</real>
 		</dict>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
 		<dict>
@@ -4414,36 +4448,36 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>process annotations</string>
 			<key>xpos</key>
-			<integer>2090</integer>
+			<real>2090</real>
 			<key>ypos</key>
-			<integer>585</integer>
+			<real>585</real>
 		</dict>
 		<key>9C92EB76-F1A1-4A3C-8FD4-8A801580438A</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1060</integer>
+			<real>1060</real>
 			<key>ypos</key>
-			<integer>1595</integer>
+			<real>1595</real>
 		</dict>
 		<key>9EFB5FE8-9D69-4B84-A71B-179058E4F6E0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>1415</integer>
+			<real>1415</real>
 		</dict>
 		<key>A0207D9A-20A9-4AF8-9E7D-905566B18866</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<integer>2965</integer>
+			<real>2965</real>
 			<key>ypos</key>
-			<integer>660</integer>
+			<real>660</real>
 		</dict>
 		<key>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</key>
 		<dict>
@@ -4452,9 +4486,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>assign output variables</string>
 			<key>xpos</key>
-			<integer>1190</integer>
+			<real>1190</real>
 			<key>ypos</key>
-			<integer>500</integer>
+			<real>500</real>
 		</dict>
 		<key>A37D8724-7F84-4931-B412-68377C99A6EA</key>
 		<dict>
@@ -4463,9 +4497,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>Fallback: Manual Entering of Page Number</string>
 			<key>xpos</key>
-			<integer>1395</integer>
+			<real>1395</real>
 			<key>ypos</key>
-			<integer>830</integer>
+			<real>830</real>
 		</dict>
 		<key>A3D475A5-260F-4CE8-96D6-2C3D4A058444</key>
 		<dict>
@@ -4474,36 +4508,36 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>create new Draft</string>
 			<key>xpos</key>
-			<integer>2820</integer>
+			<real>2820</real>
 			<key>ypos</key>
-			<integer>525</integer>
+			<real>525</real>
 		</dict>
 		<key>A5AEA9C3-D502-43CF-9ADB-365F337379EC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1200</integer>
+			<real>1200</real>
 			<key>ypos</key>
-			<integer>1625</integer>
+			<real>1625</real>
 		</dict>
 		<key>A7323E84-86A9-4D7E-93C2-5968D1763BD9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>165</integer>
+			<real>165</real>
 			<key>ypos</key>
-			<integer>1285</integer>
+			<real>1285</real>
 		</dict>
 		<key>A765F8CF-74E3-4F1C-B857-508B2F74FB80</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>2020</integer>
+			<real>2020</real>
 		</dict>
 		<key>A9EE2187-6D2F-49C3-9E1C-3F2A5A188D53</key>
 		<dict>
@@ -4512,18 +4546,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>open in Obsidian</string>
 			<key>xpos</key>
-			<integer>2685</integer>
+			<real>2685</real>
 			<key>ypos</key>
-			<integer>660</integer>
+			<real>660</real>
 		</dict>
 		<key>AA6970AD-776B-4793-B505-5073FF05A972</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>2150</integer>
+			<real>2150</real>
 		</dict>
 		<key>AB2B2780-B8AB-4E7D-AD86-F4EC3501E13E</key>
 		<dict>
@@ -4532,18 +4566,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>saves .md file</string>
 			<key>xpos</key>
-			<integer>2680</integer>
+			<real>2680</real>
 			<key>ypos</key>
-			<integer>805</integer>
+			<real>805</real>
 		</dict>
 		<key>ADB5B0AA-BF9B-491D-98BC-D8D25542C149</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>15</integer>
+			<real>15</real>
 		</dict>
 		<key>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</key>
 		<dict>
@@ -4552,9 +4586,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>get file path</string>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>150</integer>
+			<real>150</real>
 		</dict>
 		<key>B2E63790-BE81-4BCA-971E-E93C887F6262</key>
 		<dict>
@@ -4563,36 +4597,36 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>Sets the Output Style</string>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>1650</integer>
+			<real>1650</real>
 		</dict>
 		<key>B7CFBC29-8784-4E92-B775-B87611C6E218</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>1265</integer>
+			<real>1265</real>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<real>1065</real>
 		</dict>
 		<key>BBA749AA-EDEC-4269-AED6-E665AF904A6D</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>2400</integer>
+			<real>2400</real>
 			<key>ypos</key>
-			<integer>650</integer>
+			<real>650</real>
 		</dict>
 		<key>BC076709-F221-436F-88DE-401BA8D595DA</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>300</integer>
+			<real>300</real>
 			<key>ypos</key>
-			<integer>2540</integer>
+			<real>2540</real>
 		</dict>
 		<key>BF8186EC-113D-4B38-8C4D-069F8CA540A5</key>
 		<dict>
@@ -4601,18 +4635,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>replace home with ~</string>
 			<key>xpos</key>
-			<integer>545</integer>
+			<real>545</real>
 			<key>ypos</key>
-			<integer>2150</integer>
+			<real>2150</real>
 		</dict>
 		<key>C15A23BF-194F-4054-A4D9-B8CEA4CBE6A4</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<integer>170</integer>
+			<real>170</real>
 			<key>ypos</key>
-			<integer>15</integer>
+			<real>15</real>
 		</dict>
 		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
 		<dict>
@@ -4621,63 +4655,63 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>Error Sound</string>
 			<key>xpos</key>
-			<integer>1400</integer>
+			<real>1400</real>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<real>1065</real>
 		</dict>
 		<key>C62314C8-E529-459D-8A01-B9F3001DC160</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>465</integer>
+			<real>465</real>
 			<key>ypos</key>
-			<integer>180</integer>
+			<real>180</real>
 		</dict>
 		<key>C7679DCD-1436-41BF-80EE-FAE5C4DB3638</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>410</integer>
+			<real>410</real>
 			<key>ypos</key>
-			<integer>490</integer>
+			<real>490</real>
 		</dict>
 		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>3595</integer>
+			<real>3595</real>
 			<key>ypos</key>
-			<integer>720</integer>
+			<real>720</real>
 		</dict>
 		<key>D407E01A-667B-446E-8733-6717C1222845</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>305</integer>
+			<real>305</real>
 			<key>ypos</key>
-			<integer>2395</integer>
+			<real>2395</real>
 		</dict>
 		<key>DC6B9C42-6BD1-4C89-8475-525C43635551</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1950</integer>
+			<real>1950</real>
 			<key>ypos</key>
-			<integer>605</integer>
+			<real>605</real>
 		</dict>
 		<key>E0A30547-5FD6-4C8C-9150-5E2B87BCA2E0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>615</integer>
+			<real>615</real>
 		</dict>
 		<key>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</key>
 		<dict>
@@ -4686,18 +4720,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>save first page number</string>
 			<key>xpos</key>
-			<integer>1560</integer>
+			<real>1560</real>
 			<key>ypos</key>
-			<integer>615</integer>
+			<real>615</real>
 		</dict>
 		<key>E274AAB2-30EB-4F2E-91A3-15E04D20D3D6</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>640</integer>
+			<real>640</real>
 			<key>ypos</key>
-			<integer>1990</integer>
+			<real>1990</real>
 		</dict>
 		<key>E7A70ECA-1D24-4E43-9EE9-68EA1A92999D</key>
 		<dict>
@@ -4706,27 +4740,27 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>save citekey, pass file_path</string>
 			<key>xpos</key>
-			<integer>665</integer>
+			<real>665</real>
 			<key>ypos</key>
-			<integer>570</integer>
+			<real>570</real>
 		</dict>
 		<key>EE09880D-17AC-45B3-9D49-0DE8CB9193EE</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>545</integer>
+			<real>545</real>
 			<key>ypos</key>
-			<integer>1860</integer>
+			<real>1860</real>
 		</dict>
 		<key>EFF65A14-8130-4A5D-A826-B733F799683E</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<integer>1645</integer>
+			<real>1645</real>
 			<key>ypos</key>
-			<integer>585</integer>
+			<real>585</real>
 		</dict>
 		<key>F572FACB-3A22-4A51-A3D6-9180CB6858E4</key>
 		<dict>
@@ -4735,27 +4769,27 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>copy wikilink</string>
 			<key>xpos</key>
-			<integer>2820</integer>
+			<real>2820</real>
 			<key>ypos</key>
-			<integer>660</integer>
+			<real>660</real>
 		</dict>
 		<key>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>6</integer>
 			<key>xpos</key>
-			<integer>2820</integer>
+			<real>2820</real>
 			<key>ypos</key>
-			<integer>805</integer>
+			<real>805</real>
 		</dict>
 		<key>FA8CD837-F873-4BE0-A473-0F4133880FCC</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>850</integer>
+			<real>850</real>
 			<key>ypos</key>
-			<integer>1990</integer>
+			<real>1990</real>
 		</dict>
 		<key>FB43CE4D-F24B-4E00-8484-BE2B5FBC764E</key>
 		<dict>
@@ -4764,18 +4798,18 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>remove preceding "@"</string>
 			<key>xpos</key>
-			<integer>550</integer>
+			<real>550</real>
 			<key>ypos</key>
-			<integer>520</integer>
+			<real>520</real>
 		</dict>
 		<key>FBFAD844-0211-4F50-B344-6AAD97D41894</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>1070</integer>
+			<real>1070</real>
 			<key>ypos</key>
-			<integer>1740</integer>
+			<real>1740</real>
 		</dict>
 		<key>FD6ECA6B-51D6-46E0-8811-99AB9FBBB03D</key>
 		<dict>
@@ -4784,11 +4818,13 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>create note</string>
 			<key>xpos</key>
-			<integer>2555</integer>
+			<real>2555</real>
 			<key>ypos</key>
-			<integer>660</integer>
+			<real>660</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>bibtex_library_path</key>
@@ -4808,12 +4844,12 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>only_recent_annos</string>
-		<string>bibtex_library_path</string>
 		<string>output_style</string>
-		<string>underlines_second_output</string>
+		<string>bibtex_library_path</string>
+		<string>only_recent_annos</string>
 		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>
+		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
 	<string>9.5.8</string>
