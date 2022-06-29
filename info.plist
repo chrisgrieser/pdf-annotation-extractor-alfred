@@ -3907,12 +3907,32 @@ end run</string>
 	</array>
 	<key>readme</key>
 	<string># PDF Annotation Extractor
-*Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.*
+Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.
 
 ## Info
 - [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
 - [Changelog](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md)
-- [Donate](https://ko-fi.com/pseudometa)</string>
+- [Donate](https://ko-fi.com/pseudometa)
+
+## Workflow Setup
+- Set the Hotkey by double-clicking the sky-blue field
+- Install [Homebrew](https://brew.sh/).
+- Install `pdfannots2json` by pasting the following into your terminal:
+
+`brew tap mgmeyers/pdfannots2json`  
+`brew install pdfannots2json`
+
+### Alfred 4
+- Using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file. The file has to be in your Alfred Search Scope for this to work; alternatively you can also set the path manually. ([➡️ How to set environment variables in Alfred](https://www.alfredapp.com/help/workflows/advanced/variables/#environment)).
+- Using `aconf`, set an output style (Obsidian, Drafts, or Markdown File). Note that Obsidian as output format requires that you also set a destination folder.
+
+### Alfred 5
+- Set the path to your BibTeX Library via the configuration option to the left.
+- Select an output style.
+
+
+## Created by
+[Chris Grieser](https://chris-grieser.de/) aka [pseudometa (Twitter)](https://twitter.com/pseudo_meta)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
@@ -4824,7 +4844,74 @@ Start Annotation Export</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/.pandoc/main-bibliography.bib</string>
+				<key>filtermode</key>
+				<integer>2</integer>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Absolute path to your BibTeX library. (Accepts "~" for your home folder.)</string>
+			<key>label</key>
+			<string>BibTeX Library Path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>bibtex_library_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Markdown File</string>
+						<string>markdown</string>
+					</array>
+					<array>
+						<string>Obsidian</string>
+						<string>obsidian</string>
+					</array>
+					<array>
+						<string>Drafts</string>
+						<string>drafts</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Note that Obsidian as output format requires that you also set a destination folder below.</string>
+			<key>label</key>
+			<string>Output Type</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>output_style</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>When Obsidian has been selected as Output Type. Sets folder where the annotations should be saved. Has to be a folder in your vault. Use the full path to the file, not the vault-relative path.</string>
+			<key>label</key>
+			<string>Obsidian Destination Folder</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>obsidian_destination</string>
+		</dict>
+	</array>
 	<key>variables</key>
 	<dict>
 		<key>bibtex_library_path</key>
