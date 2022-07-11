@@ -56,7 +56,6 @@ Automatically determines correct page numbers, merges highlights across page bre
 	<img width=18% alt="Set Hotkey" src="https://user-images.githubusercontent.com/73286100/132960488-a60eff61-16a9-42cf-801f-c42612fbfb5e.png">
 
 ## How to Use
-
 The PDF Annotation Extractor works on any PDF that has valid annotations saved *in the PDF file*. Some PDF readers like __Skim__ or __Zotero 6__ do not store annotations int eh PDF itself by default, but usually, you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 
 ### Basics
@@ -68,7 +67,7 @@ The PDF Annotation Extractor works on any PDF that has valid annotations saved *
 - Underlines
 - Free Comments
 - Strikethroughs
-- Rectangles as Images
+- Rectangles (as Images)
 
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
@@ -96,8 +95,8 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ## Extracting Images
-Both alternatives work only in Obsidian, the respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named as `{citekey}_image{n}.png`. The images will be embedded in the markdown file with the `![[ ]]` syntax, e.g. `![[filename.png|foobar]]`
-
+- Extracting images only works in Obsidian. The respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named `{citekey}_image{n}.png`.
+- The images will be embedded in the markdown file with the `![[ ]]` syntax, e.g. `![[filename.png|foobar]]`
 - Any `rectangle` type annotation in the PDF will be extracted as image.
 - If the rectangle annotation has any comment, it will be used as the alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
 
