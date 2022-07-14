@@ -3258,20 +3258,6 @@ fi</string>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>pdfengine</string>
-						<key>outputlabel</key>
-						<string>pdfengine</string>
-						<key>uid</key>
-						<string>59E1E37B-87DB-410B-8B4C-77377DD440E9</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
 						<string>citekey_insertion</string>
 						<key>outputlabel</key>
 						<string>citekey_insertion</string>
