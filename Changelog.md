@@ -1,3 +1,6 @@
+- 2022-07-15	release 6.5.2
+- 2022-07-15	rm user configration since conflict with env vars
+- 2022-07-13	trim and default settings
 - 2022-06-29	release 6.5.1
 - 2022-06-29	configrations for Alfred 5
 - 2022-06-28	release 6.5.0

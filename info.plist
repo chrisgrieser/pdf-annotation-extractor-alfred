@@ -4858,7 +4858,7 @@ Start Annotation Export</string>
 		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
-	<string>6.5.1</string>
+	<string>6.5.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
