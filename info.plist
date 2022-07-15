@@ -4850,7 +4850,6 @@ Start Annotation Export</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>output_style</string>
 		<string>bibtex_library_path</string>
 		<string>only_recent_annos</string>
 		<string>pdf_folder_highlights_app</string>
