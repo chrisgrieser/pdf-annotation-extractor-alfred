@@ -4830,74 +4830,7 @@ Start Annotation Export</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>~/.pandoc/main-bibliography.bib</string>
-				<key>filtermode</key>
-				<integer>2</integer>
-				<key>required</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Absolute path to your BibTeX library. (Accepts "~" for your home folder.)</string>
-			<key>label</key>
-			<string>BibTeX Library Path</string>
-			<key>type</key>
-			<string>filepicker</string>
-			<key>variable</key>
-			<string>bibtex_library_path</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>Markdown File</string>
-						<string>markdown</string>
-					</array>
-					<array>
-						<string>Obsidian</string>
-						<string>obsidian</string>
-					</array>
-					<array>
-						<string>Drafts</string>
-						<string>drafts</string>
-					</array>
-				</array>
-			</dict>
-			<key>description</key>
-			<string>Note that Obsidian as output format requires that you also set a destination folder below.</string>
-			<key>label</key>
-			<string>Output Type</string>
-			<key>type</key>
-			<string>popupbutton</string>
-			<key>variable</key>
-			<string>output_style</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string></string>
-				<key>filtermode</key>
-				<integer>1</integer>
-				<key>required</key>
-				<false/>
-			</dict>
-			<key>description</key>
-			<string>When Obsidian has been selected as Output Type. Sets folder where the annotations should be saved. Has to be a folder in your vault. Use the full path to the file, not the vault-relative path.</string>
-			<key>label</key>
-			<string>Obsidian Destination Folder</string>
-			<key>type</key>
-			<string>filepicker</string>
-			<key>variable</key>
-			<string>obsidian_destination</string>
-		</dict>
-	</array>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>bibtex_library_path</key>
