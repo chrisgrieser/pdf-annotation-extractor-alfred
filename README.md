@@ -72,8 +72,8 @@ The PDF Annotation Extractor works on any PDF that has valid annotations saved *
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
 ### Automatic Page Number Identification
-The *correct* page numbers will automatically from the BibTex Library. If there is no start-page information in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually.
-- Enter the __real page number__ of your __first PDF page__. *Example: if the first PDF page represents the page number 104, you have to enter `104`.*
+Instead of the PDF page numbers, this workflow retrieves information on the *real* page numbers from the BibTeX library and inserts them. If there is no page data in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually.
+- In that case, enter the __real page number__ of your __first PDF page__. *Example: if the first PDF page represents the page number 104, you have to enter `104`.*
 - In case there is content before the actual text (e.g. a foreword or Table of Contents), the real page number `1` often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example: Your PDF is a book which has a foreword, and uses roman numbers for it; real page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.*
 
 ### Automatic Citekey Identification
