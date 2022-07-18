@@ -403,6 +403,18 @@ function run() {
 		return arr.filter (a => a.type !== "remove");
 	};
 
+	// "()"
+	Array.prototype.quoteWithoutReferences = function () {
+		return this.map(a => {
+			if (a.type !== "Highlight" || a.type !== "Underline") return a;
+			if (!a.comment?.startsWith("()")) return a;
+
+			a.comment = a.comment.slice(2).trim();
+			a.quotes = a.quote.replace(/\([^(]{5,}?\)/g, "()"); // quantifier "5", so brackets with years like "(2013)" aren't shortened
+			return a;
+		});
+
+	};
 	// Main
 	// --------------------------------------------------------------
 
@@ -413,8 +425,9 @@ function run() {
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
 
-		// annotation codes & Images
+		// annotation codes & images
 		.mergeQuotes()
+		.quoteWithoutReferences()
 		.transformHeadings()
 		.transformHr()
 		.questionCallout()
