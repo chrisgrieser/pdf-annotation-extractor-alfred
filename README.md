@@ -77,7 +77,7 @@ Instead of the PDF page numbers, this workflow retrieves information on the *rea
 - In case there is content before the actual text (e.g. a foreword or Table of Contents), the real page number `1` often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example: Your PDF is a book which has a foreword, and uses roman numbers for it; real page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.*
 
 ### Automatic Citekey Identification
-If the filename of the pdf is *exactly* the citekey (optionally followed by an underscore and some text like `{citekey}_{title}.pdf`), the citekey for the bibliographic information will be automatically determined. Otherwise, you have to enter the citekey manually. (You can turn off automatic citekey identification via `aconf`, see (section Configuration)[#configuration].)
+If the filename of the pdf is *exactly* the citekey (optionally followed by an underscore and some text like `{citekey}_{title}.pdf`), the citekey for the bibliographic information will be automatically determined. Otherwise, you have to enter the citekey manually. [You can turn off automatic citekey identification via `aconf`, see (section Configuration](#configuration).)
 
 You can easily achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 

@@ -1,3 +1,5 @@
+- 2022-07-18	release 6.6.0
+- 2022-07-18	new annotat code: shorten content in parenthesis
 - 2022-07-15	release 6.5.2
 - 2022-07-15	rm user configration since conflict with env vars
 - 2022-07-13	trim and default settings
