@@ -93,7 +93,15 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `X` Turns highlighted/underlines text into a markdown __task__ (`- [ ]`) and move up. If the annotation is a free comment, the text following the `X` will be used as task text.
 - `=`: Adds highlighted/underlined text as __tags__ to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and will do nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
-- `()`: Removes the `()` and shortens the highlighted/underlined text by removing all content between parentheses, leaving only "()" as indicators that there is more content in the original quote. This is useful when quoting a passage which contains a high number of references which can decrease readability of the highlighted/underlined text segment.
+- `()`: Removes the `()` and shortens the highlighted/underlined text by removing all content between parentheses, leaving only "()" as indicators that there is more content in the original quote. This is useful when quoting a passage which contains a high number of references which can decrease readability of the highlighted/underlined text segment. For example, the first passage will be transformed to the second.
+
+```md
+While heterogeneity can lead to lower team functioning due to arising faultlines (Ndofor et al., 2015) and conflict between team members due to a lack of understanding (Miller et al., 1998), heterogeneity can also broaden a team's knowledge base (van Knippenberg et al., 2004), thus increasing organizational performance (Higgins and Gulati, 2003; Wei and Wu, 2013).
+```
+
+```md
+While heterogeneity can lead to lower team functioning due to arising faultlines () and conflict between team members due to a lack of understanding (), heterogeneity can also broaden a team's knowledge base (), thus increasing organizational performance ().
+```
 
 ## Extracting Images
 - Extracting images only works in Obsidian. The respective images will be saved in the `attachments` subfolder of the Obsidian destination folder, and named `{citekey}_image{n}.png`.
