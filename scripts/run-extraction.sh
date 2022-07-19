@@ -11,7 +11,7 @@ mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
 if [[ "$only_recent_annos" = "true" ]]; then
 	RECENT_DATE="$(date -v-4d +%F)" # --ignore-before uses DATE 23:59
-	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE"  | tee "$alfred_workflow_cache/temp.json"
+	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE" | tee "$alfred_workflow_cache/temp.json"
 else
 	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" | tee "$alfred_workflow_cache/temp.json"
 fi

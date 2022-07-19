@@ -2229,6 +2229,7 @@ author: "{var:author}"
 publicationType: {var:ptype}
 url: {var:url}
 creation-date: {date:yyyy-MM-dd}
+obsidianUIMode: preview
 ---
 
 # {var:citekey}
@@ -4851,10 +4852,10 @@ Start Annotation Export</string>
 	<key>variablesdontexport</key>
 	<array>
 		<string>bibtex_library_path</string>
-		<string>only_recent_annos</string>
+		<string>underlines_second_output</string>
 		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>
-		<string>underlines_second_output</string>
+		<string>only_recent_annos</string>
 	</array>
 	<key>version</key>
 	<string>6.6.0</string>
