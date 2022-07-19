@@ -394,7 +394,6 @@ function run() {
 		if (keywords) {
 			keywords
 				.split(",")
-				.map (kw => kw.trim())
 				.forEach (tag => newKeywords.push(tag));
 		}
 
@@ -406,7 +405,6 @@ function run() {
 					if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
 					tags
 						.split(",")
-						.map (kw => kw.trim())
 						.forEach (tag => newKeywords.push(tag));
 					a.type = "remove";
 				}
@@ -415,8 +413,8 @@ function run() {
 
 		// Merge & Save both
 		if (newKeywords.length) {
-			newKeywords = [... new Set (newKeywords)]
-				.map (kw => kw.replaceAll(" ", "-"));
+			newKeywords = [...new Set (newKeywords)]
+				.map (kw => kw.trim().replaceAll(" ", "-"));
 		}
 		setAlfredEnv("tags", newKeywords.join(", ")); // variable name has to be changed so Alfred accepts it >:(
 

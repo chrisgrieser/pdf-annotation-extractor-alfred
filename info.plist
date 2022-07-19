@@ -304,7 +304,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>39404419-C091-4379-A868-22D8A2854023</string>
+				<string>4006D327-9BBC-4253-AE02-39AA3D8D5FC0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -405,6 +405,16 @@
 		</array>
 		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4006D327-9BBC-4253-AE02-39AA3D8D5FC0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
@@ -1166,18 +1176,7 @@
 			</dict>
 		</array>
 		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>39404419-C091-4379-A868-22D8A2854023</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>DAF50EDD-1821-4F2D-901A-BC44F08265FB</key>
 		<array>
 			<dict>
@@ -2096,33 +2095,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to remove configuration "tags" in workflow (system attribute "alfred_workflow_bundleid")
-
-tell application id "com.runningwithcrayons.Alfred" to remove configuration "underlines" in workflow (system attribute "alfred_workflow_bundleid")
-
-tell application id "com.runningwithcrayons.Alfred" to remove configuration "annotations" in workflow (system attribute "alfred_workflow_bundleid")</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/finish-and-debug.js</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>39404419-C091-4379-A868-22D8A2854023</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -2171,6 +2143,29 @@ tell application id "com.runningwithcrayons.Alfred" to remove configuration "ann
 			<string>86514609-4A22-4679-B595-2E96303A9132</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/remove-config.js</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4006D327-9BBC-4253-AE02-39AA3D8D5FC0</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2442,27 +2437,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2562,6 +2536,27 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>*️⃣ Underlines saved in Drafts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3883,7 +3878,7 @@ end run</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>toggle-value.applescript</string>
+				<string>scripts/toggle-value.applescript</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -3914,7 +3909,7 @@ end run</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>toggle-value-engine.applescript</string>
+				<string>scripts/toggle-value-engine.applescript</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -4153,17 +4148,6 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>ypos</key>
 			<real>525</real>
 		</dict>
-		<key>39404419-C091-4379-A868-22D8A2854023</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>note</key>
-			<string>remove temporary environment variables &amp; debug</string>
-			<key>xpos</key>
-			<real>3595</real>
-			<key>ypos</key>
-			<real>635</real>
-		</dict>
 		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
 		<dict>
 			<key>colorindex</key>
@@ -4172,6 +4156,15 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<real>1385</real>
 			<key>ypos</key>
 			<real>395</real>
+		</dict>
+		<key>4006D327-9BBC-4253-AE02-39AA3D8D5FC0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>3455</real>
+			<key>ypos</key>
+			<real>645</real>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
@@ -4750,9 +4743,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<real>3425</real>
+			<real>3460</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>785</real>
 		</dict>
 		<key>D407E01A-667B-446E-8733-6717C1222845</key>
 		<dict>
@@ -4911,7 +4904,7 @@ Start Annotation Export</string>
 		<key>citekey_insertion</key>
 		<string>filename</string>
 		<key>extraction_engine</key>
-		<string>pdfannots2json</string>
+		<string>pdfannots</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>only_recent_annos</key>
@@ -4920,23 +4913,16 @@ Start Annotation Export</string>
 		<string>obsidian</string>
 		<key>pdf_folder_highlights_app</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
-		<key>tags</key>
-		<string>Organisationssoziologie, -Formalität, -Hierarchie, -StartUps, -Demokratie, -Partizipation, -Review</string>
-		<key>underlines</key>
-		<string>- __Methodisches Problem: "wirklich" heterarchische Organisationen so selten, dass sie praktisch im Zusammenspiel mit den Forschenden "geschaffen" werden müssen, um sie erforschen zu können?:__ "Argyris (2002),instudyingorganizationallearning,arguedthat thephenomenonhewishedtostudy,“double-loop learning'–inwhichindividualsandgroupsareableto alterunderlyingvaluesandassumptionstosolvecomplex andill-structuredproblems–wassorarethatitwas necessarytoworkwithorganizationstocreateitinorder tostudyit.Inshort,theresearchtopicnecessitatedthe “actionresearch'thatArgyrisandhiscolleaguesvigorouslypursued(Argyris&amp;Schön989).Studyingself managingorganizationsinvolvesasimilarchallenge. (…) However,thesestudiesexaminedcontexts wherehierarchicalauthoritycouldstillbereliedupon whenneeded,suchasincasesofconfictordisagreement. Weknowlittleaboutwhetherandhowcomplex,emergent coordinationcanbeaccomplishedincontextswhere managerialauthorityhasbeeneliminatedaltogether" [@LeeEdmondson2017, p. 50–51]
-</string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>underlines</string>
-		<string>only_recent_annos</string>
-		<string>tags</string>
-		<string>obsidian_destination</string>
-		<string>pdf_folder_highlights_app</string>
 		<string>extraction_engine</string>
 		<string>bibtex_library_path</string>
+		<string>only_recent_annos</string>
+		<string>pdf_folder_highlights_app</string>
+		<string>obsidian_destination</string>
 		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>

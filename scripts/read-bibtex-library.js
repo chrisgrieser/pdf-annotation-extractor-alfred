@@ -31,7 +31,7 @@ function run() {
 		return errorMsg;
 	}
 
-	// workaround to avoid the need for pcregrep (uses grep -A20 from before)
+	// workaround to avoid the need for pcregrep (together with grep -A20 from before)
 	bibtexEntry = "@" + bibtexEntry.split("@")[1];
 
 	// BibTeX-Decoding
@@ -108,8 +108,8 @@ function run() {
 		else if (property.includes("date =")) year = property.match(/\d{4}/)[0];
 		else if (property.includes("keywords =")) {
 			keywords = extract(property)
-				.replaceAll(" ", "-")
-				.replaceAll(",", ", ");
+				.replaceAll(" ", "-") // no spaces allowed in tags
+				.replaceAll(",-", ",");
 		}
 		else if (property.includes ("url =")) url = extract (property);
 		else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
