@@ -2889,7 +2889,7 @@ url: {var:url}
 				<key>fixedorder</key>
 				<true/>
 				<key>items</key>
-				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines_second_output","subtitle":"currently: {var:underlines_second_output}"},{"title":"🕑 Extract only Annotations done in last 3 days","arg":"only_recent_annos","subtitle":"currently: {var:only_recent_annos}"},{"title":"🔁 Fallback Extraction Engine (advanced users only)","arg":"extraction_engine","subtitle":"currently: {var:extraction_engine}"}]</string>
+				<string>[{"title":"🚪 Exit this Configuration","arg":"exit"},{"title":"🏃 Run Annotation Extraction","arg":"run"},{"title":"📚 Set BibTeX Library","arg":"bibtex_library_path","subtitle":"currently: {var:bibtex_library_path}"},{"title":"📑 Output Style","arg":"output","subtitle":"currently: {var:output_style}"},{"title":"✍️ Citekey Identification","arg":"citekey_insertion","subtitle":"currently: {var:citekey_insertion}"},{"title":"♋️ Obsidian Destination","arg":"obsidian_destination","subtitle":"currently: {var:obsidian_destination}"},{"title":"2️⃣ Underlines as 2nd Output (⚠️ currently only to Drafts)","arg":"underlines_second_output","subtitle":"currently: {var:underlines_second_output}"},{"title":"🕑 Extract only Annotations done in last 3 days","arg":"only_recent_annos","subtitle":"currently: {var:only_recent_annos}"},{"title":"🔁 Advanced Users: Extraction Engine","arg":"extraction_engine","subtitle":"currently: {var:extraction_engine}"}]</string>
 				<key>keyword</key>
 				<string>aconf</string>
 				<key>matchmode</key>
@@ -4911,7 +4911,7 @@ Start Annotation Export</string>
 		<key>citekey_insertion</key>
 		<string>filename</string>
 		<key>extraction_engine</key>
-		<string>pdfannots</string>
+		<string>pdfannots2json</string>
 		<key>obsidian_destination</key>
 		<string>~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main Vault/Literature Notes</string>
 		<key>only_recent_annos</key>
@@ -4921,23 +4921,23 @@ Start Annotation Export</string>
 		<key>pdf_folder_highlights_app</key>
 		<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
 		<key>tags</key>
-		<string></string>
+		<string>Organisationssoziologie, -Formalität, -Hierarchie, -StartUps, -Demokratie, -Partizipation, -Review</string>
 		<key>underlines</key>
-		<string>&gt; "modern" [@LeeEdmondson2017, p. 36]
+		<string>- __Methodisches Problem: "wirklich" heterarchische Organisationen so selten, dass sie praktisch im Zusammenspiel mit den Forschenden "geschaffen" werden müssen, um sie erforschen zu können?:__ "Argyris (2002),instudyingorganizationallearning,arguedthat thephenomenonhewishedtostudy,“double-loop learning'–inwhichindividualsandgroupsareableto alterunderlyingvaluesandassumptionstosolvecomplex andill-structuredproblems–wassorarethatitwas necessarytoworkwithorganizationstocreateitinorder tostudyit.Inshort,theresearchtopicnecessitatedthe “actionresearch'thatArgyrisandhiscolleaguesvigorouslypursued(Argyris&amp;Schön989).Studyingself managingorganizationsinvolvesasimilarchallenge. (…) However,thesestudiesexaminedcontexts wherehierarchicalauthoritycouldstillbereliedupon whenneeded,suchasincasesofconfictordisagreement. Weknowlittleaboutwhetherandhowcomplex,emergent coordinationcanbeaccomplishedincontextswhere managerialauthorityhasbeeneliminatedaltogether" [@LeeEdmondson2017, p. 50–51]
 </string>
 		<key>underlines_second_output</key>
 		<string>true</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>obsidian_destination</string>
-		<string>underlines_second_output</string>
 		<string>underlines</string>
-		<string>bibtex_library_path</string>
+		<string>only_recent_annos</string>
+		<string>tags</string>
+		<string>obsidian_destination</string>
 		<string>pdf_folder_highlights_app</string>
 		<string>extraction_engine</string>
-		<string>tags</string>
-		<string>only_recent_annos</string>
+		<string>bibtex_library_path</string>
+		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
 	<string>6.6.0</string>

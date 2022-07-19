@@ -10,7 +10,7 @@ function run() {
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
-	const usePdfannots = $.getenv("extraction_engine") == "pdfannots";
+	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 
 	const citekey = $.getenv("citekey");
 	const filename = citekey;
@@ -166,8 +166,8 @@ function run() {
 
 		const underScoreHls = [];
 		this.forEach (anno => {
-			if (!anno.type === "Highlight" || !anno.comment) return;
-			if (!anno.comment.startsWith("_")) return;
+			if (anno.type !== "Highlight") return;
+			if (!anno.comment?.startsWith("_")) return;
 			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
 			underScoreHls.push(anno);
 		});
