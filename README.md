@@ -124,9 +124,12 @@ Use the Alfred keyword `aconf` to configure this workflow. The various options a
 	```
 
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
-- This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all annotations that are "free form" and the workflow should work.
-- When the hotkey does not work when triggered in PDF Expert, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the Mac OS System Settings:
+- This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
+- When the hotkey does not work when triggered in Preview, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the Mac OS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
+
+- There are some cases where the extracted text is all jumbled up. In that case, it's a is a problem with the upstream `pdfannots2json`. [The issue is tracked here](https://github.com/mgmeyers/pdfannots2json/issues/11), and you can also report your problem. 
+- As a fallback, you can use `pdfannots` as extraction engine, as a different PDF engine sometimes fixes issues. This requires installing [pdfannots](https://github.com/mgmeyers/pdfannots2json/issues/11) via `pip3 install pdfannots`, and switching the fallback engine via `aconf`. Note that `pdfannots` does not support image extraction or extracting only recent annotations, so generally you want to keep using `pdfannots2json`.
 
 ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
 

@@ -10,6 +10,7 @@ function run() {
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
+	const usePdfannots = $.getenv("extraction_engine") == "pdfannots";
 
 	const citekey = $.getenv("citekey");
 	const filename = citekey;
@@ -58,14 +59,12 @@ function run() {
 			"type": "Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough",
 			"comment"?: string,
 			"quote"?: string,
-			"colorCategory"?: string,
 			"imagePath"?: string,
-			"ocrText"?: string,
 		},
 	]
 	*/
 
-	// https://github.com/mgmeyers/pdf-annots2json#pdf-annots2json
+	// https://github.com/mgmeyers/pdfannots2json#sample-output
 	Array.prototype.adapter4pdfannots2json = function () {
 		return this.map (a => {
 			delete a.date;
@@ -73,6 +72,8 @@ function run() {
 			delete a.y;
 			delete a.x;
 			delete a.color;
+			delete a.colorCategory;
+			delete a.ocrText;
 
 			a.quote = a.annotatedText;
 			delete a.annotatedText;
@@ -92,6 +93,26 @@ function run() {
 					break;
 				case "image":
 					a.type = "Image";
+					break;
+			}
+			return a;
+		});
+	};
+
+	Array.prototype.adapter4pdfannots = function () {
+		return this.map (a => {
+			delete a.created;
+			delete a.start_xy;
+			delete a.author;
+
+			a.quote = a.text;
+			a.comment = a.contents;
+			delete a.text;
+			delete a.contents;
+
+			switch (a.type) {
+				case "text":
+					a.type = "Free Comment";
 					break;
 			}
 			return a;
@@ -418,9 +439,14 @@ function run() {
 	// Main
 	// --------------------------------------------------------------
 
-	const annotations = JSON.parse(readFile(inputFile))
+	let annotations = JSON.parse(readFile(inputFile));
+
+	// select right adapter method
+	if (usePdfannots) annotations = annotations.adapter4pdfannots();
+	else annotations = annotations.adapter4pdfannots2json();
+
+	annotations = annotations
 		// process input
-		.adapter4pdfannots2json()
 		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
