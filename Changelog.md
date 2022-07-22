@@ -1,3 +1,6 @@
+- 2022-07-22	release 6.6.1
+- 2022-07-22	fix () annotation code
+- 2022-07-19	add pdfannots fallback extraction engine
 - 2022-07-18	release 6.6.0
 - 2022-07-18	new annotat code: shorten content in parenthesis
 - 2022-07-15	release 6.5.2
