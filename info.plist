@@ -2127,26 +2127,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>file_path</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>86514609-4A22-4679-B595-2E96303A9132</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2166,6 +2146,26 @@
 			<string>4006D327-9BBC-4253-AE02-39AA3D8D5FC0</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>file_path</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>86514609-4A22-4679-B595-2E96303A9132</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -4161,10 +4161,12 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
+			<key>note</key>
+			<string>remove temp variables</string>
 			<key>xpos</key>
 			<real>3455</real>
 			<key>ypos</key>
-			<real>645</real>
+			<real>640</real>
 		</dict>
 		<key>4337C18A-43C6-48EA-B9EC-BF6D7A56661B</key>
 		<dict>
