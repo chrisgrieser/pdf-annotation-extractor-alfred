@@ -222,7 +222,7 @@ function run() {
 					if (comment) {
 						output = "- "
 							+ annotationTag
-							+ "__" + comment + ":__ "
+							+ "__" + comment + "__ "
 							+ "\"" + a.quote + "\""
 							+ reference;
 						output = bulletHandling(output, comment, "__");
@@ -233,16 +233,6 @@ function run() {
 							+ reference;
 					}
 					else if (!comment && !annotationTag) output = "> \""+ a.quote + "\"" + reference;
-					break;
-				case "Strikethrough":
-					if (comment) {
-						output = "- "
-						+ annotationTag
-						+ "*" + comment + "*: "
-						+ "~~\"" + a.quote + "\"~~"
-						+ reference;
-					}
-					if (!comment) output = "> ~~\""+ a.quote + "\"~~" + reference;
 					break;
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
