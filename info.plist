@@ -1733,6 +1733,8 @@
 			<dict>
 				<key>delimiter</key>
 				<string>;;</string>
+				<key>discardemptyarguments</key>
+				<false/>
 				<key>outputas</key>
 				<integer>0</integer>
 				<key>trimarguments</key>
@@ -2241,7 +2243,7 @@
 				<key>filetext</key>
 				<string>---
 aliases: "{var:title}"
-tags: pdf-annotations, {var:tags}
+tags: literature-note, {var:tags}
 citekey: {var:citekey}
 year: {var:year}
 author: "{var:author}"
