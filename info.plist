@@ -2253,8 +2253,7 @@ creation-date: {date:yyyy-MM-dd}
 obsidianUIMode: preview
 ---
 
-# {var:citekey}
-*{var:title}*
+# {var:title}
 
 {query}</string>
 				<key>ignoredynamicplaceholders</key>
