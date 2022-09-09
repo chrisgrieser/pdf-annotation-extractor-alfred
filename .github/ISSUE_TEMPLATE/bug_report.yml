@@ -49,3 +49,5 @@ body:
           required: true
         - label: "I checked out the available options under `aconf` and there isn't one that enables the desired behavior."
           required: true
+        - label: "If the extracted text is all jumbled up (special characters, spaces missing, etc.) then the issue is not with this workflow workflow, but the underlying extraction engine, pdfannots2json. [In that case, please file a bug report there.](https://github.com/mgmeyers/pdfannots2json/issues)"
+          required: true
