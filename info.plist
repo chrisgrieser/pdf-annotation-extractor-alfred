@@ -124,7 +124,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
+				<string>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -765,7 +765,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
+				<string>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -950,6 +950,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>F5B1DB5E-4F1B-419B-B8A1-E5161A5EC73C</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1171,6 +1186,21 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CA5A9C74-7046-49F6-82D1-9003F7A57011</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -3357,6 +3387,70 @@ fi</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
+						<string>{const:alfred_version}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^5\.</string>
+						<key>outputlabel</key>
+						<string>version &gt;= 5</string>
+						<key>uid</key>
+						<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>version &lt;= 4</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:auto_update}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>true</string>
+						<key>uid</key>
+						<string>F5B1DB5E-4F1B-419B-B8A1-E5161A5EC73C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>false</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
 						<string></string>
 						<key>matchcasesensitive</key>
 						<false/>
@@ -3956,27 +4050,31 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 ## Info
 - [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
 - [Changelog](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md)
-- [Donate](https://ko-fi.com/pseudometa)
+- [Bug Reports](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues)
+
 
 ## Workflow Setup
-- Set the Hotkey by double-clicking the sky-blue field
+- Set the Hotkey by double-clicking the sky-blue field at the top left.
 - Install [Homebrew](https://brew.sh/).
 - Install `pdfannots2json` by pasting the following into your terminal:
-
-`brew tap mgmeyers/pdfannots2json`  
+`brew tap mgmeyers/pdfannots2json`
 `brew install pdfannots2json`
 
-### Alfred 4
 - Using the `aconf` command, select `Set BibTeX Library`, and then search/select your `.bib` file. The file has to be in your Alfred Search Scope for this to work; alternatively you can also set the path manually. ([➡️ How to set environment variables in Alfred](https://www.alfredapp.com/help/workflows/advanced/variables/#environment)).
 - Using `aconf`, set an output style (Obsidian, Drafts, or Markdown File). Note that Obsidian as output format requires that you also set a destination folder.
 
-### Alfred 5
-- Set the path to your BibTeX Library via the configuration option to the left.
-- Select an output style.
-
-
 ## Created by
-[Chris Grieser](https://chris-grieser.de/) aka [pseudometa (Twitter)](https://twitter.com/pseudo_meta)</string>
+[Chris Grieser](https://chris-grieser.de/)
+
+#### Profiles
+- [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
+- [Discord](https://discordapp.com/users/462774483044794368/)
+- [GitHub](https://github.com/chrisgrieser/)
+- [Twitter](https://twitter.com/pseudo_meta)
+- [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
+
+#### Buy me a Coffee
+[Ko-Fi](https://ko-fi.com/pseudometa)</string>
 	<key>uidata</key>
 	<dict>
 		<key>00C09279-B8C3-4A16-877D-DC3D91358BB4</key>
@@ -4477,11 +4575,11 @@ Start Annotation Export</string>
 		<key>972267FB-A5B1-42A6-86D7-91ED0A815777</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>8</integer>
+			<integer>11</integer>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<real>2435</real>
+			<real>2425</real>
 			<key>ypos</key>
 			<real>1800</real>
 		</dict>
@@ -4575,6 +4673,17 @@ Start Annotation Export</string>
 			<real>2650</real>
 			<key>ypos</key>
 			<real>525</real>
+		</dict>
+		<key>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>note</key>
+			<string>auto_update</string>
+			<key>xpos</key>
+			<real>2188</real>
+			<key>ypos</key>
+			<real>1820</real>
 		</dict>
 		<key>A5AEA9C3-D502-43CF-9ADB-365F337379EC</key>
 		<dict>
@@ -4740,6 +4849,15 @@ Start Annotation Export</string>
 			<real>410</real>
 			<key>ypos</key>
 			<real>490</real>
+		</dict>
+		<key>CA5A9C74-7046-49F6-82D1-9003F7A57011</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
+			<key>xpos</key>
+			<real>2290</real>
+			<key>ypos</key>
+			<real>1820</real>
 		</dict>
 		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
 		<dict>
@@ -4922,11 +5040,11 @@ Start Annotation Export</string>
 	<key>variablesdontexport</key>
 	<array>
 		<string>extraction_engine</string>
-		<string>only_recent_annos</string>
 		<string>bibtex_library_path</string>
-		<string>underlines_second_output</string>
+		<string>only_recent_annos</string>
 		<string>pdf_folder_highlights_app</string>
 		<string>obsidian_destination</string>
+		<string>underlines_second_output</string>
 	</array>
 	<key>version</key>
 	<string>6.6.1</string>
