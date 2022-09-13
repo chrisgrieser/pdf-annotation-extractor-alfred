@@ -1,3 +1,6 @@
+- 2022-09-13	release 6.6.2
+- 2022-09-13	last version compatible with Alfred 4
+- 2022-09-13	update release automation for Alfred 5
 - 2022-07-22	release 6.6.1
 - 2022-07-22	fix () annotation code
 - 2022-07-19	add pdfannots fallback extraction engine
