@@ -5017,7 +5017,27 @@ Start Annotation Export</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Automatically keep this workflow up to date</string>
+			</dict>
+			<key>description</key>
+			<string>If disabled, you will have to manually download new versions by visiting the GitHub Page of this workflow.</string>
+			<key>label</key>
+			<string>Auto Update</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>auto_update</string>
+		</dict>
+	</array>
 	<key>variables</key>
 	<dict>
 		<key>bibtex_library_path</key>
