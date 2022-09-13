@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>bibtex_library_path</key>
+	<string>~/dotfiles/pandoc/main-bibliography.bib</string>
+	<key>obsidian_destination</key>
+	<string>~/Main Vault/Literature Notes</string>
+	<key>pdf_folder_highlights_app</key>
+	<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
+	<key>underlines_second_output</key>
+	<true/>
+</dict>
 </plist>
