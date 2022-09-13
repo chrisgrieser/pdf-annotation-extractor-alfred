@@ -3052,7 +3052,7 @@ Start Annotation Export</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Required. The .bib file containing your library.</string>
+			<string>The .bib file containing your library.</string>
 			<key>label</key>
 			<string>BibTeX Library Path</string>
 			<key>type</key>
