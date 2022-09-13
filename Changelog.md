@@ -1,3 +1,4 @@
+- 2022-09-13	release 6.6.3
 - 2022-09-13	release 6.6.2
 - 2022-09-13	last version compatible with Alfred 4
 - 2022-09-13	update release automation for Alfred 5
