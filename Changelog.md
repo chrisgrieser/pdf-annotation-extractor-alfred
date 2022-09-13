@@ -1,3 +1,4 @@
+- 2022-09-13	release 7.0.1
 - 2022-09-13	release 7.0.0
 - 2022-09-13	fully reworked workflow config via Alfred 5
 - 2022-09-13	release 6.6.3

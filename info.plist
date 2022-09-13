@@ -831,29 +831,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/get-pdf-path.applescript</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -885,6 +862,29 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/get-pdf-path.applescript</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1193,27 +1193,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>delimiter</key>
-				<string>;;</string>
-				<key>discardemptyarguments</key>
-				<false/>
-				<key>outputas</key>
-				<integer>0</integer>
-				<key>trimarguments</key>
-				<true/>
-				<key>variableprefix</key>
-				<string>split</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.split</string>
-			<key>uid</key>
-			<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string>{var:split1}</string>
 				<key>passthroughargument</key>
@@ -1242,6 +1221,27 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>;;</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>split</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1425,23 +1425,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
+				<key>matchmode</key>
 				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/create-new-draft.sh</string>
-				<key>type</key>
-				<integer>8</integer>
+				<key>matchstring</key>
+				<string>.*\/(.*?)(_.*)?\.pdf</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string>$1</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.replace</string>
 			<key>uid</key>
-			<string>A3D475A5-260F-4CE8-96D6-2C3D4A058444</string>
+			<string>17CE4DD3-D484-4FDD-9441-A0589B92CE38</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1469,21 +1467,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>matchmode</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
 				<integer>1</integer>
-				<key>matchstring</key>
-				<string>.*\/(.*?)(_.*)?\.pdf</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
-				<string>$1</string>
+				<key>scriptfile</key>
+				<string>scripts/create-new-draft.sh</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>17CE4DD3-D484-4FDD-9441-A0589B92CE38</string>
+			<string>A3D475A5-260F-4CE8-96D6-2C3D4A058444</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1511,29 +1511,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/run-extraction.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1604,23 +1581,25 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/run-extraction.sh</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
+			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1644,6 +1623,27 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>*️⃣ Underlines saved in Drafts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1694,7 +1694,7 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>DC6B9C42-6BD1-4C89-8475-525C43635551</string>
+			<string>00DBF7D8-B695-4BE6-B88D-1822E6C537A1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1726,7 +1726,7 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>00DBF7D8-B695-4BE6-B88D-1822E6C537A1</string>
+			<string>DC6B9C42-6BD1-4C89-8475-525C43635551</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1868,6 +1868,55 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>[[{var:citekey}]]</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F572FACB-3A22-4A51-A3D6-9180CB6858E4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>delay (0.2);
+path="{query}";
+
+urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
+
+app = Application.currentApplication();
+app.includeStandardAdditions = true;
+app.openLocation(urlscheme);</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A9EE2187-6D2F-49C3-9E1C-3F2A5A188D53</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -1909,6 +1958,21 @@ obsidianUIMode: preview
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>soundname</key>
+				<string>Blow</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1930,70 +1994,6 @@ obsidianUIMode: preview
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>delay (0.2);
-path="{query}";
-
-urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
-
-app = Application.currentApplication();
-app.includeStandardAdditions = true;
-app.openLocation(urlscheme);</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A9EE2187-6D2F-49C3-9E1C-3F2A5A188D53</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>[[{var:citekey}]]</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>F572FACB-3A22-4A51-A3D6-9180CB6858E4</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Blow</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
@@ -2007,6 +2007,38 @@ app.openLocation(urlscheme);</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>A37D8724-7F84-4931-B412-68377C99A6EA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^-?\d+$</string>
+						<key>outputlabel</key>
+						<string>is number</string>
+						<key>uid</key>
+						<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>no number</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1F409233-6B32-4BC6-9162-D0D58C81A5F1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2104,38 +2136,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^-?\d+$</string>
-						<key>outputlabel</key>
-						<string>is number</string>
-						<key>uid</key>
-						<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>no number</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>1F409233-6B32-4BC6-9162-D0D58C81A5F1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -2147,38 +2147,6 @@ fi</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>4683ABC7-8419-41CB-BD41-FA122EA45915</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{const:alfred_version}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^5\.</string>
-						<key>outputlabel</key>
-						<string>version &gt;= 5</string>
-						<key>uid</key>
-						<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>version &lt;= 4</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2217,6 +2185,38 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{const:alfred_version}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^5\.</string>
+						<key>outputlabel</key>
+						<string>version &gt;= 5</string>
+						<key>uid</key>
+						<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>version &lt;= 4</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2232,6 +2232,19 @@ fi</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>5E57A409-3BDD-4EE7-8AB8-B21391A7D298</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>{var:output_md}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2299,19 +2312,6 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string>{var:output_md}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>FA8C7A32-56E0-4F7C-87B4-94AD01F108E3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>soundname</key>
 				<string>Basso</string>
 				<key>systemsound</key>
@@ -2348,21 +2348,6 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>soundname</key>
-				<string>Basso</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2378,6 +2363,21 @@ url: {var:url}
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Basso</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2421,6 +2421,8 @@ url: {var:url}
 Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.
 
 ℹ️ With Alfred 5, the workflow is now configured with the configuration menu to the left. The Alfred keyword `aconf` has subsequently been removed.
+
+ℹ️ When upgrading to version 7+ of this workflow, your workflow configuration might have been reset.
 
 ## Info
 - [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
@@ -3231,7 +3233,7 @@ Start Annotation Export</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>7.0.0</string>
+	<string>7.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
