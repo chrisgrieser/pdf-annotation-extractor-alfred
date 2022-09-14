@@ -2420,7 +2420,7 @@ url: {var:url}
 	<string># PDF Annotation Extractor
 Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.
 
-## ⚠️ First Upgrade to Version 7 ⚠️Version 7 of this workflow uses the new Alfred 5 User Configuration. If you first update to version 7+ from an older version, you have to **DISABLE the checkbox `Migrate my workflow customizations`** and configure your workflow again to the left again. This is due to Alfred 5 using a different form of configuration in the background.*If you missed to disable the checkbox, you can simply download the latest release from GitHub again install the `.alfredworkflow` and disable the checkbox this time.*
+## ⚠️ First Upgrade to Version 7 ⚠️Version 7 of this workflow uses the new Alfred 5 User Configuration. If you first update to version 7+ from an older version, you have to **DISABLE the checkbox "Migrate my workflow customizations"** and configure your workflow again to the left again. This is due to Alfred 5 using a different form of configuration in the background.*If you missed to disable the checkbox, you can simply download the latest release from GitHub again install the `.alfredworkflow` and disable the checkbox this time.*
 
 ℹ️ With Alfred 5, the workflow is now configured with the configuration menu to the left. The Alfred keyword `aconf` has subsequently been removed.
 
