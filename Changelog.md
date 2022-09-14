@@ -1,3 +1,4 @@
+- 2022-09-14	release 7.0.4
 - 2022-09-14	release 7.0.3
 - 2022-09-14	release 7.0.2
 - 2022-09-14	add info to _not_ migrate Alfred 4 settings
