@@ -1,3 +1,5 @@
+- 2022-09-19	release 7.0.6
+- 2022-09-19	fix for checkbox variables
 - 2022-09-14	release 7.0.5
 - 2022-09-14	release 7.0.4
 - 2022-09-14	release 7.0.3
