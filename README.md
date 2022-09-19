@@ -3,6 +3,9 @@
 > **Note**  
 > [Version 6.6.3](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/tag/6.6.3) is the last version compatible with Alfred 4. All future versions of this workflow will require Alfred 5.
 
+> **Warning**  
+> The initial version 7 had a bug preventing auto-updating. Please [manually download 7.0.6 or newer](https://github.com/chrisgrieser/shimmering-obsidian/releases) to receive auto-updates.
+
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
 An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References. Outputs annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), or a Markdown file.

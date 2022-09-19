@@ -16,7 +16,7 @@ IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
 # run extraction
-if [[ "$only_recent_annos" = "true" ]]; then
+if [[ "$only_recent_annos" == "1" ]]; then
 	RECENT_DATE="$(date -v-4d +%F)" # --ignore-before uses DATE 23:59
 	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE" | tee "$alfred_workflow_cache/temp.json"
 else
@@ -24,7 +24,7 @@ else
 fi
 
 # image extraction
-if [[ "$citekey_insertion" = "no_bibliography_extraction" ]] ; then
+if [[ "$citekey_insertion" == "no_bibliography_extraction" ]] ; then
 	IMAGE_BASE_NAME=$(date '+%Y-%m-%d_%H-%M')_annotations
 else
 	IMAGE_BASE_NAME="$citekey"
@@ -33,7 +33,7 @@ fi
 # abort if no images
 # shellcheck disable=SC2012
 NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
-[[ $NUMBER_OF_IMAGES == 0 ]] && exit 0
+[[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0
 
 # rename & move images
 i=1

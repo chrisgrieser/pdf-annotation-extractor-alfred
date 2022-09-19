@@ -2163,7 +2163,7 @@ fi</string>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>true</string>
+						<string>1</string>
 						<key>outputlabel</key>
 						<string>true</string>
 						<key>uid</key>
@@ -2577,7 +2577,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>note</key>
-			<string>underlines</string>
+			<string>underlines existent in annotations</string>
 			<key>xpos</key>
 			<real>3206</real>
 			<key>ypos</key>

@@ -8,7 +8,7 @@ function run() {
 	// import Alfred variables
 	//---------------------------------------------------------------
 	const firstPageNo = parseInt($.getenv("first_page_no"));
-	const underlinesSecondOutput = $.getenv("underlines_second_output") === "true";
+	const underlinesSecondOutput = $.getenv("underlines_second_output") === "1";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 
