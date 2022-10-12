@@ -3232,6 +3232,18 @@ Start Annotation Export</string>
 			<string>auto_update</string>
 		</dict>
 	</array>
+	<key>variables</key>
+	<dict>
+		<key>tags</key>
+		<string>Science-Studies</string>
+		<key>underlines</key>
+		<string>none</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>tags</string>
+		<string>underlines</string>
+	</array>
 	<key>version</key>
 	<string>7.0.6</string>
 	<key>webaddress</key>
