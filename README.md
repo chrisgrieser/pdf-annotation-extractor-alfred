@@ -20,6 +20,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 ## Table of Contents
 
 <!--toc:start-->
+- [Installation](#installation)
 - [How to Use](#how-to-use)
   - [Basics](#basics)
   - [Annotation Types extracted](#annotation-types-extracted)
@@ -35,6 +36,19 @@ Automatically determines correct page numbers, merges highlights across page bre
   - [Profiles](#profiles)
   - [Donate](#donate)
 <!--toc:end-->
+
+## Installation
+- Install [Homebrew](https://brew.sh/).
+- Install `pdfannots2json` by pasting the following into your terminal:
+
+  ```bash
+  brew tap mgmeyers/pdfannots2json
+  brew install pdfannots2json
+  ```
+
+- Download the [latest release](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
+- Set the Hotkey by double-clicking the sky-blue field at the top left. (You can also use this workflow with the Alfred keyword `anno`.)
+- Set up the workflow configuration inside the app.
 
 ## How to Use
 The PDF Annotation Extractor works on any PDF that has valid annotations saved *in the PDF file*. Some PDF readers like __Skim__ or __Zotero 6__ do not store annotations int eh PDF itself by default, but usually, you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)

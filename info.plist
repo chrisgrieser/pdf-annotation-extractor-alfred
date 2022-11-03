@@ -2420,6 +2420,14 @@ url: {var:url}
 	<string># PDF Annotation Extractor
 Extract Annotations as Markdown, insert Pandoc Citations with correct page numbers and more.
 
+## Workflow Setup
+- Install [Homebrew](https://brew.sh/).
+- Install `pdfannots2json` by pasting the following into your terminal:
+`brew tap mgmeyers/pdfannots2json`
+`brew install pdfannots2json`
+- Set the Hotkey by double-clicking the sky-blue field at the top left. (You can also use this workflow with the Alfred keyword `anno`.)
+- Set up the workflow configuration to the left.
+
 ## ⚠️ First Upgrade to Version 7 ⚠️Version 7 of this workflow uses the new Alfred 5 User Configuration. If you first update to version 7+ from an older version, you have to **DISABLE the checkbox "Migrate my workflow customizations"** and configure your workflow again with the settings to the left. This is due to Alfred 5 using a different form of configuration in the background.*If you missed to disable the checkbox, you can simply re-download the latest release from GitHub, install the `.alfredworkflow` file and disable the checkbox this time.*
 
 ℹ️ Since the workflow is now configured with the configuration menu to the left, the keyword `aconf` has been removed.
@@ -2428,14 +2436,6 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 - [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
 - [Changelog](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/Changelog.md)
 - [Bug Reports](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues)
-
-## Workflow Setup
-- Install [Homebrew](https://brew.sh/).
-- Install `pdfannots2json` by pasting the following into your terminal:
-`brew tap mgmeyers/pdfannots2json`
-`brew install pdfannots2json`
-- Set the Hotkey by double-clicking the sky-blue field at the top left. (You can also use this workflow with the Alfred keyword `anno`.)
-- Set up the workflow configuration to the left.
 
 ## Created by
 [Chris Grieser](https://chris-grieser.de/)
@@ -3048,6 +3048,8 @@ Start Annotation Export</string>
 				<string></string>
 				<key>filtermode</key>
 				<integer>2</integer>
+				<key>placeholder</key>
+				<string></string>
 				<key>required</key>
 				<true/>
 			</dict>
@@ -3063,6 +3065,8 @@ Start Annotation Export</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>default</key>
+				<string>manually</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -3087,6 +3091,8 @@ Start Annotation Export</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>default</key>
+				<string>markdown</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -3119,6 +3125,8 @@ Start Annotation Export</string>
 				<string></string>
 				<key>filtermode</key>
 				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
 				<key>required</key>
 				<false/>
 			</dict>
@@ -3172,6 +3180,8 @@ Start Annotation Export</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>default</key>
+				<string>pdfannots2json</string>
 				<key>pairs</key>
 				<array>
 					<array>
@@ -3200,6 +3210,8 @@ Start Annotation Export</string>
 				<string></string>
 				<key>filtermode</key>
 				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
 				<key>required</key>
 				<false/>
 			</dict>
