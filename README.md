@@ -1,9 +1,9 @@
 # PDF Annotation Extractor (Alfred Workflow)
 
-> **Note**  
+> __Note__
 > [Version 6.6.3](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/tag/6.6.3) is the last version compatible with Alfred 4. All future versions of this workflow will require Alfred 5.
 
-> **Warning**  
+> __Warning__
 > The initial version 7 had a bug preventing auto-updating. Please [manually download 7.0.6 or newer](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases) to receive auto-updates.
 
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
@@ -11,31 +11,29 @@
 An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References. Outputs annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), or a Markdown file.
 
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
+
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
 
-> **Note**  
-> Version 6.6.3 is the last version compatible with Alfred 4. All future versions of this workflow will require [Alfred 5](https://www.alfredapp.com/). 
+> __Note__
+> Version 6.6.3 is the last version compatible with Alfred 4. All future versions of this workflow will require [Alfred 5](https://www.alfredapp.com/).
 
 ## Table of Contents
 
-
 <!--toc:start-->
-- [PDF Annotation Extractor (Alfred Workflow)](#pdf-annotation-extractor-alfred-workflow)
-  - [Table of Contents](#table-of-contents)
-  - [How to Use](#how-to-use)
-    - [Basics](#basics)
-    - [Annotation Types extracted](#annotation-types-extracted)
-    - [Automatic Page Number Identification](#automatic-page-number-identification)
-    - [Automatic Citekey Identification](#automatic-citekey-identification)
-    - [Annotation Codes](#annotation-codes)
-  - [Extracting Images](#extracting-images)
-  - [Extra Features](#extra-features)
-  - [Configuration](#configuration)
-  - [Troubleshooting](#troubleshooting)
-  - [Thanks & Credits](#thanks-credits)
-  - [About the Developer](#about-the-developer)
-    - [Profiles](#profiles)
-    - [Donate](#donate)
+- [How to Use](#how-to-use)
+  - [Basics](#basics)
+  - [Annotation Types extracted](#annotation-types-extracted)
+  - [Automatic Page Number Identification](#automatic-page-number-identification)
+  - [Automatic Citekey Identification](#automatic-citekey-identification)
+  - [Annotation Codes](#annotation-codes)
+- [Extracting Images](#extracting-images)
+- [Extra Features](#extra-features)
+- [Configuration](#configuration)
+- [Troubleshooting](#troubleshooting)
+- [Thanks & Credits](#thanks--credits)
+- [About the Developer](#about-the-developer)
+  - [Profiles](#profiles)
+  - [Donate](#donate)
 <!--toc:end-->
 
 ## How to Use
@@ -55,7 +53,7 @@ The PDF Annotation Extractor works on any PDF that has valid annotations saved *
 Highlights, Underlines and Strikethroughs are extracted as blockquotes when the have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
 
 ### Automatic Page Number Identification
-Instead of the PDF page numbers, this workflow retrieves information on the *real* page numbers from the BibTeX library and inserts them. If there is no page data in the BibTex entry (e.g. monographies), you are prompted to enter the page number manually.
+Instead of the PDF page numbers, this workflow retrieves information on the *real* page numbers from the BibTeX library and inserts them. If there is no page data in the BibTeX entry (e.g., monographies), you are prompted to enter the page number manually.
 - In that case, enter the __real page number__ of your __first PDF page__. *Example: if the first PDF page represents the page number 104, you have to enter `104`.*
 - In case there is content before the actual text (e.g. a foreword or Table of Contents), the real page number `1` often occurs later in the PDF. In that case, you must enter a __negative page number__, reflecting the true page number the first PDF would have. *Example: Your PDF is a book which has a foreword, and uses roman numbers for it; real page number 1 is PDF page number 12. If you continued the numbering backwards, the first PDF page would have page number `-10`. So you enter the value `-10` when prompted for a page number.*
 
@@ -68,7 +66,7 @@ You can easily achieve such a filename pattern with via renaming rules of most r
 Insert these special codes at the __beginning__ of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to quickly display a cheat sheet showing all the following information.)
 
 - `+`: Merge this highlight/underline with the previous highlight/underline.
-	- Both annotations on the same page: will put a "(…)" in between them. This is useful to leave out certain parts of text.  Used for jumping sections on the same page.
+	- Both annotations on the same page: will put a "(…)" in between them. This is useful to leave out certain parts of text. Used for jumping sections on the same page.
 	- The second annotation is on the following page: Assuming a continuation of a highlight/underline across page borders, this will not insert a "(…)". However, both pages will be inserted in the Pandoc citation, e.g. `[Grieser2020, p. 14-15]`.
 - `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax.)
 - `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required).
@@ -102,12 +100,12 @@ Use the Alfred keyword `aconf` to configure this workflow. The various options a
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following Terminal command `brew upgrade pdfannots2json` in your terminal.
 - This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
-- This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g. from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
+- This workflow sometimes does not work when the pdf contains bigger free-form annotations (e.g., from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the Mac OS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
 
 - There are some cases where the extracted text is all jumbled up. In that case, it's a is a problem with the upstream `pdfannots2json`. [The issue is tracked here](https://github.com/mgmeyers/pdfannots2json/issues/11), and you can also report your problem.
-- As a fallback, you can use `pdfannots` as extraction engine, as a different PDF engine sometimfixes issues. This requires installing [pdfannots](https://github.com/mgmeyers/pdfannots2json/issues/11) via `pip3 install pdfannots`, and switching the fallback engine via `aconf`. Note that `pdfannots` does not support image extraction or extracting only recent annotations, so generally you want to keep using `pdfannots2json`.
+- As a fallback, you can use `pdfannots` as extraction engine, as a different PDF engine sometimes fixes issues. This requires installing [pdfannots](https://github.com/mgmeyers/pdfannots2json/issues/11) via `pip3 install pdfannots`, and switching the fallback engine via `aconf`. Note that `pdfannots` does not support image extraction or extracting only recent annotations, so generally you want to keep using `pdfannots2json`.
 
 ℹ️ When you cannot resolve the problem, please [open an GitHub issue](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/issues).
 
