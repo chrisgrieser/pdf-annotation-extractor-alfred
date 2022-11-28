@@ -4,18 +4,18 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 [[ ! -e "$alfred_workflow_cache" ]] && mkdir -p "$alfred_workflow_cache"
 
 #-------------------------------------------------------------------------------
-
+# PDFANNOTS
 if [[ "$extraction_engine" == "pdfannots" ]]; then
 	pdfannots --no-group --format=json "$file_path" | tee "$alfred_workflow_cache/temp.json"
 	exit 0
 fi
 
 #-------------------------------------------------------------------------------
-
+# PDFANNOTS2JSON
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
-# run extraction
+# RUN EXTRACTION
 if [[ "$only_recent_annos" == "1" ]]; then
 	RECENT_DATE="$(date -v-4d +%F)" # --ignore-before uses DATE 23:59
 	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE" | tee "$alfred_workflow_cache/temp.json"
@@ -24,8 +24,6 @@ else
 fi
 
 # IMAGE EXTRACTION
-IMAGE_BASE_NAME="$citekey"
-
 # shellcheck disable=SC2012
 NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 [[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0 # abort if no images
@@ -34,9 +32,8 @@ NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 # TODO: the image order is sometimes not correctly preserved
 i=1
 for image in *; do
-	mv "$image" ../"${IMAGE_BASE_NAME}_image$i.png"
+	cp "$image" ../"${citekey}_image${i}.png"
 	i=$((i + 1))
 done
 
-# remove temp folder
-rmdir "$IMAGE_FOLDER"
+rmdir "$IMAGE_FOLDER" # remove temp folder
