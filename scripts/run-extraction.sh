@@ -28,11 +28,16 @@ fi
 NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 [[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0 # abort if no images
 
-# rename & move images
-# TODO: the image order is sometimes not correctly preserved
+# fix padding for low page numbers, all images get 3 digits.
+# see https://github.com/mgmeyers/pdfannots2json/issues/16
 i=1
 for image in *; do
-	cp "$image" ../"${citekey}_image${i}.png"
+	leftPadded=$(echo "$image" | sed -E 's/-([[:digit:]])-/-00\1-/' | sed -E 's/-([[:digit:]][[:digit:]])-/-0\1-/')
+	mv "$image" "$leftPadded"
+done
+# rename for workflow
+for image in *; do
+	mv -f "$image" ../"${citekey}_image${i}.png"
 	i=$((i + 1))
 done
 
