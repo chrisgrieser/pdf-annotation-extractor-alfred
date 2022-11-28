@@ -23,19 +23,15 @@ else
 	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" | tee "$alfred_workflow_cache/temp.json"
 fi
 
-# image extraction
-if [[ "$citekey_insertion" == "no_bibliography_extraction" ]] ; then
-	IMAGE_BASE_NAME=$(date '+%Y-%m-%d_%H-%M')_annotations
-else
-	IMAGE_BASE_NAME="$citekey"
-fi
+# IMAGE EXTRACTION
+IMAGE_BASE_NAME="$citekey"
 
-# abort if no images
 # shellcheck disable=SC2012
 NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
-[[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0
+[[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0 # abort if no images
 
 # rename & move images
+# TODO: the image order is sometimes not correctly preserved
 i=1
 for image in *; do
 	mv "$image" ../"${IMAGE_BASE_NAME}_image$i.png"
