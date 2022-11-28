@@ -13,7 +13,7 @@ function run() {
 	const fileExists = Application("Finder").exists(Path(bibtexLibraryPath));
 
 	if (!fileExists) {
-		const errorMsg = `No BibTeX File found at "${bibtexLibraryPath}".\n\n Make sure you have entered the full path to the file, if you entered it manually.`;
+		const errorMsg = `No BibTeX File found at "${bibtexLibraryPath}".`;
 		return errorMsg;
 	}
 

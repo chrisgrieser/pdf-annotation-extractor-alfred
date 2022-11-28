@@ -416,6 +416,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>2674BF22-E20F-4515-AD2A-534634F6CED3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>973A8963-A800-41E3-A231-A0F825882339</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -891,27 +903,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>⚠️ File is not a PDF</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -965,6 +956,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>⚠️ File is not a PDF</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>856C6C52-1A73-4712-A28C-E277645BFC7A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>soundname</key>
 				<string>Basso</string>
 				<key>systemsound</key>
@@ -976,35 +988,6 @@
 			<string>65E7AED3-BD1F-43E5-908F-09636A52A2A6</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alignment</key>
-				<integer>0</integer>
-				<key>backgroundcolor</key>
-				<string></string>
-				<key>fadespeed</key>
-				<integer>0</integer>
-				<key>fillmode</key>
-				<integer>0</integer>
-				<key>font</key>
-				<string></string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>largetypetext</key>
-				<string>{query}</string>
-				<key>textcolor</key>
-				<string></string>
-				<key>wrapat</key>
-				<integer>50</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.largetype</string>
-			<key>uid</key>
-			<string>2674BF22-E20F-4515-AD2A-534634F6CED3</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1089,6 +1072,35 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>2674BF22-E20F-4515-AD2A-534634F6CED3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1122,13 +1134,27 @@
 						<key>matchstring</key>
 						<string>^No Citekey found.*</string>
 						<key>outputlabel</key>
-						<string>error</string>
+						<string>no citekey</string>
 						<key>uid</key>
 						<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^No BibTeX File found.*</string>
+						<key>outputlabel</key>
+						<string>no BibTeX file</string>
+						<key>uid</key>
+						<string>973A8963-A800-41E3-A231-A0F825882339</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>worked</string>
+				<string>success</string>
 				<key>hideelse</key>
 				<false/>
 			</dict>
@@ -2530,9 +2556,9 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1110</real>
+			<real>1145</real>
 			<key>ypos</key>
-			<real>170</real>
+			<real>220</real>
 		</dict>
 		<key>280875D9-6878-4994-8CC2-C08DF9543A64</key>
 		<dict>
@@ -2661,9 +2687,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1280</real>
+			<real>1325</real>
 			<key>ypos</key>
-			<real>100</real>
+			<real>115</real>
 		</dict>
 		<key>6BB3AAFD-652C-433E-B510-BFB36C7988B4</key>
 		<dict>
@@ -2719,9 +2745,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1110</real>
+			<real>1145</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>90</real>
 		</dict>
 		<key>86514609-4A22-4679-B595-2E96303A9132</key>
 		<dict>
@@ -2741,9 +2767,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>citekey found</string>
 			<key>xpos</key>
-			<real>986</real>
+			<real>970</real>
 			<key>ypos</key>
-			<real>345</real>
+			<real>325</real>
 		</dict>
 		<key>972267FB-A5B1-42A6-86D7-91ED0A815777</key>
 		<dict>
@@ -3126,7 +3152,7 @@ Start Annotation Export</string>
 				<key>filtermode</key>
 				<integer>1</integer>
 				<key>placeholder</key>
-				<string></string>
+				<string>~/my-vault/literature-notes</string>
 				<key>required</key>
 				<false/>
 			</dict>
@@ -3216,9 +3242,9 @@ Start Annotation Export</string>
 				<false/>
 			</dict>
 			<key>description</key>
-			<string>Highlights.app only: Folder containing all PDFs</string>
+			<string>Folder containing all PDFs</string>
 			<key>label</key>
-			<string></string>
+			<string>Highlights.app only</string>
 			<key>type</key>
 			<string>filepicker</string>
 			<key>variable</key>
@@ -3247,9 +3273,10 @@ Start Annotation Export</string>
 	<key>variables</key>
 	<dict>
 		<key>tags</key>
-		<string>Science-Studies</string>
+		<string>Digitalwirtschaft, Plattformen</string>
 		<key>underlines</key>
-		<string>none</string>
+		<string>- #main __Unterscheidung von Organisation und etechnischr Infrastruktur__ "Diese Fragen lassen sich unseres Erachtens nicht angemessen beantworten, ohne analytisch zwischen internetbasierten Plattformen und den sie betreibenden Unternehmen zu unterscheiden, die spezifischen Koordinationsund Regelungsmechanismen zwischen diesen beiden konstitutiven Ebenen herauszuarbeiten sowie onlinezentrierte Plattformunternehmen als Unternehmensform in einen größeren sozioökonomischen Zusammenhang zu stellen." [@DolataSchrape2022, p. 13]
+</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
