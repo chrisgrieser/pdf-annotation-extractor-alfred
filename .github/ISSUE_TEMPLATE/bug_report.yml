@@ -37,7 +37,7 @@ body:
     id: workflow-configuration
     attributes:
       label: Workflow Configuration
-      description: "Please add a screenshot of all your [workflow variables](https://www.alfredapp.com/help/workflows/advanced/variables/)."
+      description: "Please add a screenshot of all your [workflow configuration](https://www.alfredapp.com/help/workflows/workflow-configuration/)."
     validations:
       required: true
   - type: checkboxes
@@ -45,9 +45,7 @@ body:
     attributes:
       label: Checklist
       options:
-        - label: I have [updated to the latest version](https://github.com/chrisgrieser/shimmering-obsidian/releases/latest) of this workflow.
-          required: true
-        - label: "I checked out the available options under `aconf` and there isn't one that enables the desired behavior."
+        - label: I have [updated to the latest version](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest) of this workflow.
           required: true
         - label: "If the extracted text is all jumbled up (special characters, spaces missing, etc.) then the issue is not with this workflow, but the underlying extraction engine, pdfannots2json. Upgrade it to the latest version with `brew upgrade pdfannots2json` and try again. If the issue persists, [file a bug report at pdfannots2json.](https://github.com/mgmeyers/pdfannots2json/issues)"
           required: true
