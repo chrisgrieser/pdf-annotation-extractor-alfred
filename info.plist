@@ -562,7 +562,17 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
+				<string>0A6D99B4-1E5E-470A-A319-D3C031FCC24B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -606,19 +616,6 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>628B9D14-2B47-4E44-B529-FF35FE4640E3</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -2138,6 +2135,21 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>number-input-loop</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>4CBB5EFD-7DE6-47E9-8677-232683385214</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>path</key>
 				<string>{var:output_md}</string>
 			</dict>
@@ -2269,21 +2281,6 @@ url: {var:url}
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>soundname</key>
-				<string>Basso</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>C1E823F5-C983-4F0A-A862-DC947650022B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>number-input-loop</string>
 				<key>passinputasargument</key>
@@ -2297,21 +2294,6 @@ url: {var:url}
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>number-input-loop</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>4CBB5EFD-7DE6-47E9-8677-232683385214</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2374,9 +2356,9 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>2190</real>
+			<real>2120</real>
 			<key>ypos</key>
-			<real>845</real>
+			<real>885</real>
 		</dict>
 		<key>0B185B98-4066-4CB1-9724-AA64206396DF</key>
 		<dict>
@@ -2466,7 +2448,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>xpos</key>
 			<real>1395</real>
 			<key>ypos</key>
@@ -2486,9 +2468,9 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>965</real>
+			<real>1065</real>
 			<key>ypos</key>
-			<real>950</real>
+			<real>800</real>
 		</dict>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<dict>
@@ -2530,9 +2512,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>2015</real>
+			<real>1925</real>
 			<key>ypos</key>
-			<real>790</real>
+			<real>770</real>
 		</dict>
 		<key>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</key>
 		<dict>
@@ -2568,9 +2550,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>2015</real>
+			<real>1925</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>885</real>
 		</dict>
 		<key>7C9BEE60-1D74-421C-A8E5-4BECA690AB4E</key>
 		<dict>
@@ -2599,9 +2581,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1495</real>
+			<real>2120</real>
 			<key>ypos</key>
-			<real>945</real>
+			<real>1090</real>
 		</dict>
 		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
 		<dict>
@@ -2767,9 +2749,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1225</real>
+			<real>1925</real>
 			<key>ypos</key>
-			<real>945</real>
+			<real>1000</real>
 		</dict>
 		<key>BBA749AA-EDEC-4269-AED6-E665AF904A6D</key>
 		<dict>
@@ -2788,17 +2770,6 @@ Start Annotation Export</string>
 			<real>170</real>
 			<key>ypos</key>
 			<real>605</real>
-		</dict>
-		<key>C1E823F5-C983-4F0A-A862-DC947650022B</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>note</key>
-			<string>Error Sound</string>
-			<key>xpos</key>
-			<real>1360</real>
-			<key>ypos</key>
-			<real>945</real>
 		</dict>
 		<key>C62314C8-E529-459D-8A01-B9F3001DC160</key>
 		<dict>
