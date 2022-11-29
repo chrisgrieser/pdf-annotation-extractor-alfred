@@ -1,15 +1,18 @@
-#!/bin/zsh
-# shellcheck disable=SC2154
+#!/usr/bin/env zsh
 
-# using '"' somehow leads to a parsing error, so this needs to be translated
-annos=$(echo "$underlines" | tr '"' "'")
+# extract underlines to Drafts
+if [[ "$underlines" != "none" ]]; then
+	annos=$(echo "$underlines" | tr '"' "'") # using '"' somehow leads to a parsing error, so this needs to be translated
+	input="# $citekey\n_${title}_\n\n$annos" # insert Citekey and title
+	uuid=$(osascript -e "tell application \"Drafts\" to make new draft with properties {content: \"$input\", tags: {\"underlines\" }}" |
+		cut -c10-)                                    # create Draft and save UUID
+	open "drafts://x-callback-url/open?uuid=$uuid" # open Draft
+	sleep 0.4
+fi
 
-# insert Citekey and title
-input="# $citekey\n_${title}_\n\n$annos"
-
-# create Draft and save UUID
-uuid=$(osascript -e "tell application \"Drafts\" to make new draft with properties {content: \"$input\", tags: {\"underlines\" }}" \
-| cut -c10-)
-
-# save Draft
-open "drafts://x-callback-url/open?uuid=$uuid"
+# remove temp variables
+osascript -e "
+	tell application id \"com.runningwithcrayons.Alfred\"
+		remove configuration \"underlines\" in workflow (system attribute \"$alfred_workflow_bundleid\")
+		remove configuration \"tags\" in workflow (system attribute \"$alfred_workflow_bundleid\")
+	end tell"

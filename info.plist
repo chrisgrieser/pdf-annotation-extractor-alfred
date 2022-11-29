@@ -88,7 +88,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>44776CD9-148B-4DD3-AD19-40B16312706C</string>
+				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -209,19 +209,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<array>
 			<dict>
@@ -262,18 +249,7 @@
 			</dict>
 		</array>
 		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<array>
 			<dict>
@@ -519,7 +495,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
+				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -673,23 +649,6 @@
 				<true/>
 			</dict>
 		</array>
-		<key>CA5A9C74-7046-49F6-82D1-9003F7A57011</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>972267FB-A5B1-42A6-86D7-91ED0A815777</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
-		<array/>
 		<key>DC6B9C42-6BD1-4C89-8475-525C43635551</key>
 		<array>
 			<dict>
@@ -1519,6 +1478,29 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/split-off-to-drafts.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
 				<string>tell application "System Events" to set frontApp to (name of first process where it is frontmost)
@@ -1626,50 +1608,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/split-off-to-drafts.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>*️⃣ Underlines saved in Drafts</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1796,38 +1734,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>E0D3A1AB-DF6A-49A2-B93B-5E2996A62BBE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:underlines}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>none</string>
-						<key>outputlabel</key>
-						<string>no</string>
-						<key>uid</key>
-						<string>7DDAD6BB-2726-4BD8-8C52-9B99A82500F4</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>yes</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>44776CD9-148B-4DD3-AD19-40B16312706C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2199,44 +2105,12 @@ fi</string>
 				<key>elselabel</key>
 				<string>false</string>
 				<key>hideelse</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>A4E34E95-1047-4E03-B6C0-48CBFFD99B4D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{const:alfred_version}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^5\.</string>
-						<key>outputlabel</key>
-						<string>version &gt;= 5</string>
-						<key>uid</key>
-						<string>0FE84C8E-C444-4461-AC9F-30CD4B47058C</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>version &lt;= 4</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>CA5A9C74-7046-49F6-82D1-9003F7A57011</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2598,17 +2472,6 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>ypos</key>
 			<real>260</real>
 		</dict>
-		<key>44776CD9-148B-4DD3-AD19-40B16312706C</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>underlines existent in annotations</string>
-			<key>xpos</key>
-			<real>3206</real>
-			<key>ypos</key>
-			<real>620</real>
-		</dict>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<dict>
 			<key>colorindex</key>
@@ -2643,11 +2506,11 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>note</key>
-			<string>create new Draft</string>
+			<string>(potentially) extract underlines to Drafts + remove temp vars</string>
 			<key>xpos</key>
-			<real>3310</real>
+			<real>3200</real>
 			<key>ypos</key>
-			<real>600</real>
+			<real>575</real>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -2778,9 +2641,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<real>3460</real>
+			<real>3345</real>
 			<key>ypos</key>
-			<real>730</real>
+			<real>735</real>
 		</dict>
 		<key>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</key>
 		<dict>
@@ -2851,11 +2714,11 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>note</key>
-			<string>auto_update</string>
+			<string>auto_update enabled</string>
 			<key>xpos</key>
-			<real>3223</real>
+			<real>3235</real>
 			<key>ypos</key>
-			<real>750</real>
+			<real>765</real>
 		</dict>
 		<key>A9EE2187-6D2F-49C3-9E1C-3F2A5A188D53</key>
 		<dict>
@@ -2954,24 +2817,6 @@ Start Annotation Export</string>
 			<real>395</real>
 			<key>ypos</key>
 			<real>355</real>
-		</dict>
-		<key>CA5A9C74-7046-49F6-82D1-9003F7A57011</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
-			<key>xpos</key>
-			<real>3325</real>
-			<key>ypos</key>
-			<real>750</real>
-		</dict>
-		<key>CDEE34AB-D384-4DC7-8F8E-9402F57FCD8C</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<real>3460</real>
-			<key>ypos</key>
-			<real>600</real>
 		</dict>
 		<key>DC6B9C42-6BD1-4C89-8475-525C43635551</key>
 		<dict>
@@ -3269,19 +3114,6 @@ Start Annotation Export</string>
 			<key>variable</key>
 			<string>auto_update</string>
 		</dict>
-	</array>
-	<key>variables</key>
-	<dict>
-		<key>tags</key>
-		<string>Digitalwirtschaft, Plattformen</string>
-		<key>underlines</key>
-		<string>- #main __Unterscheidung von Organisation und technischer Infrastruktur__ "Diese Fragen lassen sich unseres Erachtens nicht angemessen beantworten, ohne analytisch zwischen internetbasierten Plattformen und den sie betreibenden Unternehmen zu unterscheiden, die spezifischen Koordinationsund Regelungsmechanismen zwischen diesen beiden konstitutiven Ebenen herauszuarbeiten sowie onlinezentrierte Plattformunternehmen als Unternehmensform in einen größeren sozioökonomischen Zusammenhang zu stellen." [@DolataSchrape2022, p. 13]
-</string>
-	</dict>
-	<key>variablesdontexport</key>
-	<array>
-		<string>tags</string>
-		<string>underlines</string>
 	</array>
 	<key>version</key>
 	<string>7.0.6</string>
