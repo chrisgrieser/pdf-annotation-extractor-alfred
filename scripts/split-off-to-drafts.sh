@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# extract underlines to Drafts
+underlines=$(cat "$alfred_workflow_data/underlines")
+
 if [[ "$underlines" != "none" ]]; then
 	annos=$(echo "$underlines" | tr '"' "'") # using '"' somehow leads to a parsing error, so this needs to be translated
 	input="# $citekey\n_${title}_\n\n$annos" # insert Citekey and title
@@ -9,10 +10,3 @@ if [[ "$underlines" != "none" ]]; then
 	open "drafts://x-callback-url/open?uuid=$uuid" # open Draft
 	sleep 0.4
 fi
-
-# remove temp variables
-osascript -e "
-	tell application id \"com.runningwithcrayons.Alfred\"
-		remove configuration \"underlines\" in workflow (system attribute \"$alfred_workflow_bundleid\")
-		remove configuration \"tags\" in workflow (system attribute \"$alfred_workflow_bundleid\")
-	end tell"

@@ -16,7 +16,7 @@ function run() {
 	const filename = citekey;
 	const keywords = $.getenv("keywords");
 
-	function readFile (path, encoding) {
+	function readFile(path, encoding) {
 		if (!encoding) encoding = $.NSUTF8StringEncoding;
 		const fm = $.NSFileManager.defaultManager;
 		const data = fm.contentsAtPath(path);
@@ -24,17 +24,19 @@ function run() {
 		return ObjC.unwrap(str);
 	}
 
-	function setAlfredEnv (envVar, newValue) {
-		Application("com.runningwithcrayons.Alfred").setConfiguration (envVar, {
-			toValue: newValue,
-			inWorkflow: $.getenv("alfred_workflow_bundleid"),
-			exportable: false
-		});
+	function writeData(key, newValue) {
+		const dataFolder = $.getenv("alfred_workflow_data");
+		const fileManager = $.NSFileManager.defaultManager;
+		const folderExists = fileManager.fileExistsAtPath(dataFolder);
+		if (!folderExists) fileManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(dataFolder, false, $(), $()); 
+		const dataPath = `${dataFolder}/${key}`;
+		const str = $.NSString.alloc.initWithUTF8String(newValue);
+		str.writeToFileAtomicallyEncodingError(dataPath, true, $.NSUTF8StringEncoding, null);
 	}
 
 	String.prototype.toTitleCase = function () {
 		const smallWords = /\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
-		let capitalized = this.replace(/\w\S*/g, function(word) {
+		let capitalized = this.replace(/\w\S*/g, function (word) {
 			if (smallWords.test(word)) return word.toLowerCase();
 			if (word.toLowerCase() === "i") return "I";
 			if (word.length < 3) return word.toLowerCase();
@@ -66,7 +68,7 @@ function run() {
 
 	// https://github.com/mgmeyers/pdfannots2json#sample-output
 	Array.prototype.adapter4pdfannots2json = function () {
-		return this.map (a => {
+		return this.map(a => {
 			delete a.date;
 			delete a.id;
 			delete a.y;
@@ -100,7 +102,7 @@ function run() {
 	};
 
 	Array.prototype.adapter4pdfannots = function () {
-		return this.map (a => {
+		return this.map(a => {
 			delete a.created;
 			delete a.start_xy;
 			delete a.author;
@@ -123,11 +125,11 @@ function run() {
 	// --------------------------------------------------------------
 
 	Array.prototype.cleanBrokenOCR = function () {
-		return this.filter (a => !(a.type === "Free Text" && !a.comment));
+		return this.filter(a => !(a.type === "Free Text" && !a.comment));
 	};
 
 	Array.prototype.cleanQuoteKey = function () {
-		return this.map (a => {
+		return this.map(a => {
 			if (!a.quote) return a; // free comments have no text
 			a.quote = a.quote
 				.replace(/ {2,}/g, " ") // multiple spaces
@@ -135,8 +137,8 @@ function run() {
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
 				.replace(/\u00AD/g, "") // remove invisible character
 				.replace(/(\D)[.,]\d/g, "$1") // remove footnotes from quote
-				.replaceAll ("\\u0026", "&") // resolve "&"-symbol
-				.replace (/(?!^)(\S)-\s+(?=\w)/gm, "$1") // remove leftover hyphens, regex uses hack to treat lookahead as lookaround https://stackoverflow.com/a/43232659
+				.replaceAll("\\u0026", "&") // resolve "&"-symbol
+				.replace(/(?!^)(\S)-\s+(?=\w)/gm, "$1") // remove leftover hyphens, regex uses hack to treat lookahead as lookaround https://stackoverflow.com/a/43232659
 				.trim();
 			return a;
 		});
@@ -145,27 +147,25 @@ function run() {
 	Array.prototype.insertAndCleanPageNo = function (pageNo) {
 		return this
 			// in case the page numbers have names like "image 1" instead of integers
-			.map (a => {
+			.map(a => {
 				if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
 				return a;
 			})
-			.map (a => {
-				a.page += pageNo;
-				a.page--;
-				a.page = a.page.toString();
+			.map(a => {
+				a.page = (a.page + pageNo - 1).toString();
 				return a;
 			});
 	};
 
 	Array.prototype.splitOffUnderlines = function () {
 		if (!underlinesSecondOutput) {
-			setAlfredEnv("underlines", "none");
+			writeData("underlines", "none");
 			return this;
 		}
-		const underlineAnnos = this.filter (a => a.type === "Underline");
+		const underlineAnnos = this.filter(a => a.type === "Underline");
 
 		const underScoreHls = [];
-		this.forEach (anno => {
+		this.forEach(anno => {
 			if (anno.type !== "Highlight") return;
 			if (!anno.comment?.startsWith("_")) return;
 			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
@@ -174,16 +174,16 @@ function run() {
 
 		const totalSplitOff = [...underlineAnnos, ...underScoreHls];
 		if (!totalSplitOff.length) {
-			setAlfredEnv("underlines", "none");
+			writeData("underlines", "none");
 			return this;
 		}
 
-		setAlfredEnv("underlines", totalSplitOff.JSONtoMD());
-		return this.filter (a => a.type !== "Underline");
+		writeData("underlines", totalSplitOff.JSONtoMD());
+		return this.filter(a => a.type !== "Underline");
 	};
 
 	Array.prototype.JSONtoMD = function () {
-		const arr = this.map (a => {
+		const arr = this.map(a => {
 			let comment, output;
 			let annotationTag = "";
 
@@ -211,7 +211,7 @@ function run() {
 				if (/^\d\. /.test(comment_)) str = str.slice(2); // enumerations do not get a bullet
 				str = str
 					.replaceAll("\n", markup + "\n" + markup) // for multiline-comments
-					.replace (/(..?)(\d\. )/g, "$2$1"); // valid markup of enumerations
+					.replace(/(..?)(\d\. )/g, "$2$1"); // valid markup of enumerations
 				return str;
 			}
 
@@ -232,7 +232,7 @@ function run() {
 							+ " \"" + a.quote + "\""
 							+ reference;
 					}
-					else if (!comment && !annotationTag) output = "> \""+ a.quote + "\"" + reference;
+					else if (!comment && !annotationTag) output = "> \"" + a.quote + "\"" + reference;
 					break;
 				case "Free Comment":
 					output = "- " + annotationTag + "*" + comment + reference + "*";
@@ -280,11 +280,11 @@ function run() {
 			if (this[i].comment !== "+") continue;
 			let connector = "";
 
-			if (this[i-1].page !== this[i].page) { // if across pages
-				this[i-1].page += "–" + this[i].page; // merge page numbers
+			if (this[i - 1].page !== this[i].page) { // if across pages
+				this[i - 1].page += "–" + this[i].page; // merge page numbers
 				connector = " (…) ";
 			}
-			this[i-1].quote += connector + this[i].quote; // merge quotes
+			this[i - 1].quote += connector + this[i].quote; // merge quotes
 
 			this.splice(i, 1); // remove current element
 			i--; // to move index back, since element isn't there anymore
@@ -365,7 +365,7 @@ function run() {
 	// pdfannots2json images (rectangle annotations)
 	Array.prototype.insertImage4pdfannots2json = function () {
 		let i = 1;
-		return this.map (a => {
+		return this.map(a => {
 			if (a.type !== "Image") return a;
 
 			a.image = `${filename}_image${i}.png`;
@@ -382,20 +382,19 @@ function run() {
 
 		// existing tags (from BibTeX library)
 		if (keywords) {
-			keywords
-				.split(",")
-				.forEach (tag => newKeywords.push(tag));
+			keywords.split(",")
+				.forEach(tag => newKeywords.push(tag));
 		}
 
 		// addtional tags (from annotations)
 		const arr = this
-			.map (a => {
+			.map(a => {
 				if (a.comment?.startsWith("=")) {
 					let tags = a.comment.slice(1); // remove the "="
 					if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
 					tags
 						.split(",")
-						.forEach (tag => newKeywords.push(tag));
+						.forEach(tag => newKeywords.push(tag));
 					a.type = "remove";
 				}
 				return a;
@@ -403,13 +402,13 @@ function run() {
 
 		// Merge & Save both
 		if (newKeywords.length) {
-			newKeywords = [...new Set (newKeywords)]
-				.map (kw => kw.trim().replaceAll(" ", "-"));
+			newKeywords = [...new Set(newKeywords)]
+				.map(kw => kw.trim().replaceAll(" ", "-"));
 		}
-		setAlfredEnv("tags", newKeywords.join(", ")); // variable name has to be changed so Alfred accepts it >:(
+		writeData("tags", newKeywords.join(", ") + ", ");
 
 		// return annotation array without tags
-		return arr.filter (a => a.type !== "remove");
+		return arr.filter(a => a.type !== "remove");
 	};
 
 	// "()"
@@ -424,16 +423,15 @@ function run() {
 		});
 
 	};
-	// Main
-	// --------------------------------------------------------------
 
-	let annotations = JSON.parse(readFile(inputFile));
+	//───────────────────────────────────────────────────────────────────────────
+	// MAIN
+	let annos = JSON.parse(readFile(inputFile));
 
 	// select right adapter method
-	if (usePdfannots) annotations = annotations.adapter4pdfannots();
-	else annotations = annotations.adapter4pdfannots2json();
+	annos = usePdfannots ? annos.adapter4pdfannots() : annos.adapter4pdfannots2json();
 
-	annotations = annotations
+	annos = annos
 		// process input
 		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
@@ -453,5 +451,5 @@ function run() {
 		.splitOffUnderlines()
 		.JSONtoMD();
 
-	return annotations;
+	return annos;
 }
