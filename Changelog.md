@@ -1,3 +1,9 @@
+- 2022-12-07	release 7.0.7
+- 2022-12-07	more reliable datawriting
+- 2022-11-29	cleanup of temp variables
+- 2022-11-29	zero-padding for images from pages with 4 digits
+- 2022-11-28	fix image ordering sometimes off
+- 2022-11-28	validation of bibtex-file existence
 - 2022-09-19	release 7.0.6
 - 2022-09-19	fix for checkbox variables
 - 2022-09-14	release 7.0.5
