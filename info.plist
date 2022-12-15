@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>de.chris-grieser.pdf-annotation-extraction</string>
-	<key>category</key>
-	<string>Academic</string>
 	<key>connections</key>
 	<dict>
 		<key>00DBF7D8-B695-4BE6-B88D-1822E6C537A1</key>
