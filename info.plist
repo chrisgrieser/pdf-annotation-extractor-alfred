@@ -1155,6 +1155,8 @@
 				<dict>
 					<key>author</key>
 					<string>{var:split4}</string>
+					<key>doi</key>
+					<string>{var:split8}</string>
 					<key>filename</key>
 					<string>{var:citekey}</string>
 					<key>first_page_no</key>

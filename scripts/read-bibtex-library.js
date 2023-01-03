@@ -20,7 +20,7 @@ function run() {
 	// read BibTeX-entry
 	let bibtexEntry = app.doShellScript(
 		// --max-count is needed in case of duplicate citekeys
-		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
+		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`,
 	);
 
 	if (bibtexEntry === "") {
@@ -36,20 +36,20 @@ function run() {
 
 	// BibTeX-Decoding
 	const germanChars = [
-		"{\\\"u};ü",
-		"{\\\"a};ä",
-		"{\\\"o};ö",
-		"{\\\"U};Ü",
-		"{\\\"A};Ä",
-		"{\\\"O};Ö",
-		"\\\"u;ü",
-		"\\\"a;ä",
-		"\\\"o;ö",
-		"\\\"U;Ü",
-		"\\\"A;Ä",
-		"\\\"O;Ö",
+		'{\\"u};ü',
+		'{\\"a};ä',
+		'{\\"o};ö',
+		'{\\"U};Ü',
+		'{\\"A};Ä',
+		'{\\"O};Ö',
+		'\\"u;ü',
+		'\\"a;ä',
+		'\\"o;ö',
+		'\\"U;Ü',
+		'\\"A;Ä',
+		'\\"O;Ö',
 		"\\ss;ß",
-		"{\\ss};ß"
+		"{\\ss};ß",
 	];
 	const otherChars = [
 		"{\\~n};ñ",
@@ -59,21 +59,14 @@ function run() {
 		"\\c{c};ç",
 		"\\o{};ø",
 		"\\^{i};î",
-		"\\\"{i};î",
-		"\\\"{i};ï",
+		'\\"{i};î',
+		'\\"{i};ï',
 		"{\\'c};ć",
-		"\\\"e;ë"
+		'\\"e;ë',
 	];
-	const specialChars = [
-		"\\&;&",
-		"``;\"",
-		"`;'",
-		"\\textendash{};—",
-		"---;—",
-		"--;—"
-	];
+	const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
 	const decodePair = [...germanChars, ...otherChars, ...specialChars];
-	decodePair.forEach((pair) => {
+	decodePair.forEach(pair => {
 		const half = pair.split(";");
 		bibtexEntry = bibtexEntry.replaceAll(half[0], half[1]);
 	});
@@ -92,16 +85,15 @@ function run() {
 	let year = "";
 	let keywords = "";
 	let url = "";
+	let doi = "";
 
 	const array = bibtexEntry.split("\r");
 	array.forEach(property => {
-
 		if (/\stitle =/i.test(property)) {
-			title =extract(property)
-				.replaceAll("\"", "'") // to avoid invalid yaml, since title is wrapped in ""
+			title = extract(property)
+				.replaceAll('"', "'") // to avoid invalid yaml, since title is wrapped in ""
 				.replaceAll(":", "."); // to avoid invalid yaml
-		}
-		else if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
+		} else if (property.includes("@")) ptype = property.replace(/@(.*)\{.*/, "$1");
 		else if (property.includes("pages =")) firstPage = property.match(/\d+/)[0];
 		else if (property.includes("author =")) author = extract(property);
 		else if (/\syear =/i.test(property)) year = property.match(/\d{4}/)[0];
@@ -110,18 +102,27 @@ function run() {
 			keywords = extract(property)
 				.replaceAll(" ", "-") // no spaces allowed in tags
 				.replaceAll(",-", ",");
-		}
-		else if (property.includes ("url =")) url = extract (property);
-		else if (property.includes ("doi =")) url = "https://doi.org/" + extract (property);
+		} else if (property.includes("doi =")) {
+			url = "https://doi.org/" + extract(property);
+			doi = extract(property);
+		} else if (property.includes("url =")) url = extract(property);
 	});
 
 	return (
-		firstPage + ";;" +
-		title + ";;" +
-		keywords + ";;" +
-		author + ";;" +
-		year + ";;" +
-		ptype + ";;" +
-		url
+		firstPage +
+		";;" +
+		title +
+		";;" +
+		keywords +
+		";;" +
+		author +
+		";;" +
+		year +
+		";;" +
+		ptype +
+		";;" +
+		url +
+		";;" +
+		doi
 	).replace(/[{}]/g, ""); // remove Tex
 }
