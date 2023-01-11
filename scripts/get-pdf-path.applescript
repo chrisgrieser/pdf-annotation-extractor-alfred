@@ -3,7 +3,7 @@
 tell application "System Events" to set frontApp to (name of first process where it is frontmost)
 
 # PDF Expert
-# opens Finder and then lets the finder part do its thing
+# opens Finder and then lets the Finder part do its thing
 if (frontApp is "PDF Expert") then
 	tell application "System Events"
 		tell process "PDF Expert"
@@ -16,7 +16,7 @@ if (frontApp is "PDF Expert") then
 end if
 
 # Finder
-if (frontApp is "Finder" or frontApp is "com.readdle.PDFExpert-Mac") then
+if (frontApp is "Finder" or frontApp is "PDF Expert") then
 	tell application "Finder" to set sel to selection
 	if ((count sel) > 1) then
 		set firstItem to item 1 of sel
@@ -27,7 +27,7 @@ if (frontApp is "Finder" or frontApp is "com.readdle.PDFExpert-Mac") then
 end if
 
 # Highlights
-# "Hack" to get filepath, requires "pdf_folder_highlights_app" being set
+# HACK to get filepath, requires "pdf_folder_highlights_app" being set
 if (frontApp is "Highlights") then
 
 	# resolved PDF Folder
@@ -38,9 +38,10 @@ if (frontApp is "Highlights") then
 	set pdfFolder to theTextItems as string
 
 	# get File Name
-	set pdfFolder to "/Users/chrisgrieser/Library/Mobile Documents/com~apple~CloudDocs/PDFs"
 	tell application "System Events"
 		tell process "Highlights"
+			set frontmost to true
+			click menu item "Save" of menu "File" of menu bar 1
 			if (count of windows) > 0 then set frontWindow to name of front window
 		end tell
 	end tell
@@ -48,7 +49,7 @@ if (frontApp is "Highlights") then
 	set AppleScript's text item delimiters to " – "
 	set filename to text item 1 of frontWindow
 
-	set current_file to do shell script ("find \"" & pdfFolder & "\" -type f -name \"" & filename & "\"")
+	set current_file to do shell script ("find '" & pdfFolder & "' -type f -name '" & filename & "'")
 end if
 
 # direct return
