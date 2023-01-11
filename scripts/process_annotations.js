@@ -221,6 +221,7 @@ function run() {
 			switch (a.type) {
 				case "Highlight":
 				case "Underline":
+					// highlights/underlines = bullet points
 					if (comment) {
 						output = `- ${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
 						output = bulletHandling(output, comment, "__");
@@ -229,6 +230,7 @@ function run() {
 					} else if (!comment && !annotationTag) output = `- "${a.quote}" ${reference}`;
 					break;
 				case "Free Comment":
+					// free comments = block quote (my comments)
 					output = `> ${annotationTag} ${comment} ${reference}`;
 					output = bulletHandling(output, comment, "*");
 					break;
