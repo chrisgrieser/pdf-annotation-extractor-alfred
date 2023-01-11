@@ -226,7 +226,7 @@ function run() {
 						output = bulletHandling(output, comment, "__");
 					} else if (!comment && annotationTag) {
 						output = `- ${annotationTag} "${a.quote}" ${reference}`;
-					} else if (!comment && !annotationTag) output = `> "${a.quote}" ${reference}`;
+					} else if (!comment && !annotationTag) output = `- "${a.quote}" ${reference}`;
 					break;
 				case "Free Comment":
 					output = `> ${annotationTag} ${comment} ${reference}`;
