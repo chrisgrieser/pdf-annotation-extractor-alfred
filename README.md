@@ -1,11 +1,5 @@
 # PDF Annotation Extractor (Alfred Workflow)
 
-> __Note__
-> [Version 6.6.3](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/tag/6.6.3) is the last version compatible with Alfred 4. All future versions of this workflow will require Alfred 5.
-
-> __Warning__
-> The initial version 7 had a bug preventing auto-updating. Please [manually download 7.0.6 or newer](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases) to receive auto-updates.
-
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
 An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References. Outputs annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), or a Markdown file.
@@ -13,9 +7,6 @@ An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markd
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
 
 <img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
-
-> __Note__
-> Version 6.6.3 is the last version compatible with Alfred 4. All future versions of this workflow will require [Alfred 5](https://www.alfredapp.com/).
 
 ## Table of Contents
 
@@ -38,6 +29,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 <!--toc:end-->
 
 ## Installation
+- Requirement: [Alfred 5](https://www.alfredapp.com/) with Powerpack
 - Install [Homebrew](https://brew.sh/).
 - Install `pdfannots2json` by pasting the following into your terminal:
 

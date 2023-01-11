@@ -5,15 +5,15 @@ function run() {
 	const app = Application.currentApplication();
 	app.includeStandardAdditions = true;
 
+	//───────────────────────────────────────────────────────────────────────────
 	// import Alfred variables
-	//---------------------------------------------------------------
+
 	const firstPageNo = parseInt($.getenv("first_page_no"));
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "1";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 
 	const citekey = $.getenv("citekey");
-	const filename = citekey;
 	const keywords = $.getenv("keywords");
 
 	function readFile(path, encoding) {
@@ -28,14 +28,16 @@ function run() {
 		const dataFolder = $.getenv("alfred_workflow_data");
 		const fileManager = $.NSFileManager.defaultManager;
 		const folderExists = fileManager.fileExistsAtPath(dataFolder);
-		if (!folderExists) fileManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(dataFolder, false, $(), $()); 
+		if (!folderExists)
+			fileManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(dataFolder, false, $(), $());
 		const dataPath = `${dataFolder}/${key}`;
 		const str = $.NSString.alloc.initWithUTF8String(newValue);
 		str.writeToFileAtomicallyEncodingError(dataPath, true, $.NSUTF8StringEncoding, null);
 	}
 
 	String.prototype.toTitleCase = function () {
-		const smallWords = /\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
+		const smallWords =
+			/\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
 		let capitalized = this.replace(/\w\S*/g, function (word) {
 			if (smallWords.test(word)) return word.toLowerCase();
 			if (word.toLowerCase() === "i") return "I";
@@ -46,9 +48,8 @@ function run() {
 		return capitalized;
 	};
 
-
+	//───────────────────────────────────────────────────────────────────────────
 	// Adapter Method
-	// --------------------------------------------------------------
 
 	/*
 	The script requires annotation-jsons with the following signature:
@@ -121,8 +122,8 @@ function run() {
 		});
 	};
 
+	//───────────────────────────────────────────────────────────────────────────
 	// Core Methods
-	// --------------------------------------------------------------
 
 	Array.prototype.cleanBrokenOCR = function () {
 		return this.filter(a => !(a.type === "Free Text" && !a.comment));
@@ -145,16 +146,18 @@ function run() {
 	};
 
 	Array.prototype.insertAndCleanPageNo = function (pageNo) {
-		return this
-			// in case the page numbers have names like "image 1" instead of integers
-			.map(a => {
-				if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
-				return a;
-			})
-			.map(a => {
-				a.page = (a.page + pageNo - 1).toString();
-				return a;
-			});
+		return (
+			this
+				// in case the page numbers have names like "image 1" instead of integers
+				.map(a => {
+					if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
+					return a;
+				})
+				.map(a => {
+					a.page = (a.page + pageNo - 1).toString();
+					return a;
+				})
+		);
 	};
 
 	Array.prototype.splitOffUnderlines = function () {
@@ -183,7 +186,7 @@ function run() {
 	};
 
 	Array.prototype.JSONtoMD = function () {
-		const arr = this.map(a => {
+		const arr = this.map(a => { /* eslint-disable-line complexity */
 			let comment, output;
 			let annotationTag = "";
 
@@ -201,11 +204,10 @@ function run() {
 					annotationTag = comment;
 					comment = "";
 				}
-			}
-			else annotationTag = "";
+			} else annotationTag = "";
 
 			// Pandoc Citation
-			const reference = " [@" + citekey + ", p. " + a.page + "]";
+			const reference = `[@${citekey}, p. ${a.page}]`;
 
 			function bulletHandling(str, comment_, markup) {
 				if (/^\d\. /.test(comment_)) str = str.slice(2); // enumerations do not get a bullet
@@ -220,22 +222,14 @@ function run() {
 				case "Highlight":
 				case "Underline":
 					if (comment) {
-						output = "- "
-							+ annotationTag
-							+ "__" + comment + "__ "
-							+ "\"" + a.quote + "\""
-							+ reference;
+						output = `- ${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
 						output = bulletHandling(output, comment, "__");
 					} else if (!comment && annotationTag) {
-						output = "- "
-							+ annotationTag
-							+ " \"" + a.quote + "\""
-							+ reference;
-					}
-					else if (!comment && !annotationTag) output = "> \"" + a.quote + "\"" + reference;
+						output = `- ${annotationTag} "${a.quote}" ${reference}`;
+					} else if (!comment && !annotationTag) output = `> "${a.quote}" ${reference}`;
 					break;
 				case "Free Comment":
-					output = "- " + annotationTag + "*" + comment + reference + "*";
+					output = `> ${annotationTag} ${comment} ${reference}`;
 					output = bulletHandling(output, comment, "*");
 					break;
 				case "Heading":
@@ -249,23 +243,24 @@ function run() {
 					break;
 				case "Question Callout":
 					comment = comment.replace(/^/gm, "> "); // blockquoted comment
-					output = "> [!QUESTION]\n" + comment + "\n";
+					output = `> [!QUESTION]\n${comment}\n`;
 					break;
 				case "Task":
 					output = "- [ ] " + comment;
 					break;
 				case "Image":
-					output = "\n![[" + a.image + "]]\n";
+					output = `\n![[${a.image}]]\n`;
 					break;
 			}
 			return output;
 		});
 
-		const mdText = arr
-			.join("\n")
-			.trim()
-			.replace(/\n{3,}/g, "\n\n") // needed in case the annotations add line breaks
-			+ "\n";
+		const mdText =
+			arr
+				.join("\n")
+				.trim()
+				.replace(/\n{3,}/g, "\n\n") + // needed in case the annotations add line breaks
+			"\n";
 		return mdText;
 	};
 
@@ -280,7 +275,8 @@ function run() {
 			if (this[i].comment !== "+") continue;
 			let connector = "";
 
-			if (this[i - 1].page !== this[i].page) { // if across pages
+			if (this[i - 1].page !== this[i].page) {
+				// if across pages
 				this[i - 1].page += "–" + this[i].page; // merge page numbers
 				connector = " (…) ";
 			}
@@ -288,7 +284,6 @@ function run() {
 
 			this.splice(i, 1); // remove current element
 			i--; // to move index back, since element isn't there anymore
-
 		}
 		return this;
 	};
@@ -338,7 +333,8 @@ function run() {
 	Array.prototype.transformTasks = function () {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
-			if (a.comment.charAt(0).toLowerCase() === "x") { // case-insensitive matching
+			if (a.comment.charAt(0).toLowerCase() === "x") {
+				// case-insensitive matching
 				a.comment = a.comment.slice(1).trim();
 				if (a.type === "Highlight" || a.type === "Underline") {
 					a.comment += ": " + a.quote;
@@ -354,11 +350,11 @@ function run() {
 
 		annoArr = annoArr.filter(a => a.type !== "Task");
 		return [
-			{ "type": "Heading", "comment": "## Tasks" },
+			{ type: "Heading", comment: "## Tasks" },
 			...taskArr,
-			{ "type": "Line Break", "comment": "" },
+			{ type: "Line Break", comment: "" },
 			...annoArr,
-			{ "type": "hr", "comment": "" }
+			{ type: "hr", comment: "" },
 		];
 	};
 
@@ -367,11 +363,9 @@ function run() {
 		let i = 1;
 		return this.map(a => {
 			if (a.type !== "Image") return a;
-
-			a.image = `${filename}_image${i}.png`;
+			a.image = `${citekey}_image${i}.png`;
 			if (a.comment) a.image += "|" + a.comment; // add alias
 			i++;
-
 			return a;
 		});
 	};
@@ -382,28 +376,23 @@ function run() {
 
 		// existing tags (from BibTeX library)
 		if (keywords) {
-			keywords.split(",")
-				.forEach(tag => newKeywords.push(tag));
+			keywords.split(",").forEach(tag => newKeywords.push(tag));
 		}
 
-		// addtional tags (from annotations)
-		const arr = this
-			.map(a => {
-				if (a.comment?.startsWith("=")) {
-					let tags = a.comment.slice(1); // remove the "="
-					if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
-					tags
-						.split(",")
-						.forEach(tag => newKeywords.push(tag));
-					a.type = "remove";
-				}
-				return a;
-			});
+		// additional tags (from annotations)
+		const arr = this.map(a => {
+			if (a.comment?.startsWith("=")) {
+				let tags = a.comment.slice(1); // remove the "="
+				if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
+				tags.split(",").forEach(tag => newKeywords.push(tag));
+				a.type = "remove";
+			}
+			return a;
+		});
 
 		// Merge & Save both
 		if (newKeywords.length) {
-			newKeywords = [...new Set(newKeywords)]
-				.map(kw => kw.trim().replaceAll(" ", "-"));
+			newKeywords = [...new Set(newKeywords)].map(kw => kw.trim().replaceAll(" ", "-"));
 		}
 		writeData("tags", newKeywords.join(", ") + ", ");
 
@@ -421,7 +410,6 @@ function run() {
 			a.quote = a.quote.replace(/\([^(]{5,}?\)/g, "()"); // quantifier "5", so brackets with years like "(2013)" aren't shortened
 			return a;
 		});
-
 	};
 
 	//───────────────────────────────────────────────────────────────────────────
