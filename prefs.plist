@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bibtex_library_path</key>
-	<string>~/.pandoc/main-bibliography.bib</string>
+	<string>~/.config/pandoc/main-bibliography.bib</string>
 	<key>citekey_insertion</key>
 	<string>filename</string>
 	<key>obsidian_destination</key>
