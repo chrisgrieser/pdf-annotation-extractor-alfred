@@ -1,3 +1,16 @@
+- 2023-01-23	release 7.1.0
+- 2023-01-23	fix #12
+- 2023-01-23	chore: deprecate drafts as output
+- 2023-01-23	chore
+- 2023-01-23	chore
+- 2023-01-11	chore
+- 2023-01-11	chore
+- 2023-01-11	chore
+- 2023-01-11	chore
+- 2023-01-05	chore
+- 2023-01-03	feat: add doi to obsidian extraction
+- 2022-12-29	chore
+- 2022-12-29	docs: minor updates
 - 2022-12-07	release 7.0.7
 - 2022-12-07	more reliable datawriting
 - 2022-11-29	cleanup of temp variables
