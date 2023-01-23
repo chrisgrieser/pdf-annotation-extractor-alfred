@@ -6,8 +6,11 @@ function run(argv) {
 
 	function env(envVar) {
 		let out;
-		try { out = $.getenv(envVar) }
-		catch (e) { out = "" }
+		try {
+			out = $.getenv(envVar);
+		} catch (e) {
+			out = "";
+		}
 		return out;
 	}
 
@@ -18,8 +21,8 @@ function run(argv) {
 		str.writeToFileAtomicallyEncodingError(file, true, $.NSUTF8StringEncoding, null);
 	}
 
-	function readData (key) {
-		const fileExists = (filePath) => Application("Finder").exists(Path(filePath));
+	function readData(key) {
+		const fileExists = filePath => Application("Finder").exists(Path(filePath));
 		const dataPath = $.getenv("alfred_workflow_data") + "/" + key;
 		if (!fileExists(dataPath)) return "data does not exist.";
 		const data = $.NSFileManager.defaultManager.contentsAtPath(dataPath);
@@ -29,11 +32,10 @@ function run(argv) {
 
 	//───────────────────────────────────────────────────────────────────────────
 
-	const path = env("obsidian_destination") + "/" + env("filename") + ".md";
 	const annotations = argv[0];
 	const tags = readData("tags");
 
-	const noteContent = `---
+	let noteContent = `---
 aliases: "${env("title")}"
 tags: literature-note, ${tags}
 citekey: ${env("citekey")}
@@ -51,14 +53,18 @@ obsidianUIMode: preview
 ${annotations}
 `;
 
-	writeToFile(noteContent, path);
-
-	// open in Obsidian
-	delay(0.1); // delay to ensure writing took place
-	const urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
-	app.openLocation(urlscheme);
-
-	// copy wikilink
-	app.setTheClipboardTo(`[[${env("citekey")}]]`);
-
+	const obsidianOutput = env("output_style") === "obsidian";
+	if (obsidianOutput) {
+		const path = env("obsidian_destination") + "/" + env("filename") + ".md";
+		writeToFile(noteContent, path);
+		delay(0.1); // delay to ensure writing took place
+		const urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
+		app.openLocation(urlscheme);
+		app.setTheClipboardTo(`[[${env("citekey")}]]`); // copy wikilink
+	} else {
+		const path = env("file_path") + ".md";
+		noteContent = noteContent.replace(/^obsidianUIMode: preview\n/, "")
+		writeToFile(noteContent, path);
+		app.doShellScript(`open -R "${path}"`); // reveal in Finder
+	}
 }
