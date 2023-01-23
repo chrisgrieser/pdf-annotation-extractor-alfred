@@ -41,12 +41,13 @@ year: ${env("year")}
 author: "${env("author")}"
 publicationType: ${env("ptype")}
 url: ${env("url")}
-url: ${env("doi")}
+doi: ${env("doi")}
 creation-date: ${isoToday}
 obsidianUIMode: preview
 ---
 
 # ${env("title")}
+
 ${annotations}
 `;
 
