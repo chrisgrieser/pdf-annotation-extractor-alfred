@@ -1,3 +1,6 @@
+- 2023-01-27	release 8.0.0
+- 2023-01-27	chore: prepare for Alfred Gallery
+- 2023-01-23	refactor
 - 2023-01-23	release 7.1.0
 - 2023-01-23	fix #12
 - 2023-01-23	chore: deprecate drafts as output
