@@ -967,7 +967,7 @@ Start Annotation Export</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>8.2.3</string>
+	<string>8.2.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
