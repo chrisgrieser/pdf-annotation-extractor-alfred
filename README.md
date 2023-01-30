@@ -40,10 +40,10 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 ### Requirements for the PDF
 - The PDF Annotation Extractor works on any PDF that has valid annotations saved *in the PDF file*. (Some PDF readers like __Skim__ or __Zotero 6__ do not store annotations int eh PDF itself by default.)
-- The filename of the PDF must be *exactly* the citekey, optionally followed by an underscore and some text like `{citekey}_{title}.pdf`. The citekey must not contain underscores (`_`).
+- The filename of the PDF must be *exactly* the citekey, optionally followed by an underscore and some text like `{citekey}_{title}.pdf`. The citekey must not contain underscores (`_`), the filename should not include the `@`.
 
 > __Note__  
-> You can achieve such a filename pattern with via renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
+> You can achieve such a filename pattern with automatic renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 
 ### Basics
 - Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder, or if it is open in PDF Expert or Highlights.
