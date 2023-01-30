@@ -63,7 +63,7 @@ ${annotations}
 		app.setTheClipboardTo(`[[${env("citekey")}]]`); // copy wikilink
 	} else {
 		const path = env("filepath").replace(/\.pdf$/, ".md");
-		noteContent = noteContent.replace(/^obsidianUIMode: preview\n/, "")
+		noteContent = noteContent.replace(/^obsidianUIMode: preview\n/m, "")
 		writeToFile(noteContent, path);
 		app.doShellScript(`open -R "${path}"`); // reveal in Finder
 	}
