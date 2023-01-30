@@ -125,15 +125,10 @@ function run() {
 	//───────────────────────────────────────────────────────────────────────────
 	// Core Methods
 
-	Array.prototype.cleanBrokenOCR = function () {
-		return this.filter(a => !(a.type === "Free Text" && !a.comment));
-	};
-
 	Array.prototype.cleanQuoteKey = function () {
 		return this.map(a => {
 			if (!a.quote) return a; // free comments have no text
 			a.quote = a.quote
-				.replace(/ {2,}/g, " ") // multiple spaces
 				.replace(/["„”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
 				.replace(/\u00AD/g, "") // remove invisible character
@@ -237,18 +232,12 @@ function run() {
 				case "Heading":
 					output = "\n" + comment;
 					break;
-				case "hr":
-					output = "\n---\n";
-					break;
 				case "Line Break":
 					output = "\n";
 					break;
 				case "Question Callout":
 					comment = comment.replace(/^/gm, "> "); // blockquoted comment
 					output = `> [!QUESTION]\n${comment}\n`;
-					break;
-				case "Task":
-					output = "- [ ] " + comment;
 					break;
 				case "Image":
 					output = `\n![[${a.image}]]\n`;
@@ -308,14 +297,6 @@ function run() {
 		});
 	};
 
-	// "---"
-	Array.prototype.transformHr = function () {
-		return this.map(a => {
-			if (a.type === "Free Comment" && a.comment === "---") a.type = "hr";
-			return a;
-		});
-	};
-
 	// "?"
 	Array.prototype.questionCallout = function () {
 		let annoArr = this.map(a => {
@@ -331,36 +312,7 @@ function run() {
 		return [...pseudoAdmos, ...annoArr];
 	};
 
-	// "X"
-	Array.prototype.transformTasks = function () {
-		let annoArr = this.map(a => {
-			if (!a.comment) return a;
-			if (a.comment.charAt(0).toLowerCase() === "x") {
-				// case-insensitive matching
-				a.comment = a.comment.slice(1).trim();
-				if (a.type === "Highlight" || a.type === "Underline") {
-					a.comment += ": " + a.quote;
-					delete a.quote;
-				}
-				a.type = "Task";
-			}
-			return a;
-		});
-		const taskArr = annoArr.filter(a => a.type === "Task");
-
-		if (!taskArr.length) return annoArr;
-
-		annoArr = annoArr.filter(a => a.type !== "Task");
-		return [
-			{ type: "Heading", comment: "## Tasks" },
-			...taskArr,
-			{ type: "Line Break", comment: "" },
-			...annoArr,
-			{ type: "hr", comment: "" },
-		];
-	};
-
-	// pdfannots2json images (rectangle annotations)
+	// images / rectangle annotations (pdfannots2json only)
 	Array.prototype.insertImage4pdfannots2json = function () {
 		let i = 1;
 		return this.map(a => {
@@ -402,18 +354,6 @@ function run() {
 		return arr.filter(a => a.type !== "remove");
 	};
 
-	// "()"
-	Array.prototype.quoteWithoutReferences = function () {
-		return this.map(a => {
-			if (a.type !== "Highlight" && a.type !== "Underline") return a;
-			if (!a.comment?.startsWith("()")) return a;
-
-			a.comment = a.comment.slice(2).trim();
-			a.quote = a.quote.replace(/\([^(]{5,}?\)/g, "()"); // quantifier "5", so brackets with years like "(2013)" aren't shortened
-			return a;
-		});
-	};
-
 	//───────────────────────────────────────────────────────────────────────────
 	// MAIN
 	let annos = JSON.parse(readFile(inputFile));
@@ -423,7 +363,6 @@ function run() {
 
 	annos = annos
 		// process input
-		.cleanBrokenOCR()
 		.insertAndCleanPageNo(firstPageNo)
 		.cleanQuoteKey()
 
@@ -431,9 +370,7 @@ function run() {
 		.mergeQuotes()
 		.quoteWithoutReferences()
 		.transformHeadings()
-		.transformHr()
 		.questionCallout()
-		.transformTasks()
 		.transformTag4yaml()
 		.insertImage4pdfannots2json()
 
