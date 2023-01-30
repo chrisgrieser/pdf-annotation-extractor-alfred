@@ -1,3 +1,8 @@
+- 2023-01-30	release 8.1.0
+- 2023-01-30	refactor! (removes manual citekey entering)
+- 2023-01-30	chore
+- 2023-01-30	refactor: structure in alfred
+- 2023-01-29	chore
 - 2023-01-27	release 8.0.0
 - 2023-01-27	chore: prepare for Alfred Gallery
 - 2023-01-23	refactor
