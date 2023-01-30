@@ -232,9 +232,6 @@ function run() {
 				case "Heading":
 					output = "\n" + comment;
 					break;
-				case "Line Break":
-					output = "\n";
-					break;
 				case "Question Callout":
 					comment = comment.replace(/^/gm, "> "); // blockquoted comment
 					output = `> [!QUESTION]\n${comment}\n`;

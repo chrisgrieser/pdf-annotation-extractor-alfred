@@ -55,7 +55,7 @@ ${annotations}
 
 	const obsidianOutput = env("output_style") === "obsidian";
 	if (obsidianOutput) {
-		const path = env("obsidian_destination") + "/" + env("filename") + ".md";
+		const path = env("obsidian_destination") + "/" + env("citekey") + ".md";
 		writeToFile(noteContent, path);
 		delay(0.1); // delay to ensure writing took place
 		const urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
