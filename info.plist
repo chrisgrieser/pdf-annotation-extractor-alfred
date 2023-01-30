@@ -2032,6 +2032,8 @@ Start Annotation Export</string>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
+			<key>note</key>
+			<string>show cheatsheet of annotation codes</string>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
@@ -2071,7 +2073,7 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<real>225</real>
+			<real>210</real>
 			<key>ypos</key>
 			<real>535</real>
 		</dict>
