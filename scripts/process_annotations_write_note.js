@@ -9,7 +9,6 @@ function run() {
 	// import Alfred variables
 
 	const firstPageNo = parseInt($.getenv("first_page_no"));
-	const underlinesSecondOutput = $.getenv("underlines_second_output") === "1";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 	const obsidianOutput = $.getenv("output_style") === "obsidian";
@@ -170,11 +169,8 @@ function run() {
 		);
 	};
 
-	Array.prototype.splitOffUnderlines = function() {
-		if (!underlinesSecondOutput) {
-			writeData("underlines", "none");
-			return this;
-		}
+	// underlines
+	Array.prototype.splitOffUnderlinesToDrafts = function() {
 		const underlineAnnos = this.filter(a => a.type === "Underline");
 
 		const underScoreHls = [];
@@ -186,18 +182,17 @@ function run() {
 		});
 
 		const totalSplitOff = [...underlineAnnos, ...underScoreHls];
-		if (!totalSplitOff.length) {
-			writeData("underlines", "none");
-			return this;
+		if (totalSplitOff.length > 0) {
+			const draftsInbox =
+				app.pathTo("home folder") + "/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox";
+			writeToFile(totalSplitOff.JSONtoMD(), draftsInbox);
 		}
 
-		writeData("underlines", totalSplitOff.JSONtoMD());
 		return this.filter(a => a.type !== "Underline");
 	};
 
 	Array.prototype.JSONtoMD = function() {
 		const arr = this.map(a => {
-			/* eslint-disable-line complexity */
 			let comment, output;
 			let annotationTag = "";
 
@@ -231,8 +226,7 @@ function run() {
 			// type specific output
 			switch (a.type) {
 				case "Highlight":
-				case "Underline":
-					// highlights/underlines = bullet points
+				case "Underline": // highlights/underlines = bullet points
 					if (comment) {
 						output = `- ${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
 						output = bulletHandling(output, comment, "__");
@@ -240,16 +234,15 @@ function run() {
 						output = `- ${annotationTag} "${a.quote}" ${reference}`;
 					} else if (!comment && !annotationTag) output = `- "${a.quote}" ${reference}`;
 					break;
-				case "Free Comment":
-					// free comments = block quote (my comments)
+				case "Free Comment": // free comments = block quote (my comments)
 					output = `> ${annotationTag} ${comment} ${reference}`;
 					output = bulletHandling(output, comment, "*");
 					break;
 				case "Heading":
 					output = "\n" + comment;
 					break;
-				case "Question Callout":
-					comment = comment.replace(/^/gm, "> "); // blockquoted comment
+				case "Question Callout": // blockquoted comment
+					comment = comment.replace(/^/gm, "> ");
 					output = `> [!QUESTION]\n${comment}\n`;
 					break;
 				case "Image":
@@ -259,17 +252,11 @@ function run() {
 			return output;
 		});
 
-		const mdText =
-			arr
-				.join("\n")
-				.trim()
-				.replace(/\n{3,}/g, "\n\n") + // needed in case the annotations add line breaks
-			"\n";
-		return mdText;
+		return arr.join("\n") + "\n";
 	};
 
 	// Annotation Code Methods
-	// --------------------------------------------------------------
+	//───────────────────────────────────────────────────────────────────────────
 
 	// "+"
 	Array.prototype.mergeQuotes = function() {
@@ -436,7 +423,7 @@ ${annotations}
 		.insertImage4pdfannots2json()
 
 		// finalize
-		.splitOffUnderlines()
+		.splitOffUnderlinesToDrafts()
 		.JSONtoMD();
 
 	writeNote(annos);

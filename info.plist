@@ -84,8 +84,6 @@
 		</array>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<array/>
-		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
-		<array/>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<array>
 			<dict>
@@ -112,42 +110,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4D1C2773-4F2F-4E81-AB52-DD833DF471EE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>4683ABC7-8419-41CB-BD41-FA122EA45915</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
-		<array/>
-		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
 		<array/>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<array>
@@ -204,7 +167,17 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>4D1C2773-4F2F-4E81-AB52-DD833DF471EE</string>
+				<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4683ABC7-8419-41CB-BD41-FA122EA45915</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -277,18 +250,7 @@
 			</dict>
 		</array>
 		<key>9BB10AD2-9139-46F2-9F29-E922356484CB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</key>
 		<array>
 			<dict>
@@ -613,29 +575,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/split-off-to-drafts.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -911,21 +850,47 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>ℹ️ Citekey found, but BibTeX entry has no page numbers</string>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "System Events" to set frontApp to (name of first process where it is frontmost)
+
+if (frontApp is "PDF Expert or 
+
+tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/scroll-up.applescript</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</string>
+			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>first_page_no</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>17C74FE5-7E9D-4197-B566-95C2D125700F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -970,61 +935,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>ADB5B0AA-BF9B-491D-98BC-D8D25542C149</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "System Events" to set frontApp to (name of first process where it is frontmost)
-
-if (frontApp is "PDF Expert or 
-
-tell application id focusedapp to activatetell application "System Events" to key code 126 using {command down}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/scroll-up.applescript</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>4D1C2773-4F2F-4E81-AB52-DD833DF471EE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>first_page_no</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>17C74FE5-7E9D-4197-B566-95C2D125700F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1089,9 +999,9 @@ tell application id focusedapp to activatetell application "System Events" to k
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string></string>
-				<key>text</key>
 				<string>Enter true page number of the first PDF page</string>
+				<key>text</key>
+				<string>BibTeX entry has no page numbers</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -1208,18 +1118,18 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>note</key>
 			<string>save first page number</string>
 			<key>xpos</key>
-			<real>1170</real>
+			<real>1120</real>
 			<key>ypos</key>
-			<real>610</real>
+			<real>475</real>
 		</dict>
 		<key>1F409233-6B32-4BC6-9162-D0D58C81A5F1</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>1000</real>
+			<real>945</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>580</real>
 		</dict>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<dict>
@@ -1230,41 +1140,23 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>ypos</key>
 			<real>185</real>
 		</dict>
-		<key>3E450CA1-AB23-4D3B-951D-A6A90BBCFCED</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>5</integer>
-			<key>xpos</key>
-			<real>855</real>
-			<key>ypos</key>
-			<real>425</real>
-		</dict>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>xpos</key>
-			<real>785</real>
+			<real>730</real>
 			<key>ypos</key>
-			<real>720</real>
+			<real>590</real>
 		</dict>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>600</real>
+			<real>545</real>
 			<key>ypos</key>
-			<real>690</real>
-		</dict>
-		<key>4D1C2773-4F2F-4E81-AB52-DD833DF471EE</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<real>700</real>
-			<key>ypos</key>
-			<real>570</real>
+			<real>560</real>
 		</dict>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<dict>
@@ -1273,20 +1165,9 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>note</key>
 			<string>scroll up (helps finding first page number)</string>
 			<key>xpos</key>
-			<real>855</real>
+			<real>800</real>
 			<key>ypos</key>
-			<real>540</real>
-		</dict>
-		<key>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
-			<key>note</key>
-			<string>(optionally) extract underlines to Drafts + remove temp vars</string>
-			<key>xpos</key>
-			<real>1375</real>
-			<key>ypos</key>
-			<real>285</real>
+			<real>395</real>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -1339,9 +1220,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1280</real>
+			<real>1225</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>560</real>
 		</dict>
 		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
 		<dict>
@@ -1412,9 +1293,9 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>Manual Entering of Page Number</string>
 			<key>xpos</key>
-			<real>855</real>
+			<real>800</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>560</real>
 		</dict>
 		<key>ADB5B0AA-BF9B-491D-98BC-D8D25542C149</key>
 		<dict>
@@ -1443,9 +1324,9 @@ Start Annotation Export</string>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1135</real>
+			<real>1080</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>560</real>
 		</dict>
 		<key>C15A23BF-194F-4054-A4D9-B8CEA4CBE6A4</key>
 		<dict>
@@ -1546,25 +1427,6 @@ Start Annotation Export</string>
 			<string>filepicker</string>
 			<key>variable</key>
 			<string>obsidian_destination</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<false/>
-				<key>required</key>
-				<false/>
-				<key>text</key>
-				<string>Use Underlines as Secondary Output Stream</string>
-			</dict>
-			<key>description</key>
-			<string>Currently only supports redirecting them to Drafts.</string>
-			<key>label</key>
-			<string>Extraction Options</string>
-			<key>type</key>
-			<string>checkbox</string>
-			<key>variable</key>
-			<string>underlines_second_output</string>
 		</dict>
 		<dict>
 			<key>config</key>
