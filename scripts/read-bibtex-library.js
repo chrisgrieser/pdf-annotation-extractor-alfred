@@ -10,12 +10,14 @@ function run(argv) {
 	const citekey = filepath
 		.replace(/.*\/(.*)\.pdf/, "$1") // only basename w/o ext
 		.replace(/(_[^_]*$)/, ""); // INFO part before underscore, this method does not work for citkeys which contain an underscore though...
+	console.log("citekey: " + citekey);
+
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
 	const libraryExists = Application("Finder").exists(Path(bibtexLibraryPath));
 	if (!libraryExists) return `No BibTeX File found at "${bibtexLibraryPath}".`;
 
 	// Read Bibtex-Entry
-	// --max-count in case of duplicate citekeys, --after-context=20 to retrieve
+	// `--max-count` in case of duplicate citekeys, `--after-context=20` to retrieve
 	// full entry since grep does not work on multi-line
 	let bibtexEntry = app.doShellScript(
 		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
@@ -26,37 +28,11 @@ function run(argv) {
 	bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
 
 	// Decode Bibtex
-	const germanChars = [
-		'{\\"u};ü',
-		'{\\"a};ä',
-		'{\\"o};ö',
-		'{\\"U};Ü',
-		'{\\"A};Ä',
-		'{\\"O};Ö',
-		'\\"u;ü',
-		'\\"a;ä',
-		'\\"o;ö',
-		'\\"U;Ü',
-		'\\"A;Ä',
-		'\\"O;Ö',
-		"\\ss;ß",
-		"{\\ss};ß",
-	];
-	const otherChars = [
-		"{\\~n};ñ",
-		"{\\'a};á",
-		"{\\'e};é",
-		"{\\v c};č",
-		"\\c{c};ç",
-		"\\o{};ø",
-		"\\^{i};î",
-		'\\"{i};î',
-		'\\"{i};ï',
-		"{\\'c};ć",
-		'\\"e;ë',
-	];
+	// prettier-ignore
+	const germanChars = ['{\\"u};ü', '{\\"a};ä', '{\\"o};ö', '{\\"U};Ü', '{\\"A};Ä', '{\\"O};Ö', '\\"u;ü', '\\"a;ä', '\\"o;ö', '\\"U;Ü', '\\"A;Ä', '\\"O;Ö', "\\ss;ß", "{\\ss};ß"];
+	// prettier-ignore
+	const otherChars = ["{\\~n};ñ", "{\\'a};á", "{\\'e};é", "{\\v c};č", "\\c{c};ç", "\\o{};ø", "\\^{i};î", '\\"{i};î', '\\"{i};ï', "{\\'c};ć", '\\"e;ë'];
 	const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
-
 	const decodePair = [...germanChars, ...otherChars, ...specialChars];
 	decodePair.forEach(pair => {
 		const half = pair.split(";");
