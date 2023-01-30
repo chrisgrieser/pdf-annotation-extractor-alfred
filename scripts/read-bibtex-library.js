@@ -1,40 +1,31 @@
 #!/usr/bin/env osascript -l JavaScript
 
-function run() {
+function run(argv) {
 	ObjC.import("stdlib");
 	const app = Application.currentApplication();
 	app.includeStandardAdditions = true;
-	const homepath = app.pathTo("home folder");
 
 	// import variables
-	const citekey = $.getenv("citekey");
-	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, homepath);
+	const filepath = argv[0];
+	const citekey = filepath
+		.replace(/.*\/(.*)\.pdf/, "$1") // only basename w/o ext
+		.replace(/(_[^_]*$)/, ""); // INFO part before underscore, this method does not work for citkeys which contain an underscore though...
+	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
+	const libraryExists = Application("Finder").exists(Path(bibtexLibraryPath));
+	if (!libraryExists) return `No BibTeX File found at "${bibtexLibraryPath}".`;
 
-	const fileExists = Application("Finder").exists(Path(bibtexLibraryPath));
-
-	if (!fileExists) {
-		const errorMsg = `No BibTeX File found at "${bibtexLibraryPath}".`;
-		return errorMsg;
-	}
-
-	// read BibTeX-entry
+	// Read Bibtex-Entry
+	// --max-count in case of duplicate citekeys, --after-context=20 to retrieve
+	// full entry since grep does not work on multi-line
 	let bibtexEntry = app.doShellScript(
-		// --max-count is needed in case of duplicate citekeys
-		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`,
+		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
 	);
 
-	if (bibtexEntry === "") {
-		const citekeyInsertion = $.getenv("citekey_insertion");
-		let errorMsg = "No citekey found.\n\n";
-		if (citekeyInsertion === "filename") errorMsg += "Make sure your file is named correctly:\n'[citekey]_[...].pdf'";
-		if (citekeyInsertion === "manually") errorMsg += "Check your BibTeX Library for the correct citekey.";
-		return errorMsg;
-	}
+	if (!bibtexEntry) return "No citekey found.\n\nMake sure your file is named correctly:\n'[citekey]_[...].pdf'";
 
-	// workaround to avoid the need for pcregrep (together with grep -A20 from before)
-	bibtexEntry = "@" + bibtexEntry.split("@")[1];
+	bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
 
-	// BibTeX-Decoding
+	// Decode Bibtex
 	const germanChars = [
 		'{\\"u};ü',
 		'{\\"a};ä',
@@ -65,6 +56,7 @@ function run() {
 		'\\"e;ë',
 	];
 	const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
+
 	const decodePair = [...germanChars, ...otherChars, ...specialChars];
 	decodePair.forEach(pair => {
 		const half = pair.split(";");
@@ -87,8 +79,7 @@ function run() {
 	let url = "";
 	let doi = "";
 
-	const array = bibtexEntry.split("\r");
-	array.forEach(property => {
+	bibtexEntry.split("\r").forEach(property => {
 		if (/\stitle =/i.test(property)) {
 			title = extract(property)
 				.replaceAll('"', "'") // to avoid invalid yaml, since title is wrapped in ""
@@ -108,21 +99,9 @@ function run() {
 		} else if (property.includes("url =")) url = extract(property);
 	});
 
-	return (
-		firstPage +
-		";;" +
-		title +
-		";;" +
-		keywords +
-		";;" +
-		author +
-		";;" +
-		year +
-		";;" +
-		ptype +
-		";;" +
-		url +
-		";;" +
-		doi
-	).replace(/[{}]/g, ""); // remove Tex
+	const bundleAndCleaned = [citekey, firstPage, title, keywords, author, year, ptype, url, doi, filepath]
+		.join(";;") // separator used to split in next step via alfred
+		.replaceAll("}", "") // remove TeX-Syntax
+		.replaceAll("{", "");
+	return bundleAndCleaned;
 }
