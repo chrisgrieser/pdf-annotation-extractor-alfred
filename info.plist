@@ -327,7 +327,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
+				<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -337,7 +337,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
+				<string>A0207D9A-20A9-4AF8-9E7D-905566B18866</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -608,6 +608,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>soundname</key>
+				<string>Blow</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -870,17 +885,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>soundname</key>
-				<string>Blow</string>
-				<key>systemsound</key>
-				<true/>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/split-off-to-drafts.sh</string>
+				<key>type</key>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>106248DA-2DCF-477E-AD35-D8CC6F19792F</string>
+			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1140,29 +1163,6 @@
 			<string>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/split-off-to-drafts.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>57DF9386-2BC7-4A3A-BE50-613EF0CBA937</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1466,7 +1466,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>xpos</key>
 			<real>1840</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>45</real>
 		</dict>
 		<key>17C74FE5-7E9D-4197-B566-95C2D125700F</key>
 		<dict>
@@ -1553,7 +1553,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>xpos</key>
 			<real>1840</real>
 			<key>ypos</key>
-			<real>405</real>
+			<real>285</real>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
