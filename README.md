@@ -33,7 +33,7 @@ Automatically determines correct page numbers, merges highlights across page bre
   ```
 
 - Download the [latest release](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
-- Set the hotkey by double-clicking the sky-blue field at the top left. (You can also use this workflow with the Alfred keyword `anno`.)
+- Set the hotkey by double-clicking the sky-blue field at the top left. 
 - Set up the workflow configuration inside the app.
 
 ## How to Use
@@ -46,8 +46,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 > You can achieve such a filename pattern with automatic renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 
 ### Basics
-- Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder, or if it is open in PDF Expert or Highlights.
-- Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
+Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder, or if it is open in PDF Expert or Highlights.
 
 __Annotation Types extracted__
 - Highlight ➡️ bullet point, quoting text and prepending the comment
