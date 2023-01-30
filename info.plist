@@ -48,7 +48,17 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>88DE8376-3330-476E-B4BF-76AABEF06565</string>
+				<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -68,6 +78,16 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>124DAD19-F950-4BFC-BEF7-54881682A216</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -155,7 +175,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>88DE8376-3330-476E-B4BF-76AABEF06565</string>
+				<string>17C74FE5-7E9D-4197-B566-95C2D125700F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -188,29 +208,6 @@
 		</array>
 		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
 		<array/>
-		<key>88DE8376-3330-476E-B4BF-76AABEF06565</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8D6FF67C-CE9A-47BD-8EB3-0D073F0C1F87</key>
 		<array>
 			<dict>
@@ -291,18 +288,7 @@
 			</dict>
 		</array>
 		<key>B7CFBC29-8784-4E92-B775-B87611C6E218</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>C62314C8-E529-459D-8A01-B9F3001DC160</key>
 		<array>
 			<dict>
@@ -736,10 +722,22 @@
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>first_page_no</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>88DE8376-3330-476E-B4BF-76AABEF06565</string>
+			<string>17C74FE5-7E9D-4197-B566-95C2D125700F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -864,45 +862,6 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict>
-					<key>first_page_no</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>17C74FE5-7E9D-4197-B566-95C2D125700F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>number-input-loop</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
@@ -937,21 +896,19 @@ tell application id focusedapp to activatetell application "System Events" to k
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>externaltriggerid</key>
+				<string>number-input-loop</string>
+				<key>passinputasargument</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>⚠️ Input was not a number. Please try again.</string>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
+			<string>83D85448-CA51-4A18-87B6-0F6F02EA0D73</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1004,6 +961,27 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>⚠️ Input was not a number. Please try again.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B7CFBC29-8784-4E92-B775-B87611C6E218</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Alfred Gallery[This workflow is now included in the Alfred gallery](http://alfred.app/workflows/chrisgrieser/pdf-annotation-extractor-alfred/) and auto-updates will there be managed by Alfred and not by this workflow anymore.---
@@ -1039,78 +1017,78 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 		<key>089D6A27-5A58-41E6-93DF-C1DAE9A8A027</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>470</real>
+			<real>420</real>
 			<key>ypos</key>
 			<real>330</real>
 		</dict>
 		<key>0B185B98-4066-4CB1-9724-AA64206396DF</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>445</real>
+			<real>420</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
 		<key>17C74FE5-7E9D-4197-B566-95C2D125700F</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>save first page number</string>
 			<key>xpos</key>
-			<real>1120</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>315</real>
 		</dict>
 		<key>1F409233-6B32-4BC6-9162-D0D58C81A5F1</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>945</real>
+			<real>785</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>515</real>
 		</dict>
 		<key>2674BF22-E20F-4515-AD2A-534634F6CED3</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>485</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>195</real>
 		</dict>
 		<key>4683ABC7-8419-41CB-BD41-FA122EA45915</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>730</real>
+			<real>580</real>
 			<key>ypos</key>
-			<real>590</real>
+			<real>525</real>
 		</dict>
 		<key>4CBB5EFD-7DE6-47E9-8677-232683385214</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>545</real>
+			<real>420</real>
 			<key>ypos</key>
-			<real>560</real>
+			<real>495</real>
 		</dict>
 		<key>534116A0-B39B-4D5F-B291-CFA206FBCD6D</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>scroll up (helps finding first page number)</string>
 			<key>xpos</key>
-			<real>800</real>
+			<real>640</real>
 			<key>ypos</key>
-			<real>395</real>
+			<real>355</real>
 		</dict>
 		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
 		<dict>
@@ -1132,7 +1110,7 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>run extraction</string>
 			<key>xpos</key>
-			<real>1085</real>
+			<real>900</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
@@ -1150,60 +1128,51 @@ Start Annotation Export</string>
 		<key>7D407AFC-B0A7-4ABD-A235-5ADF18B6ADF1</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>has page numbers</string>
 			<key>xpos</key>
-			<real>656</real>
+			<real>541</real>
 			<key>ypos</key>
 			<real>320</real>
 		</dict>
 		<key>83D85448-CA51-4A18-87B6-0F6F02EA0D73</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>1225</real>
+			<real>920</real>
 			<key>ypos</key>
-			<real>560</real>
+			<real>510</real>
 		</dict>
 		<key>856C6C52-1A73-4712-A28C-E277645BFC7A</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>555</real>
+			<real>530</real>
 			<key>ypos</key>
 			<real>30</real>
-		</dict>
-		<key>88DE8376-3330-476E-B4BF-76AABEF06565</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>3</integer>
-			<key>xpos</key>
-			<real>1005</real>
-			<key>ypos</key>
-			<real>315</real>
 		</dict>
 		<key>8D6FF67C-CE9A-47BD-8EB3-0D073F0C1F87</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>citekey found</string>
 			<key>xpos</key>
-			<real>386</real>
+			<real>341</real>
 			<key>ypos</key>
 			<real>305</real>
 		</dict>
 		<key>978BF1BA-F34E-40C6-8828-DD3CEE25C9FA</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>read metadata from bibtex library</string>
 			<key>xpos</key>
-			<real>205</real>
+			<real>180</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
@@ -1214,69 +1183,69 @@ Start Annotation Export</string>
 			<key>note</key>
 			<string>process annotations &amp; write note</string>
 			<key>xpos</key>
-			<real>1230</real>
+			<real>1045</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
 		<key>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>assign output variables</string>
 			<key>xpos</key>
-			<real>545</real>
+			<real>470</real>
 			<key>ypos</key>
 			<real>330</real>
 		</dict>
 		<key>A37D8724-7F84-4931-B412-68377C99A6EA</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Manual Entering of Page Number</string>
 			<key>xpos</key>
-			<real>800</real>
+			<real>640</real>
 			<key>ypos</key>
-			<real>560</real>
+			<real>495</real>
 		</dict>
 		<key>AEE1EEBA-A5DE-4704-BA7D-C2F5F56303F1</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>get file path</string>
 			<key>xpos</key>
-			<real>205</real>
+			<real>180</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
 		<key>B7CFBC29-8784-4E92-B775-B87611C6E218</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>1080</real>
+			<real>920</real>
 			<key>ypos</key>
-			<real>560</real>
+			<real>625</real>
 		</dict>
 		<key>C62314C8-E529-459D-8A01-B9F3001DC160</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>note</key>
 			<string>remove "\n"</string>
 			<key>xpos</key>
-			<real>370</real>
+			<real>345</real>
 			<key>ypos</key>
 			<real>45</real>
 		</dict>
 		<key>EFF65A14-8130-4A5D-A826-B733F799683E</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>3</integer>
 			<key>xpos</key>
-			<real>1085</real>
+			<real>900</real>
 			<key>ypos</key>
 			<real>165</real>
 		</dict>
