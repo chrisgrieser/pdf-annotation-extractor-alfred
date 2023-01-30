@@ -1,3 +1,7 @@
+- 2023-01-30	release 8.2.0
+- 2023-01-30	refactor
+- 2023-01-30	chore
+- 2023-01-30	chore
 - 2023-01-30	release 8.1.3
 - 2023-01-30	refactor
 - 2023-01-30	chore
