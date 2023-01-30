@@ -52,5 +52,4 @@ if (frontApp is "Highlights") then
 	set current_file to do shell script ("find '" & pdfFolder & "' -type f -name '" & filename & "'")
 end if
 
-# direct return
-current_file
+current_file # direct return

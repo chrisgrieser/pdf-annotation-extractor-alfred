@@ -14,7 +14,7 @@ function run(argv) {
 
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
 	const libraryExists = Application("Finder").exists(Path(bibtexLibraryPath));
-	if (!libraryExists) return `No BibTeX File found at "${bibtexLibraryPath}".`;
+	if (!libraryExists) return `Error: No BibTeX File found at "${bibtexLibraryPath}".`;
 
 	// Read Bibtex-Entry
 	// `--max-count` in case of duplicate citekeys, `--after-context=20` to retrieve
@@ -23,7 +23,7 @@ function run(argv) {
 		`grep --ignore-case --after-context=20 --max-count=1 "{${citekey}," "${bibtexLibraryPath}" || true`
 	);
 
-	if (!bibtexEntry) return "No citekey found.\n\nMake sure your file is named correctly:\n'[citekey]_[...].pdf'";
+	if (!bibtexEntry) return "Error: No citekey found.\n\nMake sure your file is named correctly:\n'[citekey]_[...].pdf'";
 
 	bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
 
