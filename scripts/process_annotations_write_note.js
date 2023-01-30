@@ -129,14 +129,12 @@ function run(argv) {
 			underScoreHls.push(anno);
 		});
 
-		const totalSplitOff = [...underlineAnnos, ...underScoreHls].JSONtoMD();
-		console.log("totalSplitOff: " + totalSplitOff);
-		if (totalSplitOff.length > 0) {
+		const textToDrafts = [...underlineAnnos, ...underScoreHls];
+		if (textToDrafts.length > 0) {
 			const draftsInbox =
 				app.pathTo("home folder") +
 				`/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/${citekey}.md`;
-			console.log("draftsInbox: " + draftsInbox);
-			writeToFile(totalSplitOff, draftsInbox);
+			writeToFile(textToDrafts.JSONtoMD(), draftsInbox);
 		}
 
 		return this.filter(a => a.type !== "Underline");
