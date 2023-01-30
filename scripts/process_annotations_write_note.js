@@ -1,5 +1,5 @@
 #!/usr/bin/env osascript -l JavaScript
-function run() {
+function run(argv) {
 	ObjC.import("stdlib");
 	ObjC.import("Foundation");
 	const app = Application.currentApplication();
@@ -9,44 +9,16 @@ function run() {
 	// import Alfred variables
 
 	const firstPageNo = parseInt($.getenv("first_page_no"));
-	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 	const obsidianOutput = $.getenv("output_style") === "obsidian";
 
 	const citekey = $.getenv("citekey");
 	const keywords = $.getenv("keywords");
-
-	function readFile(path, encoding) {
-		if (!encoding) encoding = $.NSUTF8StringEncoding;
-		const fm = $.NSFileManager.defaultManager;
-		const data = fm.contentsAtPath(path);
-		const str = $.NSString.alloc.initWithDataEncoding(data, encoding);
-		return ObjC.unwrap(str);
-	}
+	let tagsForYaml = ""
 
 	function writeToFile(text, file) {
 		const str = $.NSString.alloc.initWithUTF8String(text);
 		str.writeToFileAtomicallyEncodingError(file, true, $.NSUTF8StringEncoding, null);
-	}
-
-	function writeData(key, newValue) {
-		const dataFolder = $.getenv("alfred_workflow_data");
-		const fileManager = $.NSFileManager.defaultManager;
-		const folderExists = fileManager.fileExistsAtPath(dataFolder);
-		if (!folderExists)
-			fileManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(dataFolder, false, $(), $());
-		const dataPath = `${dataFolder}/${key}`;
-		const str = $.NSString.alloc.initWithUTF8String(newValue);
-		str.writeToFileAtomicallyEncodingError(dataPath, true, $.NSUTF8StringEncoding, null);
-	}
-
-	function readData(key) {
-		const fileExists = filePath => Application("Finder").exists(Path(filePath));
-		const dataPath = $.getenv("alfred_workflow_data") + "/" + key;
-		if (!fileExists(dataPath)) return "data does not exist.";
-		const data = $.NSFileManager.defaultManager.contentsAtPath(dataPath);
-		const str = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding);
-		return ObjC.unwrap(str);
 	}
 
 	String.prototype.toTitleCase = function () {
@@ -65,36 +37,19 @@ function run() {
 	//───────────────────────────────────────────────────────────────────────────
 	// Adapter Method
 
-	/*
-	The script requires annotation-jsons with the following signature:
-	- "type" values need to be lower-cased
-	- "comment" denotes user-written text
-	- "quote" denotes the marked text from the pdf
-	- "colorCategory" denotes a color range
-	[
-		{
-			"type": "Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough",
-			"comment"?: string,
-			"quote"?: string,
-			"imagePath"?: string,
-		},
-	]
+	/* SIGNATURE EXPECTED BY THIS WORKFLOW
+	{
+		"type": enum, ("Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough")
+		"comment"?: string, (user-written comment for the annotation)
+		"quote"?: string, (text marked in the pdf)
+		"imagePath"?: string,
+	},
 	*/
 
 	// https://github.com/mgmeyers/pdfannots2json#sample-output
 	Array.prototype.adapter4pdfannots2json = function () {
 		return this.map(a => {
-			delete a.date;
-			delete a.id;
-			delete a.y;
-			delete a.x;
-			delete a.color;
-			delete a.colorCategory;
-			delete a.ocrText;
-
 			a.quote = a.annotatedText;
-			delete a.annotatedText;
-
 			switch (a.type) {
 				case "text":
 					a.type = "Free Comment";
@@ -118,15 +73,8 @@ function run() {
 
 	Array.prototype.adapter4pdfannots = function () {
 		return this.map(a => {
-			delete a.created;
-			delete a.start_xy;
-			delete a.author;
-
 			a.quote = a.text;
 			a.comment = a.contents;
-			delete a.text;
-			delete a.contents;
-
 			switch (a.type) {
 				case "text":
 					a.type = "Free Comment";
@@ -258,8 +206,8 @@ function run() {
 		return arr.join("\n") + "\n";
 	};
 
-	// Annotation Code Methods
 	//───────────────────────────────────────────────────────────────────────────
+	// Annotation Code Methods
 
 	// "+"
 	Array.prototype.mergeQuotes = function () {
@@ -350,8 +298,8 @@ function run() {
 		// Merge & Save both
 		if (newKeywords.length) {
 			newKeywords = [...new Set(newKeywords)].map(kw => kw.trim().replaceAll(" ", "-"));
+			tagsForYaml = newKeywords.join(", ") + ", "
 		}
-		writeData("tags", newKeywords.join(", ") + ", ");
 
 		// return annotation array without tags
 		return arr.filter(a => a.type !== "remove");
@@ -361,7 +309,6 @@ function run() {
 
 	function writeNote(annotations) {
 		const isoToday = new Date().toISOString().slice(0, 10);
-		const tags = readData("tags");
 
 		function env(envVar) {
 			let out;
@@ -375,7 +322,7 @@ function run() {
 
 		const noteContent = `---
 aliases: "${env("title")}"
-tags: literature-note, ${tags}
+tags: literature-note, ${tagsForYaml}
 citekey: ${env("citekey")}
 year: ${env("year")}
 author: "${env("author")}"
@@ -406,7 +353,7 @@ ${annotations}
 
 	//───────────────────────────────────────────────────────────────────────────
 	// MAIN
-	let annos = JSON.parse(readFile(inputFile));
+	let annos = JSON.parse(argv[0]);
 
 	// select right adapter method
 	annos = usePdfannots ? annos.adapter4pdfannots() : annos.adapter4pdfannots2json();
