@@ -1,3 +1,5 @@
+- 2023-01-30	release 8.1.1
+- 2023-01-30	refactor
 - 2023-01-30	release 8.1.0
 - 2023-01-30	refactor! (removes manual citekey entering)
 - 2023-01-30	chore
