@@ -50,13 +50,11 @@ Automatically determines correct page numbers, merges highlights across page bre
 - Alternatively, you can use the Alfred keyword `anno` to select a PDF from which to extract the annotations. (Uses your [Alfred default search scope](https://www.alfredapp.com/help/features/default-results/#search-scope).)
 
 __Annotation Types extracted__
-- Highlights
-- Underlines
-- Free Comments
-- Strikethroughs
-- Rectangles (as Images)
-
-Highlights, Underlines, Strikethroughs are extracted as blockquotes when they  have no comments, and as annotated quote when they have a comment. Highlights and Underlines are extracted in visually the same way, while Strikethroughs are extracted as Markdown Strikethroughs.
+- Highlight ➡️ bullet point, quoting text and prepending the comment
+- Underline ➡️ output to [Drafts.app](https://getdrafts.com/) (not included in the annotations)
+- Free Comment ➡️ blockquote of the comment text
+- Strikethrough ➡️ Markdown strikethrough
+- Rectangle ➡️ image
 
 ### Automatic Page Number Identification
 Instead of the PDF page numbers, this workflow retrieves information about the *real* page numbers from the BibTeX library and inserts them. If there is no page data in the BibTeX entry (e.g., monographies), you are prompted to enter the page number manually.
@@ -66,13 +64,11 @@ Instead of the PDF page numbers, this workflow retrieves information about the *
 ### Annotation Codes
 Insert these special codes at the __beginning__ of an annotation to invoke special actions on that annotation. Annotation Codes do not apply to Strikethroughs. (You can run the Alfred command `acode` to display a cheat sheet showing all the following information.)
 
-- `+`: Merge this highlight/underline with the previous highlight/underline.
-	- Both annotations on the same page: puts a "(…)" in between them. This is useful to omit certain parts of text. Used for jumping sections on the same page.
-	- The second annotation is on the following page: Assuming a continuation of a highlight/underline across page borders, this does not insert a `(…)`. However, both pages are inserted in the Pandoc citation, e.g. `[Grieser2020, p. 14-15]`.
+- `+`: Merge this highlight/underline with the previous highlight/underline. Works for annotations on the same page (= skipping text in between) and for annotations across two pages.
 - `? foo` __(free comments)__: Turns "foo" into a [Question Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and move up. (Callouts are Obsidian-specific Syntax.)
 - `##`: Turns highlighted/underlined text into a __heading__ that is added at that location. The number of `#` determines the heading level. If the annotation is a free comment, the text following the `#` is used as heading instead (Space after `#` required).
 - `=`: Adds highlighted/underlined text as __tags__ to the YAML-frontmatter (mostly used for Obsidian as output). If the annotation is a free comment, uses the text after the `=`. In both cases, the annotation is removed afterwards.
-- `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. Intended for use when the split-off of underlines is enabled, and does nothing if it is disabled. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
+- `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ### Extracting Images
 - Extracting images only works in Obsidian. The respective images is saved in the `attachments` subfolder of the Obsidian destination folder, and named `{citekey}_image{n}.png`.
