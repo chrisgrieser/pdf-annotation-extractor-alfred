@@ -4,10 +4,10 @@
 <dict>
 	<key>bibtex_library_path</key>
 	<string>~/.config/pandoc/main-bibliography.bib</string>
-	<key>citekey_insertion</key>
-	<string>filename</string>
 	<key>obsidian_destination</key>
 	<string>~/main-vault/Literature Notes</string>
+	<key>output_style</key>
+	<string>obsidian</string>
 	<key>pdf_folder_highlights_app</key>
 	<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
 	<key>underlines_second_output</key>

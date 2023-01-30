@@ -6,22 +6,17 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 #-------------------------------------------------------------------------------
 # PDFANNOTS
 if [[ "$extraction_engine" == "pdfannots" ]]; then
-	pdfannots --no-group --format=json "$file_path" | tee "$alfred_workflow_cache/temp.json"
+	pdfannots --no-group --format=json "$filepath" | tee "$alfred_workflow_cache/temp.json"
 	exit 0
 fi
 
 #-------------------------------------------------------------------------------
 # PDFANNOTS2JSON
+
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
-# RUN EXTRACTION
-if [[ "$only_recent_annos" == "1" ]]; then
-	RECENT_DATE="$(date -v-4d +%F)" # --ignore-before uses DATE 23:59
-	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" --ignore-before="$RECENT_DATE" | tee "$alfred_workflow_cache/temp.json"
-else
-	pdfannots2json "$file_path" --image-output-path=./ --image-format="png" | tee "$alfred_workflow_cache/temp.json"
-fi
+pdfannots2json "$filepath" --image-output-path=./ --image-format="png" > "$alfred_workflow_cache/temp.json"
 
 # IMAGE EXTRACTION
 # shellcheck disable=SC2012

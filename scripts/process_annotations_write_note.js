@@ -12,6 +12,7 @@ function run() {
 	const underlinesSecondOutput = $.getenv("underlines_second_output") === "1";
 	const inputFile = $.getenv("alfred_workflow_cache") + "/temp.json";
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
+	const obsidianOutput = $.getenv("output_style") === "obsidian";
 
 	const citekey = $.getenv("citekey");
 	const keywords = $.getenv("keywords");
@@ -22,6 +23,11 @@ function run() {
 		const data = fm.contentsAtPath(path);
 		const str = $.NSString.alloc.initWithDataEncoding(data, encoding);
 		return ObjC.unwrap(str);
+	}
+
+	function writeToFile(text, file) {
+		const str = $.NSString.alloc.initWithUTF8String(text);
+		str.writeToFileAtomicallyEncodingError(file, true, $.NSUTF8StringEncoding, null);
 	}
 
 	function writeData(key, newValue) {
@@ -35,10 +41,19 @@ function run() {
 		str.writeToFileAtomicallyEncodingError(dataPath, true, $.NSUTF8StringEncoding, null);
 	}
 
-	String.prototype.toTitleCase = function () {
+	function readData(key) {
+		const fileExists = filePath => Application("Finder").exists(Path(filePath));
+		const dataPath = $.getenv("alfred_workflow_data") + "/" + key;
+		if (!fileExists(dataPath)) return "data does not exist.";
+		const data = $.NSFileManager.defaultManager.contentsAtPath(dataPath);
+		const str = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding);
+		return ObjC.unwrap(str);
+	}
+
+	String.prototype.toTitleCase = function() {
 		const smallWords =
 			/\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
-		let capitalized = this.replace(/\w\S*/g, function (word) {
+		let capitalized = this.replace(/\w\S*/g, function(word) {
 			if (smallWords.test(word)) return word.toLowerCase();
 			if (word.toLowerCase() === "i") return "I";
 			if (word.length < 3) return word.toLowerCase();
@@ -68,7 +83,7 @@ function run() {
 	*/
 
 	// https://github.com/mgmeyers/pdfannots2json#sample-output
-	Array.prototype.adapter4pdfannots2json = function () {
+	Array.prototype.adapter4pdfannots2json = function() {
 		return this.map(a => {
 			delete a.date;
 			delete a.id;
@@ -102,7 +117,7 @@ function run() {
 		});
 	};
 
-	Array.prototype.adapter4pdfannots = function () {
+	Array.prototype.adapter4pdfannots = function() {
 		return this.map(a => {
 			delete a.created;
 			delete a.start_xy;
@@ -125,7 +140,7 @@ function run() {
 	//───────────────────────────────────────────────────────────────────────────
 	// Core Methods
 
-	Array.prototype.cleanQuoteKey = function () {
+	Array.prototype.cleanQuoteKey = function() {
 		return this.map(a => {
 			if (!a.quote) return a; // free comments have no text
 			a.quote = a.quote
@@ -140,7 +155,7 @@ function run() {
 		});
 	};
 
-	Array.prototype.insertAndCleanPageNo = function (pageNo) {
+	Array.prototype.insertAndCleanPageNo = function(pageNo) {
 		return (
 			this
 				// in case the page numbers have names like "image 1" instead of integers
@@ -155,7 +170,7 @@ function run() {
 		);
 	};
 
-	Array.prototype.splitOffUnderlines = function () {
+	Array.prototype.splitOffUnderlines = function() {
 		if (!underlinesSecondOutput) {
 			writeData("underlines", "none");
 			return this;
@@ -180,8 +195,9 @@ function run() {
 		return this.filter(a => a.type !== "Underline");
 	};
 
-	Array.prototype.JSONtoMD = function () {
-		const arr = this.map(a => { /* eslint-disable-line complexity */
+	Array.prototype.JSONtoMD = function() {
+		const arr = this.map(a => {
+			/* eslint-disable-line complexity */
 			let comment, output;
 			let annotationTag = "";
 
@@ -256,7 +272,7 @@ function run() {
 	// --------------------------------------------------------------
 
 	// "+"
-	Array.prototype.mergeQuotes = function () {
+	Array.prototype.mergeQuotes = function() {
 		// start at one, since the first element can't be merged to a predecessor
 		for (let i = 1; i < this.length; i++) {
 			if (this[i].type === "Free Comment" || !this[i].comment) continue;
@@ -277,7 +293,7 @@ function run() {
 	};
 
 	// "##"
-	Array.prototype.transformHeadings = function () {
+	Array.prototype.transformHeadings = function() {
 		return this.map(a => {
 			if (!a.comment) return a;
 			const hLevel = a.comment.match(/^#+(?!\w)/);
@@ -295,7 +311,7 @@ function run() {
 	};
 
 	// "?"
-	Array.prototype.questionCallout = function () {
+	Array.prototype.questionCallout = function() {
 		let annoArr = this.map(a => {
 			if (!a.comment) return a;
 			if (a.type === "Free Comment" && a.comment.startsWith("?")) {
@@ -310,7 +326,7 @@ function run() {
 	};
 
 	// images / rectangle annotations (pdfannots2json only)
-	Array.prototype.insertImage4pdfannots2json = function () {
+	Array.prototype.insertImage4pdfannots2json = function() {
 		let i = 1;
 		return this.map(a => {
 			if (a.type !== "Image") return a;
@@ -322,7 +338,7 @@ function run() {
 	};
 
 	// "="
-	Array.prototype.transformTag4yaml = function () {
+	Array.prototype.transformTag4yaml = function() {
 		let newKeywords = [];
 
 		// existing tags (from BibTeX library)
@@ -352,6 +368,55 @@ function run() {
 	};
 
 	//───────────────────────────────────────────────────────────────────────────
+
+	function writeNote(annotations) {
+		const isoToday = new Date().toISOString().slice(0, 10);
+		const tags = readData("tags");
+
+		function env(envVar) {
+			let out;
+			try {
+				out = $.getenv(envVar);
+			} catch (e) {
+				out = "";
+			}
+			return out;
+		}
+
+		let noteContent = `---
+aliases: "${env("title")}"
+tags: literature-note, ${tags}
+citekey: ${env("citekey")}
+year: ${env("year")}
+author: "${env("author")}"
+publicationType: ${env("ptype")}
+url: ${env("url")}
+doi: ${env("doi")}
+creation-date: ${isoToday}
+obsidianUIMode: preview
+---
+
+# ${env("title")}
+
+${annotations}
+`;
+
+		if (obsidianOutput) {
+			const path = $.getenv("obsidian_destination") + `/${citekey}.md`;
+			writeToFile(noteContent, path);
+			delay(0.1); // delay to ensure writing took place
+			const urlscheme = "obsidian://open?path=" + encodeURIComponent(path);
+			app.openLocation(urlscheme);
+			app.setTheClipboardTo(`[[${citekey}]]`); // copy wikilink
+		} else {
+			const path = $.getenv("filepath").replace(/\.pdf$/, ".md");
+			noteContent = noteContent.replace(/^obsidianUIMode: preview\n/m, "");
+			writeToFile(noteContent, path);
+			app.doShellScript(`open -R "${path}"`); // reveal in Finder
+		}
+	}
+
+	//───────────────────────────────────────────────────────────────────────────
 	// MAIN
 	let annos = JSON.parse(readFile(inputFile));
 
@@ -365,7 +430,6 @@ function run() {
 
 		// annotation codes & images
 		.mergeQuotes()
-		.quoteWithoutReferences()
 		.transformHeadings()
 		.questionCallout()
 		.transformTag4yaml()
@@ -375,5 +439,5 @@ function run() {
 		.splitOffUnderlines()
 		.JSONtoMD();
 
-	return annos;
+	writeNote(annos);
 }
