@@ -93,7 +93,7 @@ function run(argv) {
 			a.quote = a.quote
 				.replace(/["„”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
-				.replace(/\u00AD/g, "") // remove invisible character
+				.replaceAll("\\u00AD", "") // remove invisible character
 				.replace(/(\D)[.,]\d/g, "$1") // remove footnotes from quote
 				.replaceAll("\\u0026", "&") // resolve "&"-symbol
 				.replace(/(?!^)(\S)-\s+(?=\w)/gm, "$1") // remove leftover hyphens, regex uses hack to treat lookahead as lookaround https://stackoverflow.com/a/43232659

@@ -51,7 +51,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 __Annotation Types extracted__
 - Highlight ➡️ bullet point, quoting text and prepending the comment
-- Underline ➡️ output to [Drafts.app](https://getdrafts.com/) (not included in the annotations)
+- Underline ➡️ output to [Drafts.app](https://getdrafts.com/); they are not included in the annotations. (Requires turning on automatic file import in the drafts settings.)
 - Free Comment ➡️ blockquote of the comment text
 - Strikethrough ➡️ Markdown strikethrough
 - Rectangle ➡️ image
