@@ -23,11 +23,10 @@ function run(argv) {
 		return capitalized;
 	};
 
-	// TODO add to function
-	let tagsForYaml = "";
+	let tagsForYaml = ""; // needed as global variable for methods
 
 	//───────────────────────────────────────────────────────────────────────────
-	// Adapter Method
+	// Core Methods
 
 	/* SIGNATURE EXPECTED BY THIS WORKFLOW
 	{
@@ -76,14 +75,11 @@ function run(argv) {
 		});
 	};
 
-	//───────────────────────────────────────────────────────────────────────────
-	// Core Methods
-
 	Array.prototype.cleanQuoteKey = function () {
 		return this.map(a => {
 			if (!a.quote) return a; // free comments have no text
 			a.quote = a.quote
-				.replace(/["„”«»]/g, "'") // quotation marks
+				.replace(/["„“”«»]/g, "'") // quotation marks
 				.replace(/\. ?\. ?\./g, "…") // ellipsis
 				.replaceAll("\\u00AD", "") // remove invisible character
 				.replace(/(\D)[.,]\d/g, "$1") // remove footnotes from quote
@@ -186,7 +182,7 @@ function run(argv) {
 					break;
 				case "Question Callout": // blockquoted comment
 					comment = comment.replaceAll("\n", "\n> ");
-					output = `> [!QUESTION]\n> ${comment}\n`;
+					output = `> [!QUESTION]\n> ${comment}`;
 					break;
 				case "Image":
 					output = `\n![[${a.image}]]\n`;
@@ -379,12 +375,13 @@ function run(argv) {
 		return m;
 	}
 
-	function writeNote(annotations, metad, useObsidian) {
+	function writeNote(annos, metad, useObsidian) {
 		const isoToday = new Date().toISOString().slice(0, 10);
 
 		const noteContent = `---
 aliases: "${metad.title}"
 tags: literature-note, ${tagsForYaml}
+obsidianUIMode: preview
 citekey: ${metad.citekey}
 year: ${metad.year}
 author: "${metad.author}"
@@ -392,13 +389,11 @@ publicationType: ${metad.ptype}
 url: ${metad.url}
 doi: ${metad.doi}
 creation-date: ${isoToday}
-obsidianUIMode: preview
 ---
 
 # ${metad.title}
 
-${annotations}
-`;
+${annos}`;
 
 		if (useObsidian) {
 			const path = $.getenv("obsidian_destination") + `/${metad.citekey}.md`;
@@ -420,11 +415,13 @@ ${annotations}
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
 	const obsidianOutput = $.getenv("output_style") === "obsidian";
-	const citekey = $.getenv("citekey");
-	const rawAnnotations = argv[0];
+	// const citekey = argv[0].split(";;;;")[0];
+	// const rawAnnotations = argv[0].split(";;;;")[1];
+	const citekey = argv[0];
+	const rawAnnotations = argv[1];
 
 	const metadata = extractMetadata(citekey, bibtexLibraryPath);
-	const annos = JSON.parse(rawAnnotations)
+	const annotations = JSON.parse(rawAnnotations)
 		// process input
 		.adapterForInput(usePdfannots)
 		.useCorrectPageNum(metadata.firstPage)
@@ -441,5 +438,5 @@ ${annotations}
 		.splitOffUnderlinesToDrafts()
 		.JSONtoMD(citekey);
 
-	writeNote(annos, metadata, obsidianOutput);
+	writeNote(annotations, metadata, obsidianOutput);
 }
