@@ -5,12 +5,10 @@ An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markd
 
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
 
-<img src="https://user-images.githubusercontent.com/73286100/132963514-f08463cb-de2a-45d2-80fb-8c29afa35fb8.gif" alt="PDF Annotation Extractor" width=60%>
-
 ## Table of Contents
 <!--toc:start-->
 - [Installation](#installation)
-- [How to Use](#how-to-use)
+- [Usage](#usage)
 	- [Requirements for the PDF](#requirements-for-the-pdf)
 	- [Basics](#basics)
 	- [Automatic Page Number Identification](#automatic-page-number-identification)
@@ -36,7 +34,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - Set the hotkey by double-clicking the sky-blue field at the top left. 
 - Set up the workflow configuration inside the app.
 
-## How to Use
+## Usage
 
 ### Requirements for the PDF
 - The PDF Annotation Extractor works on any PDF that has valid annotations saved *in the PDF file*. (Some PDF readers like __Skim__ or __Zotero 6__ do not store annotations int eh PDF itself by default.)
