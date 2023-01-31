@@ -23,7 +23,7 @@ function run(argv) {
 
 	String.prototype.toTitleCase = function () {
 		const smallWords =
-			/\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
+			/\b(?:a[stn]?|and|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|that|than|the|to|up(on)?|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
 		let capitalized = this.replace(/\w\S*/g, function (word) {
 			if (smallWords.test(word)) return word.toLowerCase();
 			if (word.toLowerCase() === "i") return "I";
@@ -164,13 +164,9 @@ function run(argv) {
 			// Pandoc Citation
 			const reference = `[@${citekey}, p. ${a.page}]`;
 
-			function bulletHandling(str, comment_, markup) {
-				if (/^\d\. /.test(comment_)) str = str.slice(2); // enumerations do not get a bullet
-				str = str
-					.replaceAll("\n", markup + "\n" + markup) // for multiline-comments
-					.replace(/(..?)(\d\. )/g, "$2$1"); // valid markup of enumerations
-				return str;
-			}
+			// if the comment starts with an enumeration, use an ordered list
+			// instead of bullet points
+			const enumerationFix = (str) => str.replace(/- ((?:_{1,2}|\*{1,2}))(\d+)[.)] ?/, "$2. $1");
 
 			// type specific output
 			switch (a.type) {
@@ -178,14 +174,14 @@ function run(argv) {
 				case "Underline": // highlights/underlines = bullet points
 					if (comment) {
 						output = `- ${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
-						output = bulletHandling(output, comment, "__");
+						output = enumerationFix(output);
 					} else if (!comment && annotationTag) {
 						output = `- ${annotationTag} "${a.quote}" ${reference}`;
 					} else if (!comment && !annotationTag) output = `- "${a.quote}" ${reference}`;
 					break;
 				case "Free Comment": // free comments = block quote (my comments)
 					output = `> ${annotationTag} ${comment} ${reference}`;
-					output = bulletHandling(output, comment, "*");
+					output = enumerationFix(output);
 					break;
 				case "Heading":
 					output = "\n" + comment;
