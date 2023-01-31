@@ -86,13 +86,13 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 
 ## Credits
 
+<!-- vale Google.FirstPerson = NO -->
 ### Thanks
 - Thanks to [Andrew Baumann for pdfannots](https://github.com/0xabu/pdfannots), which caused me to develop this workflow (even though it does not use `pdfannots` anymore).
 - Also many thanks to [@mgmeyers for pdfannots2json](https://github.com/mgmeyers/pdfannots2json/), which enabled many improvements to this workflow.
 - I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on annotation codes.
 - <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon.</a>
 
-<!-- vale Google.FirstPerson = NO -->
 ### About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the digital economy. For my PhD project, I investigate the governance of the app economy and how software ecosystems manage the tension between innovation and compatibility. If you are interested in this subject, feel free to get in touch!
 
