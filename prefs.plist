@@ -10,7 +10,5 @@
 	<string>obsidian</string>
 	<key>pdf_folder_highlights_app</key>
 	<string>~/Library/Mobile Documents/com~apple~CloudDocs/PDFs</string>
-	<key>underlines_second_output</key>
-	<true/>
 </dict>
 </plist>

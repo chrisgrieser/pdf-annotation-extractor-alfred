@@ -922,32 +922,6 @@ Start Annotation Export</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>pdfannots2json</string>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>pdfannots2json</string>
-						<string>pdfannots2json</string>
-					</array>
-					<array>
-						<string>pdfannots</string>
-						<string>pdfannots</string>
-					</array>
-				</array>
-			</dict>
-			<key>description</key>
-			<string>Extraction engine used. Normally, this should be `pdfannots2json`.</string>
-			<key>label</key>
-			<string>Advanced</string>
-			<key>type</key>
-			<string>popupbutton</string>
-			<key>variable</key>
-			<string>extraction_engine</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string></string>
 				<key>filtermode</key>
 				<integer>1</integer>
@@ -964,6 +938,32 @@ Start Annotation Export</string>
 			<string>filepicker</string>
 			<key>variable</key>
 			<string>pdf_folder_highlights_app</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>pdfannots2json</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>pdfannots2json</string>
+						<string>pdfannots2json</string>
+					</array>
+					<array>
+						<string>pdfannots</string>
+						<string>pdfannots</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Normally, this stay "pdfannots2json".</string>
+			<key>label</key>
+			<string>Extraction Engine</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>extraction_engine</string>
 		</dict>
 	</array>
 	<key>version</key>
