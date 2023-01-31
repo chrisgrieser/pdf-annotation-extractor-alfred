@@ -119,14 +119,14 @@ function run(argv) {
 		});
 
 		const textToDrafts = [...underlineAnnos, ...underScoreHls];
-		if (textToDrafts.length > 0) {
-			// prettier-ignore
-			const timestamp = new Date().toISOString().slice(0, 19).replaceAll(":", "-"); /* eslint-disable-line no-magic-numbers, newline-per-chained-call */
-			// prettier-ignore
-			const draftsInbox = app.pathTo("home folder") + `/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/annotation_${timestamp}.md`;
-			writeToFile(textToDrafts.JSONtoMD(), draftsInbox);
-		}
 
+		if (textToDrafts.length === 0) return this;
+
+		// prettier-ignore
+		const timestamp = new Date().toISOString().slice(0, 19).replaceAll(":", "-"); /* eslint-disable-line no-magic-numbers, newline-per-chained-call */
+		// prettier-ignore
+		const draftsInbox = app.pathTo("home folder") + `/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/annotation_${timestamp}.md`;
+		writeToFile(textToDrafts.JSONtoMD(), draftsInbox);
 		return this.filter(a => a.type !== "Underline");
 	};
 
@@ -415,8 +415,6 @@ ${annos}`;
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
 	const obsidianOutput = $.getenv("output_style") === "obsidian";
-	// const citekey = argv[0].split(";;;;")[0];
-	// const rawAnnotations = argv[0].split(";;;;")[1];
 	const citekey = argv[0];
 	const rawAnnotations = argv[1];
 

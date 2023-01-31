@@ -10,7 +10,7 @@ function notify() {
 # GUARD CLAUSES & RETRIEVE PATH/CITEKEY
 
 if [[ ! -f "$bibtex_library_path" ]]; then
-	notify "Error" "$bibtex_library_path does not exist."
+	notify "Error" "Library file does not exist."
 	exit 1
 fi
 

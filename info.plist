@@ -142,7 +142,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>note</key>
 			<string>run extraction</string>
 			<key>xpos</key>
-			<real>200</real>
+			<real>190</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
