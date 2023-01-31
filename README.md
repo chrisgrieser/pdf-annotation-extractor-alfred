@@ -76,7 +76,7 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following Terminal command `brew upgrade pdfannots2json` in your terminal.
 - This workflow does not work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
-- This workflow sometimes does not work when the PDF contains bigger free-form annotations (e.g., from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
+- This workflow sometimes does not work when the PDF has bigger free-form annotations (e.g., from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the macOS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>
 - There are some cases where the extracted text is all jumbled up. In that case, it's a is a problem with the upstream `pdfannots2json`. [The issue is tracked here](https://github.com/mgmeyers/pdfannots2json/issues/11), and you can also report your problem.
