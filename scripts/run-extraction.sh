@@ -27,8 +27,17 @@ if [[ -z "$entry" ]]; then
 	exit 1
 fi
 
+if [[ "$extraction_engine" == "pdfannots" ]] && ! command -v pdfannots; then
+	notify "Error" "pdfannots not installed."
+	exit 1
+elif [[ "$extraction_engine" != "pdfannots" ]] && ! command -v pdfannots2json; then
+	notify "Error" "pdfannots2json not installed."
+	exit 1
+fi
+
 #───────────────────────────────────────────────────────────────────────────────
 # EXTRACTION
+
 notify "Annotation Extractor" "⏳ Running Extraction…"
 
 if [[ "$extraction_engine" == "pdfannots" ]]; then
