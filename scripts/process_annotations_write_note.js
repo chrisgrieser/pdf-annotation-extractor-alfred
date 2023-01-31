@@ -14,7 +14,7 @@ function run(argv) {
 
 	const citekey = $.getenv("citekey");
 	const keywords = $.getenv("keywords");
-	let tagsForYaml = ""
+	let tagsForYaml = "";
 
 	function writeToFile(text, file) {
 		const str = $.NSString.alloc.initWithUTF8String(text);
@@ -141,7 +141,7 @@ function run(argv) {
 	};
 
 	Array.prototype.JSONtoMD = function () {
-		const arr = this.map(a => {
+		const formattedAnnos = this.map(a => {
 			let comment, output;
 			let annotationTag = "";
 
@@ -156,39 +156,43 @@ function run(argv) {
 					annotationTag = tempArr.shift() + " ";
 					comment = tempArr.join(" ");
 				} else {
-					annotationTag = comment;
+					annotationTag = comment + " ";
 					comment = "";
 				}
-			} else annotationTag = "";
+			}
 
 			// Pandoc Citation
 			const reference = `[@${citekey}, p. ${a.page}]`;
-
-			// if the comment starts with an enumeration, use an ordered list
-			// instead of bullet points
-			const enumerationFix = (str) => str.replace(/- ((?:_{1,2}|\*{1,2}))(\d+)[.)] ?/, "$2. $1");
 
 			// type specific output
 			switch (a.type) {
 				case "Highlight":
 				case "Underline": // highlights/underlines = bullet points
 					if (comment) {
-						output = `- ${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
-						output = enumerationFix(output);
-					} else if (!comment && annotationTag) {
-						output = `- ${annotationTag} "${a.quote}" ${reference}`;
-					} else if (!comment && !annotationTag) output = `- "${a.quote}" ${reference}`;
+						// ordered list, if comments starts with numbering
+						const numberRegex = /^\d+[.)] ?/;
+						const commentNumbered = comment.match(numberRegex);
+						if (commentNumbered) {
+							output = commentNumbered[0].replace(/[.)] ?/, ". "); // turn consistently into "."
+							comment = comment.replace(numberRegex, "");
+						} else {
+							output = "- ";
+						}
+						output += `${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
+					} else {
+						output = `- ${annotationTag}"${a.quote}" ${reference}`;
+					}
 					break;
 				case "Free Comment": // free comments = block quote (my comments)
-					output = `> ${annotationTag} ${comment} ${reference}`;
-					output = enumerationFix(output);
+					comment = comment.replaceAll("\n", "\n> "); 
+					output = `> ${annotationTag}${comment} ${reference}`;
 					break;
 				case "Heading":
 					output = "\n" + comment;
 					break;
 				case "Question Callout": // blockquoted comment
-					comment = comment.replace(/^/gm, "> ");
-					output = `> [!QUESTION]\n${comment}\n`;
+					comment = comment.replaceAll("\n", "\n> "); 
+					output = `> [!QUESTION]\n> ${comment}\n`;
 					break;
 				case "Image":
 					output = `\n![[${a.image}]]\n`;
@@ -197,7 +201,7 @@ function run(argv) {
 			return output;
 		});
 
-		return arr.join("\n") + "\n";
+		return formattedAnnos.join("\n") + "\n";
 	};
 
 	//───────────────────────────────────────────────────────────────────────────
@@ -292,7 +296,7 @@ function run(argv) {
 		// Merge & Save both
 		if (newKeywords.length) {
 			newKeywords = [...new Set(newKeywords)].map(kw => kw.trim().replaceAll(" ", "-"));
-			tagsForYaml = newKeywords.join(", ") + ", "
+			tagsForYaml = newKeywords.join(", ") + ", ";
 		}
 
 		// return annotation array without tags
