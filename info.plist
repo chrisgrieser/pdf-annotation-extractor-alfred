@@ -289,29 +289,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/run-extraction.sh</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -343,6 +320,29 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>scripts/run-extraction.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -483,27 +483,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:citekey}</string>
-				<key>title</key>
-				<string>⌛️ Extracting Annotations...</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -527,6 +506,27 @@ tell application id focusedapp to activatetell application "System Events" to k
 			<string>534116A0-B39B-4D5F-B291-CFA206FBCD6D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:citekey}</string>
+				<key>title</key>
+				<string>⌛️ Extracting Annotations...</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EFF65A14-8130-4A5D-A826-B733F799683E</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -763,12 +763,12 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<real>855</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>60</real>
 		</dict>
 		<key>7D407AFC-B0A7-4ABD-A235-5ADF18B6ADF1</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>2</integer>
+			<integer>6</integer>
 			<key>note</key>
 			<string>has page numbers</string>
 			<key>xpos</key>
@@ -794,7 +794,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<real>1000</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>60</real>
 		</dict>
 		<key>A0673581-CCBB-4907-A5AB-0D1D37B2DB64</key>
 		<dict>
@@ -845,7 +845,7 @@ Start Annotation Export</string>
 			<key>xpos</key>
 			<real>855</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>190</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
