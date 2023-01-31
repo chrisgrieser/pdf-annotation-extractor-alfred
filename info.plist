@@ -35,6 +35,42 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<true/>
+				<key>focusedappvariablename</key>
+				<string>focusedapp</string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>917504</integer>
+				<key>hotstring</key>
+				<string>A</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>com.apple.finder</string>
+					<string>net.highlightsapp.universal</string>
+				</array>
+				<key>relatedAppsMode</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -55,41 +91,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>focusedappvariable</key>
-				<true/>
-				<key>focusedappvariablename</key>
-				<string>focusedapp</string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>917504</integer>
-				<key>hotstring</key>
-				<string>A</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedApps</key>
-				<array>
-					<string>com.apple.finder</string>
-				</array>
-				<key>relatedAppsMode</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Alfred Gallery[This workflow is now included in the Alfred gallery](http://alfred.app/workflows/chrisgrieser/pdf-annotation-extractor-alfred/) and auto-updates will there be managed by Alfred and not by this workflow anymore.---
@@ -100,8 +101,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 ## Workflow Setup
 - Install [Homebrew](https://brew.sh/).
 - Install `pdfannots2json` by pasting the following into your terminal: `brew install mgmeyers/pdfannots2json/pdfannots2json`
-- Set the hotkey by double-clicking the sky-blue field at the top left. (You can also use this workflow with the Alfred keyword `anno`.)
-- Set up the workflow configuration to the left.
+- Set the hotkey by double-clicking the sky-blue field at the top left.
 
 ## Info
 - [README](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/blob/main/README.md)
@@ -140,7 +140,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>note</key>
 			<string>run extraction</string>
 			<key>xpos</key>
-			<real>190</real>
+			<real>215</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>
@@ -214,6 +214,27 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>extraction_engine</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>~/PDFs</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>The folder containing all PDFs. Required to be able to extract the current PDF from Highlights.</string>
+			<key>label</key>
+			<string>Highlights.app</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>pdf_folder_highlights_app</string>
 		</dict>
 	</array>
 	<key>version</key>

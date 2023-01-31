@@ -396,11 +396,11 @@ ${annos}`;
 		writeToFile(noteContent, path);
 
 		// automatically determine if file is an Obsidian Vault
-		const obsidianJsonFilePath = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
+		const obsidianJson = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
 		let isInObsidianVault = false;
-		const fileExists = Application("Finder").exists(Path(obsidianJsonFilePath));
+		const fileExists = Application("Finder").exists(Path(obsidianJson));
 		if (fileExists) {
-			const vaults = JSON.parse(app.read(obsidianJsonFilePath)).vaults;
+			const vaults = JSON.parse(app.read(obsidianJson)).vaults;
 			isInObsidianVault = Object.values(vaults).some(vault => path.startsWith(vault.path));
 		}
 

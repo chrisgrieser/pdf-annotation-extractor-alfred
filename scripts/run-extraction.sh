@@ -14,7 +14,7 @@ if [[ ! -f "$bibtex_library_path" ]]; then
 	exit 1
 fi
 
-pdf_path="$*"
+pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
 if [[ ! "$pdf_path" == *.pdf ]]; then
 	notify "Error" "Not a .pdf file."
 	exit 1
