@@ -20,7 +20,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 - [Credits](#credits)
 	- [Thanks](#thanks)
 	- [About the Developer](#about-the-developer)
-	- [Donate](#donate)
+	- [Buy me a Coffee](#buy-me-a-coffee)
 <!--toc:end-->
 
 ## Installation
@@ -106,5 +106,5 @@ In my day job, I am a sociologist studying the social mechanisms underlying the 
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
-### Donate
+### Buy me a Coffee
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
