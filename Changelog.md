@@ -1,3 +1,5 @@
+- 2023-01-31	release 8.2.6
+- 2023-01-31	fix: page number insertion
 - 2023-01-31	release 8.2.5
 - 2023-01-31	chore
 - 2023-01-31	chore
