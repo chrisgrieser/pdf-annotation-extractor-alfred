@@ -1,3 +1,11 @@
+- 2023-01-31	release 8.3.0
+- 2023-01-31	refactor: one big call
+- 2023-01-31	chore
+- 2023-01-31	refactor
+- 2023-01-31	chore
+- 2023-01-31	refactor: jsonToMd formatting
+- 2023-01-31	fix: enumrations instead of bullet points
+- 2023-01-31	chore
 - 2023-01-31	release 8.2.6
 - 2023-01-31	fix: page number insertion
 - 2023-01-31	release 8.2.5
