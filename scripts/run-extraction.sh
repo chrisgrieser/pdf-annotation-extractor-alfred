@@ -7,14 +7,14 @@ function notify() {
 }
 
 #───────────────────────────────────────────────────────────────────────────────
-# GUARD CLAUSES & RETRIEVE PATH/CITEKEY
+# GUARD CLAUSES & RETRIEVE CITEKEY
 
 if [[ ! -f "$bibtex_library_path" ]]; then
 	notify "Error" "Library file does not exist."
 	exit 1
 fi
 
-pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
+pdf_path="$*"
 if [[ ! "$pdf_path" == *.pdf ]]; then
 	notify "Error" "Not a .pdf file."
 	exit 1
@@ -34,9 +34,8 @@ notify "Annotation Extractor" "⏳ Running Extraction…"
 if [[ "$extraction_engine" == "pdfannots" ]]; then
 	annotations=$(pdfannots --no-group --format=json "$pdf_path")
 else
-	IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 	wd="$PWD"
-
+	IMAGE_FOLDER="${output_path/#\~/$HOME}/attachments/image_temp"
 	mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER"
 
 	annotations=$(pdfannots2json "$pdf_path" --image-output-path=./ --image-format="png")
@@ -67,4 +66,4 @@ fi
 #───────────────────────────────────────────────────────────────────────────────
 
 # PROCESS ANNOTATIONS
-osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations"
+osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations" "$entry" "$pdf_path"

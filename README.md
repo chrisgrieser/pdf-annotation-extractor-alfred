@@ -1,7 +1,7 @@
 # PDF Annotation Extractor
 ![](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic) ![](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
-An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References. Outputs annotations to [Obsidian](https://obsidian.md/), [Drafts](https://getdrafts.com/), or a Markdown file.
+An [Alfred Workflow](https://www.alfredapp.com/) to extract annotations as Markdown & insert Pandoc Citations as References.
 
 Automatically determines correct page numbers, merges highlights across page breaks, prepends a YAML Header bibliographic information, and some more small Quality-of-Life conveniences.
 
@@ -46,7 +46,7 @@ Automatically determines correct page numbers, merges highlights across page bre
 > You can achieve such a filename pattern with automatic renaming rules of most reference managers, for example with the [ZotFile plugin for Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of BibDesk](https://bibdesk.sourceforge.io/manual/BibDeskHelp_77.html#SEC140).
 
 ### Basics
-Use the hotkey to trigger the Annotation Extraction of the PDF file currently selected in Finder, or if it is open in PDF Expert or Highlights.
+Use the hotkey to trigger the Annotation Extraction on the PDF file currently selected in Finder.
 
 __Annotation Types extracted__
 - Highlight ➡️ bullet point, quoting text and prepending the comment
@@ -70,14 +70,14 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 - `_` __(highlights only)__: Removes the `_` and creates a copy of the annotation, but with the type `underline`. This annotation code avoids having to highlight *and* underline the same text segment to have it in both places.
 
 ### Extracting Images
-- Extracting images only works in Obsidian. The respective images is saved in the `attachments` subfolder of the Obsidian destination folder, and named `{citekey}_image{n}.png`.
+- The respective images is saved in the `attachments` subfolder of the output folder, and named `{citekey}_image{n}.png`.
 - The images is embedded in the markdown file with the `![[ ]]` syntax, e.g. `![[filename.png|foobar]]`
 - Any `rectangle` type annotation in the PDF is extracted as image.
 - If the rectangle annotation has any comment, it is used as the alt-text for the image. (Note that some PDF readers like PDF Expert do not allow you to add a comment to rectangular annotations.)
 
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following Terminal command `brew upgrade pdfannots2json` in your terminal.
-- This workflow won't work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
+- This workflow does not work with annotations that are not actually saved in the PDF file. Some PDF Readers like __Skim__ or __Zotero 6__ do this, but you can [tell those PDF readers to save the notes in the actual PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
 - This workflow sometimes does not work when the PDF contains bigger free-form annotations (e.g., from using a stylus on a tablet). Delete all those annotations that are "free form" and the workflow should work.
 - When the hotkey does not work when triggered in Preview, most likely the Alfred app does not have permission to access the app. You can give Alfred permission in the macOS System Settings:
 <img src="https://i.imgur.com/ylGDs2f.png" alt="Permission for Alfred to access Preview" width=30%>

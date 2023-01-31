@@ -61,7 +61,7 @@
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>focusedappvariable</key>
 				<true/>
 				<key>focusedappvariablename</key>
@@ -79,8 +79,6 @@
 				<key>relatedApps</key>
 				<array>
 					<string>com.apple.finder</string>
-					<string>com.readdle.PDFExpert-Mac</string>
-					<string>net.highlightsapp.universal</string>
 				</array>
 				<key>relatedAppsMode</key>
 				<integer>1</integer>
@@ -174,69 +172,22 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>markdown</string>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>Markdown File</string>
-						<string>markdown</string>
-					</array>
-					<array>
-						<string>Obsidian</string>
-						<string>obsidian</string>
-					</array>
-				</array>
-			</dict>
-			<key>description</key>
-			<string>"Markdown File" will create a markdown file in the same directory as your PDF file. "Obsidian" requires setting an Obsidian destination inside your vault (see below).</string>
-			<key>label</key>
-			<string>Form of Output</string>
-			<key>type</key>
-			<string>popupbutton</string>
-			<key>variable</key>
-			<string>output_style</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string></string>
-				<key>filtermode</key>
-				<integer>1</integer>
-				<key>placeholder</key>
-				<string>~/my-vault/literature-notes</string>
-				<key>required</key>
-				<false/>
-			</dict>
-			<key>description</key>
-			<string>Only required when using Obsidian as output. Folder where your extracted annotations will be placed. Must be a folder inside your Obsidian vault.</string>
-			<key>label</key>
-			<string>Obsidian Destination</string>
-			<key>type</key>
-			<string>filepicker</string>
-			<key>variable</key>
-			<string>obsidian_destination</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string></string>
+				<string>~/Documents</string>
 				<key>filtermode</key>
 				<integer>1</integer>
 				<key>placeholder</key>
 				<string></string>
 				<key>required</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>description</key>
-			<string>Folder containing all PDFs</string>
+			<string>If folder is inside an Obsidian vault, will open the file in Obsidian after extraction.</string>
 			<key>label</key>
-			<string>Highlights.app only</string>
+			<string>Output Path</string>
 			<key>type</key>
 			<string>filepicker</string>
 			<key>variable</key>
-			<string>pdf_folder_highlights_app</string>
+			<string>output_path</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -256,7 +207,7 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Normally, this stay "pdfannots2json".</string>
+			<string>Advanced users only. Normally, this should stay "pdfannots2json". (`pdfannots` requries the respective pip package.)</string>
 			<key>label</key>
 			<string>Extraction Engine</string>
 			<key>type</key>

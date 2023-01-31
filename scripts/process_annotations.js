@@ -91,6 +91,8 @@ function run(argv) {
 	};
 
 	Array.prototype.useCorrectPageNum = function (pageNo) {
+		if (typeof pageNo !== "number") pageNo = parseInt(pageNo);
+
 		return (
 			this
 				// in case the page numbers have names like "image 1" instead of integers
@@ -297,14 +299,7 @@ function run(argv) {
 	//───────────────────────────────────────────────────────────────────────────
 	//───────────────────────────────────────────────────────────────────────────
 
-	function extractMetadata(_citekey, libraryFile) {
-		// Read Bibtex-Entry
-		// `--max-count` in case of duplicate citekeys, `--after-context=20` to retrieve
-		// full entry since grep does not work on multi-line
-		let bibtexEntry = app.doShellScript(
-			`grep --ignore-case --after-context=20 --max-count=1 "{${_citekey}," "${libraryFile}" || true`,
-		);
-
+	function extractMetadata(_citekey, bibtexEntry) {
 		bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
 
 		// Decode Bibtex
@@ -337,7 +332,7 @@ function run(argv) {
 			citekey: _citekey,
 		};
 
-		bibtexEntry.split("\r").forEach(property => {
+		bibtexEntry.split("\n").forEach(property => {
 			if (/\stitle =/i.test(property)) {
 				m.title = extract(property)
 					.replaceAll('"', "'") // to avoid invalid yaml, since title is wrapped in ""
@@ -375,7 +370,9 @@ function run(argv) {
 		return m;
 	}
 
-	function writeNote(annos, metad, useObsidian) {
+	//──────────────────────────────────────────────────────────────────────────────
+
+	function writeNote(annos, metad) {
 		const isoToday = new Date().toISOString().slice(0, 10);
 
 		const noteContent = `---
@@ -395,15 +392,24 @@ creation-date: ${isoToday}
 
 ${annos}`;
 
-		if (useObsidian) {
-			const path = $.getenv("obsidian_destination") + `/${metad.citekey}.md`;
-			writeToFile(noteContent, path);
+		const path = $.getenv("output_path") + `/${metad.citekey}.md`;
+		writeToFile(noteContent, path);
+
+		// automatically determine if file is an Obsidian Vault
+		const obsidianJsonFilePath = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
+		let isInObsidianVault = false;
+		const fileExists = Application("Finder").exists(Path(obsidianJsonFilePath));
+		if (fileExists) {
+			const vaults = JSON.parse(app.read(obsidianJsonFilePath)).vaults;
+			isInObsidianVault = Object.values(vaults).some(vault => path.startsWith(vault.path));
+		}
+
+		// open in Obsidian or reveal in Finder
+		if (isInObsidianVault) {
 			delay(0.1); // delay to ensure writing took place
 			app.openLocation("obsidian://open?path=" + encodeURIComponent(path));
 			app.setTheClipboardTo(`[[${metad.citekey}]]`); // copy wikilink
 		} else {
-			const path = $.getenv("filepath").replace(/\.pdf$/, ".md");
-			writeToFile(noteContent, path);
 			app.doShellScript(`open -R "${path}"`); // reveal in Finder
 		}
 	}
@@ -413,12 +419,11 @@ ${annos}`;
 
 	// import Alfred variables
 	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
-	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
-	const obsidianOutput = $.getenv("output_style") === "obsidian";
 	const citekey = argv[0];
 	const rawAnnotations = argv[1];
+	const entry = argv[2];
 
-	const metadata = extractMetadata(citekey, bibtexLibraryPath);
+	const metadata = extractMetadata(citekey, entry);
 	const annotations = JSON.parse(rawAnnotations)
 		// process input
 		.adapterForInput(usePdfannots)
@@ -436,5 +441,5 @@ ${annos}`;
 		.splitOffUnderlinesToDrafts()
 		.JSONtoMD(citekey);
 
-	writeNote(annotations, metadata, obsidianOutput);
+	writeNote(annotations, metadata);
 }
