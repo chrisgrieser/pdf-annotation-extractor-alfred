@@ -1,21 +1,10 @@
 #!/usr/bin/env osascript -l JavaScript
 function run(argv) {
 	ObjC.import("stdlib");
-	ObjC.import("Foundation");
 	const app = Application.currentApplication();
 	app.includeStandardAdditions = true;
 
-	//───────────────────────────────────────────────────────────────────────────
-	// import Alfred variables
-
-	const firstPageNo = parseInt($.getenv("first_page_no"));
-	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
-	const obsidianOutput = $.getenv("output_style") === "obsidian";
-
-	const citekey = $.getenv("citekey");
-	const keywords = $.getenv("keywords");
-	let tagsForYaml = "";
-
+	ObjC.import("Foundation");
 	function writeToFile(text, file) {
 		const str = $.NSString.alloc.initWithUTF8String(text);
 		str.writeToFileAtomicallyEncodingError(file, true, $.NSUTF8StringEncoding, null);
@@ -34,6 +23,9 @@ function run(argv) {
 		return capitalized;
 	};
 
+	// TODO add to function
+	let tagsForYaml = "";
+
 	//───────────────────────────────────────────────────────────────────────────
 	// Adapter Method
 
@@ -46,8 +38,21 @@ function run(argv) {
 	},
 	*/
 
-	// https://github.com/mgmeyers/pdfannots2json#sample-output
-	Array.prototype.adapter4pdfannots2json = function () {
+	Array.prototype.adapterForInput = function (usePdfAnnots) {
+		// pdfannots
+		if (usePdfAnnots)
+			return this.map(a => {
+				a.quote = a.text;
+				a.comment = a.contents;
+				switch (a.type) {
+					case "text":
+						a.type = "Free Comment";
+						break;
+				}
+				return a;
+			});
+
+		// pdfannots2json https://github.com/mgmeyers/pdfannots2json#sample-output
 		return this.map(a => {
 			a.quote = a.annotatedText;
 			switch (a.type) {
@@ -65,19 +70,6 @@ function run(argv) {
 					break;
 				case "image":
 					a.type = "Image";
-					break;
-			}
-			return a;
-		});
-	};
-
-	Array.prototype.adapter4pdfannots = function () {
-		return this.map(a => {
-			a.quote = a.text;
-			a.comment = a.contents;
-			switch (a.type) {
-				case "text":
-					a.type = "Free Comment";
 					break;
 			}
 			return a;
@@ -102,7 +94,7 @@ function run(argv) {
 		});
 	};
 
-	Array.prototype.insertAndCleanPageNo = function (pageNo) {
+	Array.prototype.useCorrectPageNum = function (pageNo) {
 		return (
 			this
 				// in case the page numbers have names like "image 1" instead of integers
@@ -110,6 +102,7 @@ function run(argv) {
 					if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
 					return a;
 				})
+				// add first page number to pdf page number
 				.map(a => {
 					a.page = (a.page + pageNo - 1).toString();
 					return a;
@@ -131,16 +124,17 @@ function run(argv) {
 
 		const textToDrafts = [...underlineAnnos, ...underScoreHls];
 		if (textToDrafts.length > 0) {
-			const draftsInbox =
-				app.pathTo("home folder") +
-				`/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/${citekey}.md`;
+			// prettier-ignore
+			const timestamp = new Date().toISOString().slice(0, 19).replaceAll(":", "-"); /* eslint-disable-line no-magic-numbers, newline-per-chained-call */
+			// prettier-ignore
+			const draftsInbox = app.pathTo("home folder") + `/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/annotation_${timestamp}.md`;
 			writeToFile(textToDrafts.JSONtoMD(), draftsInbox);
 		}
 
 		return this.filter(a => a.type !== "Underline");
 	};
 
-	Array.prototype.JSONtoMD = function () {
+	Array.prototype.JSONtoMD = function (_citekey) {
 		const formattedAnnos = this.map(a => {
 			let comment, output;
 			let annotationTag = "";
@@ -162,7 +156,7 @@ function run(argv) {
 			}
 
 			// Pandoc Citation
-			const reference = `[@${citekey}, p. ${a.page}]`;
+			const reference = `[@${_citekey}, p. ${a.page}]`;
 
 			// type specific output
 			switch (a.type) {
@@ -184,14 +178,14 @@ function run(argv) {
 					}
 					break;
 				case "Free Comment": // free comments = block quote (my comments)
-					comment = comment.replaceAll("\n", "\n> "); 
+					comment = comment.replaceAll("\n", "\n> ");
 					output = `> ${annotationTag}${comment} ${reference}`;
 					break;
 				case "Heading":
 					output = "\n" + comment;
 					break;
 				case "Question Callout": // blockquoted comment
-					comment = comment.replaceAll("\n", "\n> "); 
+					comment = comment.replaceAll("\n", "\n> ");
 					output = `> [!QUESTION]\n> ${comment}\n`;
 					break;
 				case "Image":
@@ -262,11 +256,11 @@ function run(argv) {
 	};
 
 	// images / rectangle annotations (pdfannots2json only)
-	Array.prototype.insertImage4pdfannots2json = function () {
+	Array.prototype.insertImage4pdfannots2json = function (filename) {
 		let i = 1;
 		return this.map(a => {
 			if (a.type !== "Image") return a;
-			a.image = `${citekey}_image${i}.png`;
+			a.image = `${filename}_image${i}.png`;
 			if (a.comment) a.image += "|" + a.comment; // add alias
 			i++;
 			return a;
@@ -274,7 +268,7 @@ function run(argv) {
 	};
 
 	// "="
-	Array.prototype.transformTag4yaml = function () {
+	Array.prototype.transformTag4yaml = function (keywords) {
 		let newKeywords = [];
 
 		// existing tags (from BibTeX library)
@@ -304,44 +298,114 @@ function run(argv) {
 	};
 
 	//───────────────────────────────────────────────────────────────────────────
+	//───────────────────────────────────────────────────────────────────────────
+	//───────────────────────────────────────────────────────────────────────────
 
-	function writeNote(annotations) {
-		const isoToday = new Date().toISOString().slice(0, 10);
+	function extractMetadata(_citekey, libraryFile) {
+		// Read Bibtex-Entry
+		// `--max-count` in case of duplicate citekeys, `--after-context=20` to retrieve
+		// full entry since grep does not work on multi-line
+		let bibtexEntry = app.doShellScript(
+			`grep --ignore-case --after-context=20 --max-count=1 "{${_citekey}," "${libraryFile}" || true`,
+		);
 
-		function env(envVar) {
-			let out;
-			try {
-				out = $.getenv(envVar);
-			} catch (e) {
-				out = "";
-			}
-			return out;
+		bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
+
+		// Decode Bibtex
+		// prettier-ignore
+		const germanChars = ['{\\"u};ü', '{\\"a};ä', '{\\"o};ö', '{\\"U};Ü', '{\\"A};Ä', '{\\"O};Ö', '\\"u;ü', '\\"a;ä', '\\"o;ö', '\\"U;Ü', '\\"A;Ä', '\\"O;Ö', "\\ss;ß", "{\\ss};ß"];
+		// prettier-ignore
+		const otherChars = ["{\\~n};ñ", "{\\'a};á", "{\\'e};é", "{\\v c};č", "\\c{c};ç", "\\o{};ø", "\\^{i};î", '\\"{i};î', '\\"{i};ï', "{\\'c};ć", '\\"e;ë'];
+		const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
+		[...germanChars, ...otherChars, ...specialChars].forEach(pair => {
+			const half = pair.split(";");
+			bibtexEntry = bibtexEntry.replaceAll(half[0], half[1]);
+		});
+
+		// extracts content of a BibTeX-field
+		function extract(str) {
+			str = str.split(" = ")[1];
+			return str.replace(/[{}]|,$/g, ""); // remove TeX-syntax & trailing comma
 		}
 
+		// parse BibTeX entry
+		const m = {
+			title: "",
+			ptype: "",
+			firstPage: "",
+			author: "",
+			year: "",
+			keywords: "",
+			url: "",
+			doi: "",
+			citekey: _citekey,
+		};
+
+		bibtexEntry.split("\r").forEach(property => {
+			if (/\stitle =/i.test(property)) {
+				m.title = extract(property)
+					.replaceAll('"', "'") // to avoid invalid yaml, since title is wrapped in ""
+					.replaceAll(":", "."); // to avoid invalid yaml
+			} else if (property.includes("@")) m.ptype = property.replace(/@(.*)\{.*/, "$1");
+			else if (property.includes("pages =")) m.firstPage = property.match(/\d+/)[0];
+			else if (property.includes("author =")) m.author = extract(property);
+			else if (/\syear =/i.test(property)) m.year = property.match(/\d{4}/)[0];
+			else if (property.includes("date =")) m.year = property.match(/\d{4}/)[0];
+			else if (property.includes("keywords =")) {
+				m.keywords = extract(property)
+					.replaceAll(" ", "-") // no spaces allowed in tags
+					.replaceAll(",-", ",");
+			} else if (property.includes("doi =")) {
+				m.url = "https://doi.org/" + extract(property);
+				m.doi = extract(property);
+			} else if (property.includes("url =")) m.url = extract(property);
+		});
+
+		// prompt for page number if needed
+		if (!m.firstPage) {
+			let response;
+			let validInput = false;
+			while (!validInput) {
+				response = app.displayDialog(
+					"BibTeX Entry does not include page numbers.\n\nPlease enter the page number of the first PDF page.",
+					{ defaultAnswer: "", buttons: ["OK"], defaultButton: "OK" },
+				);
+				validInput = response.textReturned.match(/^\d+$/);
+				if (!validInput) app.displayNotification("", { withTitle: "⚠️ Input not a number." });
+			}
+			m.firstPage = response.textReturned;
+		}
+
+		return m;
+	}
+
+	function writeNote(annotations, metad, useObsidian) {
+		const isoToday = new Date().toISOString().slice(0, 10);
+
 		const noteContent = `---
-aliases: "${env("title")}"
+aliases: "${metad.title}"
 tags: literature-note, ${tagsForYaml}
-citekey: ${env("citekey")}
-year: ${env("year")}
-author: "${env("author")}"
-publicationType: ${env("ptype")}
-url: ${env("url")}
-doi: ${env("doi")}
+citekey: ${metad.citekey}
+year: ${metad.year}
+author: "${metad.author}"
+publicationType: ${metad.ptype}
+url: ${metad.url}
+doi: ${metad.doi}
 creation-date: ${isoToday}
 obsidianUIMode: preview
 ---
 
-# ${env("title")}
+# ${metad.title}
 
 ${annotations}
 `;
 
-		if (obsidianOutput) {
-			const path = $.getenv("obsidian_destination") + `/${citekey}.md`;
+		if (useObsidian) {
+			const path = $.getenv("obsidian_destination") + `/${metad.citekey}.md`;
 			writeToFile(noteContent, path);
 			delay(0.1); // delay to ensure writing took place
 			app.openLocation("obsidian://open?path=" + encodeURIComponent(path));
-			app.setTheClipboardTo(`[[${citekey}]]`); // copy wikilink
+			app.setTheClipboardTo(`[[${metad.citekey}]]`); // copy wikilink
 		} else {
 			const path = $.getenv("filepath").replace(/\.pdf$/, ".md");
 			writeToFile(noteContent, path);
@@ -351,14 +415,19 @@ ${annotations}
 
 	//───────────────────────────────────────────────────────────────────────────
 	// MAIN
-	let annos = JSON.parse(argv[0]);
 
-	// select right adapter method
-	annos = usePdfannots ? annos.adapter4pdfannots() : annos.adapter4pdfannots2json();
+	// import Alfred variables
+	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
+	const bibtexLibraryPath = $.getenv("bibtex_library_path").replace(/^~/, app.pathTo("home folder"));
+	const obsidianOutput = $.getenv("output_style") === "obsidian";
+	const citekey = $.getenv("citekey");
+	const rawAnnotations = argv[0];
 
-	annos = annos
+	const metadata = extractMetadata(citekey, bibtexLibraryPath);
+	const annos = JSON.parse(rawAnnotations)
 		// process input
-		.insertAndCleanPageNo(firstPageNo)
+		.adapterForInput(usePdfannots)
+		.useCorrectPageNum(metadata.firstPage)
 		.cleanQuoteKey()
 
 		// annotation codes & images
@@ -366,11 +435,11 @@ ${annotations}
 		.transformHeadings()
 		.questionCallout()
 		.transformTag4yaml()
-		.insertImage4pdfannots2json()
+		.insertImage4pdfannots2json(citekey)
 
 		// finalize
 		.splitOffUnderlinesToDrafts()
-		.JSONtoMD();
+		.JSONtoMD(citekey);
 
-	writeNote(annos);
+	writeNote(annos, metadata, obsidianOutput);
 }

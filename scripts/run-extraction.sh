@@ -3,20 +3,22 @@
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 [[ ! -e "$alfred_workflow_cache" ]] && mkdir -p "$alfred_workflow_cache"
 
-#-------------------------------------------------------------------------------
+pdf_path="$*"
+
+#───────────────────────────────────────────────────────────────────────────────
 # PDFANNOTS
 if [[ "$extraction_engine" == "pdfannots" ]]; then
-	pdfannots --no-group --format=json "$filepath"
+	annotations=$(pdfannots --no-group --format=json "$pdf_path")
 	exit 0
 fi
 
-#-------------------------------------------------------------------------------
+#───────────────────────────────────────────────────────────────────────────────
 # PDFANNOTS2JSON
 
 IMAGE_FOLDER="${obsidian_destination/#\~/$HOME}/attachments/image_temp"
 mkdir -p "$IMAGE_FOLDER" && cd "$IMAGE_FOLDER" || exit 1
 
-pdfannots2json "$filepath" --image-output-path=./ --image-format="png"
+annotations=$(pdfannots2json "$pdf_path" --image-output-path=./ --image-format="png")
 
 # IMAGE EXTRACTION
 # shellcheck disable=SC2012
@@ -38,3 +40,7 @@ for image in *; do
 done
 
 rmdir "$IMAGE_FOLDER" # remove temp folder
+
+#───────────────────────────────────────────────────────────────────────────────
+
+echo -n "$annotations"

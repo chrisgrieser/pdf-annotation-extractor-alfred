@@ -18,14 +18,5 @@ if [[ -z "$entry" ]] ; then
 	exit 1
 fi
 
-metadata=$(osascript -l JavaScript "./scripts/read-bibtex-library.js" "$pdf_path")
-echo -n "$metadata"
-
-# TODO activate when page number recognition via JXA is implemented
-# first_page=$(echo "$entry" | grep "pages =" | grep --only-matching "\d*" | head -n1)
-# if [[ -z "$first_page" ]]; then
-# 	echo -n "no page number"
-# else
-# 	echo -n "$first_page"
-# fi
-
+# ;; used as variable delimiter by Alfred splitter
+echo -n "$citekey;;$pdf_path"
