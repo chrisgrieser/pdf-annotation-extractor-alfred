@@ -23,14 +23,14 @@ fi
 citekey=$(basename "$pdf_path" .pdf | sed -E 's/_.*//')
 entry=$(grep --after-context=20 --max-count=1 --ignore-case "{$citekey," "$bibtex_library_path")
 if [[ -z "$entry" ]]; then
-	notify "Error" "No entry with the citekey $citekey not found in library file."
+	notify "Error" "No entry with the citekey $citekey found in library file."
 	exit 1
 fi
 
 if [[ "$extraction_engine" == "pdfannots" ]] && ! command -v pdfannots; then
 	notify "Error" "pdfannots not installed."
 	exit 1
-elif [[ "$extraction_engine" != "pdfannots" ]] && ! command -v pdfannots2json; then
+elif [[ "$extraction_engine" == "pdfannots2json" ]] && ! command -v pdfannots2json; then
 	notify "Error" "pdfannots2json not installed."
 	exit 1
 fi
@@ -54,7 +54,7 @@ else
 	NUMBER_OF_IMAGES=$(ls | wc -l | tr -d " ")
 	[[ $NUMBER_OF_IMAGES -eq 0 ]] && exit 0 # abort if no images
 
-	# HACK: fix zero-padding for low page numbers, all images get 4 digits.
+	# HACK: fix zero-padding for low page numbers by giving all images 4 digits
 	# see https://github.com/mgmeyers/pdfannots2json/issues/16
 	for image in *; do
 		leftPadded=$(echo "$image" | sed -E 's/-([[:digit:]])-/-000\1-/' | sed -E 's/-([[:digit:]][[:digit:]])-/-00\1-/' | sed -E 's/-([[:digit:]][[:digit:]][[:digit:]])-/-0\1-/')
