@@ -1,3 +1,11 @@
+- 2023-01-31	release 8.4.1
+- 2023-01-31	revert: hotkey for Highlights.app
+- 2023-01-31	chore
+- 2023-01-31	chore: added validation
+- 2023-01-31	chore
+- 2023-01-31	chore
+- 2023-01-31	chore
+- 2023-01-31	chore
 - 2023-01-31	release 8.4.0
 - 2023-01-31	refactor!: remove hotkey from Highlights/PDF-Exp.
 - 2023-01-31	release 8.3.1
