@@ -5,29 +5,33 @@ export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 #───────────────────────────────────────────────────────────────────────────────
 # READ SETTINGS
 
-# default_settings=$(cat <<EOF
-# bibtex_library_path="~/Documents/library.bib"
-# output_path="~/Desktop"
-#
-# # pdfannots2json or pdfannots. Should normally stay "pdfannots2json"
-# extraction_engine="pdfannots2json"
-# EOF
-# )
-# settings_folder="$HOME/.config/pdf-annotation-extractor"
-# settings_file="$settings_folder/pdf-annotation-extractor-config"
-#
-# if [[ ! -e "$settings_file" ]]; then
-# 	mkdir -p "$settings_folder"
-# 	echo "$default_settings" > "$settings_file"
-# 	open "$settings_file"
-# 	osascript -e 'display alert "Enter your settings and then run again."'
-# 	exit 0
-# fi
-# settings=$(grep -v -e "^#" < "$settings_file") # remove comments
-#
-# bibtex_library_path=$(echo "$settings" | grep "bibtex_library_path" | cut -d "=" -f2 | tr -d '"')
-# extraction_engine=$(echo "$settings" | grep "extraction_engine" | cut -d "=" -f2 | tr -d '"')
-# output_path=$(echo "$settings" | grep "output_path" | cut -d "=" -f2 | tr -d '"')
+default_settings=$(cat <<EOF
+bibtex_library_path="~/Documents/library.bib"
+
+# If path is in Obsidian vault, will open the note in Obsidian afterwards
+output_path="~/Desktop"
+
+# pdfannots2json or pdfannots. Should normally stay "pdfannots2json"
+extraction_engine="pdfannots2json"
+EOF
+)
+settings_folder="$HOME/.config/pdf-annotation-extractor"
+settings_file="$settings_folder/pdf-annotation-extractor-config"
+
+if [[ ! -e "$settings_file" ]]; then
+	mkdir -p "$settings_folder"
+	echo "$default_settings" > "$settings_file"
+	open "$settings_file"
+	osascript -e 'display alert "Enter your settings and then run again."'
+	exit 0
+fi
+settings=$(grep -v -e "^#" < "$settings_file") # remove comments
+
+bibtex_library_path=$(echo "$settings" | grep "bibtex_library_path" | cut -d "=" -f2 | tr -d '"')
+bibtex_library_path="${bibtex_library_path/#\~/$HOME}"
+output_path=$(echo "$settings" | grep "output_path" | cut -d "=" -f2 | tr -d '"')
+output_path="${output_path/#\~/$HOME}"
+extraction_engine=$(echo "$settings" | grep "extraction_engine" | cut -d "=" -f2 | tr -d '"')
 
 #───────────────────────────────────────────────────────────────────────────────
 # Input
