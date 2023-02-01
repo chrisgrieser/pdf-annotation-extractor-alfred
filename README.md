@@ -48,7 +48,7 @@ Use the hotkey to trigger the Annotation Extraction on the PDF file currently se
 
 __Annotation Types extracted__
 - Highlight ➡️ bullet point, quoting text and prepending the comment
-- Underline ➡️ output to [Drafts.app](https://getdrafts.com/); they are not included in the annotations. (Requires turning on automatic file import in the drafts settings.)
+- Underline ➡️ output to [Drafts.app](https://getdrafts.com/); they are not included in the annotations. 
 - Free Comment ➡️ blockquote of the comment text
 - Strikethrough ➡️ Markdown strikethrough
 - Rectangle ➡️ image
