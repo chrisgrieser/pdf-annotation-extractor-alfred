@@ -7,4 +7,5 @@ Automatically determines correct page numbers, merges highlights across page bre
 
 ---
 
+## ⚠️ Deprecation
 This workflow has been archived. You can use the successor, [PDF Annotation Extractor](https://github.com/chrisgrieser/pdf-annotation-extractor), which offers roughly the same functionality, but works without Alfred.
