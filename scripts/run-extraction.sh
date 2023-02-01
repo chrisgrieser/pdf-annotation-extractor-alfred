@@ -2,43 +2,42 @@
 # shellcheck disable=2164,2154
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
-function notify() {
-	osascript -e "display notification \"$2\" with title \"$1\""
-}
-
 #───────────────────────────────────────────────────────────────────────────────
 # GUARD CLAUSES & RETRIEVE CITEKEY
 
+function errorMsg() {
+	osascript -e "display alert \"$1\" as critical"
+}
+
 if [[ ! -f "$bibtex_library_path" ]]; then
-	notify "Error" "Library file does not exist."
+	errorMsg "Library file does not exist."
 	exit 1
 fi
 
 pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
 if [[ ! "$pdf_path" == *.pdf ]]; then
-	notify "Error" "Not a .pdf file."
+	errorMsg "Not a .pdf file."
 	exit 1
 fi
 
 citekey=$(basename "$pdf_path" .pdf | sed -E 's/_.*//')
 entry=$(grep --after-context=20 --max-count=1 --ignore-case "{$citekey," "$bibtex_library_path")
 if [[ -z "$entry" ]]; then
-	notify "Error" "No entry with the citekey $citekey found in library file."
+	errorMsg "No entry with the citekey $citekey found in library file."
 	exit 1
 fi
 
 if [[ "$extraction_engine" == "pdfannots" ]] && ! command -v pdfannots; then
-	notify "Error" "pdfannots not installed."
+	errorMsg "pdfannots not installed."
 	exit 1
 elif [[ "$extraction_engine" == "pdfannots2json" ]] && ! command -v pdfannots2json; then
-	notify "Error" "pdfannots2json not installed."
+	errorMsg "pdfannots2json not installed."
 	exit 1
 fi
 
 #───────────────────────────────────────────────────────────────────────────────
 # EXTRACTION
-
-notify "Annotation Extractor" "⏳ Running Extraction…"
+osascript -e 'display notification "⏳ Running Extraction…" with title "Annotation Extractor"'
 
 if [[ "$extraction_engine" == "pdfannots" ]]; then
 	annotations=$(pdfannots --no-group --format=json "$pdf_path")
@@ -75,4 +74,4 @@ fi
 #───────────────────────────────────────────────────────────────────────────────
 
 # PROCESS ANNOTATIONS
-osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations" "$entry" "$pdf_path"
+osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations" "$entry" 
