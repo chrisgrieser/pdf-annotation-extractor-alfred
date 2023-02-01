@@ -74,4 +74,4 @@ fi
 #───────────────────────────────────────────────────────────────────────────────
 
 # PROCESS ANNOTATIONS
-osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations" "$entry" 
+osascript -l JavaScript "./scripts/process_annotations.js" "$citekey" "$annotations" "$entry" "$output_path" "$extraction_engine"

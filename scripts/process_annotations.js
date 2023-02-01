@@ -29,13 +29,13 @@ function run(argv) {
 	//───────────────────────────────────────────────────────────────────────────
 	// Core Methods
 
-	/* SIGNATURE EXPECTED BY THIS WORKFLOW
-	{
+	/* signature expected by this workflow
+	[{
 		"type": enum, ("Free Text" | "Highlight" | "Underline" | "Free Comment" | "Image" | "Strikethrough")
 		"comment"?: string, (user-written comment for the annotation)
 		"quote"?: string, (text marked in the pdf)
 		"imagePath"?: string,
-	},
+	}],
 	*/
 
 	Array.prototype.adapterForInput = function (usePdfAnnots) {
@@ -94,19 +94,15 @@ function run(argv) {
 	Array.prototype.useCorrectPageNum = function (pageNo) {
 		if (typeof pageNo !== "number") pageNo = parseInt(pageNo);
 
-		return (
-			this
-				// in case the page numbers have names like "image 1" instead of integers
-				.map(a => {
-					if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
-					return a;
-				})
-				// add first page number to pdf page number
-				.map(a => {
-					a.page = (a.page + pageNo - 1).toString();
-					return a;
-				})
-		);
+		return this.map(a => {
+			// in case the page numbers have names like "image 1" instead of integers
+			if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
+			return a;
+		}).map(a => {
+			// add first page number to pdf page number
+			a.page = (a.page + pageNo - 1).toString();
+			return a;
+		});
 	};
 
 	// underlines
@@ -366,7 +362,7 @@ function run(argv) {
 
 	//──────────────────────────────────────────────────────────────────────────────
 
-	function writeNote(annos, metad) {
+	function writeNote(annos, metad, outputPath) {
 		const isoToday = new Date().toISOString().slice(0, 10);
 
 		const noteContent = `---
@@ -386,7 +382,7 @@ creation-date: ${isoToday}
 
 ${annos}`;
 
-		const path = $.getenv("output_path") + `/${metad.citekey}.md`;
+		const path = outputPath + `/${metad.citekey}.md`;
 		writeToFile(noteContent, path);
 
 		// automatically determine if file is an Obsidian Vault
@@ -412,10 +408,11 @@ ${annos}`;
 	// MAIN
 
 	// import Alfred variables
-	const usePdfannots = $.getenv("extraction_engine") === "pdfannots";
 	const citekey = argv[0];
 	const rawAnnotations = argv[1];
 	const entry = argv[2];
+	const outPath = argv[3];
+	const usePdfannots = argv[4] === "pdfannots";
 
 	const metadata = extractMetadata(citekey, entry);
 	const annotations = JSON.parse(rawAnnotations)
@@ -435,5 +432,5 @@ ${annos}`;
 		.splitOffUnderlinesToDrafts()
 		.JSONtoMD(citekey); // returns a string
 
-	writeNote(annotations, metadata);
+	writeNote(annotations, metadata, outPath);
 }
