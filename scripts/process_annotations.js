@@ -1,4 +1,5 @@
 #!/usr/bin/env osascript -l JavaScript
+
 function run(argv) {
 	ObjC.import("stdlib");
 	const app = Application.currentApplication();
@@ -121,14 +122,9 @@ function run(argv) {
 		});
 
 		const textToDrafts = [...underlineAnnos, ...underScoreHls];
-
-		if (textToDrafts.length === 0) return this;
-
-		// prettier-ignore
-		const timestamp = new Date().toISOString().slice(0, 19).replaceAll(":", "-"); /* eslint-disable-line no-magic-numbers, newline-per-chained-call */
-		// prettier-ignore
-		const draftsInbox = app.pathTo("home folder") + `/Library/Mobile Documents/iCloud~com~agiletortoise~Drafts5/Documents/Inbox/annotation_${timestamp}.md`;
-		writeToFile(textToDrafts.JSONtoMD(), draftsInbox);
+		if (textToDrafts.length > 0) {
+			Application("Drafts").Draft({ content: textToDrafts.JSONtoMD() }).make();
+		}
 		return this.filter(a => a.type !== "Underline");
 	};
 
@@ -300,7 +296,7 @@ function run(argv) {
 	//───────────────────────────────────────────────────────────────────────────
 
 	function extractMetadata(_citekey, bibtexEntry) {
-		bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekys
+		bibtexEntry = "@" + bibtexEntry.split("@")[1]; // cut following citekeys
 
 		// Decode Bibtex
 		// prettier-ignore
@@ -343,9 +339,7 @@ function run(argv) {
 			else if (/\syear =/i.test(property)) m.year = property.match(/\d{4}/)[0];
 			else if (property.includes("date =")) m.year = property.match(/\d{4}/)[0];
 			else if (property.includes("keywords =")) {
-				m.keywords = extract(property)
-					.replaceAll(" ", "-") // no spaces allowed in tags
-					.replaceAll(",-", ",");
+				m.keywords = extract(property).replaceAll(", ", ",").replaceAll(" ", "-"); // no spaces allowed in tags
 			} else if (property.includes("doi =")) {
 				m.url = "https://doi.org/" + extract(property);
 				m.doi = extract(property);
@@ -439,7 +433,7 @@ ${annos}`;
 
 		// finalize
 		.splitOffUnderlinesToDrafts()
-		.JSONtoMD(citekey);
+		.JSONtoMD(citekey); // returns a string
 
 	writeNote(annotations, metadata);
 }
