@@ -85,6 +85,8 @@ Insert these special codes at the __beginning__ of an annotation to invoke speci
 make release
 ```
 
+Then enter the next version number.
+
 ## Credits
 <!-- vale Google.FirstPerson = NO -->
 ### Thanks
