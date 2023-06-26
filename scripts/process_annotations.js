@@ -147,6 +147,7 @@ function splitOffUnderlines(annotations, citekey) {
  * @param {string} citekey
  */
 function jsonToMd(annotations, citekey) {
+	let firstItem = true;
 	const formattedAnnos = annotations.map((a) => {
 		let comment, output;
 		let annotationTag = "";
@@ -194,7 +195,9 @@ function jsonToMd(annotations, citekey) {
 				output = `> ${annotationTag}${comment} ${reference}`;
 				break;
 			case "Heading":
-				output = "\n" + comment;
+				// ensure no leading line break when heading is first item
+				if (firstItem) output = "## ";
+				else output = "\n" + comment;
 				break;
 			case "Question Callout": // blockquoted comment
 				comment = comment.replaceAll("\n", "\n> ");
@@ -205,6 +208,7 @@ function jsonToMd(annotations, citekey) {
 				break;
 			default:
 		}
+		firstItem = false;
 		return output;
 	});
 

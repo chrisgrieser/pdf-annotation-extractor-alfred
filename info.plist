@@ -81,9 +81,10 @@
 				<integer>0</integer>
 				<key>relatedApps</key>
 				<array>
-					<string>com.apple.finder</string>
-					<string>com.readdle.PDFExpert-Mac</string>
 					<string>net.highlightsapp.universal</string>
+					<string>com.readdle.PDFExpert-Mac</string>
+					<string>com.apple.Preview</string>
+					<string>com.apple.finder</string>
 				</array>
 				<key>relatedAppsMode</key>
 				<integer>1</integer>

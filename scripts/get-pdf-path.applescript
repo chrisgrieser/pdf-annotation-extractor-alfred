@@ -17,11 +17,12 @@ end if
 # Finder
 if (frontApp is "Finder" or frontApp is "PDF Expert") then
 	tell application "Finder" to set sel to selection
-	if ((count sel) > 1) then
-		set firstItem to item 1 of sel
-		set current_file to POSIX path of (firstItem as text)
-	else
+	if ((count sel) = 0) then
+		set current_file to "No file selected."
+	else if ((count sel) = 1) then
 		set current_file to POSIX path of (sel as text)
+	else 
+		set current_file to "More than one file selected."
 	end if
 end if
 

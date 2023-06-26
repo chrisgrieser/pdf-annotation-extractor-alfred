@@ -2,15 +2,10 @@
 # shellcheck disable=2164,2154
 export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
-
-#───────────────────────────────────────────────────────────────────────────────
-# Alfred subfolder where the scripts are located
-script_location="./pdf-annotation-extraction"
-
 #───────────────────────────────────────────────────────────────────────────────
 
 # Input
-pdf_path=$(osascript "$script_location/get-pdf-path.applescript")
+pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
 
 #───────────────────────────────────────────────────────────────────────────────
 # GUARD CLAUSES & CITEKEY RETRIEVAL
@@ -18,9 +13,13 @@ pdf_path=$(osascript "$script_location/get-pdf-path.applescript")
 if [[ ! -f "$bibtex_library_path" ]]; then
 	echo "⚠️ Library file does not exist."
 	exit 1
-fi
-
-if [[ "$pdf_path" != *.pdf ]]; then
+elif [[ "$pdf_path" == "No file selected." ]]; then
+	echo "⚠️ No file selected."
+	exit 1
+elif [[ "$pdf_path" == "More than one file selected." ]]; then
+	echo "⚠️ More than one file selected."
+	exit 1
+elif [[ "$pdf_path" != *.pdf ]]; then
 	echo "⚠️ Not a .pdf file."
 	exit 1
 fi
@@ -79,5 +78,5 @@ fi
 #───────────────────────────────────────────────────────────────────────────────
 
 # PROCESS ANNOTATIONS
-JS_script_path="$script_location/process_annotations.js"
-osascript -l JavaScript "$JS_script_path" "$citekey" "$annotations" "$entry" "$output_path" "$extraction_engine"
+osascript -l JavaScript "./scripts/process_annotations.js" \
+	"$citekey" "$annotations" "$entry" "$output_path" "$extraction_engine"
