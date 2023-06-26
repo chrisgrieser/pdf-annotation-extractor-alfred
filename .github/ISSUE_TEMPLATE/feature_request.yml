@@ -22,6 +22,4 @@ body:
       options:
         - label: The feature would be useful to more users than just me.
           required: true
-        - label: "I have read the README and also checked that the `aconf` does not already offer an option for the feature I am requesting."
-          required: true
 
