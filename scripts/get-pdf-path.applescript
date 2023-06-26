@@ -2,8 +2,7 @@
 
 tell application "System Events" to set frontApp to (name of first process where it is frontmost)
 
-# PDF Expert
-# opens Finder and then lets the Finder part do its thing
+# PDF Expert: # opens Finder, so the subsequent block can do it's work
 if (frontApp is "PDF Expert") then
 	tell application "System Events"
 		tell process "PDF Expert"
@@ -15,12 +14,22 @@ if (frontApp is "PDF Expert") then
 	delay 0.5
 end if
 
-# Highlights
-# HACK to get filepath, requires "pdf_folder_highlights_app" being set
+# Finder
+if (frontApp is "Finder" or frontApp is "PDF Expert") then
+	tell application "Finder" to set sel to selection
+	if ((count sel) > 1) then
+		set firstItem to item 1 of sel
+		set current_file to POSIX path of (firstItem as text)
+	else
+		set current_file to POSIX path of (sel as text)
+	end if
+end if
+
+# Highlights # HACK to get filepath
 if (frontApp is "Highlights") then
 
 	# resolved PDF Folder
-	set pdfFolder to (system attribute "pdf_folder_highlights_app")
+	set pdfFolder to (system attribute "pdf_folder")
 	set AppleScript's text item delimiters to "~/"
 	set theTextItems to every text item of pdfFolder
 	set AppleScript's text item delimiters to (POSIX path of (path to home folder as string))
@@ -38,7 +47,7 @@ if (frontApp is "Highlights") then
 	set AppleScript's text item delimiters to " – "
 	set filename to text item 1 of frontWindow
 
-	set current_file to do shell script ("find '" & pdfFolder & "' -type f -name '" & filename & "'")
+	set current_file to do shell script ("find " & (quoted form of pdfFolder) & " -type f -name " & (quoted form of filename))
 end if
 
 current_file # direct return

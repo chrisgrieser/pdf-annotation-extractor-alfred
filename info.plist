@@ -4,13 +4,15 @@
 <dict>
 	<key>bundleid</key>
 	<string>de.chris-grieser.pdf-annotation-extraction</string>
+	<key>category</key>
+	<string>⭐️</string>
 	<key>connections</key>
 	<dict>
-		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
+		<key>65783839-9CCB-48D0-A740-1F7BF96926D1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
+				<string>0C315F47-D751-4D59-8DFA-2CFC7BF581A2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -19,8 +21,32 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</key>
-		<array/>
+		<key>77F6FCC3-FA68-477B-BBB0-40F8C4911955</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65783839-9CCB-48D0-A740-1F7BF96926D1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD293D43-2356-49DB-AD4F-DBA5FDE026C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3069BB02-5E48-40CF-9DD8-337C5FA9F054</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Chris Grieser</string>
@@ -40,9 +66,9 @@
 				<key>argument</key>
 				<integer>0</integer>
 				<key>focusedappvariable</key>
-				<true/>
+				<false/>
 				<key>focusedappvariablename</key>
-				<string>focusedapp</string>
+				<string></string>
 				<key>hotkey</key>
 				<integer>0</integer>
 				<key>hotmod</key>
@@ -52,10 +78,11 @@
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>relatedApps</key>
 				<array>
 					<string>com.apple.finder</string>
+					<string>com.readdle.PDFExpert-Mac</string>
 					<string>net.highlightsapp.universal</string>
 				</array>
 				<key>relatedAppsMode</key>
@@ -64,7 +91,7 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>5B84D786-4228-4895-B183-DF571B003C75</string>
+			<string>77F6FCC3-FA68-477B-BBB0-40F8C4911955</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -80,16 +107,81 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>scripts/run-extraction.sh</string>
+				<string>./scripts/run-extraction.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</string>
+			<string>65783839-9CCB-48D0-A740-1F7BF96926D1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0C315F47-D751-4D59-8DFA-2CFC7BF581A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>qlmanage -p "./cheatsheet-pdf-annotation-extractor.md"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3069BB02-5E48-40CF-9DD8-337C5FA9F054</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>acodes</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Cheatsheet for PDF Annotation Extractor</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD293D43-2356-49DB-AD4F-DBA5FDE026C5</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -122,31 +214,130 @@ Extract Annotations as Markdown, insert Pandoc Citations with correct page numbe
 [Ko-Fi](https://ko-fi.com/pseudometa)</string>
 	<key>uidata</key>
 	<dict>
-		<key>5B84D786-4228-4895-B183-DF571B003C75</key>
+		<key>0C315F47-D751-4D59-8DFA-2CFC7BF581A2</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>7</integer>
+			<integer>9</integer>
 			<key>note</key>
-			<string>DOUBLE CLICK THIS to define Hotkey</string>
+			<string>reports error messages</string>
 			<key>xpos</key>
-			<real>30</real>
+			<real>350</real>
 			<key>ypos</key>
-			<real>35</real>
+			<real>75</real>
 		</dict>
-		<key>5EE42C29-6B2C-42C9-BF53-12C26B7B22D8</key>
+		<key>3069BB02-5E48-40CF-9DD8-337C5FA9F054</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>2</integer>
+			<integer>9</integer>
+			<key>xpos</key>
+			<real>195</real>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>65783839-9CCB-48D0-A740-1F7BF96926D1</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>run extraction</string>
 			<key>xpos</key>
-			<real>215</real>
+			<real>195</real>
 			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>77F6FCC3-FA68-477B-BBB0-40F8C4911955</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>note</key>
+			<string>run PDF annotation extractor</string>
+			<key>xpos</key>
 			<real>35</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>CD293D43-2356-49DB-AD4F-DBA5FDE026C5</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
+			<key>note</key>
+			<string>cheatsheet for PDF Annotation Extractor</string>
+			<key>xpos</key>
+			<real>35</real>
+			<key>ypos</key>
+			<real>220</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>2</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The .bib file containing your library.</string>
+			<key>label</key>
+			<string>BibTeX Library Path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>bibtex_library_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Documents</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>If folder is inside an Obsidian vault, will open the file in Obsidian after extraction.</string>
+			<key>label</key>
+			<string>Output Path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>output_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>pdfannots2json</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>pdfannots2json</string>
+						<string>pdfannots2json</string>
+					</array>
+					<array>
+						<string>pdfannots</string>
+						<string>pdfannots</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Advanced users only. Normally, this should stay "pdfannots2json". (`pdfannots` requries the respective pip package.)</string>
+			<key>label</key>
+			<string>Extraction Engine</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>extraction_engine</string>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
