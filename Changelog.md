@@ -1,3 +1,3 @@
+- 2023-06-27	release 8.7.0
+- 2023-06-27	feat: underlines to SideNotes
 - 2023-06-27	release 8.6.2
-- 2023-06-27	release 8.6.1
-- 2023-06-26	Update cheatsheet-pdf-annotation-extractor.md
