@@ -1,11 +1,9 @@
 #!/bin/zsh
 # shellcheck disable=2164,2154
-export PATH=/usr/local/lib:/usr/local/bin:/opt/homebrew/bin/:$PATH
 
-#───────────────────────────────────────────────────────────────────────────────
-
-# Input
-pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
+# INPUT
+pdf_path="$*"
+[[ -z "$pdf_path" ]] && pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
 
 #───────────────────────────────────────────────────────────────────────────────
 # GUARD CLAUSES & CITEKEY RETRIEVAL

@@ -2,7 +2,8 @@
 
 tell application "System Events" to set frontApp to (name of first process where it is frontmost)
 
-# PDF Expert: # opens Finder, so the subsequent block can do it's work
+# PDF Expert
+# opens Finder, so the subsequent block can do it's work
 if (frontApp is "PDF Expert") then
 	tell application "System Events"
 		tell process "PDF Expert"
@@ -26,7 +27,8 @@ if (frontApp is "Finder" or frontApp is "PDF Expert") then
 	end if
 end if
 
-# Highlights # HACK to get filepath
+# Highlights 
+# HACK to get filepath
 if (frontApp is "Highlights") then
 
 	# resolved PDF Folder
