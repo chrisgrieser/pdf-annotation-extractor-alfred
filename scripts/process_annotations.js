@@ -500,8 +500,8 @@ ${annos}
 /** @type {AlfredRun} */
 // rome-ignore lint/correctness/noUnusedVariables: AlfredRun
 function run(argv) {
-	const [citekey, rawAnnotations, entry, outPath, _] = argv;
-	const usePdfannots = argv[4] === "pdfannots";
+	const [citekey, rawAnnotations, entry, outPath, engine] = argv;
+	const usePdfannots = engine === "pdfannots";
 	const metadata = extractMetadata(citekey, entry);
 	if (!metadata) return; // cancellation of the page-number-dialog by the user
 
