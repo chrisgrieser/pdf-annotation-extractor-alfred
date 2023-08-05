@@ -474,7 +474,7 @@ ${annos}
 `;
 
 	const path = outputPath + `/${metad.citekey}.md`;
-	writeToFile(noteContent, path);
+	writeToFile(path, noteContent);
 
 	// automatically determine if file is an Obsidian Vault
 	const obsidianJson = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
