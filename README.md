@@ -33,9 +33,9 @@ Quality-of-Life conveniences.
 - Install [Homebrew](https://brew.sh/)
 - Install `pdfannots2json` by pasting the following into your terminal:
 
-  ```bash
-  brew install mgmeyers/pdfannots2json/pdfannots2json
-  ```
+	```bash
+	brew install mgmeyers/pdfannots2json/pdfannots2json
+	```
 
 - Download the [latest release](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 - Set the hotkey by double-clicking the sky-blue field at the top left.
@@ -65,9 +65,9 @@ __Annotation Types extracted__
 - Highlight ➡️ bullet point, quoting text and prepending the comment
 - Free Comment ➡️ blockquote of the comment text
 - Strikethrough ➡️ Markdown strikethrough
-- Rectangle ➡️ image
-- Underlines ➡️ sent to [SideNotes](https://www.apptorium.com/sidenotes) (if not
-  installed, they are ignored)
+- Rectangle ➡️ [image](#extracting-images)
+- Underlines ➡️ sent to [Tot](https://tot.rocks/). If Tot is not installed, they
+  are skipped entirely from the extraction.
 
 ### Automatic Page Number Identification
 Instead of the PDF page numbers, this workflow retrieves information about the
@@ -91,10 +91,10 @@ Strikethroughs. (You can run the Alfred command `acode` to display a cheat sheet
 showing all the following information.)
 
 - `+`: Merge this highlight with the previous highlight or underline. Works for
-  annotations on the same PDF-page (= skipping text in between) and for annotations
-  across two pages.
+  annotations on the same PDF-page (= skipping text in between) and for
+  annotations across two pages.
 - `? foo` __(free comments)__: Turns "foo" into a [Question
-  Callout](https://help.obsidian.md/How+to/Use+callouts)  (`> ![QUESTION]`) and
+  Callout](https://help.obsidian.md/How+to/Use+callouts)	(`> ![QUESTION]`) and
   move up. (Callouts are Obsidian-specific Syntax.)
 - `##`: Turns highlighted text into a __heading__ that is added at that
   location. The number of `#` determines the heading level. If the annotation is
@@ -102,10 +102,9 @@ showing all the following information.)
   space after the is `#` required).
 - `=`: Adds highlighted text as __tags__ to the YAML frontmatter (mostly used
   for Obsidian as output). If the annotation is a free comment, uses the text
-	after the `=`. In both cases, the annotation is removed afterward.
-- `_`: A copy of the annotation is sent to
-  [SideNotes](https://www.apptorium.com/sidenotes). If SideNotes is not
-  installed, these annotations are extracted as normal.
+  after the `=`. In both cases, the annotation is removed afterward.
+- `_`: A copy of the annotation is sent to [Tot](https://tot.rocks/). If Tot is
+  not installed, these annotations are extracted as if they were highlights.
 
 ### Extracting Images
 <!-- LTeX: enabled=false -->

@@ -18,7 +18,7 @@ function writeToFile(filepath, text) {
 function toTitleCase(str) {
 	const smallWords =
 		/\b(and|because|but|for|neither|nor|only|over|per|some|that|than|the|upon|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
-	const word = str.replace(/\w\S*/g, function (word) {
+	const word = str.replace(/\w\S*/g, (word) => {
 		if (smallWords.test(word)) return word.toLowerCase();
 		if (word.toLowerCase() === "i") return "I";
 		if (word.length < 3) return word.toLowerCase();
@@ -27,6 +27,17 @@ function toTitleCase(str) {
 	const sentenceFirstCharUpper = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
 	return sentenceFirstCharUpper;
 }
+
+/** JSON signature of annotations expected by this script
+ * @typedef {Object} Annotation
+ * @property {"Highlight"|"Underline"|"Free Comment"|"Image"|"Heading"|"Question Callout"|"remove"} type – of the annotation
+ * @property {number} page - page number where the annotation is located
+ * @property {string=} pageStr - page number as string, so it can represent page ranges
+ * @property {string=} comment - user-written comment for the annotation
+ * @property {string=} quote - text marked in the pdf by Highlight or Underline
+ * @property {string=} imagePath - path of image file
+ * @property {string=} image - filename of image file
+ */
 
 //──────────────────────────────────────────────────────────────────────────────
 
@@ -56,40 +67,19 @@ function adapterForInput(nonStandardizedAnnos, usePdfAnnots) {
 			// in case the page numbers have names like "image 1" instead of integers
 			if (typeof a.page === "string") a.page = parseInt(a.page.match(/\d+/)[0]);
 
-			switch (a.type) {
-				case "text":
-					a.type = "Free Comment";
-					break;
-				case "strike":
-					a.type = "Strikethrough";
-					break;
-				case "highlight":
-					a.type = "Highlight";
-					break;
-				case "underline":
-					a.type = "Underline";
-					break;
-				case "image":
-					a.type = "Image";
-					break;
-				default:
-			}
+			const typeMap = {
+				text: "Free Comment",
+				strike: "Strikethrough",
+				highlight: "Highlight",
+				underline: "Underline",
+				image: "Image",
+			};
+			a.type = typeMap[a.type] || a.type;
 			return a;
 		});
 	}
 	return out;
 }
-
-/** JSON signature of annotations expected by this script
- * @typedef {Object} Annotation
- * @property {"Highlight"|"Underline"|"Free Comment"|"Image"|"Heading"|"Question Callout"|"remove"} type – of the annotation
- * @property {number} page - page number where the annotation is located
- * @property {string=} pageStr - page number as string, so it can represent page ranges
- * @property {string=} comment - user-written comment for the annotation
- * @property {string=} quote - text marked in the pdf by Highlight or Underline
- * @property {string=} imagePath - path of image file
- * @property {string=} image - filename of image file
- */
 
 /** @param {Annotation[]} annotations */
 function cleanQuoteKey(annotations) {
@@ -130,29 +120,30 @@ function insertPageNumber(annotations, pageNo) {
  */
 function underlinesToSidenotes(annotations, citekey) {
 	// sidenotes is installed?
-	let sidenotesIsInstalled = false;
+	let totInstalled;
 	try {
-		Application("SideNotes");
-		sidenotesIsInstalled = true;
+		Application("Tot");
+		totInstalled = true;
 	} catch (_error) {
-		sidenotesIsInstalled = false;
+		totInstalled = false;
 	}
 
 	// Annotations with leading "_"
-	const underscoreAnnos = [];
-	annotations.forEach((anno) => {
-		if (!anno.comment?.startsWith("_")) return;
-		anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
-		underscoreAnnos.push(anno);
-	});
+	if (totInstalled) {
+		const underscoreAnnos = [];
+		for (const anno of annotations) {
+			if (!anno.comment?.startsWith("_")) return;
+			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
+			underscoreAnnos.push(anno);
+		}
 
-	if (sidenotesIsInstalled) {
 		const underlineAnnos = annotations.filter((a) => a.type === "Underline");
 
 		const annosToSplitOff = [...underlineAnnos, ...underscoreAnnos];
 		if (annosToSplitOff.length > 0) {
+			const dot = 2;
 			const text = jsonToMd(annosToSplitOff, citekey);
-			Application("SideNotes").createNote({ text: text });
+			app.openLocation(`tot://${dot}/append?text=${encodeURIComponent(text)}`);
 		}
 	}
 	return annotations.filter((/** @type {{ type: string; }} */ anno) => anno.type !== "Underline");
@@ -317,7 +308,11 @@ function transformTag4yaml(annotations, keywords) {
 	let tagsForYaml = "";
 
 	// existing tags (from BibTeX library)
-	if (keywords) keywords.split(",").forEach((tag) => newKeywords.push(tag));
+	if (keywords) {
+		for (const tag of keywords.split(",")) {
+			newKeywords.push(tag);
+		}
+	}
 
 	// additional tags (from annotations)
 	const arr = annotations.map((a) => {
@@ -325,7 +320,9 @@ function transformTag4yaml(annotations, keywords) {
 		if (a.comment?.startsWith("=") && !a.comment?.startsWith("==")) {
 			let tags = a.comment.slice(1); // remove the "="
 			if (a.type === "Highlight" || a.type === "Underline") tags += " " + a.quote;
-			tags.split(",").forEach((/** @type {string} */ tag) => newKeywords.push(tag));
+			for (const tag of tags.split(",")) {
+				newKeywords.push(tag);
+			}
 			a.type = "remove";
 		}
 		return a;
@@ -352,15 +349,15 @@ function extractMetadata(citekey, rawEntry) {
 	let bibtexEntry = "@" + rawEntry.split("@")[1]; // cut following citekeys
 
 	// Decode Bibtex
-	// rome-ignore format: more compact
+	// biome-ignore format: more compact
 	const germanChars = ['{\\"u};ü', '{\\"a};ä', '{\\"o};ö', '{\\"U};Ü', '{\\"A};Ä', '{\\"O};Ö', '\\"u;ü', '\\"a;ä', '\\"o;ö', '\\"U;Ü', '\\"A;Ä', '\\"O;Ö', "\\ss;ß", "{\\ss};ß"];
-	// rome-ignore format: more compact
+	// biome-ignore format: more compact
 	const otherChars = ["{\\~n};ñ", "{\\'a};á", "{\\'e};é", "{\\v c};č", "\\c{c};ç", "\\o{};ø", "\\^{i};î", '\\"{i};î', '\\"{i};ï', "{\\'c};ć", '\\"e;ë'];
 	const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
-	[...germanChars, ...otherChars, ...specialChars].forEach((pair) => {
+	for (const pair of [...germanChars, ...otherChars, ...specialChars]) {
 		const half = pair.split(";");
 		bibtexEntry = bibtexEntry.replaceAll(half[0], half[1]);
-	});
+	}
 
 	// extracts content of a BibTeX-field
 	/** @param {string} str */
@@ -382,7 +379,7 @@ function extractMetadata(citekey, rawEntry) {
 		citekey: citekey,
 	};
 
-	bibtexEntry.split("\n").forEach((property) => {
+	for (const property of bibtexEntry.split("\n")) {
 		if (/\stitle =/i.test(property)) {
 			data.title = extract(property)
 				.replaceAll('"', "'") // avoid invalid yaml, since title is wrapped in "'"
@@ -405,7 +402,7 @@ function extractMetadata(citekey, rawEntry) {
 			data.url = "https://doi.org/" + extract(property);
 			data.doi = extract(property);
 		} else if (property.includes("url =")) data.url = extract(property);
-	});
+	}
 
 	// prompt for page number if needed
 	if (data.firstPage === -999) {
@@ -477,7 +474,8 @@ ${annos}
 	writeToFile(path, noteContent);
 
 	// automatically determine if file is an Obsidian Vault
-	const obsidianJson = app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
+	const obsidianJson =
+		app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
 	let isInObsidianVault = false;
 	const fileExists = Application("Finder").exists(Path(obsidianJson));
 	if (fileExists) {
@@ -498,7 +496,7 @@ ${annos}
 //──────────────────────────────────────────────────────────────────────────────
 
 /** @type {AlfredRun} */
-// rome-ignore lint/correctness/noUnusedVariables: AlfredRun
+// biome-ignore lint/correctness/noUnusedVariables: AlfredRun
 function run(argv) {
 	const [citekey, rawAnnotations, entry, outPath, engine] = argv;
 	const usePdfannots = engine === "pdfannots";
