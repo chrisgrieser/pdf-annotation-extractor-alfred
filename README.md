@@ -108,7 +108,8 @@ showing all the following information.)
   installed, these annotations are extracted as normal.
 
 ### Extracting Images
-- The respective images is saved in the `attachments` sub-folder of the output
+<!-- LTeX: enabled=false -->
+- The respective images are saved in the `attachments` sub-folder of the output
   folder, and named `{citekey}_image{n}.png`.
 - The images are embedded in the markdown file with the `![[ ]]` syntax, for
   example `![[filename.png|foobar]]`
@@ -116,6 +117,7 @@ showing all the following information.)
 - If the rectangle annotation has any comment, it is used as the alt-text for
   the image. (Note that some PDF readers like PDF Expert do not allow you to add
   a comment to rectangular annotations.)
+<!-- LTeX: enabled=true -->
 
 ## Troubleshooting
 - Update to the latest version of `pdfannots2json` by running the following
