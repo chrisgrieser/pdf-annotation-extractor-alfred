@@ -113,13 +113,12 @@ function insertPageNumber(annotations, pageNo) {
 }
 
 /** code: "_" or annotation type "Underline" -> split off and send to SideNotes.app
- * when SideNotes is not installed, Underlines are ignored and annotations with
+ * when tots is not installed, Underlines are ignored and annotations with
  * leading "_" are still extracted (though the "_" is removed)
  * @param {Annotation[]} annotations
  * @param {string} citekey
  */
-function underlinesToSidenotes(annotations, citekey) {
-	// sidenotes is installed?
+function underlinesToTot(annotations, citekey) {
 	let totInstalled;
 	try {
 		Application("Tot");
@@ -129,14 +128,15 @@ function underlinesToSidenotes(annotations, citekey) {
 	}
 
 	// Annotations with leading "_"
-	if (totInstalled) {
-		const underscoreAnnos = [];
-		for (const anno of annotations) {
-			if (!anno.comment?.startsWith("_")) return;
+	const underscoreAnnos = [];
+	for (const anno of annotations) {
+		if (anno.comment?.startsWith("_")) {
 			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
 			underscoreAnnos.push(anno);
 		}
+	}
 
+	if (totInstalled) {
 		const underlineAnnos = annotations.filter((a) => a.type === "Underline");
 
 		const annosToSplitOff = [...underlineAnnos, ...underscoreAnnos];
@@ -518,7 +518,7 @@ function run(argv) {
 
 	// finish up
 	if (!usePdfannots) annos = insertImage4pdfannots2json(annos, citekey);
-	annos = underlinesToSidenotes(annos, citekey);
+	annos = underlinesToTot(annos, citekey);
 	annos = jsonToMd(annos, citekey);
 
 	writeNote(annos, metadata, outPath, tagsForYaml);
