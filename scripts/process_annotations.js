@@ -132,9 +132,10 @@ function underlinesToSidenotes(annotations, citekey) {
 	if (totInstalled) {
 		const underscoreAnnos = [];
 		for (const anno of annotations) {
-			if (!anno.comment?.startsWith("_")) return;
-			anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
-			underscoreAnnos.push(anno);
+			if (anno.comment?.startsWith("_")) {
+				anno.comment = anno.comment.slice(1).trim(); // remove "_" prefix
+				underscoreAnnos.push(anno);
+			}
 		}
 
 		const underlineAnnos = annotations.filter((a) => a.type === "Underline");
