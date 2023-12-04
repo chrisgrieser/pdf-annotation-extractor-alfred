@@ -112,7 +112,7 @@ function insertPageNumber(annotations, pageNo) {
 	});
 }
 
-/** code: "_" or annotation type "Underline" -> split off and send to SideNotes.app
+/** code: "_" or annotation type "Underline" -> split off and send to Reminders.app
  * when tots is not installed, Underlines are ignored and annotations with
  * leading "_" are still extracted (though the "_" is removed)
  * @param {Annotation[]} annotations
@@ -120,12 +120,6 @@ function insertPageNumber(annotations, pageNo) {
  */
 function processUnderlines(annotations, citekey) {
 	let totInstalled;
-	try {
-		Application("Tot");
-		totInstalled = true;
-	} catch (_error) {
-		totInstalled = false;
-	}
 
 	// Annotations with leading "_": collected & removal of the "_"
 	const underscoreAnnos = [];
@@ -142,9 +136,18 @@ function processUnderlines(annotations, citekey) {
 
 		const annosToSplitOff = [...underlineAnnos, ...underscoreAnnos];
 		if (annosToSplitOff.length > 0) {
-			const dot = 2;
 			const text = jsonToMd(annosToSplitOff, citekey);
-			app.openLocation(`tot://${dot}/append?text=${encodeURIComponent(text)}`);
+
+			// create new reminder due today
+			const rem = Application("Reminders");
+			const today = new Date();
+			const newReminder = rem.Reminder({
+				name: `Underline Annotations for ${citekey}`,
+				body: text,
+				alldayDueDate: today,
+			});
+			rem.defaultList().reminders.push(newReminder);
+			rem.quit();
 		}
 	}
 
@@ -195,7 +198,7 @@ function jsonToMd(annotations, citekey) {
 					} else {
 						output = "- ";
 					}
-					output += `${annotationTag}__${comment}__ "${a.quote}" ${reference}`;
+					output += `${annotationTag}**${comment}** "${a.quote}" ${reference}`;
 				} else {
 					output = `- ${annotationTag}"${a.quote}" ${reference}`;
 				}

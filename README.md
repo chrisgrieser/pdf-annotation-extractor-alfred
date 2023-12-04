@@ -66,8 +66,7 @@ __Annotation Types extracted__
 - Free Comment ➡️ blockquote of the comment text
 - Strikethrough ➡️ Markdown strikethrough
 - Rectangle ➡️ [image](#extracting-images)
-- Underlines ➡️ sent to [Tot](https://tot.rocks/). If Tot is not installed, they
-  are skipped entirely from the extraction.
+- Underlines ➡️ sent to `Reminders.app` as a task due today (default list)
 
 ### Automatic Page Number Identification
 Instead of the PDF page numbers, this workflow retrieves information about the
@@ -103,8 +102,8 @@ showing all the following information.)
 - `=`: Adds highlighted text as __tags__ to the YAML frontmatter (mostly used
   for Obsidian as output). If the annotation is a free comment, uses the text
   after the `=`. In both cases, the annotation is removed afterward.
-- `_`: A copy of the annotation is sent to [Tot](https://tot.rocks/). If Tot is
-  not installed, these annotations are extracted as if they were highlights.
+- `_`: A copy of the annotation is sent `Reminders.app` as a task due today
+  (default list).
 
 ### Extracting Images
 <!-- LTeX: enabled=false -->
