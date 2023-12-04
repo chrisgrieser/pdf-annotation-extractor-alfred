@@ -155,6 +155,19 @@ Then enter the next version number.
   annotation codes.
 - <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon.</a>
 
+## Recommended Citation
+
+Please cite this software project as (APA):
+
+```txt
+Grieser, C. (2023). PDF Annotation Extractor [Computer software]. 
+https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
+```
+
+For other citation styles, use the following metadata:
+- [Citation File Format](./CITATION.cff)
+- [BibTeX](./CITATION.bib)
+
 ### About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
