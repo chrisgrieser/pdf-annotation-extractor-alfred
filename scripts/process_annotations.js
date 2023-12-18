@@ -1,9 +1,9 @@
 #!/usr/bin/env osascript -l JavaScript
-
 ObjC.import("stdlib");
 ObjC.import("Foundation");
 const app = Application.currentApplication();
 app.includeStandardAdditions = true;
+//──────────────────────────────────────────────────────────────────────────────
 
 /** write to file via c-bridge
  * @param {string} filepath
@@ -14,7 +14,10 @@ function writeToFile(filepath, text) {
 	str.writeToFileAtomicallyEncodingError(filepath, true, $.NSUTF8StringEncoding, null);
 }
 
-/** @param {string} str */
+/**
+ * @param {string} str
+ * @returns {string}
+ */
 function toTitleCase(str) {
 	const smallWords =
 		/\b(and|because|but|for|neither|nor|only|over|per|some|that|than|the|upon|vs?\.?|versus|via|when|with(out)?|yet)\b/i;
@@ -28,6 +31,8 @@ function toTitleCase(str) {
 	return sentenceFirstCharUpper;
 }
 
+//──────────────────────────────────────────────────────────────────────────────
+// TYPES
 /** JSON signature of annotations expected by this script
  * @typedef {Object} Annotation
  * @property {"Highlight"|"Underline"|"Free Comment"|"Image"|"Heading"|"Question Callout"|"remove"} type – of the annotation
@@ -39,11 +44,25 @@ function toTitleCase(str) {
  * @property {string=} image - filename of image file
  */
 
+/** @typedef {Object} entryMetadata
+ * @property {string} title
+ * @property {string} ptype
+ * @property {string} author
+ * @property {string=} keywords
+ * @property {string} url
+ * @property {string} doi
+ * @property {string} tagsForYaml
+ * @property {string} citekey
+ * @property {number} firstPage
+ * @property {number} year
+ */
+
 //──────────────────────────────────────────────────────────────────────────────
 
 /** to make pdfannots and pdfannots2json compatible with the format required by this script
  * @param {object[]} nonStandardizedAnnos
  * @param {boolean} usePdfAnnots
+ * @returns {Annotation[]}
  */
 function adapterForInput(nonStandardizedAnnos, usePdfAnnots) {
 	/** @type {Annotation[]} */
@@ -81,7 +100,10 @@ function adapterForInput(nonStandardizedAnnos, usePdfAnnots) {
 	return out;
 }
 
-/** @param {Annotation[]} annotations */
+/**
+ * @param {Annotation[]} annotations
+ * @returns {Annotation[]}
+ */
 function cleanQuoteKey(annotations) {
 	return annotations.map((a) => {
 		if (!a.quote) return a;
@@ -102,6 +124,7 @@ function cleanQuoteKey(annotations) {
 /**
  * @param {Annotation[]} annotations
  * @param {number} pageNo
+ * @returns {Annotation[]}
  */
 function insertPageNumber(annotations, pageNo) {
 	return annotations.map((a) => {
@@ -116,9 +139,11 @@ function insertPageNumber(annotations, pageNo) {
  * when tots is not installed, Underlines are ignored and annotations with
  * leading "_" are still extracted (though the "_" is removed)
  * @param {Annotation[]} annotations
- * @param {string} citekey
+ * @param {string} filename
+ * @param {string} citekey - only to be passed to jsonToMd of the underlines
+ * @returns {Annotation[]}
  */
-function processUnderlines(annotations, citekey) {
+function processUnderlines(annotations, filename, citekey) {
 	let totInstalled;
 
 	// Annotations with leading "_": collected & removal of the "_"
@@ -142,7 +167,7 @@ function processUnderlines(annotations, citekey) {
 			const rem = Application("Reminders");
 			const today = new Date();
 			const newReminder = rem.Reminder({
-				name: `Underline Annotations for ${citekey}`,
+				name: `Underline Annotations for ${filename}`,
 				body: text,
 				alldayDueDate: today,
 			});
@@ -158,6 +183,7 @@ function processUnderlines(annotations, citekey) {
 /**
  * @param {Annotation[]} annotations
  * @param {string} citekey
+ * @returns {string}
  */
 function jsonToMd(annotations, citekey) {
 	let firstItem = true;
@@ -181,8 +207,8 @@ function jsonToMd(annotations, citekey) {
 			}
 		}
 
-		// Pandoc Citation
-		const reference = `[@${citekey}, p. ${a.page}]`;
+		// Citation: Pandoc if citekey
+		const reference = citekey ? `[@${citekey}, p. ${a.page}]` : `(p. ${a.page})`;
 
 		// type specific output
 		switch (a.type) {
@@ -230,6 +256,7 @@ function jsonToMd(annotations, citekey) {
 
 /** code: "+"
  * @param {Annotation[]} annos
+ * @returns {Annotation[]}
  */
 function mergeQuotes(annos) {
 	// start at one, since the first element can't be merged to a predecessor
@@ -254,6 +281,7 @@ function mergeQuotes(annos) {
 
 /** code: "##"
  * @param {Annotation[]} annotations
+ * @returns {Annotation[]}
  */
 function transformHeadings(annotations) {
 	return annotations.map((a) => {
@@ -275,6 +303,7 @@ function transformHeadings(annotations) {
 
 /** code: "?"
  * @param {Annotation[]} annotations
+ * @returns {Annotation[]}
  */
 function questionCallout(annotations) {
 	let annoArr = annotations.map((a) => {
@@ -293,6 +322,7 @@ function questionCallout(annotations) {
 /** images / rectangle annotations (pdfannots2json only)
  * @param {Annotation[]} annotations
  * @param {string} filename
+ * @returns {Annotation[]}
  */
 function insertImage4pdfannots2json(annotations, filename) {
 	let i = 1;
@@ -308,6 +338,7 @@ function insertImage4pdfannots2json(annotations, filename) {
 /** code: "="
  * @param {Annotation[]} annotations
  * @param {string} keywords
+ * @returns {{filteredArray: Annotation[]; tagsForYaml: string}}
  */
 function transformTag4yaml(annotations, keywords) {
 	let newKeywords = [];
@@ -350,6 +381,7 @@ function transformTag4yaml(annotations, keywords) {
 /**
  * @param {string} citekey
  * @param {string} rawEntry
+ * @returns {entryMetadata}
  */
 function extractMetadata(citekey, rawEntry) {
 	let bibtexEntry = "@" + rawEntry.split("@")[1]; // cut following citekeys
@@ -358,7 +390,7 @@ function extractMetadata(citekey, rawEntry) {
 	// biome-ignore format: more compact
 	const germanChars = ['{\\"u};ü', '{\\"a};ä', '{\\"o};ö', '{\\"U};Ü', '{\\"A};Ä', '{\\"O};Ö', '\\"u;ü', '\\"a;ä', '\\"o;ö', '\\"U;Ü', '\\"A;Ä', '\\"O;Ö', "\\ss;ß", "{\\ss};ß"];
 	// biome-ignore format: more compact
-	const otherChars = ["{\\~n};ñ", "{\\'a};á", "{\\'e};é", "{\\v c};č", "\\c{c};ç", "\\o{};ø", "\\^{i};î", '\\"{i};î', '\\"{i};ï', "{\\'c};ć", '\\"e;ë'];
+	const otherChars = ["{\\~n};n", "{\\'a};a", "{\\'e};e", "{\\v c};c", "\\c{c};c", "\\o{};ø", "\\^{i};i", '\\"{i};i', '\\"{i};i', "{\\'c};c", '\\"e;e'];
 	const specialChars = ["\\&;&", '``;"', "`;'", "\\textendash{};—", "---;—", "--;—"];
 	for (const pair of [...germanChars, ...otherChars, ...specialChars]) {
 		const half = pair.split(";");
@@ -373,6 +405,7 @@ function extractMetadata(citekey, rawEntry) {
 	}
 
 	// parse BibTeX entry
+	/* @type {entryMetadata} */
 	const data = {
 		title: "",
 		ptype: "",
@@ -383,6 +416,7 @@ function extractMetadata(citekey, rawEntry) {
 		url: "",
 		doi: "",
 		citekey: citekey,
+		tagsForYaml: "",
 	};
 
 	for (const property of bibtexEntry.split("\n")) {
@@ -432,13 +466,44 @@ function extractMetadata(citekey, rawEntry) {
 	return data;
 }
 
-/**
- * @param {Annotation[]} annos
- * @param {{title: string;ptype: string;firstPage: number;author: string;year: number;keywords?: string;url: string;doi: string;citekey: string;}} metad
- * @param {string} outputPath
- * @param {string} tagsForYaml
+/** if in Obsidian, open there, otherwise reveal in Finder
+ * @param {string} filepath
  */
-function writeNote(annos, metad, outputPath, tagsForYaml) {
+function openFile(filepath) {
+	// determine if file is in Obsidian vault
+	const obsidianJson =
+		app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
+	let isInObsidianVault = false;
+	const fileExists = Application("Finder").exists(Path(obsidianJson));
+	if (fileExists) {
+		const vaults = JSON.parse(app.read(obsidianJson)).vaults;
+		isInObsidianVault = Object.values(vaults).some((vault) => filepath.startsWith(vault.path));
+	}
+
+	// open in Obsidian or reveal in Finder
+	if (isInObsidianVault) {
+		delay(0.1); // delay to ensure writing took place
+		app.openLocation("obsidian://open?path=" + encodeURIComponent(filepath));
+	} else {
+		app.doShellScript(`open -R "${filepath}"`); // reveal in Finder
+	}
+}
+
+/**
+ * @param {string} annos
+ * @param {entryMetadata} metad
+ * @param {string} outputPath
+ * @param {string} filename
+ */
+function writeNote(annos, metad, outputPath, filename) {
+	const writeToPath = outputPath + `/${filename}.md`;
+
+	// GUARD no citekey -> skip yaml
+	if (!metad) {
+		writeToFile(writeToPath, annos);
+		return;
+	}
+
 	// format authors for yaml
 	let authorStr = metad.author
 		.split(" and ")
@@ -454,7 +519,7 @@ function writeNote(annos, metad, outputPath, tagsForYaml) {
 	// yaml frontmatter
 	const yamlKeys = [
 		`aliaseses: "${metad.title}"`,
-		`tags: [literature-note, ${tagsForYaml}]`,
+		`tags: [literature-note, ${metad.tagsForYaml}]`,
 		"cssclasses: pdf-annotations",
 		`citekey: ${metad.citekey}`,
 		`year: ${metad.year.toString()}`,
@@ -476,28 +541,8 @@ ${yamlKeys.join("\n")}
 
 ${annos}
 `;
-
-	const path = outputPath + `/${metad.citekey}.md`;
-	writeToFile(path, noteContent);
-
-	// automatically determine if file is an Obsidian Vault
-	const obsidianJson =
-		app.pathTo("home folder") + "/Library/Application Support/obsidian/obsidian.json";
-	let isInObsidianVault = false;
-	const fileExists = Application("Finder").exists(Path(obsidianJson));
-	if (fileExists) {
-		const vaults = JSON.parse(app.read(obsidianJson)).vaults;
-		isInObsidianVault = Object.values(vaults).some((vault) => path.startsWith(vault.path));
-	}
-
-	// open in Obsidian or reveal in Finder
-	if (isInObsidianVault) {
-		delay(0.1); // delay to ensure writing took place
-		app.openLocation("obsidian://open?path=" + encodeURIComponent(path));
-		app.setTheClipboardTo(`[[${metad.citekey}]]`); // copy wikilink
-	} else {
-		app.doShellScript(`open -R "${path}"`); // reveal in Finder
-	}
+	writeToFile(writeToPath, noteContent);
+	openFile(writeToPath);
 }
 
 //──────────────────────────────────────────────────────────────────────────────
@@ -505,28 +550,35 @@ ${annos}
 /** @type {AlfredRun} */
 // biome-ignore lint/correctness/noUnusedVariables: AlfredRun
 function run(argv) {
-	const [citekey, rawAnnotations, entry, outPath, engine] = argv;
+	const [filename, rawAnnotations, entry, outPath, engine] = argv;
 	const usePdfannots = engine === "pdfannots";
-	const metadata = extractMetadata(citekey, entry);
-	if (!metadata) return; // cancellation of the page-number-dialog by the user
+	const hasLibraryEntry = entry !== "";
+	let metadata;
+	let citekey;
+	if (hasLibraryEntry) {
+		citekey = filename;
+		metadata = extractMetadata(citekey, entry);
+		if (!metadata) return; // cancellation of the page-number-dialog by the user
+	}
 
 	// process input
 	let annos = JSON.parse(rawAnnotations);
 	annos = adapterForInput(annos, usePdfannots);
-	annos = insertPageNumber(annos, metadata.firstPage);
+	annos = insertPageNumber(annos, metadata?.firstPage || 1);
 	annos = cleanQuoteKey(annos);
 
 	// process annotation codes & images
 	annos = mergeQuotes(annos);
 	annos = transformHeadings(annos);
 	annos = questionCallout(annos);
-	const { filteredArray, tagsForYaml } = transformTag4yaml(annos, metadata.keywords);
+	const { filteredArray, tagsForYaml } = transformTag4yaml(annos, metadata?.keywords || "");
 	annos = filteredArray;
+	if (metadata) metadata.tagsForYaml = tagsForYaml;
+	if (!usePdfannots) annos = insertImage4pdfannots2json(annos, filename);
 
 	// finish up
-	if (!usePdfannots) annos = insertImage4pdfannots2json(annos, citekey);
-	annos = processUnderlines(annos, citekey);
+	annos = processUnderlines(annos, filename, citekey);
 	annos = jsonToMd(annos, citekey);
 
-	writeNote(annos, metadata, outPath, tagsForYaml);
+	writeNote(annos, metadata, outPath, filename);
 }
