@@ -6,22 +6,28 @@ pdf_path="$*"
 [[ -z "$pdf_path" ]] && pdf_path=$(osascript "./scripts/get-pdf-path.applescript")
 
 #───────────────────────────────────────────────────────────────────────────────
-# GUARD CLAUSES & CITEKEY RETRIEVAL
 
+# GUARD
 if [[ ! -f "$bibtex_library_path" ]]; then
 	echo "⚠️ Library file does not exist."
 	exit 1
-elif [[ "$pdf_path" == "No file selected." ]]; then
+elif [[ "$pdf_path" == "" ]]; then
 	echo "⚠️ No file selected."
 	exit 1
-elif [[ "$pdf_path" == "More than one file selected." ]]; then
+elif [[ "$pdf_path" == "more-than-one-file" ]]; then
 	echo "⚠️ More than one file selected."
+	exit 1
+elif [[ "$pdf_path" == "not-in-pdf-folder" ]]; then
+	echo "⚠️ When using Highlights, the PDF must be located in the PDF folder."
 	exit 1
 elif [[ "$pdf_path" != *.pdf ]]; then
 	echo "⚠️ Not a .pdf file."
 	exit 1
 fi
 
+#───────────────────────────────────────────────────────────────────────────────
+
+# CITEKEY
 citekey=$(basename "$pdf_path" .pdf | sed -E 's/_.*//')
 entry=$(grep --after-context=20 --max-count=1 --ignore-case "{$citekey," "$bibtex_library_path")
 if [[ -z "$entry" ]]; then
