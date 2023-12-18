@@ -3,7 +3,8 @@
 ![Last release](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
 A [Workflow for Alfred](https://www.alfredapp.com/) to extract annotations as
-Markdown file.
+Markdown file. Primarily for scientific papers, but can also be used for
+non-academic PDF files.
 
 Automatically determines correct page numbers, inserts them as Pandoc citations,
 merges highlights across page breaks, prepends a YAML header with bibliographic
@@ -54,10 +55,10 @@ syntax](https://pandoc.org/MANUAL.html#citation-syntax).
   a yaml header and uses the PDF numbers as page numbers.
 
 ### Automatic citekey identification
-- The filename of the PDF file **MUST** begin with the citekey (without `@`).
-- The citekey **MUST NOT** contain any underscores (`_`).
-- The name of the file **MAY** be followed by an underscore and some
-  text, such as `{citekey}_{title}.pdf`. It **MUST NOT** be followed by anything
+- The filename of the PDF file MUST begin with the citekey (without `@`).
+- The citekey MUST NOT contain any underscores (`_`).
+- The name of the file MAY be followed by an underscore and some
+  text, such as `{citekey}_{title}.pdf`. It MUST NOT be followed by anything
   else, since then the citekey would not be found.
 - Example: With the filename, `Grieser2023_Interdependent Technologies.pdf`, the
   identified citekey is `Grieser2023`.
