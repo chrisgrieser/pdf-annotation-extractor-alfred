@@ -31,12 +31,8 @@ information, and more.
 ## Installation
 - Requirement: [Alfred 5](https://www.alfredapp.com/) with Powerpack
 - Install [Homebrew](https://brew.sh/)
-- Install `pdfannots2json` by running the following command into your terminal:
-
-	```bash
-	brew install mgmeyers/pdfannots2json/pdfannots2json
-	```
-
+- Install `pdfannots2json` by running the following command into your terminal:  
+  `brew install mgmeyers/pdfannots2json/pdfannots2json`
 - Download the [latest release](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 - Set the hotkey by double-clicking the sky-blue field at the top left.
 - Set up the workflow configuration inside the app.
