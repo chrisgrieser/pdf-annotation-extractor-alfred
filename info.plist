@@ -625,7 +625,7 @@ For other citation styles, use the following metadata:
 		</dict>
 	</array>
 	<key>version</key>
-	<string>8.11.2</string>
+	<string>9.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/chrisgrieser/pdf-annotation-extractor-alfred</string>
 </dict>
