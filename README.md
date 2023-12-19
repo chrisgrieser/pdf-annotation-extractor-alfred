@@ -63,7 +63,7 @@ syntax](https://pandoc.org/MANUAL.html#citation-syntax).
 - Example: With the filename, `Grieser2023_Interdependent Technologies.pdf`, the
   identified citekey is `Grieser2023`.
 
-> **Note**  
+> [!TIP]
 > You can achieve such a filename pattern with automatic renaming rules of most
 > reference managers, for example with the [ZotFile plugin for
 > Zotero](http://zotfile.com/#renaming-rules) or the [AutoFile feature of
@@ -177,7 +177,7 @@ For other citation styles, use the following metadata:
   many improvements to this workflow.
 - I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on
   annotation codes.
-- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon.</a>
+- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon</a>
 
 ## About the Developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
