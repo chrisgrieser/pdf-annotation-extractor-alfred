@@ -32,7 +32,7 @@ information, and more.
 ## Installation
 - Requirement: [Alfred 5](https://www.alfredapp.com/) with Powerpack
 - Install [Homebrew](https://brew.sh/)
-- Install `pdfannots2json` by running the following command into your terminal:  
+- Install `pdfannots2json` by running the following command into your terminal:
   `brew install mgmeyers/pdfannots2json/pdfannots2json`
 - Download the [latest release](https://github.com/chrisgrieser/pdf-annotation-extractor-alfred/releases/latest/).
 - Set the hotkey by double-clicking the sky-blue field at the top left.
@@ -72,9 +72,11 @@ syntax](https://pandoc.org/MANUAL.html#citation-syntax).
 ## Usage
 
 ### Basics
-Use the hotkey to trigger the Annotation Extraction on the PDF file currently
-selected in Finder. (The hotkey also works when triggered from [PDF Expert](https://pdfexpert.com/)
-or [Highlights](https://highlightsapp.net/).)
+Use the [hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/) to
+trigger the Annotation Extraction on the PDF file currently selected in Finder.
+The hotkey also works when triggered from [PDF Expert](https://pdfexpert.com/)
+or [Highlights](https://highlightsapp.net/). Alternatively, use the
+`anno` keyword to search for PDFs and select one.
 
 **Annotation Types extracted**
 - Highlight ➡️ bullet point, quoting text and prepending the comment as bold text
