@@ -383,7 +383,9 @@ fi</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>qlmanage -p "./cheatsheet.webloc"</string>
+				<string># using a webloc file that points to the readme reduces maintainance work of keeping
+# the cheatsheet and the README both up to date.
+qlmanage -p "./cheatsheet.webloc"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
