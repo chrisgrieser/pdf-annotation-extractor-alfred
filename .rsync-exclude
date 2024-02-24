@@ -10,3 +10,7 @@ Makefile
 .build-and-release.sh
 CITATION.bib
 CITATION.cff
+
+jxa-globals.d.ts
+jsconfig.json
+alfred.d.ts
