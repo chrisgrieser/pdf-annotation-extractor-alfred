@@ -1,16 +1,18 @@
 .rsync-exclude
+.editorconfig
 .gitignore
 .git/
 .github/
 docs/
+assets/
 prefs.plist
 README.md
 LICENSE
 Justfile
 .build-and-release.sh
-CITATION.bib
-CITATION.cff
+.markdownlint.yaml
 
+# symlinks
 jxa-globals.d.ts
 jsconfig.json
 alfred.d.ts
