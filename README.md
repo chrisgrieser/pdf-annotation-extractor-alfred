@@ -16,16 +16,16 @@ information, and more.
 
 - [Installation](#installation)
 - [Requirements for the PDF](#requirements-for-the-pdf)
-	* [Automatic citekey identification](#automatic-citekey-identification)
+  * [Automatic citekey identification](#automatic-citekey-identification)
 - [Usage](#usage)
-	* [Basics](#basics)
-	* [Automatic Page Number Identification](#automatic-page-number-identification)
-	* [Annotation Codes](#annotation-codes)
-	* [Extracting Images](#extracting-images)
+  * [Basics](#basics)
+  * [Automatic Page Number Identification](#automatic-page-number-identification)
+  * [Annotation Codes](#annotation-codes)
+  * [Extracting Images](#extracting-images)
 - [Troubleshooting](#troubleshooting)
 - [Cite this software project](#cite-this-software-project)
 - [Credits](#credits)
-- [About the Developer](#about-the-developer)
+- [About the developer](#about-the-developer)
 
 <!-- tocstop -->
 
@@ -130,7 +130,7 @@ strikethroughs.
 - The respective images are saved in the `attachments` sub-folder of the output
   folder, and named `{citekey}_image{n}.png`.
 - The images are embedded in the markdown file with the `![[ ]]` syntax, for
-  example `![[filename.png|foobar]]`
+  example `![[filename.png|foobar]]`.
 <!-- LTeX: enabled=false -->
 - Any `rectangle` type annotation in the PDF is extracted as image.
 <!-- LTeX: enabled=true -->
@@ -144,7 +144,7 @@ strikethroughs.
 - This workflow does not work with annotations that are not actually saved in
   the PDF file. Some PDF Readers like **Skim** or **Zotero 6** do this, but you
   can [tell those PDF readers to save the notes in the actual
-  PDF.](https://skim-app.sourceforge.io/manual/SkimHelp_45.html)
+  PDF](https://skim-app.sourceforge.io/manual/SkimHelp_45.html).
 
 > [!NOTE]
 > As a fallback, you can use `pdfannots` as extraction engine, as a different
@@ -163,9 +163,8 @@ Grieser, C. (2023). PDF Annotation Extractor [Computer software].
 https://github.com/chrisgrieser/pdf-annotation-extractor-alfred
 ```
 
-For other citation styles, use the following metadata:
-- [Citation File Format](./CITATION.cff)
-- [BibTeX](./CITATION.bib)
+For other citation styles, use the following metadata: [Citation File
+Format](./CITATION.cff).
 
 <!-- vale Google.FirstPerson = NO -->
 ## Credits
@@ -177,18 +176,16 @@ For other citation styles, use the following metadata:
   many improvements to this workflow.
 - I also thank [@StPag](https://github.com/stefanopagliari/) for his ideas on
   annotation codes.
-- <a href="https://www.flaticon.com/authors/freepik">Icons created by Freepik/Flaticon</a>
+- [Icons created by Freepik/Flaticon](https://www.flaticon.com/authors/freepik)
 
-## About the Developer
+## About the developer
 In my day job, I am a sociologist studying the social mechanisms underlying the
 digital economy. For my PhD project, I investigate the governance of the app
 economy and how software ecosystems manage the tension between innovation and
 compatibility. If you are interested in this subject, feel free to get in touch.
 
 - [Academic Website](https://chris-grieser.de/)
-- [Discord](https://discordapp.com/users/462774483044794368/)
-- [GitHub](https://github.com/chrisgrieser/)
-- [Twitter](https://twitter.com/pseudo_meta)
+- [Mastodon](https://pkm.social/@pseudometa)
 - [ResearchGate](https://www.researchgate.net/profile/Christopher-Grieser)
 - [LinkedIn](https://www.linkedin.com/in/christopher-grieser-ba693b17a/)
 
