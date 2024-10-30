@@ -406,7 +406,7 @@ function transformTag4yaml(annotations, keywords) {
 	// Merge & Save both
 	if (newKeywords.length > 0) {
 		newKeywords = [...new Set(newKeywords)].map((keyword) => keyword.trim().replaceAll(" ", "-"));
-		tagsForYaml = newKeywords.join(", ") + ", ";
+		tagsForYaml = newKeywords.map((keyword) => `"${keyword}"`).join(", ");
 	}
 
 	// return annotation array without tags
@@ -545,7 +545,7 @@ function writeNote(annos, metad, outputPath, filename) {
 	}
 
 	// format authors for yaml
-	let authorStr = metad.author
+	const authorStr = metad.author
 		.split(" and ")
 		.map((name) => {
 			const isLastCommaFirst = name.includes(",");
@@ -553,36 +553,28 @@ function writeNote(annos, metad, outputPath, filename) {
 			return `"${name}"`;
 		})
 		.join(", ");
-	// multi-item brackets only when there is more than one author
-	if (authorStr.includes(",")) authorStr = `[${authorStr}]`;
 
 	// yaml frontmatter
 	const yamlKeys = [
+		"---",
 		`aliases: "${metad.title}"`,
 		`cdate: "${new Date().toISOString().slice(0, 10)}"`,
 		`tags: [${metad.tagsForYaml}]`,
-		"cssclasses: pdf-annotations",
-		`citekey: ${metad.citekey}`,
-		`author: ${authorStr}`,
+		'cssclasses: "pdf-annotations"',
+		`citekey: "${metad.citekey}"`,
+		`author: [${authorStr}]`, // already quoted above
 		`year: ${metad.year.toString()}`,
-		`publicationType: ${metad.ptype}`,
+		`publicationType: "${metad.ptype}"`,
+		metad.url ? `url: "${metad.url}"` : undefined,
+		metad.doi ? `doi: "${metad.doi}"` : undefined,
+		"---",
+		"",
+		"",
 	];
-	// url & doi do not exist for every entry, so only inserting them if they
-	// exist to prevent empty yaml keys
-	if (metad.url) yamlKeys.push(`url: ${metad.url}`);
-	if (metad.doi) yamlKeys.push(`doi: ${metad.doi}`);
-
-	const isoToday = new Date().toISOString().slice(0, 10);
-	yamlKeys.push(`cdate: ${isoToday}`);
+	const frontmatter = yamlKeys.filter((k) => k !== undefined).join("\n");
 
 	// write note
-	const noteContent = `---
-${yamlKeys.join("\n")}
----
-
-${annos}
-`;
-	writeToFile(writeToPath, noteContent);
+	writeToFile(writeToPath, frontmatter + annos);
 	openFile(writeToPath);
 }
 
