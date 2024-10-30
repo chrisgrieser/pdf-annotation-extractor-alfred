@@ -559,6 +559,7 @@ function writeNote(annos, metad, outputPath, filename) {
 	// yaml frontmatter
 	const yamlKeys = [
 		`aliases: "${metad.title}"`,
+		`cdate: "${new Date().toISOString().slice(0, 10)}"`,
 		`tags: [${metad.tagsForYaml}]`,
 		"cssclasses: pdf-annotations",
 		`citekey: ${metad.citekey}`,
