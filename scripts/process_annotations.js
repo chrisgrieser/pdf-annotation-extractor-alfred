@@ -563,8 +563,8 @@ function writeNote(annos, metad, outputPath, filename) {
 		`tags: [${metad.tagsForYaml}]`,
 		"cssclasses: pdf-annotations",
 		`citekey: ${metad.citekey}`,
-		`year: ${metad.year.toString()}`,
 		`author: ${authorStr}`,
+		`year: ${metad.year.toString()}`,
 		`publicationType: ${metad.ptype}`,
 	];
 	// url & doi do not exist for every entry, so only inserting them if they
