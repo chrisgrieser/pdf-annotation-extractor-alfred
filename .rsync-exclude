@@ -4,6 +4,7 @@
 # git
 .git/
 .gitignore
+.gitattributes
 
 # Alfred
 prefs.plist
@@ -14,7 +15,6 @@ docs/
 LICENSE
 # INFO leading `/` -> ignore only the README in the root, not in subfolders
 /README.md
-CITATION.cff
 
 # build
 Justfile
