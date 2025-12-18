@@ -16,12 +16,12 @@ information, and more.
 
 - [Installation](#installation)
 - [Requirements for the PDF](#requirements-for-the-pdf)
-  * [Automatic citekey identification](#automatic-citekey-identification)
+    - [Automatic citekey identification](#automatic-citekey-identification)
 - [Usage](#usage)
-  * [Basics](#basics)
-  * [Automatic Page Number Identification](#automatic-page-number-identification)
-  * [Annotation Codes](#annotation-codes)
-  * [Extracting Images](#extracting-images)
+    - [Basics](#basics)
+    - [Automatic Page Number Identification](#automatic-page-number-identification)
+    - [Annotation Codes](#annotation-codes)
+    - [Extracting Images](#extracting-images)
 - [Troubleshooting](#troubleshooting)
 - [Cite this software project](#cite-this-software-project)
 - [Credits](#credits)
@@ -79,7 +79,8 @@ or [Highlights](https://highlightsapp.net/). Alternatively, use the
 `anno` keyword to search for PDFs and select one.
 
 **Annotation Types extracted**
-- Highlight ➡️ bullet point, quoting text and prepending the comment as bold text
+- Highlight ➡️ bullet point, quoting text and prepending the comment as bold
+  text
 - Free Comment ➡️ blockquote of the comment text
 - Strikethrough ➡️ Markdown strikethrough
 - Rectangle ➡️ [extracts image and inserts Markdown image link at the respective
@@ -109,7 +110,7 @@ strikethroughs.
 - `+`: Merge this highlight with the previous highlight or underline. Works for
   annotations on the same PDF-page (= skipping text in between) and for
   annotations across two pages.
-  * `? foo` **(free comments)**: Turns "foo" into a Question
+    - `? foo` **(free comments)**: Turns "foo" into a Question
   Callout (`> ![QUESTION]`) and move up. (Callouts are [Obsidian-specific
   Syntax](https://help.obsidian.md/How+to/Use+callouts).)
 - `##`: Turns highlighted text into a **heading** that is added at that
@@ -191,9 +192,9 @@ compatibility. If you are interested in this subject, feel free to get in touch.
 
 <a href='https://ko-fi.com/Y8Y86SQ91' target='_blank'>
 <img
-	height='36'
-	style='border:0px;height:36px;'
-	src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3'
-	border='0'
-	alt='Buy Me a Coffee at ko-fi.com'
+    height='36'
+    style='border:0px;height:36px;'
+    src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3'
+    border='0'
+    alt='Buy Me a Coffee at ko-fi.com'
 /></a>
