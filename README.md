@@ -1,4 +1,4 @@
-# PDF Annotation Extractor
+# PDF annotation extractor
 ![Download count](https://img.shields.io/github/downloads/chrisgrieser/pdf-annotation-extractor-alfred/total?label=Total%20Downloads&style=plastic)
 ![Last release](https://img.shields.io/github/v/release/chrisgrieser/pdf-annotation-extractor-alfred?label=Latest%20Release&style=plastic)
 
@@ -10,7 +10,7 @@ Automatically determines correct page numbers, inserts them as Pandoc citations,
 merges highlights across page breaks, prepends a YAML header with bibliographic
 information, and more.
 
-## Table of Contents
+## Table of contents
 
 <!-- toc -->
 
@@ -87,7 +87,7 @@ or [Highlights](https://highlightsapp.net/). Alternatively, use the
   place](#extracting-images)
 - Underlines ➡️ sent to `Reminders.app` as a task due today in the default list
 
-### Automatic Page Number Identification
+### Automatic page number identification
 Instead of the PDF page numbers, this workflow retrieves information about the
 *real* page numbers from the BibTeX library and inserts them. If there is no
 page data in the BibTeX entry (for example, monographies), you are prompted to
@@ -102,7 +102,7 @@ enter the page number manually.
   have page number `-10`, you enter the value `-10` when prompted for a page
   number.*
 
-### Annotation Codes
+### Annotation codes
 Insert the following codes at the **beginning** of an annotation to invoke
 special actions on that annotation. Annotation codes do not apply to
 strikethroughs.
@@ -127,7 +127,7 @@ strikethroughs.
 > You can run the Alfred command `acode` to display a cheat sheet of all
 > annotation codes.
 
-### Extracting Images
+### Extracting images
 - The respective images are saved in the `attachments` subfolder of the output
   folder, and named `{citekey}_image{n}.png`.
 - The images are embedded in the Markdown file with the `![[ ]]` syntax, for
