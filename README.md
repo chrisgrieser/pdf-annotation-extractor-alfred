@@ -4,7 +4,7 @@
 
 A [Workflow for Alfred](https://www.alfredapp.com/) to extract annotations as
 Markdown file. Primarily for scientific papers, but can also be used for
-non-academic PDF files.
+<!-- harper: ignore -->non-academic PDF files.
 
 Automatically determines correct page numbers, inserts them as Pandoc citations,
 merges highlights across page breaks, prepends a YAML header with bibliographic
@@ -46,13 +46,13 @@ store annotations in the PDF itself by default.
 This workflow automatically determines the citekey of based on the filename of
 your PDF file.
 - If the citekey is found, the `PDF Annotation Extractor`
-prepends a yaml header to the annotations and [automatically
+prepends a YAML header to the annotations and [automatically
 inserts the citekey](#automatic-page-number-identification) with the correct
 page numbers using the [Pandoc citations
 syntax](https://pandoc.org/MANUAL.html#citation-syntax).
 - If your filename does not contain citekey that can be found in
   your library, the `PDF Annotation Extractor` extracts the annotations without
-  a yaml header and uses the PDF numbers as page numbers.
+  a YAML header and uses the PDF numbers as page numbers.
 
 ### Automatic citekey identification
 - The filename of the PDF file MUST begin with the citekey (without `@`).
@@ -78,7 +78,7 @@ The hotkey also works when triggered from [PDF Expert](https://pdfexpert.com/)
 or [Highlights](https://highlightsapp.net/). Alternatively, use the
 `anno` keyword to search for PDFs and select one.
 
-**Annotation Types extracted**
+**Annotation Types extracted** <!-- rumdl-disable-line MD036 -->
 - Highlight ➡️ bullet point, quoting text and prepending the comment as bold
   text
 - Free Comment ➡️ blockquote of the comment text
@@ -128,9 +128,9 @@ strikethroughs.
 > annotation codes.
 
 ### Extracting Images
-- The respective images are saved in the `attachments` sub-folder of the output
+- The respective images are saved in the `attachments` subfolder of the output
   folder, and named `{citekey}_image{n}.png`.
-- The images are embedded in the markdown file with the `![[ ]]` syntax, for
+- The images are embedded in the Markdown file with the `![[ ]]` syntax, for
   example `![[filename.png|foobar]]`.
 <!-- LTeX: enabled=false -->
 - Any `rectangle` type annotation in the PDF is extracted as image.
