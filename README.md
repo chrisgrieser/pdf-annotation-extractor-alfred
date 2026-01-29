@@ -13,20 +13,18 @@ information, and more.
 ## Table of contents
 
 <!-- toc -->
-
 - [Installation](#installation)
 - [Requirements for the PDF](#requirements-for-the-pdf)
     - [Automatic citekey identification](#automatic-citekey-identification)
 - [Usage](#usage)
     - [Basics](#basics)
-    - [Automatic Page Number Identification](#automatic-page-number-identification)
-    - [Annotation Codes](#annotation-codes)
-    - [Extracting Images](#extracting-images)
+    - [Automatic page number identification](#automatic-page-number-identification)
+    - [Annotation codes](#annotation-codes)
+    - [Extracting images](#extracting-images)
 - [Troubleshooting](#troubleshooting)
 - [Cite this software project](#cite-this-software-project)
 - [Credits](#credits)
 - [About the developer](#about-the-developer)
-
 <!-- tocstop -->
 
 ## Installation
